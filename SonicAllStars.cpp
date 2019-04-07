@@ -1,0 +1,2 @@
+#include "SonicAllStars.h"
+

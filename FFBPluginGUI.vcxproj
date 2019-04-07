@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{44AC4452-68DE-487C-B9E5-7B795F8E7461}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>FFBPluginGUI</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <CompileAsManaged>true</CompileAsManaged>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <CompileAsManaged>true</CompileAsManaged>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework">
+      <HintPath>MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AfterburnerClimax.cpp" />
+    <ClCompile Include="BG4.cpp" />
+    <ClCompile Include="ButtonRumble.cpp" />
+    <ClCompile Include="ButtonRumbleInput.cpp" />
+    <ClCompile Include="ChaseHQ2.cpp" />
+    <ClCompile Include="DaytonaChampionshipUSA.cpp" />
+    <ClCompile Include="DaytonaChampionshipUSAInput.cpp" />
+    <ClCompile Include="FordRacing.cpp" />
+    <ClCompile Include="Form1.cpp" />
+    <ClCompile Include="GTIClub.cpp" />
+    <ClCompile Include="InitialD4.cpp" />
+    <ClCompile Include="InitialD4Japan.cpp" />
+    <ClCompile Include="InitialD5.cpp" />
+    <ClCompile Include="InitialD6.cpp" />
+    <ClCompile Include="InitialD7.cpp" />
+    <ClCompile Include="InitialD8.cpp" />
+    <ClCompile Include="LGI.cpp" />
+    <ClCompile Include="LGI3D.cpp" />
+    <ClCompile Include="M2Emulator.cpp" />
+    <ClCompile Include="M2EmulatorInput.cpp" />
+    <ClCompile Include="Machstorm.cpp" />
+    <ClCompile Include="Mame0199.cpp" />
+    <ClCompile Include="Mame0206.cpp" />
+    <ClCompile Include="MKGP100.cpp" />
+    <ClCompile Include="MKGP110.cpp" />
+    <ClCompile Include="NascarRacing.cpp" />
+    <ClCompile Include="Outrun2.cpp" />
+    <ClCompile Include="PokkenTournament.cpp" />
+    <ClCompile Include="RoadFighters3D.cpp" />
+    <ClCompile Include="RoadFighters3DInput.cpp" />
+    <ClCompile Include="SegaRacingClassic.cpp" />
+    <ClCompile Include="SegaRally3.cpp" />
+    <ClCompile Include="SonicAllStars.cpp" />
+    <ClCompile Include="WackyRaces.cpp" />
+    <ClCompile Include="WMMT5.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AfterburnerClimax.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="BG4.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ButtonRumble.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ButtonRumbleInput.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ChaseHQ2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DaytonaChampionshipUSA.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DaytonaChampionshipUSAInput.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FordRacing.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Form1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="GTIClub.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="InitialD4.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="InitialD4Japan.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="InitialD5.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="InitialD6.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="InitialD7.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="InitialD8.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="LGI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="LGI3D.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="M2Emulator.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="M2EmulatorInput.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Machstorm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Mame0199.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Mame0206.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MKGP100.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MKGP110.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="NascarRacing.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Outrun2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="PokkenTournament.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="RoadFighters3D.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="RoadFighters3DInput.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="SegaRacingClassic.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="SegaRally3.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="SonicAllStars.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="WackyRaces.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="WMMT5.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AfterburnerClimax.resx">
+      <DependentUpon>AfterburnerClimax.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BG4.resx">
+      <DependentUpon>BG4.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ButtonRumble.resx">
+      <DependentUpon>ButtonRumble.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ButtonRumbleInput.resx">
+      <DependentUpon>ButtonRumbleInput.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChaseHQ2.resx">
+      <DependentUpon>ChaseHQ2.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DaytonaChampionshipUSA.resx">
+      <DependentUpon>DaytonaChampionshipUSA.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DaytonaChampionshipUSAInput.resx">
+      <DependentUpon>DaytonaChampionshipUSAInput.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FordRacing.resx">
+      <DependentUpon>FordRacing.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GTIClub.resx">
+      <DependentUpon>GTIClub.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialD4.resx">
+      <DependentUpon>InitialD4.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialD4Japan.resx">
+      <DependentUpon>InitialD4Japan.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialD5.resx">
+      <DependentUpon>InitialD5.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialD6.resx">
+      <DependentUpon>InitialD6.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialD7.resx">
+      <DependentUpon>InitialD7.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialD8.resx">
+      <DependentUpon>InitialD8.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LGI.resx">
+      <DependentUpon>LGI.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LGI3D.resx">
+      <DependentUpon>LGI3D.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M2Emulator.resx">
+      <DependentUpon>M2Emulator.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M2EmulatorInput.resx">
+      <DependentUpon>M2EmulatorInput.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Machstorm.resx">
+      <DependentUpon>Machstorm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mame0199.resx">
+      <DependentUpon>Mame0199.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mame0206.resx">
+      <DependentUpon>Mame0206.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MKGP100.resx">
+      <DependentUpon>MKGP100.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MKGP110.resx">
+      <DependentUpon>MKGP110.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NascarRacing.resx">
+      <DependentUpon>NascarRacing.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outrun2.resx">
+      <DependentUpon>Outrun2.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PokkenTournament.resx">
+      <DependentUpon>PokkenTournament.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoadFighters3D.resx">
+      <DependentUpon>RoadFighters3D.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoadFighters3DInput.resx">
+      <DependentUpon>RoadFighters3DInput.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SegaRacingClassic.resx">
+      <DependentUpon>SegaRacingClassic.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SegaRally3.resx">
+      <DependentUpon>SegaRally3.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SonicAllStars.resx">
+      <DependentUpon>SonicAllStars.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WackyRaces.resx">
+      <DependentUpon>WackyRaces.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WMMT5.resx">
+      <DependentUpon>WMMT5.h</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\sdl2.redist.2.0.5\build\native\sdl2.redist.targets" Condition="Exists('packages\sdl2.redist.2.0.5\build\native\sdl2.redist.targets')" />
+    <Import Project="packages\sdl2.2.0.5\build\native\sdl2.targets" Condition="Exists('packages\sdl2.2.0.5\build\native\sdl2.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\sdl2.redist.2.0.5\build\native\sdl2.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\sdl2.redist.2.0.5\build\native\sdl2.redist.targets'))" />
+    <Error Condition="!Exists('packages\sdl2.2.0.5\build\native\sdl2.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\sdl2.2.0.5\build\native\sdl2.targets'))" />
+  </Target>
+</Project>
