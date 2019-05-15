@@ -120,6 +120,12 @@
     <ClCompile Include="RoadFighters3DInput.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Outrun2Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FFBTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -227,6 +233,12 @@
     <ClInclude Include="RoadFighters3DInput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Outrun2Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FFBTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -332,6 +344,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="RoadFighters3DInput.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outrun2Input.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

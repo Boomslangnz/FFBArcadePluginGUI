@@ -1,7 +1,2449 @@
-#pragma once
 #include <Windows.h>
 #include <string>
 #include "SDL.h"
+
+static bool keepRunning2 = true;
+static bool done2 = true;
+
+static DWORD WINAPI Button1(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button2(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button3(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button4(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button5(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button6(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button7(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button8(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button9(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button10(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button1Device2(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button2Device2(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button3Device2(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button4Device2(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button5Device2(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button6Device2(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button7Device2(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button8Device2(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button9Device2(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI Button10Device2(LPVOID lpParam)
+{
+	done2 = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (done2))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button == 0)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "0", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 1)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "1", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 2)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "2", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 3)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "3", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 4)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "4", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 5)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "5", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 6)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "6", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 7)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "7", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 8)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "8", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 9)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "9", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 10)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "10", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 11)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "11", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 12)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "12", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 13)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "13", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 14)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "14", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+				else if (e1.jbutton.button == 15)
+				{
+					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "15", ".\\FFBPlugin.ini");
+					done2 = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static void CreateButton1Thread()
+{
+	CreateThread(NULL, 0, Button1, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton2Thread()
+{
+	CreateThread(NULL, 0, Button2, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton3Thread()
+{
+	CreateThread(NULL, 0, Button3, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton4Thread()
+{
+	CreateThread(NULL, 0, Button4, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton5Thread()
+{
+	CreateThread(NULL, 0, Button5, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton6Thread()
+{
+	CreateThread(NULL, 0, Button6, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton7Thread()
+{
+	CreateThread(NULL, 0, Button7, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton8Thread()
+{
+	CreateThread(NULL, 0, Button8, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton9Thread()
+{
+	CreateThread(NULL, 0, Button9, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton10Thread()
+{
+	CreateThread(NULL, 0, Button10, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton1Device2Thread()
+{
+	CreateThread(NULL, 0, Button1Device2, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton2Device2Thread()
+{
+	CreateThread(NULL, 0, Button2Device2, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton3Device2Thread()
+{
+	CreateThread(NULL, 0, Button3Device2, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton4Device2Thread()
+{
+	CreateThread(NULL, 0, Button4Device2, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton5Device2Thread()
+{
+	CreateThread(NULL, 0, Button5Device2, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton6Device2Thread()
+{
+	CreateThread(NULL, 0, Button6Device2, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton7Device2Thread()
+{
+	CreateThread(NULL, 0, Button7Device2, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton8Device2Thread()
+{
+	CreateThread(NULL, 0, Button8Device2, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton9Device2Thread()
+{
+	CreateThread(NULL, 0, Button9Device2, (LPVOID)&keepRunning2, 0, NULL);
+}
+
+static void CreateButton10Device2Thread()
+{
+	CreateThread(NULL, 0, Button10Device2, (LPVOID)&keepRunning2, 0, NULL);
+}
 
 namespace FFBPluginGUI {
 
@@ -18,6 +2460,8 @@ namespace FFBPluginGUI {
 	public ref class ButtonRumbleInput : public MetroFramework::Forms::MetroForm
 	{
 	public:
+		System::Windows::Forms::Timer^ timer;
+		static int count;
 		ButtonRumbleInput(void)
 		{
 			InitializeComponent();
@@ -30,6 +2474,15 @@ namespace FFBPluginGUI {
 		{
 			obj = obj1;
 			InitializeComponent();
+			this->timer = (gcnew System::Windows::Forms::Timer());
+			//Set the interval to 0.5 second.
+			timer->Interval = 100;
+			//Add the tick event handler to set the text periodically
+			timer->Tick += gcnew System::EventHandler(this, &ButtonRumbleInput::timer_Tick);
+			//Set the initial count to 100;
+			count = 6000;
+			//Stat counting.
+			timer->Start();
 		}
 
 	protected:
@@ -164,7 +2617,7 @@ namespace FFBPluginGUI {
 			this->metroToolTip1->Style = MetroFramework::MetroColorStyle::Blue;
 			this->metroToolTip1->StyleManager = nullptr;
 			this->metroToolTip1->Theme = MetroFramework::MetroThemeStyle::Light;
-			this->metroToolTip1->SetToolTip(this->metroTextBox5, L" Click Button under select input then press button on device for 2 seconds ");
+			this->metroToolTip1->SetToolTip(this->metroTextBox5, L" Select Input then move or press Axis or Button");
 			this->metroToolTip1->SetToolTip(this->metroTextBox1, L" Button names for device 1, click below to set input for device 1 ");
 			this->metroToolTip1->SetToolTip(this->metroTextBox2, L" Button number set in FFBPlugin.ini for device 1 ");
 			this->metroToolTip1->SetToolTip(this->metroTextBox3, L" Button names for device 2, click below to set input for device 2 ");
@@ -258,9 +2711,17 @@ namespace FFBPluginGUI {
 			this->metroLabel1->Location = System::Drawing::Point(234, 112);
 			this->metroLabel1->Name = L"metroLabel1";
 			this->metroLabel1->Size = System::Drawing::Size(16, 19);
-			this->metroLabel1->Text = System::Convert::ToString(Button1Rumble1);
+			if (Button1Rumble1 == 99)
+			{
+				this->metroLabel1->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel1->Text = System::Convert::ToString(Button1Rumble1);
+			}			
 			this->metroLabel1->TabIndex = 3;
 			this->metroLabel1->TabStop = false;
+			this->metroLabel1->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel1_Click);
 			// 
 			// metroLink2
 			// 			
@@ -456,7 +2917,7 @@ namespace FFBPluginGUI {
 			this->metroTextBox5->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
 			this->metroTextBox5->CustomButton->UseSelectable = false;
 			this->metroTextBox5->CustomButton->Visible = false;
-			this->metroTextBox5->Lines = gcnew cli::array< System::String^  >(1) { L"Click then hold button for 2 seconds" };
+			this->metroTextBox5->Lines = gcnew cli::array< System::String^  >(1) { L"Set or remove button configuration below" };
 			this->metroTextBox5->Location = System::Drawing::Point(3, 48);
 			this->metroTextBox5->MaxLength = 32767;
 			this->metroTextBox5->Name = L"metroTextBox5";
@@ -470,7 +2931,7 @@ namespace FFBPluginGUI {
 			this->metroTextBox5->Size = System::Drawing::Size(309, 23);
 			this->metroTextBox5->TabIndex = 43;
 			this->metroTextBox5->TabStop = false;
-			this->metroTextBox5->Text = L"Click then hold button for 2 seconds";
+			this->metroTextBox5->Text = L"Set or remove button configuration below";
 			this->metroTextBox5->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			this->metroTextBox5->UseSelectable = false;
 			this->metroTextBox5->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
@@ -594,9 +3055,17 @@ namespace FFBPluginGUI {
 			this->metroLabel2->Location = System::Drawing::Point(234, 141);
 			this->metroLabel2->Name = L"metroLabel2";
 			this->metroLabel2->Size = System::Drawing::Size(16, 19);
-			this->metroLabel2->Text = System::Convert::ToString(Button2Rumble1);
+			if (Button2Rumble1 == 99)
+			{
+				this->metroLabel2->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel2->Text = System::Convert::ToString(Button2Rumble1);
+			}
 			this->metroLabel2->TabIndex = 25;
 			this->metroLabel2->TabStop = false;
+			this->metroLabel2->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel2_Click);
 			// 
 			// metroLabel3
 			// 
@@ -605,9 +3074,17 @@ namespace FFBPluginGUI {
 			this->metroLabel3->Location = System::Drawing::Point(234, 170);
 			this->metroLabel3->Name = L"metroLabel3";
 			this->metroLabel3->Size = System::Drawing::Size(16, 19);
-			this->metroLabel3->Text = System::Convert::ToString(Button3Rumble1);
+			if (Button3Rumble1 == 99)
+			{
+				this->metroLabel3->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel3->Text = System::Convert::ToString(Button3Rumble1);
+			}
 			this->metroLabel3->TabIndex = 26;
 			this->metroLabel3->TabStop = false;
+			this->metroLabel3->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel3_Click);
 			// 
 			// metroLabel4
 			// 
@@ -616,9 +3093,17 @@ namespace FFBPluginGUI {
 			this->metroLabel4->Location = System::Drawing::Point(234, 199);
 			this->metroLabel4->Name = L"metroLabel4";
 			this->metroLabel4->Size = System::Drawing::Size(16, 19);
-			this->metroLabel4->Text = System::Convert::ToString(Button4Rumble1);
+			if (Button4Rumble1 == 99)
+			{
+				this->metroLabel4->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel4->Text = System::Convert::ToString(Button4Rumble1);
+			}
 			this->metroLabel4->TabIndex = 27;
 			this->metroLabel4->TabStop = false;
+			this->metroLabel4->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel4_Click);
 			// 
 			// metroLabel5
 			// 
@@ -627,9 +3112,17 @@ namespace FFBPluginGUI {
 			this->metroLabel5->Location = System::Drawing::Point(234, 228);
 			this->metroLabel5->Name = L"metroLabel5";
 			this->metroLabel5->Size = System::Drawing::Size(16, 19);
-			this->metroLabel5->Text = System::Convert::ToString(Button5Rumble1);
+			if (Button5Rumble1 == 99)
+			{
+				this->metroLabel5->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel5->Text = System::Convert::ToString(Button5Rumble1);
+			}
 			this->metroLabel5->TabStop = false;
 			this->metroLabel5->TabIndex = 28;
+			this->metroLabel5->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel5_Click);
 			// 
 			// metroLabel6
 			// 
@@ -638,9 +3131,17 @@ namespace FFBPluginGUI {
 			this->metroLabel6->Location = System::Drawing::Point(234, 257);
 			this->metroLabel6->Name = L"metroLabel6";
 			this->metroLabel6->Size = System::Drawing::Size(16, 19);
-			this->metroLabel6->Text = System::Convert::ToString(Button6Rumble1);
+			if (Button6Rumble1 == 99)
+			{
+				this->metroLabel6->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel6->Text = System::Convert::ToString(Button6Rumble1);
+			}
 			this->metroLabel6->TabStop = false;
 			this->metroLabel6->TabIndex = 29;
+			this->metroLabel6->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel6_Click);
 			// 
 			// metroLabel7
 			// 
@@ -649,9 +3150,17 @@ namespace FFBPluginGUI {
 			this->metroLabel7->Location = System::Drawing::Point(234, 286);
 			this->metroLabel7->Name = L"metroLabel7";
 			this->metroLabel7->Size = System::Drawing::Size(16, 19);
-			this->metroLabel7->Text = System::Convert::ToString(Button7Rumble1);
+			if (Button7Rumble1 == 99)
+			{
+				this->metroLabel7->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel7->Text = System::Convert::ToString(Button7Rumble1);
+			}
 			this->metroLabel7->TabStop = false;
 			this->metroLabel7->TabIndex = 30;
+			this->metroLabel7->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel7_Click);
 			// 
 			// metroLabel8
 			// 
@@ -660,9 +3169,17 @@ namespace FFBPluginGUI {
 			this->metroLabel8->Location = System::Drawing::Point(234, 315);
 			this->metroLabel8->Name = L"metroLabel8";
 			this->metroLabel8->Size = System::Drawing::Size(16, 19);
-			this->metroLabel8->Text = System::Convert::ToString(Button8Rumble1);
+			if (Button8Rumble1 == 99)
+			{
+				this->metroLabel8->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel8->Text = System::Convert::ToString(Button8Rumble1);
+			}
 			this->metroLabel8->TabStop = false;
 			this->metroLabel8->TabIndex = 31;
+			this->metroLabel8->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel8_Click);
 			// 
 			// metroLabel9
 			// 
@@ -671,9 +3188,17 @@ namespace FFBPluginGUI {
 			this->metroLabel9->Location = System::Drawing::Point(234, 344);
 			this->metroLabel9->Name = L"metroLabel9";
 			this->metroLabel9->Size = System::Drawing::Size(16, 19);
-			this->metroLabel9->Text = System::Convert::ToString(Button9Rumble1);
+			if (Button9Rumble1 == 99)
+			{
+				this->metroLabel9->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel9->Text = System::Convert::ToString(Button9Rumble1);
+			}
 			this->metroLabel9->TabStop = false;
 			this->metroLabel9->TabIndex = 32;
+			this->metroLabel9->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel9_Click);
 			// 
 			// metroLabel10
 			// 
@@ -682,9 +3207,17 @@ namespace FFBPluginGUI {
 			this->metroLabel10->Location = System::Drawing::Point(234, 373);
 			this->metroLabel10->Name = L"metroLabel10";
 			this->metroLabel10->Size = System::Drawing::Size(16, 19);
-			this->metroLabel10->Text = System::Convert::ToString(Button10Rumble1);
+			if (Button10Rumble1 == 99)
+			{
+				this->metroLabel10->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel10->Text = System::Convert::ToString(Button10Rumble1);
+			}
 			this->metroLabel10->TabStop = false;
 			this->metroLabel10->TabIndex = 33;
+			this->metroLabel10->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel10_Click);
 			// 
 			// metroLabel11
 			// 
@@ -693,9 +3226,17 @@ namespace FFBPluginGUI {
 			this->metroLabel11->Location = System::Drawing::Point(234, 431);
 			this->metroLabel11->Name = L"metroLabel11";
 			this->metroLabel11->Size = System::Drawing::Size(16, 19);
-			this->metroLabel11->Text = System::Convert::ToString(Button1Device2Rumble1);
+			if (Button1Device2Rumble1 == 99)
+			{
+				this->metroLabel11->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel11->Text = System::Convert::ToString(Button1Device2Rumble1);
+			}			
 			this->metroLabel11->TabStop = false;
 			this->metroLabel11->TabIndex = 34;
+			this->metroLabel11->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel11_Click);
 			// 
 			// metroLabel12
 			// 
@@ -704,9 +3245,17 @@ namespace FFBPluginGUI {
 			this->metroLabel12->Location = System::Drawing::Point(234, 460);
 			this->metroLabel12->Name = L"metroLabel12";
 			this->metroLabel12->Size = System::Drawing::Size(16, 19);
-			this->metroLabel12->Text = System::Convert::ToString(Button2Device2Rumble1);
+			if (Button2Device2Rumble1 == 99)
+			{
+				this->metroLabel12->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel12->Text = System::Convert::ToString(Button2Device2Rumble1);
+			}
 			this->metroLabel12->TabStop = false;
 			this->metroLabel12->TabIndex = 35;
+			this->metroLabel12->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel12_Click);
 			// 
 			// metroLabel13
 			// 
@@ -715,9 +3264,17 @@ namespace FFBPluginGUI {
 			this->metroLabel13->Location = System::Drawing::Point(234, 489);
 			this->metroLabel13->Name = L"metroLabel13";
 			this->metroLabel13->Size = System::Drawing::Size(16, 19);
-			this->metroLabel13->Text = System::Convert::ToString(Button3Device2Rumble1);
+			if (Button3Device2Rumble1 == 99)
+			{
+				this->metroLabel13->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel13->Text = System::Convert::ToString(Button3Device2Rumble1);
+			}
 			this->metroLabel13->TabStop = false;
 			this->metroLabel13->TabIndex = 36;
+			this->metroLabel13->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel13_Click);
 			// 
 			// metroLabel14
 			// 
@@ -726,9 +3283,17 @@ namespace FFBPluginGUI {
 			this->metroLabel14->Location = System::Drawing::Point(234, 518);
 			this->metroLabel14->Name = L"metroLabel14";
 			this->metroLabel14->Size = System::Drawing::Size(16, 19);
-			this->metroLabel14->Text = System::Convert::ToString(Button4Device2Rumble1);
+			if (Button4Device2Rumble1 == 99)
+			{
+				this->metroLabel14->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel14->Text = System::Convert::ToString(Button4Device2Rumble1);
+			}
 			this->metroLabel14->TabStop = false;
 			this->metroLabel14->TabIndex = 37;
+			this->metroLabel14->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel14_Click);
 			// 
 			// metroLabel15
 			// 
@@ -737,9 +3302,17 @@ namespace FFBPluginGUI {
 			this->metroLabel15->Location = System::Drawing::Point(234, 547);
 			this->metroLabel15->Name = L"metroLabel15";
 			this->metroLabel15->Size = System::Drawing::Size(16, 19);
-			this->metroLabel15->Text = System::Convert::ToString(Button5Device2Rumble1);
+			if (Button5Device2Rumble1 == 99)
+			{
+				this->metroLabel15->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel15->Text = System::Convert::ToString(Button5Device2Rumble1);
+			}
 			this->metroLabel15->TabStop = false;
 			this->metroLabel15->TabIndex = 38;
+			this->metroLabel15->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel15_Click);
 			// 
 			// metroLabel16
 			// 
@@ -748,9 +3321,17 @@ namespace FFBPluginGUI {
 			this->metroLabel16->Location = System::Drawing::Point(234, 576);
 			this->metroLabel16->Name = L"metroLabel16";
 			this->metroLabel16->Size = System::Drawing::Size(16, 19);
-			this->metroLabel16->Text = System::Convert::ToString(Button6Device2Rumble1);
+			if (Button6Device2Rumble1 == 99)
+			{
+				this->metroLabel16->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel16->Text = System::Convert::ToString(Button6Device2Rumble1);
+			}
 			this->metroLabel16->TabStop = false;
 			this->metroLabel16->TabIndex = 39;
+			this->metroLabel16->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel16_Click);
 			// 
 			// metroLabel17
 			// 
@@ -759,9 +3340,17 @@ namespace FFBPluginGUI {
 			this->metroLabel17->Location = System::Drawing::Point(234, 605);
 			this->metroLabel17->Name = L"metroLabel17";
 			this->metroLabel17->Size = System::Drawing::Size(16, 19);
-			this->metroLabel17->Text = System::Convert::ToString(Button7Device2Rumble1);
+			if (Button7Device2Rumble1 == 99)
+			{
+				this->metroLabel17->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel17->Text = System::Convert::ToString(Button7Device2Rumble1);
+			}
 			this->metroLabel17->TabStop = false;
 			this->metroLabel17->TabIndex = 40;
+			this->metroLabel17->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel17_Click);
 			// 
 			// metroLabel18
 			// 
@@ -770,9 +3359,17 @@ namespace FFBPluginGUI {
 			this->metroLabel18->Location = System::Drawing::Point(234, 634);
 			this->metroLabel18->Name = L"metroLabel18";
 			this->metroLabel18->Size = System::Drawing::Size(16, 19);
-			this->metroLabel18->Text = System::Convert::ToString(Button8Device2Rumble1);
+			if (Button8Device2Rumble1 == 99)
+			{
+				this->metroLabel18->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel18->Text = System::Convert::ToString(Button8Device2Rumble1);
+			}
 			this->metroLabel18->TabStop = false;
 			this->metroLabel18->TabIndex = 41;
+			this->metroLabel18->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel18_Click);
 			// 
 			// metroLabel19
 			// 
@@ -781,9 +3378,17 @@ namespace FFBPluginGUI {
 			this->metroLabel19->Location = System::Drawing::Point(234, 663);
 			this->metroLabel19->Name = L"metroLabel19";
 			this->metroLabel19->Size = System::Drawing::Size(16, 19);
-			this->metroLabel19->Text = System::Convert::ToString(Button9Device2Rumble1);
+			if (Button9Device2Rumble1 == 99)
+			{
+				this->metroLabel19->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel19->Text = System::Convert::ToString(Button9Device2Rumble1);
+			}
 			this->metroLabel19->TabStop = false;
 			this->metroLabel19->TabIndex = 42;
+			this->metroLabel19->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel19_Click);
 			// 
 			// metroLabel20
 			// 
@@ -792,9 +3397,17 @@ namespace FFBPluginGUI {
 			this->metroLabel20->Location = System::Drawing::Point(234, 692);
 			this->metroLabel20->Name = L"metroLabel20";
 			this->metroLabel20->Size = System::Drawing::Size(16, 19);
-			this->metroLabel20->Text = System::Convert::ToString(Button10Device2Rumble1);
+			if (Button10Device2Rumble1 == 99)
+			{
+				this->metroLabel20->Text = "Not Defined";
+			}
+			else
+			{
+				this->metroLabel20->Text = System::Convert::ToString(Button10Device2Rumble1);
+			}
 			this->metroLabel20->TabStop = false;
 			this->metroLabel20->TabIndex = 43;
+			this->metroLabel20->Click += gcnew System::EventHandler(this, &ButtonRumbleInput::metroLabel20_Click);
 			// 
 			// ButtonRumbleInput
 			// 
@@ -857,6 +3470,193 @@ namespace FFBPluginGUI {
 
 		}
 #pragma endregion
+		System::Void timer_Tick(System::Object^  sender, System::EventArgs^  e) {
+
+			int Button1Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button1Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button2Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button2Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button3Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button3Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button4Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button4Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button5Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button5Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button6Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button6Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button7Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button7Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button8Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button8Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button9Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button9Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button10Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button10Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button1Device2Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button1Device2Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button2Device2Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button2Device2Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button3Device2Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button3Device2Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button4Device2Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button4Device2Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button5Device2Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button5Device2Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button6Device2Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button6Device2Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button7Device2Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button7Device2Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button8Device2Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button8Device2Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button9Device2Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button9Device2Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			int Button10Device2Rumble1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("Button10Device2Rumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			if (!done2)
+			{
+				if (Button1Rumble1 == 99)
+				{
+					this->metroLabel1->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel1->Text = System::Convert::ToString(Button1Rumble1);
+				}
+				if (Button2Rumble1 == 99)
+				{
+					this->metroLabel2->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel2->Text = System::Convert::ToString(Button2Rumble1);
+				}
+				if (Button3Rumble1 == 99)
+				{
+					this->metroLabel3->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel3->Text = System::Convert::ToString(Button3Rumble1);
+				}
+				if (Button4Rumble1 == 99)
+				{
+					this->metroLabel4->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel4->Text = System::Convert::ToString(Button4Rumble1);
+				}
+				if (Button5Rumble1 == 99)
+				{
+					this->metroLabel5->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel5->Text = System::Convert::ToString(Button5Rumble1);
+				}
+				if (Button6Rumble1 == 99)
+				{
+					this->metroLabel6->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel6->Text = System::Convert::ToString(Button6Rumble1);
+				}
+				if (Button7Rumble1 == 99)
+				{
+					this->metroLabel7->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel7->Text = System::Convert::ToString(Button7Rumble1);
+				}
+				if (Button8Rumble1 == 99)
+				{
+					this->metroLabel8->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel8->Text = System::Convert::ToString(Button8Rumble1);
+				}
+				if (Button9Rumble1 == 99)
+				{
+					this->metroLabel9->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel9->Text = System::Convert::ToString(Button9Rumble1);
+				}
+				if (Button10Rumble1 == 99)
+				{
+					this->metroLabel10->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel10->Text = System::Convert::ToString(Button10Rumble1);
+				}
+				if (Button1Device2Rumble1 == 99)
+				{
+					this->metroLabel11->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel11->Text = System::Convert::ToString(Button1Device2Rumble1);
+				}
+				if (Button2Device2Rumble1 == 99)
+				{
+					this->metroLabel12->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel12->Text = System::Convert::ToString(Button2Device2Rumble1);
+				}
+				if (Button3Device2Rumble1 == 99)
+				{
+					this->metroLabel13->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel13->Text = System::Convert::ToString(Button3Device2Rumble1);
+				}
+				if (Button4Device2Rumble1 == 99)
+				{
+					this->metroLabel14->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel14->Text = System::Convert::ToString(Button4Device2Rumble1);
+				}
+				if (Button5Device2Rumble1 == 99)
+				{
+					this->metroLabel15->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel15->Text = System::Convert::ToString(Button5Device2Rumble1);
+				}
+				if (Button6Device2Rumble1 == 99)
+				{
+					this->metroLabel16->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel16->Text = System::Convert::ToString(Button6Device2Rumble1);
+				}
+				if (Button7Device2Rumble1 == 99)
+				{
+					this->metroLabel17->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel17->Text = System::Convert::ToString(Button7Device2Rumble1);
+				}
+				if (Button8Device2Rumble1 == 99)
+				{
+					this->metroLabel18->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel18->Text = System::Convert::ToString(Button8Device2Rumble1);
+				}
+				if (Button9Device2Rumble1 == 99)
+				{
+					this->metroLabel19->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel19->Text = System::Convert::ToString(Button9Device2Rumble1);
+				}
+				if (Button10Device2Rumble1 == 99)
+				{
+					this->metroLabel20->Text = "Not Defined";
+				}
+				else
+				{
+					this->metroLabel20->Text = System::Convert::ToString(Button10Device2Rumble1);
+				}
+			}
+			//metroLabel3->Text = Convert::ToString(count--);
+		}
 	private: System::Void Form1_FormClosing(System::Object^  sender, System::Windows::Forms::FormClosingEventArgs^  e)
 	{
 		if (e->CloseReason == CloseReason::UserClosing)
@@ -867,3423 +3667,203 @@ namespace FFBPluginGUI {
 	}
 	private: System::Void metroLink1_Click(System::Object^  sender, System::EventArgs^  e) //Button 1
 	{
-		metroLabel1->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel1->Text = L"0";					
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel1->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel1->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel1->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel1->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel1->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel1->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel1->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel1->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel1->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel1->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel1->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel1->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel1->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel1->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel1->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel1->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel1->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel1->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel1->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel1->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel1->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel1->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel1->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel1->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel1->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel1->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel1->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel1->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel1->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel1->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel1->Text = L"Press Button";
+		CreateButton1Thread();
 	}
 	private: System::Void metroLink2_Click(System::Object^  sender, System::EventArgs^  e) //Button 2
 	{
-		metroLabel2->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel2->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel2->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel2->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel2->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel2->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel2->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel2->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel2->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel2->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel2->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel2->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel2->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel2->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel2->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel2->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel2->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel2->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel2->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel2->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel2->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel2->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel2->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel2->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel2->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel2->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel2->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel2->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel2->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel2->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel2->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel2->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel2->Text = L"Press Button";
+		CreateButton2Thread();
 	}
 	private: System::Void metroLink3_Click(System::Object^  sender, System::EventArgs^  e) //Button 3
 	{
-		metroLabel3->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel3->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel3->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel3->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel3->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel3->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel3->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel3->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel3->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel3->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel3->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel3->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel3->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel3->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel3->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel3->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel3->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel3->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel3->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel3->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel3->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel3->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel3->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel3->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel3->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel3->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel3->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel3->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel3->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel3->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel3->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel3->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel3->Text = L"Press Button";
+		CreateButton3Thread();
 	}
 	private: System::Void metroLink4_Click(System::Object^  sender, System::EventArgs^  e) //Button 4
 	{
-		metroLabel4->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel4->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel4->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel4->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel4->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel4->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel4->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel4->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel4->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel4->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel4->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel4->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel4->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel4->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel4->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel4->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel4->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel4->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel4->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel4->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel4->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel4->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel4->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel4->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel4->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel4->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel4->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel4->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel4->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel4->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel4->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel4->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel4->Text = L"Press Button";
+		CreateButton4Thread();
 	}
 	private: System::Void metroLink5_Click(System::Object^  sender, System::EventArgs^  e) //Button 5
 	{
-		metroLabel5->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel5->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel5->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel5->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel5->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel5->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel5->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel5->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel5->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel5->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel5->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel5->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel5->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel5->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel5->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel5->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel5->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel5->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel5->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel5->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel5->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel5->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel5->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel5->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel5->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel5->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel5->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel5->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel5->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel5->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel5->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel5->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel5->Text = L"Press Button";
+		CreateButton5Thread();
 	}
 	private: System::Void metroLink6_Click(System::Object^  sender, System::EventArgs^  e) //Button 6
 	{
-		metroLabel6->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel6->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel6->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel6->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel6->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel6->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel6->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel6->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel6->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel6->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel6->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel6->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel6->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel6->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel6->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel6->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel6->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel6->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel6->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel6->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel6->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel6->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel6->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel6->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel6->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel6->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel6->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel6->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel6->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel6->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel6->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel6->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel6->Text = L"Press Button";
+		CreateButton6Thread();
 	}
 	private: System::Void metroLink7_Click(System::Object^  sender, System::EventArgs^  e) //Button 7
 	{
-		metroLabel7->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel7->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel7->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel7->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel7->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel7->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel7->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel7->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel7->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel7->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel7->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel7->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel7->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel7->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel7->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel7->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel7->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel7->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel7->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel7->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel7->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel7->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel7->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel7->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel7->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel7->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel7->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel7->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel7->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel7->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel7->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel7->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel7->Text = L"Press Button";
+		CreateButton7Thread();
 	}
 	private: System::Void metroLink8_Click(System::Object^  sender, System::EventArgs^  e) //Button 8
 	{
-		metroLabel8->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel8->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel8->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel8->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel8->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel8->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel8->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel8->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel8->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel8->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel8->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel8->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel8->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel8->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel8->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel8->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel8->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel8->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel8->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel8->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel8->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel8->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel8->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel8->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel8->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel8->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel8->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel8->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel8->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel8->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel8->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel8->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel8->Text = L"Press Button";
+		CreateButton8Thread();
 	}
 	private: System::Void metroLink9_Click(System::Object^  sender, System::EventArgs^  e) //Button 9
 	{
-		metroLabel9->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel9->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel9->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel9->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel9->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel9->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel9->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel9->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel9->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel9->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel9->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel9->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel9->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel9->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel9->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel9->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel9->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel9->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel9->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel9->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel9->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel9->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel9->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel9->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel9->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel9->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel9->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel9->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel9->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel9->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel9->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel9->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel9->Text = L"Press Button";
+		CreateButton9Thread();
 	}
 	private: System::Void metroLink10_Click(System::Object^  sender, System::EventArgs^  e) //Button 10
 	{
-		metroLabel10->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel10->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel10->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel10->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel10->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel10->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel10->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel10->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel10->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel10->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel10->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel10->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel10->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel10->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel10->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel10->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel10->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel10->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel10->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel10->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel10->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel10->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel10->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel10->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel10->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel10->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel10->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel10->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel10->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel10->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel10->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel10->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel10->Text = L"Press Button";
+		CreateButton10Thread();
 	}
 	private: System::Void metroLink11_Click(System::Object^  sender, System::EventArgs^  e) //Button 1 Device 2 
 	{
-		metroLabel11->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel11->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel11->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel11->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel11->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel11->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel11->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel11->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel11->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel11->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel11->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel11->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel11->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel11->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel11->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel11->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel11->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel11->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel11->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel11->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel11->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel11->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel11->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel11->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel11->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel11->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel11->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel11->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel11->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel11->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel11->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel11->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel11->Text = L"Press Button";
+		CreateButton1Device2Thread();
 	}
 	private: System::Void metroLink12_Click(System::Object^  sender, System::EventArgs^  e) //Button 2 Device 2
 	{
-		metroLabel12->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel12->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel12->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel12->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel12->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel12->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel12->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel12->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel12->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel12->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel12->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel12->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel12->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel12->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel12->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel12->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel12->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel12->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel12->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel12->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel12->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel12->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel12->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel12->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel12->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel12->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel12->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel12->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel12->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel12->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel12->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel12->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel12->Text = L"Press Button";
+		CreateButton2Device2Thread();
 	}
 	private: System::Void metroLink13_Click(System::Object^  sender, System::EventArgs^  e) //Button 3 Device 2
 	{
-		metroLabel13->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel13->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel13->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel13->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel13->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel13->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel13->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel13->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel13->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel13->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel13->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel13->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel13->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel13->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel13->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel13->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel13->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel13->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel13->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel13->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel13->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel13->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel13->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel13->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel13->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel13->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel13->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel13->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel13->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel13->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel13->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel13->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel13->Text = L"Press Button";
+		CreateButton3Device2Thread();
 	}
 	private: System::Void metroLink14_Click(System::Object^  sender, System::EventArgs^  e) //Button 4 Device 2
 	{
-		metroLabel14->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel14->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel14->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel14->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel14->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel14->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel14->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel14->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel14->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel14->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel14->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel14->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel14->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel14->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel14->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel14->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel14->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel14->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel14->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel14->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel14->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel14->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel14->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel14->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel14->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel14->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel14->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel14->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel14->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel14->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel14->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel14->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel14->Text = L"Press Button";
+		CreateButton4Device2Thread();
 	}
 	private: System::Void metroLink15_Click(System::Object^  sender, System::EventArgs^  e) //Button 5 Device 2
 	{
-		metroLabel15->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel15->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel15->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel15->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel15->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel15->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel15->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel15->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel15->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel15->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel15->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel15->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel15->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel15->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel15->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel15->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel15->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel15->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel15->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel15->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel15->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel15->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel15->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel15->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel15->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel15->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel15->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel15->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel15->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel15->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel15->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel15->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel15->Text = L"Press Button";
+		CreateButton5Device2Thread();
 	}
 	private: System::Void metroLink16_Click(System::Object^  sender, System::EventArgs^  e) //Button 6 Device 2
 	{
-		metroLabel16->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel16->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel16->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel16->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel16->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel16->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel16->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel16->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel16->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel16->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel16->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel16->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel16->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel16->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel16->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel16->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel16->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel16->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel16->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel16->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel16->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel16->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel16->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel16->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel16->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel16->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel16->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel16->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel16->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel16->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel16->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel16->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel16->Text = L"Press Button";
+		CreateButton6Device2Thread();
 	}
 	private: System::Void metroLink17_Click(System::Object^  sender, System::EventArgs^  e) //Button 7 Device 2
 	{
-		metroLabel17->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel17->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel17->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel17->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel17->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel17->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel17->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel17->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel17->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel17->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel17->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel17->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel17->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel17->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel17->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel17->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel17->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel17->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel17->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel17->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel17->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel17->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel17->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel17->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel1->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel17->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel17->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel17->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel17->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel17->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel17->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel17->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel17->Text = L"Press Button";
+		CreateButton7Device2Thread();
 	}
 	private: System::Void metroLink18_Click(System::Object^  sender, System::EventArgs^  e) //Button 8 Device 2
 	{
-		metroLabel18->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel18->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel18->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel18->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel18->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel18->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel18->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel18->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel18->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel18->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel18->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel18->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel18->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel18->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel18->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel18->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel18->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel18->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel18->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel18->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel18->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel18->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel18->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel18->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel18->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel18->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel18->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel18->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel18->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel18->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel18->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel18->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel18->Text = L"Press Button";
+		CreateButton8Device2Thread();
 	}
 	private: System::Void metroLink19_Click(System::Object^  sender, System::EventArgs^  e) //Button 9 Device 2
 	{
-		metroLabel19->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel19->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel19->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel19->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel19->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel19->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel19->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel19->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel19->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel19->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel19->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel19->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel19->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel19->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel19->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel19->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel19->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel19->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel1->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel19->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel19->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel19->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel19->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel19->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel19->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel19->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel19->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel19->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel19->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel19->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel19->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel19->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel19->Text = L"Press Button";
+		CreateButton9Device2Thread();
 	}
 	private: System::Void metroLink20_Click(System::Object^  sender, System::EventArgs^  e) //Button 10 Device 2
 	{
-		metroLabel20->Text = L"Undetected";
-		for (int i = 0; i < SDL_NumJoysticks(); i++)
-		{
-			SDL_Joystick* js2 = SDL_JoystickOpen(i);
-		}
-		SDL_Event e1;
-		Sleep(2000);
-		while (SDL_PollEvent(&e1))
-		{
-			if (e1.type == SDL_JOYBUTTONDOWN)
-			{
-				if (e1.jbutton.button == 0)
-				{
-					metroLabel20->Text = L"0";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "0", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					metroLabel20->Text = L"1";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "1", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					metroLabel20->Text = L"2";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "2", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					metroLabel20->Text = L"3";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "3", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					metroLabel20->Text = L"4";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "4", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					metroLabel20->Text = L"5";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "5", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					metroLabel20->Text = L"6";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "6", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					metroLabel20->Text = L"7";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "7", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					metroLabel20->Text = L"8";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "8", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					metroLabel20->Text = L"9";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "9", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					metroLabel20->Text = L"10";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "10", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					metroLabel20->Text = L"11";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "11", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					metroLabel20->Text = L"12";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "12", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					metroLabel20->Text = L"13";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "13", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					metroLabel20->Text = L"14";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "14", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					metroLabel20->Text = L"15";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "15", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 16)
-				{
-					metroLabel20->Text = L"16";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "16", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 17)
-				{
-					metroLabel20->Text = L"17";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "17", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 18)
-				{
-					metroLabel20->Text = L"18";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "18", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 19)
-				{
-					metroLabel20->Text = L"19";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "19", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 20)
-				{
-					metroLabel20->Text = L"20";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "20", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 21)
-				{
-					metroLabel20->Text = L"21";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "21", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 22)
-				{
-					metroLabel20->Text = L"22";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "22", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 23)
-				{
-					metroLabel20->Text = L"23";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "23", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 24)
-				{
-					metroLabel20->Text = L"24";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "24", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 25)
-				{
-					metroLabel20->Text = L"25";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "25", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 26)
-				{
-					metroLabel20->Text = L"26";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "26", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 27)
-				{
-					metroLabel20->Text = L"27";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "27", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 28)
-				{
-					metroLabel20->Text = L"28";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "28", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 29)
-				{
-					metroLabel20->Text = L"29";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "29", ".\\FFBPlugin.ini");
-				}
-				else if (e1.jbutton.button == 30)
-				{
-					metroLabel20->Text = L"30";
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "30", ".\\FFBPlugin.ini");
-				}
-			}
-		}
+		metroLabel20->Text = L"Press Button";
+		CreateButton10Device2Thread();
+	}
+	private: System::Void metroLabel1_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button1Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel2_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button2Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel3_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button3Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel4_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button4Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel5_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button5Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel6_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button6Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel7_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button7Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel8_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button8Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel9_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button9Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel10_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button10Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel11_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel12_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel13_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel14_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel15_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel16_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel17_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel18_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel19_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
+	}
+	private: System::Void metroLabel20_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "99", ".\\FFBPlugin.ini");
+		done2 = false;
 	}
 	private: System::Void metroLink21_Click(System::Object^  sender, System::EventArgs^  e) //Go Back
 	{

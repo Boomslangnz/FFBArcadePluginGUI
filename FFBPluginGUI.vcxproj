@@ -158,6 +158,7 @@
     <ClCompile Include="ChaseHQ2.cpp" />
     <ClCompile Include="DaytonaChampionshipUSA.cpp" />
     <ClCompile Include="DaytonaChampionshipUSAInput.cpp" />
+    <ClCompile Include="FFBTest.cpp" />
     <ClCompile Include="FordRacing.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="GTIClub.cpp" />
@@ -178,6 +179,7 @@
     <ClCompile Include="MKGP110.cpp" />
     <ClCompile Include="NascarRacing.cpp" />
     <ClCompile Include="Outrun2.cpp" />
+    <ClCompile Include="Outrun2Input.cpp" />
     <ClCompile Include="PokkenTournament.cpp" />
     <ClCompile Include="RoadFighters3D.cpp" />
     <ClCompile Include="RoadFighters3DInput.cpp" />
@@ -207,6 +209,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="DaytonaChampionshipUSAInput.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FFBTest.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FordRacing.h">
@@ -269,6 +274,9 @@
     <ClInclude Include="Outrun2.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Outrun2Input.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PokkenTournament.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -315,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DaytonaChampionshipUSAInput.resx">
       <DependentUpon>DaytonaChampionshipUSAInput.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFBTest.resx">
+      <DependentUpon>FFBTest.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FordRacing.resx">
       <DependentUpon>FordRacing.h</DependentUpon>
@@ -375,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Outrun2.resx">
       <DependentUpon>Outrun2.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outrun2Input.resx">
+      <DependentUpon>Outrun2Input.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PokkenTournament.resx">
       <DependentUpon>PokkenTournament.h</DependentUpon>

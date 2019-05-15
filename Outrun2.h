@@ -25,7 +25,8 @@ namespace FFBPluginGUI {
 			//TODO: Add the constructor code here
 			//
 		}
-		MetroForm ^obj;
+	public:
+			 MetroForm ^obj;
 		Outrun2(MetroForm ^obj1)
 		{
 			obj = obj1;
@@ -43,6 +44,9 @@ namespace FFBPluginGUI {
 				delete components;
 			}
 		}
+	private: MetroFramework::Controls::MetroTextBox^  metroTextBox10;
+	private: MetroFramework::Controls::MetroTrackBar^  metroTrackBar7;
+	private: MetroFramework::Controls::MetroLabel^  metroLabel7;
 	private: MetroFramework::Components::MetroToolTip^  metroToolTip1;
 	private: MetroFramework::Controls::MetroLink^  metroLink1;
 	private: MetroFramework::Controls::MetroTextBox^  metroTextBox1;
@@ -92,14 +96,6 @@ namespace FFBPluginGUI {
 		void InitializeComponent(void)
 		{
 			this->metroToolTip1 = (gcnew MetroFramework::Components::MetroToolTip());
-			this->metroLink1 = (gcnew MetroFramework::Controls::MetroLink());
-			this->metroTextBox1 = (gcnew MetroFramework::Controls::MetroTextBox());
-			this->metroTextBox2 = (gcnew MetroFramework::Controls::MetroTextBox());
-			this->metroTrackBar1 = (gcnew MetroFramework::Controls::MetroTrackBar());
-			this->metroTrackBar2 = (gcnew MetroFramework::Controls::MetroTrackBar());
-			this->metroTextBox3 = (gcnew MetroFramework::Controls::MetroTextBox());
-			this->metroComboBox1 = (gcnew MetroFramework::Controls::MetroComboBox());
-			this->metroTextBox4 = (gcnew MetroFramework::Controls::MetroTextBox());
 			this->metroCheckBox1 = (gcnew MetroFramework::Controls::MetroCheckBox());
 			this->metroCheckBox2 = (gcnew MetroFramework::Controls::MetroCheckBox());
 			this->metroCheckBox3 = (gcnew MetroFramework::Controls::MetroCheckBox());
@@ -108,13 +104,21 @@ namespace FFBPluginGUI {
 			this->metroCheckBox6 = (gcnew MetroFramework::Controls::MetroCheckBox());
 			this->metroCheckBox7 = (gcnew MetroFramework::Controls::MetroCheckBox());
 			this->metroCheckBox8 = (gcnew MetroFramework::Controls::MetroCheckBox());
+			this->metroTextBox1 = (gcnew MetroFramework::Controls::MetroTextBox());
+			this->metroTextBox2 = (gcnew MetroFramework::Controls::MetroTextBox());
+			this->metroTextBox3 = (gcnew MetroFramework::Controls::MetroTextBox());
+			this->metroTextBox4 = (gcnew MetroFramework::Controls::MetroTextBox());
 			this->metroTextBox5 = (gcnew MetroFramework::Controls::MetroTextBox());
 			this->metroTextBox6 = (gcnew MetroFramework::Controls::MetroTextBox());
 			this->metroTextBox7 = (gcnew MetroFramework::Controls::MetroTextBox());
-			this->metroTrackBar3 = (gcnew MetroFramework::Controls::MetroTrackBar());
-			this->metroTrackBar4 = (gcnew MetroFramework::Controls::MetroTrackBar());
 			this->metroTextBox8 = (gcnew MetroFramework::Controls::MetroTextBox());
 			this->metroTextBox9 = (gcnew MetroFramework::Controls::MetroTextBox());
+			this->metroLink1 = (gcnew MetroFramework::Controls::MetroLink());
+			this->metroTrackBar1 = (gcnew MetroFramework::Controls::MetroTrackBar());
+			this->metroTrackBar2 = (gcnew MetroFramework::Controls::MetroTrackBar());
+			this->metroComboBox1 = (gcnew MetroFramework::Controls::MetroComboBox());
+			this->metroTrackBar3 = (gcnew MetroFramework::Controls::MetroTrackBar());
+			this->metroTrackBar4 = (gcnew MetroFramework::Controls::MetroTrackBar());
 			this->metroTrackBar5 = (gcnew MetroFramework::Controls::MetroTrackBar());
 			this->metroTrackBar6 = (gcnew MetroFramework::Controls::MetroTrackBar());
 			this->metroLabel1 = (gcnew MetroFramework::Controls::MetroLabel());
@@ -124,9 +128,11 @@ namespace FFBPluginGUI {
 			this->metroLabel5 = (gcnew MetroFramework::Controls::MetroLabel());
 			this->metroLabel6 = (gcnew MetroFramework::Controls::MetroLabel());
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->metroTextBox10 = (gcnew MetroFramework::Controls::MetroTextBox());
+			this->metroTrackBar7 = (gcnew MetroFramework::Controls::MetroTrackBar());
+			this->metroLabel7 = (gcnew MetroFramework::Controls::MetroLabel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			this->SuspendLayout();
-			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &Outrun2::Form1_FormClosing);
 			// 
 			// metroToolTip1
 			// 
@@ -150,6 +156,127 @@ namespace FFBPluginGUI {
 			this->metroToolTip1->SetToolTip(this->metroTextBox7, L" Maximum overrall left force strength that will be applied to device ");
 			this->metroToolTip1->SetToolTip(this->metroTextBox8, L" Minimum overrall right force strength that will be applied to device ");
 			this->metroToolTip1->SetToolTip(this->metroTextBox9, L" Maximum overrall right force strength that will be applied to device ");
+			this->metroToolTip1->SetToolTip(this->metroTextBox10, L" Spring Strength for wheels only ");
+			// 
+			// metroCheckBox1
+			// 
+			int EnableRumble = GetPrivateProfileInt(TEXT("Settings"), TEXT("EnableRumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroCheckBox1->AutoSize = true;
+			this->metroCheckBox1->Location = System::Drawing::Point(20, 279);
+			this->metroCheckBox1->Name = L"metroCheckBox1";
+			this->metroCheckBox1->Size = System::Drawing::Size(102, 15);
+			this->metroCheckBox1->TabIndex = 7;
+			this->metroCheckBox1->TabStop = false;
+			this->metroCheckBox1->Text = L"Enable Rumble";
+			this->metroToolTip1->SetToolTip(this->metroCheckBox1, L"Enable or disable rumble");
+			this->metroCheckBox1->UseSelectable = true;
+			this->metroCheckBox1->Checked = EnableRumble;
+			this->metroCheckBox1->CheckedChanged += gcnew System::EventHandler(this, &Outrun2::metroCheckBox1_CheckedChanged);
+			// 
+			// metroCheckBox2
+			// 
+			int ReverseRumble = GetPrivateProfileInt(TEXT("Settings"), TEXT("ReverseRumble"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroCheckBox2->AutoSize = true;
+			this->metroCheckBox2->Location = System::Drawing::Point(163, 279);
+			this->metroCheckBox2->Name = L"metroCheckBox2";
+			this->metroCheckBox2->Size = System::Drawing::Size(107, 15);
+			this->metroCheckBox2->TabIndex = 8;
+			this->metroCheckBox2->TabStop = false;
+			this->metroCheckBox2->Text = L"Reverse Rumble";
+			this->metroToolTip1->SetToolTip(this->metroCheckBox2, L"Reverse the rumble if works incorrectly to liking");
+			this->metroCheckBox2->UseSelectable = true;
+			this->metroCheckBox2->Checked = ReverseRumble;
+			this->metroCheckBox2->CheckedChanged += gcnew System::EventHandler(this, &Outrun2::metroCheckBox2_CheckedChanged);
+			// 
+			// metroCheckBox3
+			// 
+			int EnableLogging = GetPrivateProfileInt(TEXT("Settings"), TEXT("Logging"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroCheckBox3->AutoSize = true;
+			this->metroCheckBox3->Location = System::Drawing::Point(20, 300);
+			this->metroCheckBox3->Name = L"metroCheckBox3";
+			this->metroCheckBox3->Size = System::Drawing::Size(105, 15);
+			this->metroCheckBox3->TabIndex = 9;
+			this->metroCheckBox3->TabStop = false;
+			this->metroCheckBox3->Text = L"Enable Logging";
+			this->metroToolTip1->SetToolTip(this->metroCheckBox3, L"Enable or disable FFBlog.txt to collect log data");
+			this->metroCheckBox3->UseSelectable = true;
+			this->metroCheckBox3->Checked = EnableLogging;
+			this->metroCheckBox3->CheckedChanged += gcnew System::EventHandler(this, &Outrun2::metroCheckBox3_CheckedChanged);
+			// 
+			// metroCheckBox4
+			// 
+			int ResetFB = GetPrivateProfileInt(TEXT("Settings"), TEXT("ResetFeedback"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroCheckBox4->AutoSize = true;
+			this->metroCheckBox4->Location = System::Drawing::Point(163, 300);
+			this->metroCheckBox4->Name = L"metroCheckBox4";
+			this->metroCheckBox4->Size = System::Drawing::Size(104, 15);
+			this->metroCheckBox4->TabIndex = 10;
+			this->metroCheckBox4->TabStop = false;
+			this->metroCheckBox4->Text = L"Reset Feedback";
+			this->metroToolTip1->SetToolTip(this->metroCheckBox4, L" When a command contradicts a prior command, clear the prior command ");
+			this->metroCheckBox4->UseSelectable = true;
+			this->metroCheckBox4->Checked = ResetFB;
+			this->metroCheckBox4->CheckedChanged += gcnew System::EventHandler(this, &Outrun2::metroCheckBox4_CheckedChanged);
+			// 
+			// metroCheckBox5
+			// 
+			int BeepWhen = GetPrivateProfileInt(TEXT("Settings"), TEXT("BeepWhenHook"), 120, TEXT(".\\FFBPlugin.ini"));
+			this->metroCheckBox5->AutoSize = true;
+			this->metroCheckBox5->Location = System::Drawing::Point(20, 321);
+			this->metroCheckBox5->Name = L"metroCheckBox5";
+			this->metroCheckBox5->Size = System::Drawing::Size(115, 15);
+			this->metroCheckBox5->TabIndex = 11;
+			this->metroCheckBox5->TabStop = false;
+			this->metroCheckBox5->Text = L"Beep When Hook";
+			this->metroToolTip1->SetToolTip(this->metroCheckBox5, L"Beep will occur when FFBPlugin hooks application");
+			this->metroCheckBox5->UseSelectable = true;
+			this->metroCheckBox5->Checked = BeepWhen;
+			this->metroCheckBox5->CheckedChanged += gcnew System::EventHandler(this, &Outrun2::metroCheckBox5_CheckedChanged);
+			// 
+			// metroCheckBox6
+			// 
+			int GUIDMessage = GetPrivateProfileInt(TEXT("Settings"), TEXT("ForceShowDeviceGUIDMessageBox"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroCheckBox6->AutoSize = true;
+			this->metroCheckBox6->Location = System::Drawing::Point(163, 321);
+			this->metroCheckBox6->Name = L"metroCheckBox6";
+			this->metroCheckBox6->Size = System::Drawing::Size(118, 15);
+			this->metroCheckBox6->TabIndex = 12;
+			this->metroCheckBox6->TabStop = false;
+			this->metroCheckBox6->Text = L"GUID MessageBox";
+			this->metroToolTip1->SetToolTip(this->metroCheckBox6, L" Messagebox will appear when launching application to show guid number ");
+			this->metroCheckBox6->UseSelectable = true;
+			this->metroCheckBox6->Checked = GUIDMessage;
+			this->metroCheckBox6->CheckedChanged += gcnew System::EventHandler(this, &Outrun2::metroCheckBox6_CheckedChanged);
+			// 
+			// metroCheckBox7
+			// 
+			int AlternativeFFB = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeFFB"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroCheckBox7->AutoSize = true;
+			this->metroCheckBox7->Location = System::Drawing::Point(20, 342);
+			this->metroCheckBox7->Name = L"metroCheckBox7";
+			this->metroCheckBox7->Size = System::Drawing::Size(102, 15);
+			this->metroCheckBox7->TabIndex = 13;
+			this->metroCheckBox7->TabStop = false;
+			this->metroCheckBox7->Text = L"Alternative FFB";
+			this->metroToolTip1->SetToolTip(this->metroCheckBox7, L"Use if wheel rotates incorrectly");
+			this->metroCheckBox7->UseSelectable = true;
+			this->metroCheckBox7->Checked = AlternativeFFB;
+			this->metroCheckBox7->CheckedChanged += gcnew System::EventHandler(this, &Outrun2::metroCheckBox7_CheckedChanged);
+			// 
+			// metroCheckBox8
+			// 
+			int FFBMode = GetPrivateProfileInt(TEXT("Settings"), TEXT("FFBMode"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroCheckBox8->AutoSize = true;
+			this->metroCheckBox8->Location = System::Drawing::Point(163, 342);
+			this->metroCheckBox8->Name = L"metroCheckBox8";
+			this->metroCheckBox8->Size = System::Drawing::Size(76, 15);
+			this->metroCheckBox8->TabIndex = 30;
+			this->metroCheckBox8->TabStop = false;
+			this->metroCheckBox8->Text = L"FFB Mode";
+			this->metroToolTip1->SetToolTip(this->metroCheckBox8, L" Enable to raise strength of low effects ");
+			this->metroCheckBox8->UseSelectable = true;
+			this->metroCheckBox8->Checked = FFBMode;
+			this->metroCheckBox8->CheckedChanged += gcnew System::EventHandler(this, &Outrun2::metroCheckBox8_CheckedChanged);
 			// 
 			// metroTextBox1
 			// 
@@ -163,7 +290,7 @@ namespace FFBPluginGUI {
 			this->metroTextBox1->CustomButton->Style = MetroFramework::MetroColorStyle::Blue;
 			this->metroTextBox1->CustomButton->TabIndex = 1;
 			this->metroTextBox1->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
-			this->metroTextBox1->CustomButton->UseSelectable = false;
+			this->metroTextBox1->CustomButton->UseSelectable = true;
 			this->metroTextBox1->CustomButton->Visible = false;
 			this->metroTextBox1->Lines = gcnew cli::array< System::String^  >(1) { L"Min Force" };
 			this->metroTextBox1->Location = System::Drawing::Point(20, 37);
@@ -181,7 +308,8 @@ namespace FFBPluginGUI {
 			this->metroTextBox1->TabStop = false;
 			this->metroTextBox1->Text = L"Min Force";
 			this->metroTextBox1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->metroTextBox1->UseSelectable = false;
+			this->metroToolTip1->SetToolTip(this->metroTextBox1, L" Minimum overrall force strength that will be applied to device ");
+			this->metroTextBox1->UseSelectable = true;
 			this->metroTextBox1->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
 				static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
 			this->metroTextBox1->WaterMarkFont = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Pixel));
@@ -198,7 +326,7 @@ namespace FFBPluginGUI {
 			this->metroTextBox2->CustomButton->Style = MetroFramework::MetroColorStyle::Blue;
 			this->metroTextBox2->CustomButton->TabIndex = 1;
 			this->metroTextBox2->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
-			this->metroTextBox2->CustomButton->UseSelectable = false;
+			this->metroTextBox2->CustomButton->UseSelectable = true;
 			this->metroTextBox2->CustomButton->Visible = false;
 			this->metroTextBox2->Lines = gcnew cli::array< System::String^  >(1) { L"Max Force" };
 			this->metroTextBox2->Location = System::Drawing::Point(163, 37);
@@ -216,51 +344,11 @@ namespace FFBPluginGUI {
 			this->metroTextBox2->TabStop = false;
 			this->metroTextBox2->Text = L"Max Force";
 			this->metroTextBox2->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->metroTextBox2->UseSelectable = false;
+			this->metroToolTip1->SetToolTip(this->metroTextBox2, L" Maximum overrall force strength that will be applied to device ");
+			this->metroTextBox2->UseSelectable = true;
 			this->metroTextBox2->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
 				static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
 			this->metroTextBox2->WaterMarkFont = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Pixel));
-			// 
-			// metroLink1
-			// 
-			this->metroLink1->Location = System::Drawing::Point(67, 8);
-			this->metroLink1->Name = L"metroLink1";
-			this->metroLink1->Size = System::Drawing::Size(173, 23);
-			this->metroLink1->TabIndex = 30;
-			this->metroLink1->TabStop = false;
-			this->metroLink1->Text = L"Go Back To Previous Menu";
-			this->metroLink1->UseSelectable = false;
-			this->metroLink1->Click += gcnew System::EventHandler(this, &Outrun2::metroLink1_Click);
-			// 
-			// metroTrackBar1
-			// 
-			int configMinForce = GetPrivateProfileInt(TEXT("Settings"), TEXT("MinForce"), 0, TEXT(".\\FFBPlugin.ini"));
-			this->metroTrackBar1->BackColor = System::Drawing::Color::Transparent;
-			this->metroTrackBar1->Location = System::Drawing::Point(20, 63);
-			this->metroTrackBar1->Name = L"metroTrackBar1";
-			this->metroTrackBar1->Size = System::Drawing::Size(118, 23);
-			this->metroTrackBar1->Maximum = 100;
-			this->metroTrackBar1->Minimum = -100;
-			this->metroTrackBar1->TabIndex = 2;
-			this->metroTrackBar1->TabStop = false;
-			this->metroTrackBar1->Text = L"metroTrackBar1";
-			this->metroTrackBar1->Value = configMinForce;
-			this->metroTrackBar1->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &Outrun2::metroTrackBar1_Scroll);
-			// 
-			// metroTrackBar2
-			// 
-			int configMaxForce = GetPrivateProfileInt(TEXT("Settings"), TEXT("MaxForce"), 100, TEXT(".\\FFBPlugin.ini"));
-			this->metroTrackBar2->BackColor = System::Drawing::Color::Transparent;
-			this->metroTrackBar2->Location = System::Drawing::Point(163, 63);
-			this->metroTrackBar2->Name = L"metroTrackBar2";
-			this->metroTrackBar2->Size = System::Drawing::Size(118, 23);
-			this->metroTrackBar2->TabIndex = 3;
-			this->metroTrackBar2->TabStop = false;
-			this->metroTrackBar2->Maximum = 100;
-			this->metroTrackBar2->Minimum = -100;
-			this->metroTrackBar2->Text = L"metroTrackBar2";
-			this->metroTrackBar2->Value = configMaxForce;
-			this->metroTrackBar2->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &Outrun2::metroTrackBar2_Scroll);
 			// 
 			// metroTextBox3
 			// 
@@ -274,7 +362,7 @@ namespace FFBPluginGUI {
 			this->metroTextBox3->CustomButton->Style = MetroFramework::MetroColorStyle::Blue;
 			this->metroTextBox3->CustomButton->TabIndex = 1;
 			this->metroTextBox3->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
-			this->metroTextBox3->CustomButton->UseSelectable = false;
+			this->metroTextBox3->CustomButton->UseSelectable = true;
 			this->metroTextBox3->CustomButton->Visible = false;
 			this->metroTextBox3->Lines = gcnew cli::array< System::String^  >(1) { L"Device GUID" };
 			this->metroTextBox3->Location = System::Drawing::Point(20, 139);
@@ -292,37 +380,11 @@ namespace FFBPluginGUI {
 			this->metroTextBox3->TabStop = false;
 			this->metroTextBox3->Text = L"Device GUID";
 			this->metroTextBox3->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->metroTextBox3->UseSelectable = false;
+			this->metroToolTip1->SetToolTip(this->metroTextBox3, L" Device GUID FFBPlugin will use to apply forces to device ");
+			this->metroTextBox3->UseSelectable = true;
 			this->metroTextBox3->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
 				static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
 			this->metroTextBox3->WaterMarkFont = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Pixel));
-			// 
-			// metroComboBox1
-			// 
-			for (int i = 0; i < SDL_NumJoysticks(); i++)
-			{
-				SDL_Joystick* js1 = SDL_JoystickOpen(i);
-				char buff[300];
-				GetPrivateProfileStringA("Settings", "DeviceGUID", "No FFBPlugin.ini found", buff, _countof(buff), ".\\FFBPlugin.ini");
-				String^ str = gcnew String(buff);
-				String^ bah1 = gcnew String(SDL_JoystickName(js1));
-				this->metroComboBox1->Text = str;
-				this->metroComboBox1->Items->Add(bah1);
-			}
-			if (SDL_NumJoysticks() == 0)
-			{
-				this->metroComboBox1->Text = "SDL2 Cannot Detect Any Joystick";
-			}
-				this->metroComboBox1->FormattingEnabled = true;
-				this->metroComboBox1->ItemHeight = 23;
-				this->metroComboBox1->Location = System::Drawing::Point(20, 165);
-				this->metroComboBox1->Name = L"metroComboBox1";
-				this->metroComboBox1->Size = System::Drawing::Size(261, 29);
-				this->metroComboBox1->TabIndex = 5;
-				this->metroComboBox1->TabStop = false;
-				this->metroComboBox1->UseSelectable = false;
-
-			this->metroComboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Outrun2::metroComboBox1_SelectedIndexChanged);
 			// 
 			// metroTextBox4
 			// 
@@ -336,7 +398,7 @@ namespace FFBPluginGUI {
 			this->metroTextBox4->CustomButton->Style = MetroFramework::MetroColorStyle::Blue;
 			this->metroTextBox4->CustomButton->TabIndex = 1;
 			this->metroTextBox4->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
-			this->metroTextBox4->CustomButton->UseSelectable = false;
+			this->metroTextBox4->CustomButton->UseSelectable = true;
 			this->metroTextBox4->CustomButton->Visible = false;
 			this->metroTextBox4->Lines = gcnew cli::array< System::String^  >(1) { L"Feedback Length" };
 			this->metroTextBox4->Location = System::Drawing::Point(20, 200);
@@ -354,122 +416,11 @@ namespace FFBPluginGUI {
 			this->metroTextBox4->TabStop = false;
 			this->metroTextBox4->Text = L"Feedback Length";
 			this->metroTextBox4->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->metroTextBox4->UseSelectable = false;
+			this->metroToolTip1->SetToolTip(this->metroTextBox4, L"Length of a feedback command");
+			this->metroTextBox4->UseSelectable = true;
 			this->metroTextBox4->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
 				static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
 			this->metroTextBox4->WaterMarkFont = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Pixel));
-			// 
-			// metroCheckBox1
-			// 
-			int EnableRumble = GetPrivateProfileInt(TEXT("Settings"), TEXT("EnableRumble"), 0, TEXT(".\\FFBPlugin.ini"));
-			this->metroCheckBox1->AutoSize = true;
-			this->metroCheckBox1->Location = System::Drawing::Point(20, 279);
-			this->metroCheckBox1->Name = L"metroCheckBox1";
-			this->metroCheckBox1->Size = System::Drawing::Size(102, 15);
-			this->metroCheckBox1->TabIndex = 7;
-			this->metroCheckBox1->TabStop = false;
-			this->metroCheckBox1->Text = L"Enable Rumble";
-			this->metroCheckBox1->UseSelectable = false;
-			this->metroCheckBox1->Checked = EnableRumble;
-			this->metroCheckBox1->CheckedChanged += gcnew System::EventHandler(this, &Outrun2::metroCheckBox1_CheckedChanged);
-			// 
-			// metroCheckBox2
-			// 
-			int ReverseRumble = GetPrivateProfileInt(TEXT("Settings"), TEXT("ReverseRumble"), 0, TEXT(".\\FFBPlugin.ini"));
-			this->metroCheckBox2->AutoSize = true;
-			this->metroCheckBox2->Location = System::Drawing::Point(163, 279);
-			this->metroCheckBox2->Name = L"metroCheckBox2";
-			this->metroCheckBox2->Size = System::Drawing::Size(107, 15);
-			this->metroCheckBox2->TabIndex = 8;
-			this->metroCheckBox2->TabStop = false;
-			this->metroCheckBox2->Text = L"Reverse Rumble";
-			this->metroCheckBox2->UseSelectable = false;
-			this->metroCheckBox2->Checked = ReverseRumble;
-			this->metroCheckBox2->CheckedChanged += gcnew System::EventHandler(this, &Outrun2::metroCheckBox2_CheckedChanged);
-			// 
-			// metroCheckBox3
-			// 
-			int EnableLogging = GetPrivateProfileInt(TEXT("Settings"), TEXT("Logging"), 0, TEXT(".\\FFBPlugin.ini"));
-			this->metroCheckBox3->AutoSize = true;
-			this->metroCheckBox3->Location = System::Drawing::Point(20, 300);
-			this->metroCheckBox3->Name = L"metroCheckBox3";
-			this->metroCheckBox3->Size = System::Drawing::Size(105, 15);
-			this->metroCheckBox3->TabIndex = 9;
-			this->metroCheckBox3->TabStop = false;
-			this->metroCheckBox3->Text = L"Enable Logging";
-			this->metroCheckBox3->UseSelectable = false;
-			this->metroCheckBox3->Checked = EnableLogging;
-			this->metroCheckBox3->CheckedChanged += gcnew System::EventHandler(this, &Outrun2::metroCheckBox3_CheckedChanged);
-			// 
-			// metroCheckBox4
-			// 
-			int ResetFB = GetPrivateProfileInt(TEXT("Settings"), TEXT("ResetFeedback"), 0, TEXT(".\\FFBPlugin.ini"));
-			this->metroCheckBox4->AutoSize = true;
-			this->metroCheckBox4->Location = System::Drawing::Point(163, 300);
-			this->metroCheckBox4->Name = L"metroCheckBox4";
-			this->metroCheckBox4->Size = System::Drawing::Size(104, 15);
-			this->metroCheckBox4->TabIndex = 10;
-			this->metroCheckBox4->TabStop = false;
-			this->metroCheckBox4->Text = L"Reset Feedback";
-			this->metroCheckBox4->UseSelectable = false;
-			this->metroCheckBox4->Checked = ResetFB;
-			this->metroCheckBox4->CheckedChanged += gcnew System::EventHandler(this, &Outrun2::metroCheckBox4_CheckedChanged);
-			// 
-			// metroCheckBox5
-			// 
-			int BeepWhen = GetPrivateProfileInt(TEXT("Settings"), TEXT("BeepWhenHook"), 120, TEXT(".\\FFBPlugin.ini"));
-			this->metroCheckBox5->AutoSize = true;
-			this->metroCheckBox5->Location = System::Drawing::Point(20, 321);
-			this->metroCheckBox5->Name = L"metroCheckBox5";
-			this->metroCheckBox5->Size = System::Drawing::Size(115, 15);
-			this->metroCheckBox5->TabIndex = 11;
-			this->metroCheckBox5->TabStop = false;
-			this->metroCheckBox5->Text = L"Beep When Hook";
-			this->metroCheckBox5->UseSelectable = false;
-			this->metroCheckBox5->Checked = BeepWhen;
-			this->metroCheckBox5->CheckedChanged += gcnew System::EventHandler(this, &Outrun2::metroCheckBox5_CheckedChanged);
-			// 
-			// metroCheckBox6
-			// 
-			int GUIDMessage = GetPrivateProfileInt(TEXT("Settings"), TEXT("ForceShowDeviceGUIDMessageBox"), 0, TEXT(".\\FFBPlugin.ini"));
-			this->metroCheckBox6->AutoSize = true;
-			this->metroCheckBox6->Location = System::Drawing::Point(163, 321);
-			this->metroCheckBox6->Name = L"metroCheckBox6";
-			this->metroCheckBox6->Size = System::Drawing::Size(118, 15);
-			this->metroCheckBox6->TabIndex = 12;
-			this->metroCheckBox6->TabStop = false;
-			this->metroCheckBox6->Text = L"GUID MessageBox";
-			this->metroCheckBox6->UseSelectable = false;
-			this->metroCheckBox6->Checked = GUIDMessage;
-			this->metroCheckBox6->CheckedChanged += gcnew System::EventHandler(this, &Outrun2::metroCheckBox6_CheckedChanged);
-			// 
-			// metroCheckBox7
-			// 
-			int AlternativeFFB = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeFFB"), 0, TEXT(".\\FFBPlugin.ini"));
-			this->metroCheckBox7->AutoSize = true;
-			this->metroCheckBox7->Location = System::Drawing::Point(20, 342);
-			this->metroCheckBox7->Name = L"metroCheckBox7";
-			this->metroCheckBox7->Size = System::Drawing::Size(102, 15);
-			this->metroCheckBox7->TabIndex = 13;
-			this->metroCheckBox7->TabStop = false;
-			this->metroCheckBox7->Text = L"Alternative FFB";
-			this->metroCheckBox7->UseSelectable = false;
-			this->metroCheckBox7->Checked = AlternativeFFB;
-			this->metroCheckBox7->CheckedChanged += gcnew System::EventHandler(this, &Outrun2::metroCheckBox7_CheckedChanged);
-			// 
-			// metroCheckBox8
-			// 
-			int FFBMode = GetPrivateProfileInt(TEXT("Settings"), TEXT("FFBMode"), 0, TEXT(".\\FFBPlugin.ini"));
-			this->metroCheckBox8->AutoSize = true;
-			this->metroCheckBox8->Location = System::Drawing::Point(163, 342);
-			this->metroCheckBox8->Name = L"metroCheckBox8";
-			this->metroCheckBox8->Size = System::Drawing::Size(102, 15);
-			this->metroCheckBox8->TabIndex = 30;
-			this->metroCheckBox8->TabStop = false;
-			this->metroCheckBox8->Text = L"FFB Mode";
-			this->metroCheckBox8->UseSelectable = false;
-			this->metroCheckBox8->Checked = FFBMode;
-			this->metroCheckBox8->CheckedChanged += gcnew System::EventHandler(this, &Outrun2::metroCheckBox8_CheckedChanged);
 			// 
 			// metroTextBox5
 			// 
@@ -483,10 +434,10 @@ namespace FFBPluginGUI {
 			this->metroTextBox5->CustomButton->Style = MetroFramework::MetroColorStyle::Blue;
 			this->metroTextBox5->CustomButton->TabIndex = 1;
 			this->metroTextBox5->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
-			this->metroTextBox5->CustomButton->UseSelectable = false;
+			this->metroTextBox5->CustomButton->UseSelectable = true;
 			this->metroTextBox5->CustomButton->Visible = false;
 			this->metroTextBox5->Lines = gcnew cli::array< System::String^  >(1) { L"Alternative FFB Config" };
-			this->metroTextBox5->Location = System::Drawing::Point(20, 375);
+			this->metroTextBox5->Location = System::Drawing::Point(20, 470);
 			this->metroTextBox5->MaxLength = 32767;
 			this->metroTextBox5->Name = L"metroTextBox5";
 			this->metroTextBox5->PasswordChar = '\0';
@@ -501,7 +452,8 @@ namespace FFBPluginGUI {
 			this->metroTextBox5->TabStop = false;
 			this->metroTextBox5->Text = L"Alternative FFB Config";
 			this->metroTextBox5->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->metroTextBox5->UseSelectable = false;
+			this->metroToolTip1->SetToolTip(this->metroTextBox5, L"Configuration if using Alternative FFB");
+			this->metroTextBox5->UseSelectable = true;
 			this->metroTextBox5->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
 				static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
 			this->metroTextBox5->WaterMarkFont = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Pixel));
@@ -518,10 +470,10 @@ namespace FFBPluginGUI {
 			this->metroTextBox6->CustomButton->Style = MetroFramework::MetroColorStyle::Blue;
 			this->metroTextBox6->CustomButton->TabIndex = 1;
 			this->metroTextBox6->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
-			this->metroTextBox6->CustomButton->UseSelectable = false;
+			this->metroTextBox6->CustomButton->UseSelectable = true;
 			this->metroTextBox6->CustomButton->Visible = false;
 			this->metroTextBox6->Lines = gcnew cli::array< System::String^  >(1) { L"Min Force Left" };
-			this->metroTextBox6->Location = System::Drawing::Point(20, 401);
+			this->metroTextBox6->Location = System::Drawing::Point(20, 496);
 			this->metroTextBox6->MaxLength = 32767;
 			this->metroTextBox6->Name = L"metroTextBox6";
 			this->metroTextBox6->PasswordChar = '\0';
@@ -536,7 +488,8 @@ namespace FFBPluginGUI {
 			this->metroTextBox6->TabStop = false;
 			this->metroTextBox6->Text = L"Min Force Left";
 			this->metroTextBox6->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->metroTextBox6->UseSelectable = false;
+			this->metroToolTip1->SetToolTip(this->metroTextBox6, L" Minimum overrall left force strength that will be applied to device ");
+			this->metroTextBox6->UseSelectable = true;
 			this->metroTextBox6->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
 				static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
 			this->metroTextBox6->WaterMarkFont = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Pixel));
@@ -553,10 +506,10 @@ namespace FFBPluginGUI {
 			this->metroTextBox7->CustomButton->Style = MetroFramework::MetroColorStyle::Blue;
 			this->metroTextBox7->CustomButton->TabIndex = 1;
 			this->metroTextBox7->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
-			this->metroTextBox7->CustomButton->UseSelectable = false;
+			this->metroTextBox7->CustomButton->UseSelectable = true;
 			this->metroTextBox7->CustomButton->Visible = false;
 			this->metroTextBox7->Lines = gcnew cli::array< System::String^  >(1) { L"Max Force Left" };
-			this->metroTextBox7->Location = System::Drawing::Point(163, 401);
+			this->metroTextBox7->Location = System::Drawing::Point(163, 496);
 			this->metroTextBox7->MaxLength = 32767;
 			this->metroTextBox7->Name = L"metroTextBox7";
 			this->metroTextBox7->PasswordChar = '\0';
@@ -571,40 +524,11 @@ namespace FFBPluginGUI {
 			this->metroTextBox7->TabStop = false;
 			this->metroTextBox7->Text = L"Max Force Left";
 			this->metroTextBox7->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->metroTextBox7->UseSelectable = false;
+			this->metroToolTip1->SetToolTip(this->metroTextBox7, L" Maximum overrall left force strength that will be applied to device ");
+			this->metroTextBox7->UseSelectable = true;
 			this->metroTextBox7->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
 				static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
 			this->metroTextBox7->WaterMarkFont = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Pixel));
-			// 
-			// metroTrackBar3
-			// 
-			int AlternativeMinForceLeft = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeMinForceLeft"), 0, TEXT(".\\FFBPlugin.ini"));
-			this->metroTrackBar3->BackColor = System::Drawing::Color::Transparent;
-			this->metroTrackBar3->Location = System::Drawing::Point(20, 427);
-			this->metroTrackBar3->Name = L"metroTrackBar3";
-			this->metroTrackBar3->Size = System::Drawing::Size(118, 23);
-			this->metroTrackBar3->TabIndex = 17;
-			this->metroTrackBar3->TabStop = false;
-			this->metroTrackBar3->Maximum = 100;
-			this->metroTrackBar3->Minimum = -100;
-			this->metroTrackBar3->Text = L"metroTrackBar3";
-			this->metroTrackBar3->Value = AlternativeMinForceLeft;
-			this->metroTrackBar3->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &Outrun2::metroTrackBar3_Scroll);
-			// 
-			// metroTrackBar4
-			// 
-			int AlternativeMaxForceLeft = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeMaxForceLeft"), 0, TEXT(".\\FFBPlugin.ini"));
-			this->metroTrackBar4->BackColor = System::Drawing::Color::Transparent;
-			this->metroTrackBar4->Location = System::Drawing::Point(163, 427);
-			this->metroTrackBar4->Name = L"metroTrackBar4";
-			this->metroTrackBar4->Size = System::Drawing::Size(118, 23);
-			this->metroTrackBar4->TabIndex = 18;
-			this->metroTrackBar4->TabStop = false;
-			this->metroTrackBar4->Maximum = 100;
-			this->metroTrackBar4->Minimum = -100;
-			this->metroTrackBar4->Text = L"metroTrackBar4";
-			this->metroTrackBar4->Value = AlternativeMaxForceLeft;
-			this->metroTrackBar4->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &Outrun2::metroTrackBar4_Scroll);
 			// 
 			// metroTextBox8
 			// 
@@ -618,10 +542,10 @@ namespace FFBPluginGUI {
 			this->metroTextBox8->CustomButton->Style = MetroFramework::MetroColorStyle::Blue;
 			this->metroTextBox8->CustomButton->TabIndex = 1;
 			this->metroTextBox8->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
-			this->metroTextBox8->CustomButton->UseSelectable = false;
+			this->metroTextBox8->CustomButton->UseSelectable = true;
 			this->metroTextBox8->CustomButton->Visible = false;
 			this->metroTextBox8->Lines = gcnew cli::array< System::String^  >(1) { L"Min Force Right" };
-			this->metroTextBox8->Location = System::Drawing::Point(20, 491);
+			this->metroTextBox8->Location = System::Drawing::Point(17, 570);
 			this->metroTextBox8->MaxLength = 32767;
 			this->metroTextBox8->Name = L"metroTextBox8";
 			this->metroTextBox8->PasswordChar = '\0';
@@ -636,7 +560,8 @@ namespace FFBPluginGUI {
 			this->metroTextBox8->TabStop = false;
 			this->metroTextBox8->Text = L"Min Force Right";
 			this->metroTextBox8->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->metroTextBox8->UseSelectable = false;
+			this->metroToolTip1->SetToolTip(this->metroTextBox8, L" Minimum overrall right force strength that will be applied to device ");
+			this->metroTextBox8->UseSelectable = true;
 			this->metroTextBox8->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
 				static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
 			this->metroTextBox8->WaterMarkFont = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Pixel));
@@ -653,10 +578,10 @@ namespace FFBPluginGUI {
 			this->metroTextBox9->CustomButton->Style = MetroFramework::MetroColorStyle::Blue;
 			this->metroTextBox9->CustomButton->TabIndex = 1;
 			this->metroTextBox9->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
-			this->metroTextBox9->CustomButton->UseSelectable = false;
+			this->metroTextBox9->CustomButton->UseSelectable = true;
 			this->metroTextBox9->CustomButton->Visible = false;
 			this->metroTextBox9->Lines = gcnew cli::array< System::String^  >(1) { L"Max Force Right" };
-			this->metroTextBox9->Location = System::Drawing::Point(163, 491);
+			this->metroTextBox9->Location = System::Drawing::Point(163, 570);
 			this->metroTextBox9->MaxLength = 32767;
 			this->metroTextBox9->Name = L"metroTextBox9";
 			this->metroTextBox9->PasswordChar = '\0';
@@ -669,24 +594,118 @@ namespace FFBPluginGUI {
 			this->metroTextBox9->Size = System::Drawing::Size(118, 20);
 			this->metroTextBox9->TabIndex = 20;
 			this->metroTextBox9->TabStop = false;
-			this->metroTextBox9->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			this->metroTextBox9->Text = L"Max Force Right";
-			this->metroTextBox9->UseSelectable = false;
+			this->metroTextBox9->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->metroToolTip1->SetToolTip(this->metroTextBox9, L" Maximum overrall right force strength that will be applied to device ");
+			this->metroTextBox9->UseSelectable = true;
 			this->metroTextBox9->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
 				static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
 			this->metroTextBox9->WaterMarkFont = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Pixel));
+			// 
+			// metroLink1
+			// 
+			this->metroLink1->Location = System::Drawing::Point(67, 8);
+			this->metroLink1->Name = L"metroLink1";
+			this->metroLink1->Size = System::Drawing::Size(173, 23);
+			this->metroLink1->TabIndex = 30;
+			this->metroLink1->TabStop = false;
+			this->metroLink1->Text = L"Go Back To Previous Menu";
+			this->metroLink1->UseSelectable = true;
+			this->metroLink1->Click += gcnew System::EventHandler(this, &Outrun2::metroLink1_Click);
+			// 
+			// metroTrackBar1
+			// 
+			int configMinForce = GetPrivateProfileInt(TEXT("Settings"), TEXT("MinForce"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroTrackBar1->BackColor = System::Drawing::Color::Transparent;
+			this->metroTrackBar1->Location = System::Drawing::Point(20, 63);
+			this->metroTrackBar1->Minimum = -100;
+			this->metroTrackBar1->Name = L"metroTrackBar1";
+			this->metroTrackBar1->Size = System::Drawing::Size(118, 23);
+			this->metroTrackBar1->TabIndex = 2;
+			this->metroTrackBar1->TabStop = false;
+			this->metroTrackBar1->Text = L"metroTrackBar1";
+			this->metroTrackBar1->Value = configMinForce;
+			this->metroTrackBar1->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &Outrun2::metroTrackBar1_Scroll);
+			// 
+			// metroTrackBar2
+			// 
+			int configMaxForce = GetPrivateProfileInt(TEXT("Settings"), TEXT("MaxForce"), 100, TEXT(".\\FFBPlugin.ini"));
+			this->metroTrackBar2->BackColor = System::Drawing::Color::Transparent;
+			this->metroTrackBar2->Location = System::Drawing::Point(163, 63);
+			this->metroTrackBar2->Minimum = -100;
+			this->metroTrackBar2->Name = L"metroTrackBar2";
+			this->metroTrackBar2->Size = System::Drawing::Size(118, 23);
+			this->metroTrackBar2->TabIndex = 3;
+			this->metroTrackBar2->TabStop = false;
+			this->metroTrackBar2->Text = L"metroTrackBar2";
+			this->metroTrackBar2->Value = configMaxForce;
+			this->metroTrackBar2->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &Outrun2::metroTrackBar2_Scroll);
+			// 
+			// metroComboBox1
+			// 
+			for (int i = 0; i < SDL_NumJoysticks(); i++)
+			{
+				SDL_Joystick* js1 = SDL_JoystickOpen(i);
+				char buff[300];
+				GetPrivateProfileStringA("Settings", "DeviceGUID", "No FFBPlugin.ini found", buff, _countof(buff), ".\\FFBPlugin.ini");
+				String^ str = gcnew String(buff);
+				String^ bah1 = gcnew String(SDL_JoystickName(js1));
+				this->metroComboBox1->Text = str;
+				this->metroComboBox1->Items->Add(bah1);
+			}
+			if (SDL_NumJoysticks() == 0)
+			{
+				this->metroComboBox1->Text = "SDL2 Cannot Detect Any Joystick";
+			}
+			this->metroComboBox1->FormattingEnabled = true;
+			this->metroComboBox1->ItemHeight = 23;
+			this->metroComboBox1->Location = System::Drawing::Point(20, 165);
+			this->metroComboBox1->Name = L"metroComboBox1";
+			this->metroComboBox1->Size = System::Drawing::Size(261, 29);
+			this->metroComboBox1->Items->Add("Select no device");
+			this->metroComboBox1->TabIndex = 5;
+			this->metroComboBox1->TabStop = false;
+			this->metroComboBox1->UseSelectable = true;
+			this->metroComboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Outrun2::metroComboBox1_SelectedIndexChanged);
+			// 
+			// metroTrackBar3
+			// 
+			int AlternativeMinForceLeft = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeMinForceLeft"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroTrackBar3->BackColor = System::Drawing::Color::Transparent;
+			this->metroTrackBar3->Location = System::Drawing::Point(20, 522);
+			this->metroTrackBar3->Minimum = -100;
+			this->metroTrackBar3->Name = L"metroTrackBar3";
+			this->metroTrackBar3->Size = System::Drawing::Size(118, 23);
+			this->metroTrackBar3->TabIndex = 17;
+			this->metroTrackBar3->TabStop = false;
+			this->metroTrackBar3->Text = L"metroTrackBar3";
+			this->metroTrackBar3->Value = AlternativeMinForceLeft;
+			this->metroTrackBar3->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &Outrun2::metroTrackBar3_Scroll);
+			// 
+			// metroTrackBar4
+			// 
+			int AlternativeMaxForceLeft = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeMaxForceLeft"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroTrackBar4->BackColor = System::Drawing::Color::Transparent;
+			this->metroTrackBar4->Location = System::Drawing::Point(163, 522);
+			this->metroTrackBar4->Minimum = -100;
+			this->metroTrackBar4->Name = L"metroTrackBar4";
+			this->metroTrackBar4->Size = System::Drawing::Size(118, 23);
+			this->metroTrackBar4->TabIndex = 18;
+			this->metroTrackBar4->TabStop = false;
+			this->metroTrackBar4->Text = L"metroTrackBar4";
+			this->metroTrackBar4->Value = AlternativeMaxForceLeft;
+			this->metroTrackBar4->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &Outrun2::metroTrackBar4_Scroll);
 			// 
 			// metroTrackBar5
 			// 
 			int AlternativeMinForceRight = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeMinForceRight"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroTrackBar5->BackColor = System::Drawing::Color::Transparent;
-			this->metroTrackBar5->Location = System::Drawing::Point(20, 516);
+			this->metroTrackBar5->Location = System::Drawing::Point(20, 596);
+			this->metroTrackBar5->Minimum = -100;
 			this->metroTrackBar5->Name = L"metroTrackBar5";
 			this->metroTrackBar5->Size = System::Drawing::Size(118, 23);
 			this->metroTrackBar5->TabIndex = 21;
 			this->metroTrackBar5->TabStop = false;
-			this->metroTrackBar5->Maximum = 100;
-			this->metroTrackBar5->Minimum = -100;
 			this->metroTrackBar5->Text = L"metroTrackBar5";
 			this->metroTrackBar5->Value = AlternativeMinForceRight;
 			this->metroTrackBar5->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &Outrun2::metroTrackBar5_Scroll);
@@ -695,13 +714,12 @@ namespace FFBPluginGUI {
 			// 
 			int AlternativeMaxForceRight = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeMaxForceRight"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroTrackBar6->BackColor = System::Drawing::Color::Transparent;
-			this->metroTrackBar6->Location = System::Drawing::Point(163, 516);
+			this->metroTrackBar6->Location = System::Drawing::Point(163, 596);
+			this->metroTrackBar6->Minimum = -100;
 			this->metroTrackBar6->Name = L"metroTrackBar6";
 			this->metroTrackBar6->Size = System::Drawing::Size(118, 23);
 			this->metroTrackBar6->TabIndex = 22;
 			this->metroTrackBar6->TabStop = false;
-			this->metroTrackBar6->Maximum = 100;
-			this->metroTrackBar6->Minimum = -100;
 			this->metroTrackBar6->Text = L"metroTrackBar6";
 			this->metroTrackBar6->Value = AlternativeMaxForceRight;
 			this->metroTrackBar6->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &Outrun2::metroTrackBar6_Scroll);
@@ -714,7 +732,6 @@ namespace FFBPluginGUI {
 			this->metroLabel1->Name = L"metroLabel1";
 			this->metroLabel1->Size = System::Drawing::Size(16, 19);
 			this->metroLabel1->TabIndex = 23;
-			this->metroLabel1->TabStop = false;
 			this->metroLabel1->Text = System::Convert::ToString(configMinForce1);
 			this->metroLabel1->Click += gcnew System::EventHandler(this, &Outrun2::metroLabel1_Click);
 			// 
@@ -726,7 +743,6 @@ namespace FFBPluginGUI {
 			this->metroLabel2->Name = L"metroLabel2";
 			this->metroLabel2->Size = System::Drawing::Size(16, 19);
 			this->metroLabel2->TabIndex = 24;
-			this->metroLabel2->TabStop = false;
 			this->metroLabel2->Text = System::Convert::ToString(configMaxForce1);
 			this->metroLabel2->Click += gcnew System::EventHandler(this, &Outrun2::metroLabel2_Click);
 			// 
@@ -734,11 +750,10 @@ namespace FFBPluginGUI {
 			// 
 			int AlternativeMinForceLeft1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeMinForceLeft"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroLabel3->AutoSize = true;
-			this->metroLabel3->Location = System::Drawing::Point(70, 453);
+			this->metroLabel3->Location = System::Drawing::Point(67, 548);
 			this->metroLabel3->Name = L"metroLabel3";
 			this->metroLabel3->Size = System::Drawing::Size(16, 19);
 			this->metroLabel3->TabIndex = 25;
-			this->metroLabel3->TabStop = false;
 			this->metroLabel3->Text = System::Convert::ToString(AlternativeMinForceLeft1);
 			this->metroLabel3->Click += gcnew System::EventHandler(this, &Outrun2::metroLabel3_Click);
 			// 
@@ -746,11 +761,10 @@ namespace FFBPluginGUI {
 			// 
 			int AlternativeMaxForceLeft1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeMaxForceLeft"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroLabel4->AutoSize = true;
-			this->metroLabel4->Location = System::Drawing::Point(213, 453);
+			this->metroLabel4->Location = System::Drawing::Point(213, 548);
 			this->metroLabel4->Name = L"metroLabel4";
 			this->metroLabel4->Size = System::Drawing::Size(16, 19);
 			this->metroLabel4->TabIndex = 26;
-			this->metroLabel4->TabStop = false;
 			this->metroLabel4->Text = System::Convert::ToString(AlternativeMaxForceLeft1);
 			this->metroLabel4->Click += gcnew System::EventHandler(this, &Outrun2::metroLabel4_Click);
 			// 
@@ -758,11 +772,10 @@ namespace FFBPluginGUI {
 			// 
 			int AlternativeMinForceRight1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeMinForceRight"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroLabel5->AutoSize = true;
-			this->metroLabel5->Location = System::Drawing::Point(70, 542);
+			this->metroLabel5->Location = System::Drawing::Point(67, 622);
 			this->metroLabel5->Name = L"metroLabel5";
 			this->metroLabel5->Size = System::Drawing::Size(16, 19);
 			this->metroLabel5->TabIndex = 27;
-			this->metroLabel5->TabStop = false;
 			this->metroLabel5->Text = System::Convert::ToString(AlternativeMinForceRight1);
 			this->metroLabel5->Click += gcnew System::EventHandler(this, &Outrun2::metroLabel5_Click);
 			// 
@@ -770,11 +783,10 @@ namespace FFBPluginGUI {
 			// 
 			int AlternativeMaxForceRight1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeMaxForceRight"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroLabel6->AutoSize = true;
-			this->metroLabel6->Location = System::Drawing::Point(213, 542);
+			this->metroLabel6->Location = System::Drawing::Point(213, 622);
 			this->metroLabel6->Name = L"metroLabel6";
 			this->metroLabel6->Size = System::Drawing::Size(16, 19);
 			this->metroLabel6->TabIndex = 28;
-			this->metroLabel6->TabStop = false;
 			this->metroLabel6->Text = System::Convert::ToString(AlternativeMaxForceRight1);
 			this->metroLabel6->Click += gcnew System::EventHandler(this, &Outrun2::metroLabel6_Click);
 			// 
@@ -782,20 +794,81 @@ namespace FFBPluginGUI {
 			// 
 			int configFeedbackLength1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("FeedbackLength"), 120, TEXT(".\\FFBPlugin.ini"));
 			this->numericUpDown1->Location = System::Drawing::Point(20, 229);
-			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 9999, 0, 0, 0 });
+			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 9999999999999999, 0, 0, 0 });
 			this->numericUpDown1->Name = L"numericUpDown1";
 			this->numericUpDown1->Size = System::Drawing::Size(261, 20);
 			this->numericUpDown1->TabIndex = 29;
 			this->numericUpDown1->TabStop = false;
-			this->numericUpDown1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			this->numericUpDown1->Value = configFeedbackLength1;
+			this->numericUpDown1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			this->numericUpDown1->ValueChanged += gcnew System::EventHandler(this, &Outrun2::numericUpDown1_ValueChanged);
+			// 
+			// metroTextBox10
+			// 
+			// 
+			// 
+			// 
+			this->metroTextBox10->CustomButton->Image = nullptr;
+			this->metroTextBox10->CustomButton->Location = System::Drawing::Point(239, 1);
+			this->metroTextBox10->CustomButton->Name = L"";
+			this->metroTextBox10->CustomButton->Size = System::Drawing::Size(21, 21);
+			this->metroTextBox10->CustomButton->Style = MetroFramework::MetroColorStyle::Blue;
+			this->metroTextBox10->CustomButton->TabIndex = 1;
+			this->metroTextBox10->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
+			this->metroTextBox10->CustomButton->UseSelectable = true;
+			this->metroTextBox10->CustomButton->Visible = false;
+			this->metroTextBox10->Lines = gcnew cli::array< System::String^  >(1) { L"Spring Strength" };
+			this->metroTextBox10->Location = System::Drawing::Point(20, 379);
+			this->metroTextBox10->MaxLength = 32767;
+			this->metroTextBox10->Name = L"metroTextBox10";
+			this->metroTextBox10->PasswordChar = '\0';
+			this->metroTextBox10->ReadOnly = true;
+			this->metroTextBox10->ScrollBars = System::Windows::Forms::ScrollBars::None;
+			this->metroTextBox10->SelectedText = L"";
+			this->metroTextBox10->SelectionLength = 0;
+			this->metroTextBox10->SelectionStart = 0;
+			this->metroTextBox10->ShortcutsEnabled = true;
+			this->metroTextBox10->Size = System::Drawing::Size(261, 23);
+			this->metroTextBox10->TabIndex = 0;
+			this->metroTextBox10->TabStop = false;
+			this->metroTextBox10->Text = L"Spring Strength";
+			this->metroTextBox10->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->metroTextBox10->UseSelectable = true;
+			this->metroTextBox10->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->metroTextBox10->WaterMarkFont = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Pixel));
+			// 
+			// metroTrackBar7
+			// 
+			int SpringStrength = GetPrivateProfileInt(TEXT("Settings"), TEXT("SpringStrength"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroTrackBar7->BackColor = System::Drawing::Color::Transparent;
+			this->metroTrackBar7->Location = System::Drawing::Point(20, 408);
+			this->metroTrackBar7->Name = L"metroTrackBar7";
+			this->metroTrackBar7->Size = System::Drawing::Size(261, 23);
+			this->metroTrackBar7->TabIndex = 32;
+			this->metroTrackBar7->Text = L"metroTrackBar7";
+			this->metroTrackBar7->Value = SpringStrength;
+			this->metroTrackBar7->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &Outrun2::metroTrackBar7_Scroll);
+			// 
+			// metroLabel7
+			// 
+			int SpringStrength1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("SpringStrength"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroLabel7->AutoSize = true;
+			this->metroLabel7->Location = System::Drawing::Point(141, 434);
+			this->metroLabel7->Name = L"metroLabel7";
+			this->metroLabel7->Size = System::Drawing::Size(16, 19);
+			this->metroLabel7->TabIndex = 33;
+			this->metroLabel7->Text = System::Convert::ToString(SpringStrength1);
+			this->metroLabel7->Click += gcnew System::EventHandler(this, &Outrun2::metroLabel7_Click);
 			// 
 			// Outrun2
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(300, 576);
+			this->ClientSize = System::Drawing::Size(300, 663);
+			this->Controls->Add(this->metroLabel7);
+			this->Controls->Add(this->metroTrackBar7);
+			this->Controls->Add(this->metroTextBox10);
 			this->Controls->Add(this->numericUpDown1);
 			this->Controls->Add(this->metroLink1);
 			this->Controls->Add(this->metroLabel6);
@@ -829,10 +902,11 @@ namespace FFBPluginGUI {
 			this->Controls->Add(this->metroTextBox2);
 			this->Controls->Add(this->metroTextBox1);
 			this->MaximizeBox = false;
-			this->ShowIcon = false;
 			this->Name = L"Outrun2";
 			this->Padding = System::Windows::Forms::Padding(0, 60, 0, 0);
 			this->Resizable = false;
+			this->ShowIcon = false;
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &Outrun2::Form1_FormClosing);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -871,208 +945,216 @@ namespace FFBPluginGUI {
 	}
 	private: System::Void metroComboBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) //Device GUID
 	{
-		if (metroComboBox1->SelectedIndex == 0)
+		if (metroComboBox1->SelectedItem == "Select no device")
 		{
-			SDL_Joystick* js = SDL_JoystickOpen(0);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
-			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
-			}
+			WritePrivateProfileStringA("Settings", "DeviceGUID", "", ".\\FFBPlugin.ini");
+			this->metroComboBox1->Text = "";
 		}
-		else if (metroComboBox1->SelectedIndex == 1)
+		if (metroComboBox1->SelectedItem != "Select no device")
 		{
-			SDL_Joystick* js = SDL_JoystickOpen(1);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			if (metroComboBox1->SelectedIndex == 0)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(0);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 2)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(2);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 1)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(1);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 3)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(3);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 2)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(2);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 4)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(4);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 3)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(3);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 5)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(5);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 4)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(4);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 6)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(6);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 5)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(5);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 7)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(7);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 6)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(6);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 8)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(8);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 7)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(7);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 9)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(9);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 8)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(8);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 10)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(10);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 9)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(9);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 11)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(11);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 10)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(10);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 12)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(12);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 11)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(11);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 13)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(13);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 12)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(12);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 14)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(14);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 13)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(13);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 15)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(15);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 14)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(14);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 16)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(16);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 15)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(15);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
+			}
+			else if (metroComboBox1->SelectedIndex == 16)
+			{
+				SDL_Joystick* js = SDL_JoystickOpen(16);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
 		}
 	}
@@ -1251,5 +1333,20 @@ namespace FFBPluginGUI {
 		this->Hide();
 		obj->Show();
 	}
-	};
+	private: System::Void metroTrackBar7_Scroll(System::Object^  sender, System::Windows::Forms::ScrollEventArgs^  e) //Spring Strength
+	{
+		metroLabel7->Text = metroTrackBar7->Value.ToString();
+		Decimal value = metroTrackBar7->Value;
+		int myInt{ value };
+		char Result[16];
+		sprintf_s(Result, "%d", myInt);
+		{
+			WritePrivateProfileStringA("Settings", "SpringStrength", Result, ".\\FFBPlugin.ini");
+		}
+	}
+	private: System::Void metroLabel7_Click(System::Object^  sender, System::EventArgs^  e) //Spring Strength
+	{
+
+	}
+};
 }

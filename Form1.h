@@ -8,6 +8,7 @@
 #include "ChaseHQ2.h"
 #include "DaytonaChampionshipUSA.h"
 #include "DaytonaChampionshipUSAInput.h"
+#include "FFBTest.h"
 #include "FordRacing.h"
 #include "GTIClub.h"
 #include "InitialD4.h"
@@ -27,6 +28,7 @@
 #include "MKGP110.h"
 #include "NascarRacing.h"
 #include "Outrun2.h"
+#include "Outrun2Input.h"
 #include "PokkenTournament.h"
 #include "RoadFighters3D.h"
 #include "RoadFighters3DInput.h"
@@ -75,6 +77,7 @@ namespace FFBPluginGUI {
 	protected:
 	private: MetroFramework::Controls::MetroButton^  metroButton2;
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
+	private: MetroFramework::Controls::MetroButton^  metroButton3;
 
 	private:
 		/// <summary>
@@ -93,6 +96,7 @@ namespace FFBPluginGUI {
 			this->metroButton1 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroButton2 = (gcnew MetroFramework::Controls::MetroButton());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->metroButton3 = (gcnew MetroFramework::Controls::MetroButton());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -114,7 +118,7 @@ namespace FFBPluginGUI {
 			this->metroButton2->Size = System::Drawing::Size(294, 82);
 			this->metroButton2->TabIndex = 1;
 			this->metroButton2->TabStop = false;
-			this->metroButton2->Text = L"Input Setup";
+			this->metroButton2->Text = L"Input / Miscellaneous Setup";
 			this->metroButton2->UseSelectable = true;
 			this->metroButton2->Click += gcnew System::EventHandler(this, &Form1::metroButton2_Click);
 			// 
@@ -128,11 +132,23 @@ namespace FFBPluginGUI {
 			this->pictureBox1->TabIndex = 2;
 			this->pictureBox1->TabStop = false;
 			// 
+			// metroButton3
+			// 
+			this->metroButton3->Location = System::Drawing::Point(3, 368);
+			this->metroButton3->Name = L"metroButton3";
+			this->metroButton3->Size = System::Drawing::Size(294, 82);
+			this->metroButton3->TabIndex = 3;
+			this->metroButton3->TabStop = false;
+			this->metroButton3->Text = L"Force Feedback Test";
+			this->metroButton3->UseSelectable = true;
+			this->metroButton3->Click += gcnew System::EventHandler(this, &Form1::metroButton3_Click);
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(300, 369);
+			this->ClientSize = System::Drawing::Size(300, 471);
+			this->Controls->Add(this->metroButton3);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->metroButton2);
 			this->Controls->Add(this->metroButton1);
@@ -415,7 +431,9 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 12)
 		{
-			MessageBox::Show("Outrun 2 SP contains no input features");
+			this->Hide();
+			Outrun2Input^ obj1 = gcnew Outrun2Input(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 13)
 		{
@@ -509,7 +527,9 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 35)
 		{
-		MessageBox::Show("Outrun 2 SP contains no input features");
+		this->Hide();
+		Outrun2Input^ obj1 = gcnew Outrun2Input(this);
+		obj1->ShowDialog();
 		}
 		else if (GameSelect == 36)
 		{
@@ -522,5 +542,11 @@ namespace FFBPluginGUI {
 			MessageBox::Show("FFBPlugin.ini contains no input features or does not exist");
 		}
 	}
-	};
+	private: System::Void metroButton3_Click(System::Object^  sender, System::EventArgs^  e) //FFB Test
+	{
+		this->Hide();
+		FFBTest^ obj1 = gcnew FFBTest(this);
+		obj1->ShowDialog();
+	}
+};
 }

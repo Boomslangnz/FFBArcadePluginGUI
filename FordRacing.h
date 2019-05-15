@@ -317,6 +317,7 @@ namespace FFBPluginGUI {
 				this->metroComboBox1->Location = System::Drawing::Point(20, 165);
 				this->metroComboBox1->Name = L"metroComboBox1";
 				this->metroComboBox1->Size = System::Drawing::Size(261, 29);
+				this->metroComboBox1->Items->Add("Select no device");
 				this->metroComboBox1->TabIndex = 5;
 				this->metroComboBox1->TabStop = false;
 				this->metroComboBox1->UseSelectable = false;
@@ -767,7 +768,7 @@ namespace FFBPluginGUI {
 			// 
 			int configFeedbackLength1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("FeedbackLength"), 120, TEXT(".\\FFBPlugin.ini"));
 			this->numericUpDown1->Location = System::Drawing::Point(20, 229);
-			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 9999, 0, 0, 0 });
+			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 9999999999999999, 0, 0, 0 });
 			this->numericUpDown1->Name = L"numericUpDown1";
 			this->numericUpDown1->Size = System::Drawing::Size(261, 20);
 			this->numericUpDown1->TabIndex = 29;
@@ -855,208 +856,216 @@ namespace FFBPluginGUI {
 	}
 	private: System::Void metroComboBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) //Device GUID
 	{
-		if (metroComboBox1->SelectedIndex == 0)
+		if (metroComboBox1->SelectedItem == "Select no device")
 		{
-			SDL_Joystick* js = SDL_JoystickOpen(0);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
-			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
-			}
+			WritePrivateProfileStringA("Settings", "DeviceGUID", "", ".\\FFBPlugin.ini");
+			this->metroComboBox1->Text = "";
 		}
-		else if (metroComboBox1->SelectedIndex == 1)
+		if (metroComboBox1->SelectedItem != "Select no device")
 		{
-			SDL_Joystick* js = SDL_JoystickOpen(1);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			if (metroComboBox1->SelectedIndex == 0)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(0);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 2)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(2);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 1)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(1);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 3)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(3);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 2)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(2);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 4)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(4);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 3)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(3);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 5)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(5);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 4)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(4);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 6)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(6);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 5)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(5);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 7)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(7);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 6)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(6);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 8)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(8);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 7)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(7);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 9)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(9);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 8)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(8);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 10)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(10);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 9)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(9);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 11)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(11);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 10)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(10);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 12)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(12);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 11)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(11);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 13)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(13);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 12)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(12);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 14)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(14);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 13)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(13);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 15)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(15);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 14)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(14);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
-		}
-		else if (metroComboBox1->SelectedIndex == 16)
-		{
-			SDL_Joystick* js = SDL_JoystickOpen(16);
-			SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
-			char text[256];
-			SDL_JoystickGetGUIDString(guid, text, 256);
-			String^ str = gcnew String(text);
-			this->metroComboBox1->Text = str;
+			else if (metroComboBox1->SelectedIndex == 15)
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				SDL_Joystick* js = SDL_JoystickOpen(15);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
+			}
+			else if (metroComboBox1->SelectedIndex == 16)
+			{
+				SDL_Joystick* js = SDL_JoystickOpen(16);
+				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
+				char text[256];
+				SDL_JoystickGetGUIDString(guid, text, 256);
+				String^ str = gcnew String(text);
+				this->metroComboBox1->Text = str;
+				{
+					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+				}
 			}
 		}
 	}
