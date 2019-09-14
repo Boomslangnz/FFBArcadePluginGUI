@@ -242,7 +242,9 @@
     <ClInclude Include="InitialD8.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="KODrive.h" />
+    <ClInclude Include="KODrive.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="LGI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
