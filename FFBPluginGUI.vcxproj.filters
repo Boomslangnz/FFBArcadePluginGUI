@@ -126,6 +126,9 @@
     <ClCompile Include="FFBTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="KODrive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -239,6 +242,9 @@
     <ClInclude Include="FFBTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="KODrive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -347,6 +353,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="Outrun2Input.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFBTest.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

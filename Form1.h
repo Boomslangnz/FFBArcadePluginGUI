@@ -17,6 +17,7 @@
 #include "InitialD6.h"
 #include "InitialD7.h"
 #include "InitialD8.h"
+#include "KODrive.h"
 #include "LGI.h"
 #include "LGI3D.h"
 #include "M2Emulator.h"
@@ -379,6 +380,18 @@ namespace FFBPluginGUI {
 			ButtonRumble^ obj1 = gcnew ButtonRumble(this);
 			obj1->ShowDialog();
 		}
+		else if (GameSelect == 38)
+		{
+		this->Hide();
+		FordRacing^ obj1 = gcnew FordRacing(this);
+		obj1->ShowDialog();
+		}
+		else if (GameSelect == 39)
+		{
+		this->Hide();
+		KODrive^ obj1 = gcnew KODrive(this);
+		obj1->ShowDialog();
+		}
 		else
 		{
 			MessageBox::Show("FFBPlugin.ini does not contain GameId or does not exist");
@@ -536,6 +549,14 @@ namespace FFBPluginGUI {
 			this->Hide();
 			ButtonRumbleInput^ obj1 = gcnew ButtonRumbleInput(this);
 			obj1->ShowDialog();
+		}
+		else if (GameSelect == 38)
+		{
+		MessageBox::Show("Ford Racing Other contains no input features");
+		}
+		else if (GameSelect == 39)
+		{
+		MessageBox::Show("KO Drive contains no input features");
 		}
 		else
 		{

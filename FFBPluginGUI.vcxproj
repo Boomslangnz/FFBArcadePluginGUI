@@ -168,6 +168,7 @@
     <ClCompile Include="InitialD6.cpp" />
     <ClCompile Include="InitialD7.cpp" />
     <ClCompile Include="InitialD8.cpp" />
+    <ClCompile Include="KODrive.cpp" />
     <ClCompile Include="LGI.cpp" />
     <ClCompile Include="LGI3D.cpp" />
     <ClCompile Include="M2Emulator.cpp" />
@@ -241,6 +242,7 @@
     <ClInclude Include="InitialD8.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="KODrive.h" />
     <ClInclude Include="LGI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
