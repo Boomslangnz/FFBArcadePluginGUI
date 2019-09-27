@@ -131,6 +131,7 @@ static DWORD WINAPI Button1(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -248,6 +249,7 @@ static DWORD WINAPI Button2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -365,6 +367,7 @@ static DWORD WINAPI Button3(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -482,6 +485,7 @@ static DWORD WINAPI Button4(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -599,6 +603,7 @@ static DWORD WINAPI Button5(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -716,6 +721,7 @@ static DWORD WINAPI Button6(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -833,6 +839,7 @@ static DWORD WINAPI Button7(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -950,6 +957,7 @@ static DWORD WINAPI Button8(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -1067,6 +1075,7 @@ static DWORD WINAPI Button9(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -1184,6 +1193,7 @@ static DWORD WINAPI Button10(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -1301,6 +1311,7 @@ static DWORD WINAPI Button1Device2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -1418,6 +1429,7 @@ static DWORD WINAPI Button2Device2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -1535,6 +1547,7 @@ static DWORD WINAPI Button3Device2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -1652,6 +1665,7 @@ static DWORD WINAPI Button4Device2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -1769,6 +1783,7 @@ static DWORD WINAPI Button5Device2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -1886,6 +1901,7 @@ static DWORD WINAPI Button6Device2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -2003,6 +2019,7 @@ static DWORD WINAPI Button7Device2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -2120,6 +2137,7 @@ static DWORD WINAPI Button8Device2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -2237,6 +2255,7 @@ static DWORD WINAPI Button9Device2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -2354,6 +2373,7 @@ static DWORD WINAPI Button10Device2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }

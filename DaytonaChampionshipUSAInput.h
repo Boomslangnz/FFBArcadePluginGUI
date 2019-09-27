@@ -131,6 +131,7 @@ static DWORD WINAPI Gear1D(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -248,6 +249,7 @@ static DWORD WINAPI Gear2D(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -365,6 +367,7 @@ static DWORD WINAPI Gear3D(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -482,6 +485,7 @@ static DWORD WINAPI Gear4D(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -599,6 +603,7 @@ static DWORD WINAPI Gear5D(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -716,6 +721,7 @@ static DWORD WINAPI Gear6D(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }

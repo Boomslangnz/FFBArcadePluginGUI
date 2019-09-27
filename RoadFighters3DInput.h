@@ -257,6 +257,7 @@ static DWORD WINAPI SteeringAxis(LPVOID lpParam)
 			}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -499,6 +500,7 @@ static DWORD WINAPI AcclAxis(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -742,6 +744,7 @@ static DWORD WINAPI BrakeAxis(LPVOID lpParam)
 				}
 			}
 		}		
+		Sleep(300);
 	}
 	return 0;
 }
@@ -859,6 +862,7 @@ static DWORD WINAPI ExitButton(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -976,6 +980,7 @@ static DWORD WINAPI TestButton(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -1093,6 +1098,7 @@ static DWORD WINAPI ServiceButton(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -1210,6 +1216,7 @@ static DWORD WINAPI CreditButton(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -1327,6 +1334,7 @@ static DWORD WINAPI ViewButton(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -1444,6 +1452,7 @@ static DWORD WINAPI ThreeDimensionalButton(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -1561,6 +1570,7 @@ static DWORD WINAPI leverUp(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -1678,6 +1688,7 @@ static DWORD WINAPI leverDown(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -1795,6 +1806,7 @@ static DWORD WINAPI leverLeft(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -1912,6 +1924,7 @@ static DWORD WINAPI leverRight(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -2029,6 +2042,7 @@ static DWORD WINAPI ExitButtonDevice2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -2146,6 +2160,7 @@ static DWORD WINAPI TestButtonDevice2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -2263,6 +2278,7 @@ static DWORD WINAPI ServiceButtonDevice2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -2380,6 +2396,7 @@ static DWORD WINAPI CreditButtonDevice2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -2497,6 +2514,7 @@ static DWORD WINAPI ViewButtonDevice2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -2614,6 +2632,7 @@ static DWORD WINAPI ThreeDimensionalButtonDevice2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -2731,6 +2750,7 @@ static DWORD WINAPI leverUpDevice2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -2848,6 +2868,7 @@ static DWORD WINAPI leverDownDevice2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -2965,6 +2986,7 @@ static DWORD WINAPI leverLeftDevice2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
@@ -3082,6 +3104,7 @@ static DWORD WINAPI leverRightDevice2(LPVOID lpParam)
 				}
 			}
 		}
+		Sleep(300);
 	}
 	return 0;
 }
