@@ -17,6 +17,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "SDL.h"
 static bool keepRunning3 = true;
 static bool done3 = true;
+static char buff4[100];
 
 static DWORD WINAPI Gear1(LPVOID lpParam)
 {
@@ -49,89 +50,14 @@ static DWORD WINAPI Gear1(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Gear1", "0", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Gear1", "1", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Gear1", "2", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Gear1", "3", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Gear1", "4", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Gear1", "5", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Gear1", "6", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Gear1", "7", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Gear1", "8", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Gear1", "9", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Gear1", "10", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Gear1", "11", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Gear1", "12", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Gear1", "13", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Gear1", "14", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Gear1", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff4, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Gear1", buff4, ".\\FFBPlugin.ini");
 					done3 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -167,89 +93,14 @@ static DWORD WINAPI Gear2(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Gear2", "0", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Gear2", "1", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Gear2", "2", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Gear2", "3", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Gear2", "4", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Gear2", "5", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Gear2", "6", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Gear2", "7", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Gear2", "8", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Gear2", "9", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Gear2", "10", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Gear2", "11", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Gear2", "12", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Gear2", "13", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Gear2", "14", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Gear2", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff4, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Gear2", buff4, ".\\FFBPlugin.ini");
 					done3 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -285,89 +136,14 @@ static DWORD WINAPI Gear3(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Gear3", "0", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Gear3", "1", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Gear3", "2", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Gear3", "3", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Gear3", "4", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Gear3", "5", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Gear3", "6", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Gear3", "7", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Gear3", "8", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Gear3", "9", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Gear3", "10", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Gear3", "11", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Gear3", "12", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Gear3", "13", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Gear3", "14", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Gear3", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff4, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Gear3", buff4, ".\\FFBPlugin.ini");
 					done3 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -403,89 +179,14 @@ static DWORD WINAPI Gear4(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Gear4", "0", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Gear4", "1", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Gear4", "2", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Gear4", "3", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Gear4", "4", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Gear4", "5", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Gear4", "6", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Gear4", "7", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Gear4", "8", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Gear4", "9", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Gear4", "10", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Gear4", "11", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Gear4", "12", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Gear4", "13", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Gear4", "14", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Gear4", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff4, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Gear4", buff4, ".\\FFBPlugin.ini");
 					done3 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -521,89 +222,14 @@ static DWORD WINAPI Gear5(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Gear5", "0", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Gear5", "1", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Gear5", "2", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Gear5", "3", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Gear5", "4", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Gear5", "5", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Gear5", "6", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Gear5", "7", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Gear5", "8", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Gear5", "9", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Gear5", "10", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Gear5", "11", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Gear5", "12", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Gear5", "13", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Gear5", "14", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Gear5", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff4, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Gear5", buff4, ".\\FFBPlugin.ini");
 					done3 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -639,89 +265,14 @@ static DWORD WINAPI Gear6(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Gear6", "0", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Gear6", "1", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Gear6", "2", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Gear6", "3", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Gear6", "4", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Gear6", "5", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Gear6", "6", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Gear6", "7", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Gear6", "8", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Gear6", "9", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Gear6", "10", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Gear6", "11", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Gear6", "12", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Gear6", "13", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Gear6", "14", ".\\FFBPlugin.ini");
-					done3 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Gear6", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff4, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Gear6", buff4, ".\\FFBPlugin.ini");
 					done3 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }

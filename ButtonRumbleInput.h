@@ -17,6 +17,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 
 static bool keepRunning2 = true;
 static bool done2 = true;
+static char buff2[100];
 
 static DWORD WINAPI Button1(LPVOID lpParam)
 {
@@ -49,89 +50,14 @@ static DWORD WINAPI Button1(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button1Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -167,89 +93,14 @@ static DWORD WINAPI Button2(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button2Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -285,89 +136,14 @@ static DWORD WINAPI Button3(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button3Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -403,89 +179,14 @@ static DWORD WINAPI Button4(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button4Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -521,89 +222,14 @@ static DWORD WINAPI Button5(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button5Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -639,89 +265,14 @@ static DWORD WINAPI Button6(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button6Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -757,89 +308,14 @@ static DWORD WINAPI Button7(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button7Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -875,89 +351,14 @@ static DWORD WINAPI Button8(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button8Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -993,89 +394,14 @@ static DWORD WINAPI Button9(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button9Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -1111,89 +437,14 @@ static DWORD WINAPI Button10(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button10Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -1229,89 +480,14 @@ static DWORD WINAPI Button1Device2(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button1Device2Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -1347,89 +523,14 @@ static DWORD WINAPI Button2Device2(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button2Device2Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -1465,89 +566,14 @@ static DWORD WINAPI Button3Device2(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button3Device2Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -1583,89 +609,14 @@ static DWORD WINAPI Button4Device2(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button4Device2Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -1701,89 +652,14 @@ static DWORD WINAPI Button5Device2(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button5Device2Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -1819,89 +695,14 @@ static DWORD WINAPI Button6Device2(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button6Device2Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -1937,89 +738,14 @@ static DWORD WINAPI Button7Device2(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button7Device2Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -2055,89 +781,14 @@ static DWORD WINAPI Button8Device2(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button8Device2Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -2173,89 +824,14 @@ static DWORD WINAPI Button9Device2(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button9Device2Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
@@ -2291,89 +867,14 @@ static DWORD WINAPI Button10Device2(LPVOID lpParam)
 		{
 			if (e1.type == SDL_JOYBUTTONDOWN)
 			{
-				if (e1.jbutton.button == 0)
+				if (e1.jbutton.button >= 0)
 				{
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "0", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 1)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "1", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 2)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "2", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 3)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "3", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 4)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "4", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 5)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "5", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 6)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "6", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 7)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "7", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 8)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "8", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 9)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "9", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 10)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "10", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 11)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "11", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 12)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "12", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 13)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "13", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 14)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "14", ".\\FFBPlugin.ini");
-					done2 = false;
-				}
-				else if (e1.jbutton.button == 15)
-				{
-					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", "15", ".\\FFBPlugin.ini");
+					sprintf_s(buff2, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", "Button10Device2Rumble", buff2, ".\\FFBPlugin.ini");
 					done2 = false;
 				}
 			}
 		}
-		Sleep(300);
 	}
 	return 0;
 }
