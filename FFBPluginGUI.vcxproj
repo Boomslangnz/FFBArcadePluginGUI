@@ -162,6 +162,7 @@
     <ClCompile Include="FordRacing.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="GTIClub.cpp" />
+    <ClCompile Include="Helper.cpp" />
     <ClCompile Include="InitialD4.cpp" />
     <ClCompile Include="InitialD4Japan.cpp" />
     <ClCompile Include="InitialD5.cpp" />
@@ -224,6 +225,7 @@
     <ClInclude Include="GTIClub.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Helper.h" />
     <ClInclude Include="InitialD4.h">
       <FileType>CppForm</FileType>
     </ClInclude>
