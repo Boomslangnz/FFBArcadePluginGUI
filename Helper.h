@@ -31,15 +31,15 @@ namespace FFBPluginGUI {
 		MetroLink^ backLink = gcnew MetroLink();
 		MetroFramework::Components::MetroToolTip^ toolTip = gcnew MetroFramework::Components::MetroToolTip();
 		MetroComboBox^ deviceSelectorComboBox = gcnew MetroComboBox();
-		List<MetroTrackBar^>^ TrackBarList = gcnew List<MetroTrackBar^>();
-		List<String^>^ TrackBarParamList = gcnew List<String^>();
-		List<MetroLabel^>^ TrackBarLabelList = gcnew List<MetroLabel^>();
-		List<MetroCheckBox^>^ CheckBoxList = gcnew List<MetroCheckBox^>();
-		List<String^>^ CheckBoxParamList = gcnew List<String^>();
-		const int Page1ColWidth = 160;
-		const int Page2ColsWidth = 300;
+		List<MetroTrackBar^>^ trackBarList = gcnew List<MetroTrackBar^>();
+		List<String^>^ trackBarParamList = gcnew List<String^>();
+		List<MetroLabel^>^ trackBarLabelList = gcnew List<MetroLabel^>();
+		List<MetroCheckBox^>^ checkBoxList = gcnew List<MetroCheckBox^>();
+		List<String^>^ checkBoxParamList = gcnew List<String^>();
+		const int page1ColWidth = 160;
+		const int page2ColsWidth = 300;
 		bool is1ColPage = false;
-		int WIndowsWidth = this->Page2ColsWidth;
+		int wIndowsWidth = this->page2ColsWidth;
 		const int minPosY = 37;
 		int maxPosY = 0;
 		int leftColX = 20;
@@ -76,7 +76,7 @@ namespace FFBPluginGUI {
 		{
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &Helper::Form_FormClosing);
 
-			this->backLink->Location = System::Drawing::Point((this->WIndowsWidth - 173) / 2, 8);
+			this->backLink->Location = System::Drawing::Point((this->wIndowsWidth - 173) / 2, 8);
 			this->backLink->Name = L"metroLink1";
 			this->backLink->Size = System::Drawing::Size(173, 23);
 			this->backLink->TabStop = false;
@@ -91,7 +91,7 @@ namespace FFBPluginGUI {
 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(this->WIndowsWidth, this->leftColPosY > this->maxPosY ? this->leftColPosY : this->maxPosY);
+			this->ClientSize = System::Drawing::Size(this->wIndowsWidth, this->leftColPosY > this->maxPosY ? this->leftColPosY : this->maxPosY);
 			this->MaximizeBox = false;
 			this->ShowIcon = false;
 			this->Name = L"Settings";
@@ -124,9 +124,9 @@ namespace FFBPluginGUI {
 			}
 			this->leftColPosY = this->minPosY;
 			this->rightColPosY = this->minPosY;
-			this->leftColX += this->is1ColPage ? this->Page1ColWidth : this->Page2ColsWidth;
-			this->rightColX += this->is1ColPage ? this->Page1ColWidth : this->Page2ColsWidth;
-			this->WIndowsWidth += this->Page1ColWidth;
+			this->leftColX += this->is1ColPage ? this->page1ColWidth : this->page2ColsWidth;
+			this->rightColX += this->is1ColPage ? this->page1ColWidth : this->page2ColsWidth;
+			this->wIndowsWidth += this->page1ColWidth;
 			this->lastItemType = "";
 			this->is1ColPage = true;
 		}
@@ -139,9 +139,9 @@ namespace FFBPluginGUI {
 			}
 			this->leftColPosY = this->minPosY;
 			this->rightColPosY = this->minPosY;
-			this->leftColX += this->is1ColPage ? this->Page1ColWidth : this->Page2ColsWidth;
-			this->rightColX += this->is1ColPage ? this->Page1ColWidth : this->Page2ColsWidth;
-			this->WIndowsWidth += this->Page2ColsWidth;
+			this->leftColX += this->is1ColPage ? this->page1ColWidth : this->page2ColsWidth;
+			this->rightColX += this->is1ColPage ? this->page1ColWidth : this->page2ColsWidth;
+			this->wIndowsWidth += this->page2ColsWidth;
 			this->lastItemType = "";
 			this->is1ColPage = false;
 		}
@@ -352,11 +352,11 @@ namespace FFBPluginGUI {
 			trackBar->Text = L"";
 			trackBar->Value = config;
 
-			this->TrackBarList->Add(trackBar);
-			this->TrackBarParamList->Add(param);
-			this->TrackBarLabelList->Add(gcnew MetroLabel());
+			this->trackBarList->Add(trackBar);
+			this->trackBarParamList->Add(param);
+			this->trackBarLabelList->Add(gcnew MetroLabel());
 
-			int i = this->TrackBarList->Count - 1;
+			int i = this->trackBarList->Count - 1;
 
 			// It's ugly but I don't know how to make dynamic calls to member functions
 			switch (i)
@@ -404,9 +404,9 @@ namespace FFBPluginGUI {
 			msclr::interop::marshal_context context;
 			LPCTSTR pparam = context.marshal_as<const TCHAR*>(param);
 
-			int i = this->TrackBarList->Count - 1;
+			int i = this->trackBarList->Count - 1;
 
-			MetroLabel^ label = this->TrackBarLabelList[i];
+			MetroLabel^ label = this->trackBarLabelList[i];
 
 			int config = GetPrivateProfileInt(TEXT("Settings"), pparam, 0, TEXT(".\\FFBPlugin.ini"));
 			label->AutoSize = true;
@@ -417,7 +417,7 @@ namespace FFBPluginGUI {
 			label->TabStop = false;
 			label->Text = System::Convert::ToString(config);
 
-			this->TrackBarLabelList[i] = label;
+			this->trackBarLabelList[i] = label;
 			this->Controls->Add(label);
 		}
 
@@ -510,10 +510,10 @@ namespace FFBPluginGUI {
 		Void TrackBar_ValueChanged(Object^ sender, EventArgs^ e, int index)
 		{
 			msclr::interop::marshal_context context;
-			LPCSTR pparam = context.marshal_as<const CHAR*>(this->TrackBarParamList[index]);
+			LPCSTR pparam = context.marshal_as<const CHAR*>(this->trackBarParamList[index]);
 
-			int value = this->TrackBarList[index]->Value;
-			this->TrackBarLabelList[index]->Text = System::Convert::ToString(value);
+			int value = this->trackBarList[index]->Value;
+			this->trackBarLabelList[index]->Text = System::Convert::ToString(value);
 			char Result[16];
 			sprintf_s(Result, "%d", value);
 			{
@@ -569,10 +569,10 @@ namespace FFBPluginGUI {
 			checkBox->UseSelectable = false;
 			checkBox->Checked = ResetFB;
 
-			this->CheckBoxList->Add(checkBox);
-			this->CheckBoxParamList->Add(param);
+			this->checkBoxList->Add(checkBox);
+			this->checkBoxParamList->Add(param);
 
-			int i = this->CheckBoxList->Count - 1;
+			int i = this->checkBoxList->Count - 1;
 
 			// It's ugly but I don't know how to make dynamic calls to member functions
 			switch (i)
@@ -698,9 +698,9 @@ namespace FFBPluginGUI {
 		Void CheckBox_CheckedChanged(Object^ sender, EventArgs^ e, int index)
 		{
 			msclr::interop::marshal_context context;
-			LPCSTR pparam = context.marshal_as<const CHAR*>(this->CheckBoxParamList[index]);
+			LPCSTR pparam = context.marshal_as<const CHAR*>(this->checkBoxParamList[index]);
 
-			WritePrivateProfileStringA("Settings", pparam, this->CheckBoxList[index]->Checked ? "1" : "0", ".\\FFBPlugin.ini");
+			WritePrivateProfileStringA("Settings", pparam, this->checkBoxList[index]->Checked ? "1" : "0", ".\\FFBPlugin.ini");
 		}
 		Void CheckBox0_CheckedChanged(Object^ sender, EventArgs^ e) { this->CheckBox_CheckedChanged(sender, e, 0); }
 		Void CheckBox1_CheckedChanged(Object^ sender, EventArgs^ e) { this->CheckBox_CheckedChanged(sender, e, 1); }
