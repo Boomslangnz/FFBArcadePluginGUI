@@ -87,6 +87,26 @@ namespace FFBPluginGUI {
 	private: MetroFramework::Controls::MetroLabel^  metroLabel4;
 	private: MetroFramework::Controls::MetroLabel^  metroLabel5;
 	private: MetroFramework::Controls::MetroLabel^  metroLabel6;
+	private: MetroFramework::Controls::MetroTextBox^  metroTextBox10;
+	private: MetroFramework::Controls::MetroTextBox^  metroTextBox11;
+	private: MetroFramework::Controls::MetroTextBox^  metroTextBox12;
+	private: MetroFramework::Controls::MetroTextBox^  metroTextBox13;
+	private: MetroFramework::Controls::MetroTextBox^  metroTextBox14;
+	private: MetroFramework::Controls::MetroTextBox^  metroTextBox15;
+	private: MetroFramework::Controls::MetroTextBox^  metroTextBox16;
+	private: MetroFramework::Controls::MetroTrackBar^  metroTrackBar7;
+	private: MetroFramework::Controls::MetroTrackBar^  metroTrackBar8;
+	private: MetroFramework::Controls::MetroTrackBar^  metroTrackBar9;
+	private: MetroFramework::Controls::MetroTrackBar^  metroTrackBar10;
+	private: MetroFramework::Controls::MetroTrackBar^  metroTrackBar11;
+	private: MetroFramework::Controls::MetroTrackBar^  metroTrackBar12;
+	private: MetroFramework::Controls::MetroLabel^  metroLabel7;
+	private: MetroFramework::Controls::MetroLabel^  metroLabel8;
+	private: MetroFramework::Controls::MetroLabel^  metroLabel9;
+	private: MetroFramework::Controls::MetroLabel^  metroLabel10;
+	private: MetroFramework::Controls::MetroLabel^  metroLabel11;
+	private: MetroFramework::Controls::MetroLabel^  metroLabel12;
+
 	private: System::Windows::Forms::NumericUpDown^  numericUpDown1;
 	protected:
 
@@ -135,6 +155,25 @@ namespace FFBPluginGUI {
 			this->metroLabel5 = (gcnew MetroFramework::Controls::MetroLabel());
 			this->metroLabel6 = (gcnew MetroFramework::Controls::MetroLabel());
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->metroTextBox10 = (gcnew MetroFramework::Controls::MetroTextBox());
+			this->metroTextBox11 = (gcnew MetroFramework::Controls::MetroTextBox());
+			this->metroTextBox12 = (gcnew MetroFramework::Controls::MetroTextBox());
+			this->metroTextBox13 = (gcnew MetroFramework::Controls::MetroTextBox());
+			this->metroTextBox14 = (gcnew MetroFramework::Controls::MetroTextBox());
+			this->metroTextBox15 = (gcnew MetroFramework::Controls::MetroTextBox());
+			this->metroTextBox16 = (gcnew MetroFramework::Controls::MetroTextBox());
+			this->metroTrackBar7 = (gcnew MetroFramework::Controls::MetroTrackBar());
+			this->metroTrackBar8 = (gcnew MetroFramework::Controls::MetroTrackBar());
+			this->metroTrackBar9 = (gcnew MetroFramework::Controls::MetroTrackBar());
+			this->metroTrackBar10 = (gcnew MetroFramework::Controls::MetroTrackBar());
+			this->metroTrackBar11 = (gcnew MetroFramework::Controls::MetroTrackBar());
+			this->metroTrackBar12 = (gcnew MetroFramework::Controls::MetroTrackBar());
+			this->metroLabel7 = (gcnew MetroFramework::Controls::MetroLabel());
+			this->metroLabel8 = (gcnew MetroFramework::Controls::MetroLabel());
+			this->metroLabel9 = (gcnew MetroFramework::Controls::MetroLabel());
+			this->metroLabel10 = (gcnew MetroFramework::Controls::MetroLabel());
+			this->metroLabel11 = (gcnew MetroFramework::Controls::MetroLabel());
+			this->metroLabel12 = (gcnew MetroFramework::Controls::MetroLabel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			this->SuspendLayout();
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &WMMT5::Form1_FormClosing);
@@ -160,6 +199,11 @@ namespace FFBPluginGUI {
 			this->metroToolTip1->SetToolTip(this->metroTextBox7, L" Maximum overrall left force strength that will be applied to device ");
 			this->metroToolTip1->SetToolTip(this->metroTextBox8, L" Minimum overrall right force strength that will be applied to device ");
 			this->metroToolTip1->SetToolTip(this->metroTextBox9, L" Maximum overrall right force strength that will be applied to device ");
+			this->metroToolTip1->SetToolTip(this->metroTextBox13, L" Strength when going over a joint or some stripes ");
+			this->metroToolTip1->SetToolTip(this->metroTextBox14, L" Strength when hitting a car or a wall ");
+			this->metroToolTip1->SetToolTip(this->metroTextBox15, L" Strength of vibrations when sliding ");
+			this->metroToolTip1->SetToolTip(this->metroTextBox16, L" Strength of vibrations at high speed\n(it's adviced to use the same value as tire slip strength) ");
+
 			// 
 			// metroTextBox1
 			// 
@@ -484,7 +528,7 @@ namespace FFBPluginGUI {
 			this->metroTextBox5->CustomButton->UseSelectable = false;
 			this->metroTextBox5->CustomButton->Visible = false;
 			this->metroTextBox5->Lines = gcnew cli::array< System::String^  >(1) { L"Alternative FFB Config" };
-			this->metroTextBox5->Location = System::Drawing::Point(20, 375);
+			this->metroTextBox5->Location = System::Drawing::Point(20, 647);
 			this->metroTextBox5->MaxLength = 32767;
 			this->metroTextBox5->Name = L"metroTextBox5";
 			this->metroTextBox5->PasswordChar = '\0';
@@ -495,7 +539,7 @@ namespace FFBPluginGUI {
 			this->metroTextBox5->SelectionStart = 0;
 			this->metroTextBox5->ShortcutsEnabled = true;
 			this->metroTextBox5->Size = System::Drawing::Size(261, 20);
-			this->metroTextBox5->TabIndex = 14;
+			this->metroTextBox5->TabIndex = 33;
 			this->metroTextBox5->TabStop = false;
 			this->metroTextBox5->Text = L"Alternative FFB Config";
 			this->metroTextBox5->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
@@ -519,7 +563,7 @@ namespace FFBPluginGUI {
 			this->metroTextBox6->CustomButton->UseSelectable = false;
 			this->metroTextBox6->CustomButton->Visible = false;
 			this->metroTextBox6->Lines = gcnew cli::array< System::String^  >(1) { L"Min Force Left" };
-			this->metroTextBox6->Location = System::Drawing::Point(20, 401);
+			this->metroTextBox6->Location = System::Drawing::Point(20, 673);
 			this->metroTextBox6->MaxLength = 32767;
 			this->metroTextBox6->Name = L"metroTextBox6";
 			this->metroTextBox6->PasswordChar = '\0';
@@ -530,7 +574,7 @@ namespace FFBPluginGUI {
 			this->metroTextBox6->SelectionStart = 0;
 			this->metroTextBox6->ShortcutsEnabled = true;
 			this->metroTextBox6->Size = System::Drawing::Size(118, 20);
-			this->metroTextBox6->TabIndex = 15;
+			this->metroTextBox6->TabIndex = 34;
 			this->metroTextBox6->TabStop = false;
 			this->metroTextBox6->Text = L"Min Force Left";
 			this->metroTextBox6->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
@@ -554,7 +598,7 @@ namespace FFBPluginGUI {
 			this->metroTextBox7->CustomButton->UseSelectable = false;
 			this->metroTextBox7->CustomButton->Visible = false;
 			this->metroTextBox7->Lines = gcnew cli::array< System::String^  >(1) { L"Max Force Left" };
-			this->metroTextBox7->Location = System::Drawing::Point(163, 401);
+			this->metroTextBox7->Location = System::Drawing::Point(163, 673);
 			this->metroTextBox7->MaxLength = 32767;
 			this->metroTextBox7->Name = L"metroTextBox7";
 			this->metroTextBox7->PasswordChar = '\0';
@@ -565,7 +609,7 @@ namespace FFBPluginGUI {
 			this->metroTextBox7->SelectionStart = 0;
 			this->metroTextBox7->ShortcutsEnabled = true;
 			this->metroTextBox7->Size = System::Drawing::Size(118, 20);
-			this->metroTextBox7->TabIndex = 16;
+			this->metroTextBox7->TabIndex = 35;
 			this->metroTextBox7->TabStop = false;
 			this->metroTextBox7->Text = L"Max Force Left";
 			this->metroTextBox7->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
@@ -578,10 +622,10 @@ namespace FFBPluginGUI {
 			// 
 			int AlternativeMinForceLeft = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeMinForceLeft"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroTrackBar3->BackColor = System::Drawing::Color::Transparent;
-			this->metroTrackBar3->Location = System::Drawing::Point(20, 427);
+			this->metroTrackBar3->Location = System::Drawing::Point(20, 699);
 			this->metroTrackBar3->Name = L"metroTrackBar3";
 			this->metroTrackBar3->Size = System::Drawing::Size(118, 23);
-			this->metroTrackBar3->TabIndex = 17;
+			this->metroTrackBar3->TabIndex = 36;
 			this->metroTrackBar3->TabStop = false;
 			this->metroTrackBar3->Maximum = 100;
 			this->metroTrackBar3->Minimum = -100;
@@ -593,10 +637,10 @@ namespace FFBPluginGUI {
 			// 
 			int AlternativeMaxForceLeft = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeMaxForceLeft"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroTrackBar4->BackColor = System::Drawing::Color::Transparent;
-			this->metroTrackBar4->Location = System::Drawing::Point(163, 427);
+			this->metroTrackBar4->Location = System::Drawing::Point(163, 699);
 			this->metroTrackBar4->Name = L"metroTrackBar4";
 			this->metroTrackBar4->Size = System::Drawing::Size(118, 23);
-			this->metroTrackBar4->TabIndex = 18;
+			this->metroTrackBar4->TabIndex = 37;
 			this->metroTrackBar4->TabStop = false;
 			this->metroTrackBar4->Maximum = 100;
 			this->metroTrackBar4->Minimum = -100;
@@ -619,7 +663,7 @@ namespace FFBPluginGUI {
 			this->metroTextBox8->CustomButton->UseSelectable = false;
 			this->metroTextBox8->CustomButton->Visible = false;
 			this->metroTextBox8->Lines = gcnew cli::array< System::String^  >(1) { L"Min Force Right" };
-			this->metroTextBox8->Location = System::Drawing::Point(20, 491);
+			this->metroTextBox8->Location = System::Drawing::Point(20, 751);
 			this->metroTextBox8->MaxLength = 32767;
 			this->metroTextBox8->Name = L"metroTextBox8";
 			this->metroTextBox8->PasswordChar = '\0';
@@ -630,7 +674,7 @@ namespace FFBPluginGUI {
 			this->metroTextBox8->SelectionStart = 0;
 			this->metroTextBox8->ShortcutsEnabled = true;
 			this->metroTextBox8->Size = System::Drawing::Size(118, 20);
-			this->metroTextBox8->TabIndex = 19;
+			this->metroTextBox8->TabIndex = 38;
 			this->metroTextBox8->TabStop = false;
 			this->metroTextBox8->Text = L"Min Force Right";
 			this->metroTextBox8->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
@@ -654,7 +698,7 @@ namespace FFBPluginGUI {
 			this->metroTextBox9->CustomButton->UseSelectable = false;
 			this->metroTextBox9->CustomButton->Visible = false;
 			this->metroTextBox9->Lines = gcnew cli::array< System::String^  >(1) { L"Max Force Right" };
-			this->metroTextBox9->Location = System::Drawing::Point(163, 491);
+			this->metroTextBox9->Location = System::Drawing::Point(163, 751);
 			this->metroTextBox9->MaxLength = 32767;
 			this->metroTextBox9->Name = L"metroTextBox9";
 			this->metroTextBox9->PasswordChar = '\0';
@@ -666,7 +710,7 @@ namespace FFBPluginGUI {
 			this->metroTextBox9->ShortcutsEnabled = true;
 			this->metroTextBox9->Size = System::Drawing::Size(118, 20);
 			this->metroTextBox9->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->metroTextBox9->TabIndex = 20;
+			this->metroTextBox9->TabIndex = 39;
 			this->metroTextBox9->TabStop = false;
 			this->metroTextBox9->Text = L"Max Force Right";
 			this->metroTextBox9->UseSelectable = false;
@@ -678,10 +722,10 @@ namespace FFBPluginGUI {
 			// 
 			int AlternativeMinForceRight = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeMinForceRight"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroTrackBar5->BackColor = System::Drawing::Color::Transparent;
-			this->metroTrackBar5->Location = System::Drawing::Point(20, 516);
+			this->metroTrackBar5->Location = System::Drawing::Point(20, 777);
 			this->metroTrackBar5->Name = L"metroTrackBar5";
 			this->metroTrackBar5->Size = System::Drawing::Size(118, 23);
-			this->metroTrackBar5->TabIndex = 21;
+			this->metroTrackBar5->TabIndex = 40;
 			this->metroTrackBar5->TabStop = false;
 			this->metroTrackBar5->Maximum = 100;
 			this->metroTrackBar5->Minimum = -100;
@@ -693,10 +737,10 @@ namespace FFBPluginGUI {
 			// 
 			int AlternativeMaxForceRight = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeMaxForceRight"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroTrackBar6->BackColor = System::Drawing::Color::Transparent;
-			this->metroTrackBar6->Location = System::Drawing::Point(163, 516);
+			this->metroTrackBar6->Location = System::Drawing::Point(163, 777);
 			this->metroTrackBar6->Name = L"metroTrackBar6";
 			this->metroTrackBar6->Size = System::Drawing::Size(118, 23);
-			this->metroTrackBar6->TabIndex = 22;
+			this->metroTrackBar6->TabIndex = 41;
 			this->metroTrackBar6->TabStop = false;
 			this->metroTrackBar6->Maximum = 100;
 			this->metroTrackBar6->Minimum = -100;
@@ -711,7 +755,7 @@ namespace FFBPluginGUI {
 			this->metroLabel1->Location = System::Drawing::Point(70, 89);
 			this->metroLabel1->Name = L"metroLabel1";
 			this->metroLabel1->Size = System::Drawing::Size(16, 19);
-			this->metroLabel1->TabIndex = 23;
+			this->metroLabel1->TabIndex = 42;
 			this->metroLabel1->TabStop = false;
 			this->metroLabel1->Text = System::Convert::ToString(configMinForce1);
 			this->metroLabel1->Click += gcnew System::EventHandler(this, &WMMT5::metroLabel1_Click);
@@ -723,7 +767,7 @@ namespace FFBPluginGUI {
 			this->metroLabel2->Location = System::Drawing::Point(213, 89);
 			this->metroLabel2->Name = L"metroLabel2";
 			this->metroLabel2->Size = System::Drawing::Size(16, 19);
-			this->metroLabel2->TabIndex = 24;
+			this->metroLabel2->TabIndex = 43;
 			this->metroLabel2->TabStop = false;
 			this->metroLabel2->Text = System::Convert::ToString(configMaxForce1);
 			this->metroLabel2->Click += gcnew System::EventHandler(this, &WMMT5::metroLabel2_Click);
@@ -732,10 +776,10 @@ namespace FFBPluginGUI {
 			// 
 			int AlternativeMinForceLeft1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeMinForceLeft"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroLabel3->AutoSize = true;
-			this->metroLabel3->Location = System::Drawing::Point(70, 453);
+			this->metroLabel3->Location = System::Drawing::Point(70, 725);
 			this->metroLabel3->Name = L"metroLabel3";
 			this->metroLabel3->Size = System::Drawing::Size(16, 19);
-			this->metroLabel3->TabIndex = 25;
+			this->metroLabel3->TabIndex = 44;
 			this->metroLabel3->TabStop = false;
 			this->metroLabel3->Text = System::Convert::ToString(AlternativeMinForceLeft1);
 			this->metroLabel3->Click += gcnew System::EventHandler(this, &WMMT5::metroLabel3_Click);
@@ -744,10 +788,10 @@ namespace FFBPluginGUI {
 			// 
 			int AlternativeMaxForceLeft1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeMaxForceLeft"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroLabel4->AutoSize = true;
-			this->metroLabel4->Location = System::Drawing::Point(213, 453);
+			this->metroLabel4->Location = System::Drawing::Point(213, 725);
 			this->metroLabel4->Name = L"metroLabel4";
 			this->metroLabel4->Size = System::Drawing::Size(16, 19);
-			this->metroLabel4->TabIndex = 26;
+			this->metroLabel4->TabIndex = 45;
 			this->metroLabel4->TabStop = false;
 			this->metroLabel4->Text = System::Convert::ToString(AlternativeMaxForceLeft1);
 			this->metroLabel4->Click += gcnew System::EventHandler(this, &WMMT5::metroLabel4_Click);
@@ -756,10 +800,10 @@ namespace FFBPluginGUI {
 			// 
 			int AlternativeMinForceRight1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeMinForceRight"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroLabel5->AutoSize = true;
-			this->metroLabel5->Location = System::Drawing::Point(70, 542);
+			this->metroLabel5->Location = System::Drawing::Point(70, 803);
 			this->metroLabel5->Name = L"metroLabel5";
 			this->metroLabel5->Size = System::Drawing::Size(16, 19);
-			this->metroLabel5->TabIndex = 27;
+			this->metroLabel5->TabIndex = 46;
 			this->metroLabel5->TabStop = false;
 			this->metroLabel5->Text = System::Convert::ToString(AlternativeMinForceRight1);
 			this->metroLabel5->Click += gcnew System::EventHandler(this, &WMMT5::metroLabel5_Click);
@@ -768,10 +812,10 @@ namespace FFBPluginGUI {
 			// 
 			int AlternativeMaxForceRight1 = GetPrivateProfileInt(TEXT("Settings"), TEXT("AlternativeMaxForceRight"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroLabel6->AutoSize = true;
-			this->metroLabel6->Location = System::Drawing::Point(213, 542);
+			this->metroLabel6->Location = System::Drawing::Point(213, 803);
 			this->metroLabel6->Name = L"metroLabel6";
 			this->metroLabel6->Size = System::Drawing::Size(16, 19);
-			this->metroLabel6->TabIndex = 28;
+			this->metroLabel6->TabIndex = 47;
 			this->metroLabel6->TabStop = false;
 			this->metroLabel6->Text = System::Convert::ToString(AlternativeMaxForceRight1);
 			this->metroLabel6->Click += gcnew System::EventHandler(this, &WMMT5::metroLabel6_Click);
@@ -783,17 +827,379 @@ namespace FFBPluginGUI {
 			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 9999999999999999, 0, 0, 0 });
 			this->numericUpDown1->Name = L"numericUpDown1";
 			this->numericUpDown1->Size = System::Drawing::Size(261, 20);
-			this->numericUpDown1->TabIndex = 29;
+			this->numericUpDown1->TabIndex = 48;
 			this->numericUpDown1->TabStop = false;
 			this->numericUpDown1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			this->numericUpDown1->Value = configFeedbackLength1;
 			this->numericUpDown1->ValueChanged += gcnew System::EventHandler(this, &WMMT5::numericUpDown1_ValueChanged);
 			// 
+			// metroTextBox10
+			// 
+			this->metroTextBox10->CustomButton->Image = nullptr;
+			this->metroTextBox10->CustomButton->Location = System::Drawing::Point(239, 1);
+			this->metroTextBox10->CustomButton->Name = L"";
+			this->metroTextBox10->CustomButton->Size = System::Drawing::Size(21, 21);
+			this->metroTextBox10->CustomButton->Style = MetroFramework::MetroColorStyle::Blue;
+			this->metroTextBox10->CustomButton->TabIndex = 1;
+			this->metroTextBox10->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
+			this->metroTextBox10->CustomButton->UseSelectable = false;
+			this->metroTextBox10->CustomButton->Visible = false;
+			this->metroTextBox10->Lines = gcnew cli::array< System::String^  >(1) { L"Effects strength" };
+			this->metroTextBox10->Location = System::Drawing::Point(20, 375);
+			this->metroTextBox10->MaxLength = 32767;
+			this->metroTextBox10->Name = L"metroTextBox10";
+			this->metroTextBox10->PasswordChar = '\0';
+			this->metroTextBox10->ReadOnly = true;
+			this->metroTextBox10->ScrollBars = System::Windows::Forms::ScrollBars::None;
+			this->metroTextBox10->SelectedText = L"";
+			this->metroTextBox10->SelectionLength = 0;
+			this->metroTextBox10->SelectionStart = 0;
+			this->metroTextBox10->ShortcutsEnabled = true;
+			this->metroTextBox10->Size = System::Drawing::Size(261, 23);
+			this->metroTextBox10->TabIndex = 14;
+			this->metroTextBox10->TabStop = false;
+			this->metroTextBox10->Text = L"Effects strength";
+			this->metroTextBox10->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->metroTextBox10->UseSelectable = false;
+			this->metroTextBox10->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->metroTextBox10->WaterMarkFont = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Pixel));
+			// 
+			// metroTextBox11
+			// 
+			this->metroTextBox11->CustomButton->Image = nullptr;
+			this->metroTextBox11->CustomButton->Location = System::Drawing::Point(100, 1);
+			this->metroTextBox11->CustomButton->Name = L"";
+			this->metroTextBox11->CustomButton->Size = System::Drawing::Size(15, 15);
+			this->metroTextBox11->CustomButton->Style = MetroFramework::MetroColorStyle::Blue;
+			this->metroTextBox11->CustomButton->TabIndex = 1;
+			this->metroTextBox11->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
+			this->metroTextBox11->CustomButton->UseSelectable = false;
+			this->metroTextBox11->CustomButton->Visible = false;
+			this->metroTextBox11->Lines = gcnew cli::array< System::String^  >(1) { L"Spring" };
+			this->metroTextBox11->Location = System::Drawing::Point(20, 401);
+			this->metroTextBox11->MaxLength = 32767;
+			this->metroTextBox11->Name = L"metroTextBox11";
+			this->metroTextBox11->PasswordChar = '\0';
+			this->metroTextBox11->ReadOnly = true;
+			this->metroTextBox11->ScrollBars = System::Windows::Forms::ScrollBars::None;
+			this->metroTextBox11->SelectedText = L"";
+			this->metroTextBox11->SelectionLength = 0;
+			this->metroTextBox11->SelectionStart = 0;
+			this->metroTextBox11->ShortcutsEnabled = true;
+			this->metroTextBox11->Size = System::Drawing::Size(118, 20);
+			this->metroTextBox11->TabIndex = 15;
+			this->metroTextBox11->TabStop = false;
+			this->metroTextBox11->Text = L"Spring";
+			this->metroTextBox11->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->metroTextBox11->UseSelectable = false;
+			this->metroTextBox11->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->metroTextBox11->WaterMarkFont = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Pixel));
+			// 
+			// metroTrackBar7
+			// 
+			int SpringStrength = GetPrivateProfileInt(TEXT("Settings"), TEXT("SpringStrength"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroTrackBar7->BackColor = System::Drawing::Color::Transparent;
+			this->metroTrackBar7->Location = System::Drawing::Point(20, 427);
+			this->metroTrackBar7->Name = L"metroTrackBar7";
+			this->metroTrackBar7->Size = System::Drawing::Size(118, 23);
+			this->metroTrackBar7->Maximum = 150;
+			this->metroTrackBar7->TabIndex = 16;
+			this->metroTrackBar7->Text = L"metroTrackBar7";
+			this->metroTrackBar7->Value = SpringStrength;
+			this->metroTrackBar7->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &WMMT5::metroTrackBar7_Scroll);
+			// 
+			// metroLabel7
+			// 
+			this->metroLabel7->AutoSize = true;
+			this->metroLabel7->Location = System::Drawing::Point(70, 453);
+			this->metroLabel7->Name = L"metroLabel7";
+			this->metroLabel7->Size = System::Drawing::Size(16, 19);
+			this->metroLabel7->TabIndex = 17;
+			this->metroLabel7->Text = System::Convert::ToString(SpringStrength);
+			this->metroLabel7->Click += gcnew System::EventHandler(this, &WMMT5::metroLabel7_Click);
+			// 
+			// metroTextBox12
+			// 
+			this->metroTextBox12->CustomButton->Image = nullptr;
+			this->metroTextBox12->CustomButton->Location = System::Drawing::Point(100, 1);
+			this->metroTextBox12->CustomButton->Name = L"";
+			this->metroTextBox12->CustomButton->Size = System::Drawing::Size(15, 15);
+			this->metroTextBox12->CustomButton->Style = MetroFramework::MetroColorStyle::Blue;
+			this->metroTextBox12->CustomButton->TabIndex = 1;
+			this->metroTextBox12->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
+			this->metroTextBox12->CustomButton->UseSelectable = false;
+			this->metroTextBox12->CustomButton->Visible = false;
+			this->metroTextBox12->Lines = gcnew cli::array< System::String^  >(1) { L"Friction" };
+			this->metroTextBox12->Location = System::Drawing::Point(163, 401);
+			this->metroTextBox12->MaxLength = 32767;
+			this->metroTextBox12->Name = L"metroTextBox12";
+			this->metroTextBox12->PasswordChar = '\0';
+			this->metroTextBox12->ReadOnly = true;
+			this->metroTextBox12->ScrollBars = System::Windows::Forms::ScrollBars::None;
+			this->metroTextBox12->SelectedText = L"";
+			this->metroTextBox12->SelectionLength = 0;
+			this->metroTextBox12->SelectionStart = 0;
+			this->metroTextBox12->ShortcutsEnabled = true;
+			this->metroTextBox12->Size = System::Drawing::Size(118, 20);
+			this->metroTextBox12->TabIndex = 18;
+			this->metroTextBox12->TabStop = false;
+			this->metroTextBox12->Text = L"Friction";
+			this->metroTextBox12->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->metroTextBox12->UseSelectable = false;
+			this->metroTextBox12->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->metroTextBox12->WaterMarkFont = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Pixel));
+			// 
+			// metroTrackBar8
+			// 
+			int FrictionStrength = GetPrivateProfileInt(TEXT("Settings"), TEXT("FrictionStrength"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroTrackBar8->BackColor = System::Drawing::Color::Transparent;
+			this->metroTrackBar8->Location = System::Drawing::Point(163, 427);
+			this->metroTrackBar8->Name = L"metroTrackBar8";
+			this->metroTrackBar8->Size = System::Drawing::Size(118, 23);
+			this->metroTrackBar8->Maximum = 150;
+			this->metroTrackBar8->TabIndex = 19;
+			this->metroTrackBar8->Text = L"metroTrackBar8";
+			this->metroTrackBar8->Value = FrictionStrength;
+			this->metroTrackBar8->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &WMMT5::metroTrackBar8_Scroll);
+			// 
+			// metroLabel8
+			// 
+			this->metroLabel8->AutoSize = true;
+			this->metroLabel8->Location = System::Drawing::Point(213, 453);
+			this->metroLabel8->Name = L"metroLabel8";
+			this->metroLabel8->Size = System::Drawing::Size(16, 19);
+			this->metroLabel8->TabIndex = 20;
+			this->metroLabel8->Text = System::Convert::ToString(FrictionStrength);
+			this->metroLabel8->Click += gcnew System::EventHandler(this, &WMMT5::metroLabel8_Click);
+			// 
+			// metroTextBox13
+			// 
+			this->metroTextBox13->CustomButton->Image = nullptr;
+			this->metroTextBox13->CustomButton->Location = System::Drawing::Point(100, 1);
+			this->metroTextBox13->CustomButton->Name = L"";
+			this->metroTextBox13->CustomButton->Size = System::Drawing::Size(15, 15);
+			this->metroTextBox13->CustomButton->Style = MetroFramework::MetroColorStyle::Blue;
+			this->metroTextBox13->CustomButton->TabIndex = 1;
+			this->metroTextBox13->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
+			this->metroTextBox13->CustomButton->UseSelectable = false;
+			this->metroTextBox13->CustomButton->Visible = false;
+			this->metroTextBox13->Lines = gcnew cli::array< System::String^  >(1) { L"Joints & Stripes" };
+			this->metroTextBox13->Location = System::Drawing::Point(20, 479);
+			this->metroTextBox13->MaxLength = 32767;
+			this->metroTextBox13->Name = L"metroTextBox13";
+			this->metroTextBox13->PasswordChar = '\0';
+			this->metroTextBox13->ReadOnly = true;
+			this->metroTextBox13->ScrollBars = System::Windows::Forms::ScrollBars::None;
+			this->metroTextBox13->SelectedText = L"";
+			this->metroTextBox13->SelectionLength = 0;
+			this->metroTextBox13->SelectionStart = 0;
+			this->metroTextBox13->ShortcutsEnabled = true;
+			this->metroTextBox13->Size = System::Drawing::Size(118, 20);
+			this->metroTextBox13->TabIndex = 21;
+			this->metroTextBox13->TabStop = false;
+			this->metroTextBox13->Text = L"Joints & Stripes";
+			this->metroTextBox13->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->metroTextBox13->UseSelectable = false;
+			this->metroTextBox13->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->metroTextBox13->WaterMarkFont = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Pixel));
+			// 
+			// metroTrackBar9
+			// 
+			int JointsAndStripesStrength = GetPrivateProfileInt(TEXT("Settings"), TEXT("JointsAndStripesStrength"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroTrackBar9->BackColor = System::Drawing::Color::Transparent;
+			this->metroTrackBar9->Location = System::Drawing::Point(20, 505);
+			this->metroTrackBar9->Name = L"metroTrackBar9";
+			this->metroTrackBar9->Size = System::Drawing::Size(118, 23);
+			this->metroTrackBar9->Maximum = 150;
+			this->metroTrackBar9->TabIndex = 22;
+			this->metroTrackBar9->Text = L"metroTrackBar9";
+			this->metroTrackBar9->Value = SpringStrength;
+			this->metroTrackBar9->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &WMMT5::metroTrackBar9_Scroll);
+			// 
+			// metroLabel9
+			// 
+			this->metroLabel9->AutoSize = true;
+			this->metroLabel9->Location = System::Drawing::Point(70, 531);
+			this->metroLabel9->Name = L"metroLabel9";
+			this->metroLabel9->Size = System::Drawing::Size(16, 19);
+			this->metroLabel9->TabIndex = 23;
+			this->metroLabel9->Text = System::Convert::ToString(JointsAndStripesStrength);
+			this->metroLabel9->Click += gcnew System::EventHandler(this, &WMMT5::metroLabel9_Click);
+			// 
+			// metroTextBox14
+			// 
+			this->metroTextBox14->CustomButton->Image = nullptr;
+			this->metroTextBox14->CustomButton->Location = System::Drawing::Point(100, 1);
+			this->metroTextBox14->CustomButton->Name = L"";
+			this->metroTextBox14->CustomButton->Size = System::Drawing::Size(15, 15);
+			this->metroTextBox14->CustomButton->Style = MetroFramework::MetroColorStyle::Blue;
+			this->metroTextBox14->CustomButton->TabIndex = 1;
+			this->metroTextBox14->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
+			this->metroTextBox14->CustomButton->UseSelectable = false;
+			this->metroTextBox14->CustomButton->Visible = false;
+			this->metroTextBox14->Lines = gcnew cli::array< System::String^  >(1) { L"Collisions" };
+			this->metroTextBox14->Location = System::Drawing::Point(163, 479);
+			this->metroTextBox14->MaxLength = 32767;
+			this->metroTextBox14->Name = L"metroTextBox14";
+			this->metroTextBox14->PasswordChar = '\0';
+			this->metroTextBox14->ReadOnly = true;
+			this->metroTextBox14->ScrollBars = System::Windows::Forms::ScrollBars::None;
+			this->metroTextBox14->SelectedText = L"";
+			this->metroTextBox14->SelectionLength = 0;
+			this->metroTextBox14->SelectionStart = 0;
+			this->metroTextBox14->ShortcutsEnabled = true;
+			this->metroTextBox14->Size = System::Drawing::Size(118, 20);
+			this->metroTextBox14->TabIndex = 24;
+			this->metroTextBox14->TabStop = false;
+			this->metroTextBox14->Text = L"Collisions";
+			this->metroTextBox14->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->metroTextBox14->UseSelectable = false;
+			this->metroTextBox14->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->metroTextBox14->WaterMarkFont = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Pixel));
+			// 
+			// metroTrackBar10
+			// 
+			int CollisionsStrength = GetPrivateProfileInt(TEXT("Settings"), TEXT("CollisionsStrength"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroTrackBar10->BackColor = System::Drawing::Color::Transparent;
+			this->metroTrackBar10->Location = System::Drawing::Point(163, 505);
+			this->metroTrackBar10->Name = L"metroTrackBar10";
+			this->metroTrackBar10->Size = System::Drawing::Size(118, 23);
+			this->metroTrackBar10->Maximum = 150;
+			this->metroTrackBar10->TabIndex = 25;
+			this->metroTrackBar10->Text = L"metroTrackBar10";
+			this->metroTrackBar10->Value = CollisionsStrength;
+			this->metroTrackBar10->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &WMMT5::metroTrackBar10_Scroll);
+			// 
+			// metroLabel10
+			// 
+			this->metroLabel10->AutoSize = true;
+			this->metroLabel10->Location = System::Drawing::Point(213, 531);
+			this->metroLabel10->Name = L"metroLabel10";
+			this->metroLabel10->Size = System::Drawing::Size(16, 19);
+			this->metroLabel10->TabIndex = 26;
+			this->metroLabel10->Text = System::Convert::ToString(CollisionsStrength);
+			this->metroLabel10->Click += gcnew System::EventHandler(this, &WMMT5::metroLabel10_Click);
+			// 
+			// metroTextBox15
+			// 
+			this->metroTextBox15->CustomButton->Image = nullptr;
+			this->metroTextBox15->CustomButton->Location = System::Drawing::Point(100, 1);
+			this->metroTextBox15->CustomButton->Name = L"";
+			this->metroTextBox15->CustomButton->Size = System::Drawing::Size(15, 15);
+			this->metroTextBox15->CustomButton->Style = MetroFramework::MetroColorStyle::Blue;
+			this->metroTextBox15->CustomButton->TabIndex = 1;
+			this->metroTextBox15->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
+			this->metroTextBox15->CustomButton->UseSelectable = false;
+			this->metroTextBox15->CustomButton->Visible = false;
+			this->metroTextBox15->Lines = gcnew cli::array< System::String^  >(1) { L"Tires Slip" };
+			this->metroTextBox15->Location = System::Drawing::Point(20, 557);
+			this->metroTextBox15->MaxLength = 32767;
+			this->metroTextBox15->Name = L"metroTextBox15";
+			this->metroTextBox15->PasswordChar = '\0';
+			this->metroTextBox15->ReadOnly = true;
+			this->metroTextBox15->ScrollBars = System::Windows::Forms::ScrollBars::None;
+			this->metroTextBox15->SelectedText = L"";
+			this->metroTextBox15->SelectionLength = 0;
+			this->metroTextBox15->SelectionStart = 0;
+			this->metroTextBox15->ShortcutsEnabled = true;
+			this->metroTextBox15->Size = System::Drawing::Size(118, 20);
+			this->metroTextBox15->TabIndex = 27;
+			this->metroTextBox15->TabStop = false;
+			this->metroTextBox15->Text = L"Tires Slip";
+			this->metroTextBox15->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->metroTextBox15->UseSelectable = false;
+			this->metroTextBox15->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->metroTextBox15->WaterMarkFont = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Pixel));
+			// 
+			// metroTrackBar11
+			// 
+			int TiresSlipStrength = GetPrivateProfileInt(TEXT("Settings"), TEXT("TiresSlipStrength"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroTrackBar11->BackColor = System::Drawing::Color::Transparent;
+			this->metroTrackBar11->Location = System::Drawing::Point(20, 583);
+			this->metroTrackBar11->Name = L"metroTrackBar11";
+			this->metroTrackBar11->Size = System::Drawing::Size(118, 23);
+			this->metroTrackBar11->Maximum = 150;
+			this->metroTrackBar11->TabIndex = 28;
+			this->metroTrackBar11->Text = L"metroTrackBar11";
+			this->metroTrackBar11->Value = TiresSlipStrength;
+			this->metroTrackBar11->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &WMMT5::metroTrackBar11_Scroll);
+			// 
+			// metroLabel11
+			// 
+			this->metroLabel11->AutoSize = true;
+			this->metroLabel11->Location = System::Drawing::Point(70, 609);
+			this->metroLabel11->Name = L"metroLabel11";
+			this->metroLabel11->Size = System::Drawing::Size(16, 19);
+			this->metroLabel11->TabIndex = 29;
+			this->metroLabel11->Text = System::Convert::ToString(TiresSlipStrength);
+			this->metroLabel11->Click += gcnew System::EventHandler(this, &WMMT5::metroLabel11_Click);
+			// 
+			// metroTextBox16
+			// 
+			this->metroTextBox16->CustomButton->Image = nullptr;
+			this->metroTextBox16->CustomButton->Location = System::Drawing::Point(100, 1);
+			this->metroTextBox16->CustomButton->Name = L"";
+			this->metroTextBox16->CustomButton->Size = System::Drawing::Size(15, 15);
+			this->metroTextBox16->CustomButton->Style = MetroFramework::MetroColorStyle::Blue;
+			this->metroTextBox16->CustomButton->TabIndex = 1;
+			this->metroTextBox16->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
+			this->metroTextBox16->CustomButton->UseSelectable = false;
+			this->metroTextBox16->CustomButton->Visible = false;
+			this->metroTextBox16->Lines = gcnew cli::array< System::String^  >(1) { L"High Speed" };
+			this->metroTextBox16->Location = System::Drawing::Point(163, 557);
+			this->metroTextBox16->MaxLength = 32767;
+			this->metroTextBox16->Name = L"metroTextBox16";
+			this->metroTextBox16->PasswordChar = '\0';
+			this->metroTextBox16->ReadOnly = true;
+			this->metroTextBox16->ScrollBars = System::Windows::Forms::ScrollBars::None;
+			this->metroTextBox16->SelectedText = L"";
+			this->metroTextBox16->SelectionLength = 0;
+			this->metroTextBox16->SelectionStart = 0;
+			this->metroTextBox16->ShortcutsEnabled = true;
+			this->metroTextBox16->Size = System::Drawing::Size(118, 20);
+			this->metroTextBox16->TabIndex = 30;
+			this->metroTextBox16->TabStop = false;
+			this->metroTextBox16->Text = L"High Speed";
+			this->metroTextBox16->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->metroTextBox16->UseSelectable = false;
+			this->metroTextBox16->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->metroTextBox16->WaterMarkFont = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Pixel));
+			// 
+			// metroTrackBar12
+			// 
+			int HighSpeedVibrationsStrength = GetPrivateProfileInt(TEXT("Settings"), TEXT("HighSpeedVibrationsStrength"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroTrackBar12->BackColor = System::Drawing::Color::Transparent;
+			this->metroTrackBar12->Location = System::Drawing::Point(163, 583);
+			this->metroTrackBar12->Name = L"metroTrackBar12";
+			this->metroTrackBar12->Size = System::Drawing::Size(118, 23);
+			this->metroTrackBar12->Maximum = 150;
+			this->metroTrackBar12->TabIndex = 31;
+			this->metroTrackBar12->Text = L"metroTrackBar12";
+			this->metroTrackBar12->Value = HighSpeedVibrationsStrength;
+			this->metroTrackBar12->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &WMMT5::metroTrackBar12_Scroll);
+			// 
+			// metroLabel12
+			// 
+			this->metroLabel12->AutoSize = true;
+			this->metroLabel12->Location = System::Drawing::Point(213, 609);
+			this->metroLabel12->Name = L"metroLabel12";
+			this->metroLabel12->Size = System::Drawing::Size(16, 19);
+			this->metroLabel12->TabIndex = 32;
+			this->metroLabel12->Text = System::Convert::ToString(HighSpeedVibrationsStrength);
+			this->metroLabel12->Click += gcnew System::EventHandler(this, &WMMT5::metroLabel12_Click);
+			// 
 			// WMMT5
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(300, 576);
+			this->ClientSize = System::Drawing::Size(300, 829);
 			this->Controls->Add(this->numericUpDown1);
 			this->Controls->Add(this->metroLink1);
 			this->Controls->Add(this->metroLabel6);
@@ -825,6 +1231,25 @@ namespace FFBPluginGUI {
 			this->Controls->Add(this->metroTrackBar1);
 			this->Controls->Add(this->metroTextBox2);
 			this->Controls->Add(this->metroTextBox1);
+			this->Controls->Add(this->metroTextBox10);
+			this->Controls->Add(this->metroTextBox11);
+			this->Controls->Add(this->metroTextBox12);
+			this->Controls->Add(this->metroTextBox13);
+			this->Controls->Add(this->metroTextBox14);
+			this->Controls->Add(this->metroTextBox15);
+			this->Controls->Add(this->metroTextBox16);
+			this->Controls->Add(this->metroTrackBar7);
+			this->Controls->Add(this->metroTrackBar8);
+			this->Controls->Add(this->metroTrackBar9);
+			this->Controls->Add(this->metroTrackBar10);
+			this->Controls->Add(this->metroTrackBar11);
+			this->Controls->Add(this->metroTrackBar12);
+			this->Controls->Add(this->metroLabel7);
+			this->Controls->Add(this->metroLabel8);
+			this->Controls->Add(this->metroLabel9);
+			this->Controls->Add(this->metroLabel10);
+			this->Controls->Add(this->metroLabel11);
+			this->Controls->Add(this->metroLabel12);
 			this->MaximizeBox = false;
 			this->ShowIcon = false;
 			this->Name = L"WMMT5";
@@ -1242,6 +1667,96 @@ namespace FFBPluginGUI {
 	{
 		this->Hide();
 		obj->Show();
+	}
+	private: System::Void metroTrackBar7_Scroll(System::Object^  sender, System::Windows::Forms::ScrollEventArgs^  e) //Spring Strength
+	{
+		metroLabel7->Text = metroTrackBar7->Value.ToString();
+		Decimal value = metroTrackBar7->Value;
+		int myInt{ value };
+		char Result[16];
+		sprintf_s(Result, "%d", myInt);
+		{
+			WritePrivateProfileStringA("Settings", "SpringStrength", Result, ".\\FFBPlugin.ini");
+		}
+	}
+	private: System::Void metroLabel7_Click(System::Object^  sender, System::EventArgs^  e) //Spring Strength
+	{
+
+	}
+	private: System::Void metroTrackBar8_Scroll(System::Object^  sender, System::Windows::Forms::ScrollEventArgs^  e) //Friction Strength
+	{
+		metroLabel8->Text = metroTrackBar8->Value.ToString();
+		Decimal value = metroTrackBar8->Value;
+		int myInt{ value };
+		char Result[16];
+		sprintf_s(Result, "%d", myInt);
+		{
+			WritePrivateProfileStringA("Settings", "FrictionStrength", Result, ".\\FFBPlugin.ini");
+		}
+	}
+	private: System::Void metroLabel8_Click(System::Object^  sender, System::EventArgs^  e) //Friction Strength
+	{
+
+	}
+	private: System::Void metroTrackBar9_Scroll(System::Object^  sender, System::Windows::Forms::ScrollEventArgs^  e) //Joints And Stripes Strength
+	{
+		metroLabel9->Text = metroTrackBar9->Value.ToString();
+		Decimal value = metroTrackBar9->Value;
+		int myInt{ value };
+		char Result[16];
+		sprintf_s(Result, "%d", myInt);
+		{
+			WritePrivateProfileStringA("Settings", "JointsAndStripesStrength", Result, ".\\FFBPlugin.ini");
+		}
+	}
+	private: System::Void metroLabel9_Click(System::Object^  sender, System::EventArgs^  e) //Joints And Stripes Strength
+	{
+
+	}
+	private: System::Void metroTrackBar10_Scroll(System::Object^  sender, System::Windows::Forms::ScrollEventArgs^  e) //Collisions Strength
+	{
+		metroLabel10->Text = metroTrackBar10->Value.ToString();
+		Decimal value = metroTrackBar10->Value;
+		int myInt{ value };
+		char Result[16];
+		sprintf_s(Result, "%d", myInt);
+		{
+			WritePrivateProfileStringA("Settings", "CollisionsStrength", Result, ".\\FFBPlugin.ini");
+		}
+	}
+	private: System::Void metroLabel10_Click(System::Object^  sender, System::EventArgs^  e) //Collisions Strength
+	{
+
+	}
+	private: System::Void metroTrackBar11_Scroll(System::Object^  sender, System::Windows::Forms::ScrollEventArgs^  e) //Tires Slip Strength
+	{
+		metroLabel11->Text = metroTrackBar11->Value.ToString();
+		Decimal value = metroTrackBar11->Value;
+		int myInt{ value };
+		char Result[16];
+		sprintf_s(Result, "%d", myInt);
+		{
+			WritePrivateProfileStringA("Settings", "TiresSlipStrength", Result, ".\\FFBPlugin.ini");
+		}
+	}
+	private: System::Void metroLabel11_Click(System::Object^  sender, System::EventArgs^  e) //Tires Slip Strength
+	{
+
+	}
+	private: System::Void metroTrackBar12_Scroll(System::Object^  sender, System::Windows::Forms::ScrollEventArgs^  e) //High Speed Vibrations Strength
+	{
+		metroLabel12->Text = metroTrackBar12->Value.ToString();
+		Decimal value = metroTrackBar12->Value;
+		int myInt{ value };
+		char Result[16];
+		sprintf_s(Result, "%d", myInt);
+		{
+			WritePrivateProfileStringA("Settings", "HighSpeedVibrationsStrength", Result, ".\\FFBPlugin.ini");
+		}
+	}
+	private: System::Void metroLabel12_Click(System::Object^  sender, System::EventArgs^  e) //High Speed Vibrations Strength
+	{
+
 	}
 	};
 }
