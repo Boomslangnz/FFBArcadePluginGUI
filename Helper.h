@@ -82,7 +82,7 @@ namespace FFBPluginGUI {
 			this->backLink->TabStop = false;
 			this->backLink->Text = L"Go Back To Previous Menu";
 			this->backLink->UseSelectable = false;
-			this->backLink->Click += gcnew System::EventHandler(this, &Helper::backLink_Click);
+			this->backLink->Click += gcnew System::EventHandler(this, &Helper::BackLink_Click);
 			this->Controls->Add(this->backLink);
 
 			this->toolTip->Style = MetroFramework::MetroColorStyle::Blue;
@@ -110,7 +110,7 @@ namespace FFBPluginGUI {
 			}
 		}
 		   
-		Void backLink_Click(System::Object^ sender, System::EventArgs^ e)
+		Void BackLink_Click(System::Object^ sender, System::EventArgs^ e)
 		{
 			this->Hide();
 			this->obj->Show();
@@ -174,7 +174,7 @@ namespace FFBPluginGUI {
 			this->deviceSelectorComboBox->TabStop = false;
 			this->deviceSelectorComboBox->UseSelectable = false;
 
-			this->deviceSelectorComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::deviceSelector_SelectedIndexChanged);
+			this->deviceSelectorComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::DeviceSelector_SelectedIndexChanged);
 
 			this->Controls->Add(this->deviceSelectorComboBox);
 
@@ -187,7 +187,7 @@ namespace FFBPluginGUI {
 			this->AddDeviceSelector(locY);
 		}
 
-		Void deviceSelector_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)
+		Void DeviceSelector_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)
 		{
 			if (this->deviceSelectorComboBox->SelectedItem == "Select no device")
 			{
@@ -361,36 +361,36 @@ namespace FFBPluginGUI {
 			// It's ugly but I don't know how to make dynamic calls to member functions
 			switch (i)
 			{
-				case 0: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar0_ValueChanged); break;
-				case 1: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar1_ValueChanged); break;
-				case 2: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar2_ValueChanged); break;
-				case 3: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar3_ValueChanged); break;
-				case 4: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar4_ValueChanged); break;
-				case 5: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar5_ValueChanged); break;
-				case 6: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar6_ValueChanged); break;
-				case 7: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar7_ValueChanged); break;
-				case 8: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar8_ValueChanged); break;
-				case 9: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar9_ValueChanged); break;
-				case 10: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar10_ValueChanged); break;
-				case 11: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar11_ValueChanged); break;
-				case 12: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar12_ValueChanged); break;
-				case 13: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar13_ValueChanged); break;
-				case 14: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar14_ValueChanged); break;
-				case 15: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar15_ValueChanged); break;
-				case 16: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar16_ValueChanged); break;
-				case 17: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar17_ValueChanged); break;
-				case 18: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar18_ValueChanged); break;
-				case 19: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar19_ValueChanged); break;
-				case 20: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar20_ValueChanged); break;
-				case 21: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar21_ValueChanged); break;
-				case 22: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar22_ValueChanged); break;
-				case 23: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar23_ValueChanged); break;
-				case 24: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar24_ValueChanged); break;
-				case 25: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar25_ValueChanged); break;
-				case 26: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar26_ValueChanged); break;
-				case 27: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar27_ValueChanged); break;
-				case 28: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar28_ValueChanged); break;
-				case 29: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::trackBar29_ValueChanged); break;
+				case 0: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar0_ValueChanged); break;
+				case 1: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar1_ValueChanged); break;
+				case 2: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar2_ValueChanged); break;
+				case 3: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar3_ValueChanged); break;
+				case 4: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar4_ValueChanged); break;
+				case 5: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar5_ValueChanged); break;
+				case 6: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar6_ValueChanged); break;
+				case 7: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar7_ValueChanged); break;
+				case 8: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar8_ValueChanged); break;
+				case 9: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar9_ValueChanged); break;
+				case 10: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar10_ValueChanged); break;
+				case 11: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar11_ValueChanged); break;
+				case 12: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar12_ValueChanged); break;
+				case 13: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar13_ValueChanged); break;
+				case 14: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar14_ValueChanged); break;
+				case 15: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar15_ValueChanged); break;
+				case 16: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar16_ValueChanged); break;
+				case 17: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar17_ValueChanged); break;
+				case 18: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar18_ValueChanged); break;
+				case 19: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar19_ValueChanged); break;
+				case 20: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar20_ValueChanged); break;
+				case 21: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar21_ValueChanged); break;
+				case 22: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar22_ValueChanged); break;
+				case 23: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar23_ValueChanged); break;
+				case 24: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar24_ValueChanged); break;
+				case 25: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar25_ValueChanged); break;
+				case 26: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar26_ValueChanged); break;
+				case 27: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar27_ValueChanged); break;
+				case 28: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar28_ValueChanged); break;
+				case 29: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar29_ValueChanged); break;
 				default: break;
 			}
 
@@ -507,7 +507,7 @@ namespace FFBPluginGUI {
 			}
 		}
 
-		Void trackBar_ValueChanged(Object^ sender, EventArgs^ e, int index)
+		Void TrackBar_ValueChanged(Object^ sender, EventArgs^ e, int index)
 		{
 			msclr::interop::marshal_context context;
 			LPCSTR pparam = context.marshal_as<const CHAR*>(this->TrackBarParamList[index]);
@@ -520,36 +520,36 @@ namespace FFBPluginGUI {
 				WritePrivateProfileStringA("Settings", pparam, Result, ".\\FFBPlugin.ini");
 			}
 		}
-		Void trackBar0_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 0); }
-		Void trackBar1_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 1); }
-		Void trackBar2_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 2); }
-		Void trackBar3_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 3); }
-		Void trackBar4_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 4); }
-		Void trackBar5_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 5); }
-		Void trackBar6_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 6); }
-		Void trackBar7_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 7); }
-		Void trackBar8_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 8); }
-		Void trackBar9_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 9); }
-		Void trackBar10_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 10); }
-		Void trackBar11_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 11); }
-		Void trackBar12_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 12); }
-		Void trackBar13_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 13); }
-		Void trackBar14_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 14); }
-		Void trackBar15_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 15); }
-		Void trackBar16_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 16); }
-		Void trackBar17_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 17); }
-		Void trackBar18_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 18); }
-		Void trackBar19_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 19); }
-		Void trackBar20_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 20); }
-		Void trackBar21_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 21); }
-		Void trackBar22_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 22); }
-		Void trackBar23_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 23); }
-		Void trackBar24_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 24); }
-		Void trackBar25_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 25); }
-		Void trackBar26_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 26); }
-		Void trackBar27_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 27); }
-		Void trackBar28_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 28); }
-		Void trackBar29_ValueChanged(Object^ sender, EventArgs^ e) { this->trackBar_ValueChanged(sender, e, 29); }
+		Void TrackBar0_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 0); }
+		Void TrackBar1_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 1); }
+		Void TrackBar2_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 2); }
+		Void TrackBar3_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 3); }
+		Void TrackBar4_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 4); }
+		Void TrackBar5_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 5); }
+		Void TrackBar6_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 6); }
+		Void TrackBar7_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 7); }
+		Void TrackBar8_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 8); }
+		Void TrackBar9_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 9); }
+		Void TrackBar10_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 10); }
+		Void TrackBar11_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 11); }
+		Void TrackBar12_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 12); }
+		Void TrackBar13_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 13); }
+		Void TrackBar14_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 14); }
+		Void TrackBar15_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 15); }
+		Void TrackBar16_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 16); }
+		Void TrackBar17_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 17); }
+		Void TrackBar18_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 18); }
+		Void TrackBar19_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 19); }
+		Void TrackBar20_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 20); }
+		Void TrackBar21_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 21); }
+		Void TrackBar22_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 22); }
+		Void TrackBar23_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 23); }
+		Void TrackBar24_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 24); }
+		Void TrackBar25_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 25); }
+		Void TrackBar26_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 26); }
+		Void TrackBar27_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 27); }
+		Void TrackBar28_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 28); }
+		Void TrackBar29_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 29); }
 
 		Void AddCheckBox(String^ param, String^ text, int locX, int locY, int width, int height, String^ tooltip)
 		{
