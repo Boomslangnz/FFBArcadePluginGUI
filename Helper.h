@@ -30,12 +30,17 @@ namespace FFBPluginGUI {
 		MetroForm^ obj;
 		MetroLink^ backLink = gcnew MetroLink();
 		MetroFramework::Components::MetroToolTip^ toolTip = gcnew MetroFramework::Components::MetroToolTip();
-		MetroComboBox^ deviceSelectorComboBox = gcnew MetroComboBox();
+		MetroComboBox^ device1SelectorComboBox = gcnew MetroComboBox();
+		MetroComboBox^ device2SelectorComboBox = gcnew MetroComboBox();
+		MetroComboBox^ device3SelectorComboBox = gcnew MetroComboBox();
+		MetroComboBox^ device4SelectorComboBox = gcnew MetroComboBox();
 		List<MetroTrackBar^>^ trackBarList = gcnew List<MetroTrackBar^>();
 		List<String^>^ trackBarParamList = gcnew List<String^>();
 		List<MetroLabel^>^ trackBarLabelList = gcnew List<MetroLabel^>();
 		List<MetroCheckBox^>^ checkBoxList = gcnew List<MetroCheckBox^>();
 		List<String^>^ checkBoxParamList = gcnew List<String^>();
+		List<MetroComboBox^>^ comboBoxList = gcnew List<MetroComboBox^>();
+		List<String^>^ comboBoxParamList = gcnew List<String^>();
 		const int page1ColWidth = 160;
 		const int page2ColsWidth = 300;
 		bool is1ColPage = false;
@@ -51,7 +56,10 @@ namespace FFBPluginGUI {
 		const int trackBarHeight = 20;
 		const int trackBarOuterHeight = 20;
 		const int trackBarLabelOuterHeight = 26;
+		const int checkBoxHeight = 15;
 		const int checkBoxOuterHeight = 21;
+		const int comboBoxHeight = 29;
+		const int comboBoxOuterHeight = 35;
 		int leftColPosY = this->minPosY;
 		int rightColPosY = this->minPosY;
 		bool nextItemOnRightCol = false;
@@ -110,10 +118,27 @@ namespace FFBPluginGUI {
 			}
 		}
 		   
-		Void BackLink_Click(System::Object^ sender, System::EventArgs^ e)
+		Void BackLink_Click(Object^ sender, EventArgs^ e)
 		{
 			this->Hide();
 			this->obj->Show();
+		}
+
+		int GetIniValue(String^ param)
+		{
+			msclr::interop::marshal_context context;
+			LPCTSTR pparam = context.marshal_as<const TCHAR*>(param);
+
+			return GetPrivateProfileInt(TEXT("Settings"), pparam, 0, TEXT(".\\FFBPlugin.ini"));
+		}
+
+		Void SetIniValue(String^ param, String^ value)
+		{
+			msclr::interop::marshal_context context;
+			LPCSTR pparam = context.marshal_as<const CHAR*>(param);
+			LPCSTR pvalue = context.marshal_as<const CHAR*>(value);
+
+			WritePrivateProfileStringA("Settings", pparam, pvalue, ".\\FFBPlugin.ini");
 		}
 
 		Void New1ColPage()
@@ -146,66 +171,128 @@ namespace FFBPluginGUI {
 			this->is1ColPage = false;
 		}
 
-		Void AddDeviceSelector(int locY)
+		Void AddSpace()
 		{
-			this->AddTextBox("Device GUID", this->leftColX, locY, this->longWidth, this->textBoxHeight, L" Device GUID FFBPlugin will use to apply forces to device ");
+			this->leftColPosY += 12;
+		}
+
+		Void AddDeviceSelector(int device, LPCSTR param, String^ text, String^ tooltîp, MetroComboBox^ comboBox, int locY)
+		{
+			this->AddTextBox(text, this->leftColX, locY, this->longWidth, this->textBoxHeight, tooltîp);
 			locY += this->textBoxOuterHeight;
 			for (int i = 0; i < SDL_NumJoysticks(); i++)
 			{
 				SDL_Joystick* js1 = SDL_JoystickOpen(i);
 				char buff[300];
-				GetPrivateProfileStringA("Settings", "DeviceGUID", "No FFBPlugin.ini found", buff, _countof(buff), ".\\FFBPlugin.ini");
+				GetPrivateProfileStringA("Settings", param, "No FFBPlugin.ini found", buff, _countof(buff), ".\\FFBPlugin.ini");
 				String^ str = gcnew String(buff);
 				String^ bah1 = gcnew String(SDL_JoystickName(js1));
-				this->deviceSelectorComboBox->Text = str;
-				this->deviceSelectorComboBox->Items->Add(bah1);
+				comboBox->Text = str;
+				comboBox->Items->Add(bah1);
 			}
 			if (SDL_NumJoysticks() == 0)
 			{
-				this->deviceSelectorComboBox->Text = "SDL2 Cannot Detect Any Joystick";
+				comboBox->Text = "SDL2 Cannot Detect Any Joystick";
 			}
-			this->deviceSelectorComboBox->FormattingEnabled = true;
-			this->deviceSelectorComboBox->ItemHeight = 23;
-			this->deviceSelectorComboBox->Location = System::Drawing::Point(this->leftColX, locY);
-			this->deviceSelectorComboBox->Name = L"metroComboBox1";
-			this->deviceSelectorComboBox->Items->Add("Select no device");
-			this->deviceSelectorComboBox->Size = System::Drawing::Size(this->longWidth, 29);
-			this->deviceSelectorComboBox->TabIndex = this->tabIndex++;
-			this->deviceSelectorComboBox->TabStop = false;
-			this->deviceSelectorComboBox->UseSelectable = false;
+			comboBox->FormattingEnabled = true;
+			comboBox->ItemHeight = 23;
+			comboBox->Location = System::Drawing::Point(this->leftColX, locY);
+			comboBox->Name = L"";
+			comboBox->Items->Add("Select no device");
+			comboBox->Size = System::Drawing::Size(this->longWidth, 29);
+			comboBox->TabIndex = this->tabIndex++;
+			comboBox->TabStop = false;
+			comboBox->UseSelectable = false;
 
-			this->deviceSelectorComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::DeviceSelector_SelectedIndexChanged);
+			switch (device)
+			{
+				case 1: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::Device1Selector_SelectedIndexChanged); break;
+				case 2: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::Device2Selector_SelectedIndexChanged); break;
+				case 3: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::Device3Selector_SelectedIndexChanged); break;
+				case 4: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::Device4Selector_SelectedIndexChanged); break;
+				default: break;
+			}
 
-			this->Controls->Add(this->deviceSelectorComboBox);
+			this->Controls->Add(comboBox);
 
 			this->leftColPosY = this->rightColPosY = locY + 35;
 		}
-		Void AutoAddDeviceSelector()
+		Void AddDevice1Selector(int locY)
+		{
+			this->AddDeviceSelector(1, "DeviceGUID", L"Device GUID", L"Device GUID FFBPlugin will use to apply forces to device 1", this->device1SelectorComboBox, locY);
+		}
+		Void AddDevice2Selector(int locY)
+		{
+			this->AddDeviceSelector(2, "Device2GUID", L"Device 2 GUID", L"Device GUID FFBPlugin will use to apply forces to device 2", this->device2SelectorComboBox, locY);
+		}
+		Void AddDevice3Selector(int locY)
+		{
+			this->AddDeviceSelector(3, "Device3GUID", L"Device 3 GUID", L"Device GUID FFBPlugin will use to apply forces to device 3", this->device3SelectorComboBox, locY);
+		}
+		Void AddDevice4Selector(int locY)
+		{
+			this->AddDeviceSelector(4, "Device4GUID", L"Device 4 GUID", L"Device GUID FFBPlugin will use to apply forces to device 4", this->device4SelectorComboBox, locY);
+		}
+		Void AutoAddDevice1Selector()
 		{
 			int locY = this->leftColPosY > this->rightColPosY ? this->leftColPosY : this->rightColPosY;
 
-			this->AddDeviceSelector(locY);
+			this->AddDevice1Selector(locY);
+		}
+		Void AutoAddDevice2Selector()
+		{
+			int locY = this->leftColPosY > this->rightColPosY ? this->leftColPosY : this->rightColPosY;
+
+			this->AddDevice2Selector(locY);
+		}
+		Void AutoAddDevice3Selector()
+		{
+			int locY = this->leftColPosY > this->rightColPosY ? this->leftColPosY : this->rightColPosY;
+
+			this->AddDevice3Selector(locY);
+		}
+		Void AutoAddDevice4Selector()
+		{
+			int locY = this->leftColPosY > this->rightColPosY ? this->leftColPosY : this->rightColPosY;
+
+			this->AddDevice4Selector(locY);
 		}
 
-		Void DeviceSelector_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)
+		Void DeviceSelector_SelectedIndexChanged(Object^ sender, EventArgs^ e, String^ param, MetroComboBox^ comboBox)
 		{
-			if (this->deviceSelectorComboBox->SelectedItem == "Select no device")
+			if (comboBox->SelectedItem == "Select no device")
 			{
-				WritePrivateProfileStringA("Settings", "DeviceGUID", "", ".\\FFBPlugin.ini");
-				this->deviceSelectorComboBox->Text = "";
+				this->SetIniValue(param, "");
+				comboBox->Text = "";
 			}
 			else
 			{
-				SDL_Joystick* js = SDL_JoystickOpen(this->deviceSelectorComboBox->SelectedIndex);
+				SDL_Joystick* js = SDL_JoystickOpen(comboBox->SelectedIndex);
 				SDL_JoystickGUID guid = SDL_JoystickGetGUID(js);
 				char text[256];
 				SDL_JoystickGetGUIDString(guid, text, 256);
 				String^ str = gcnew String(text);
-				this->deviceSelectorComboBox->Text = str;
+				comboBox->Text = str;
 				{
-					WritePrivateProfileStringA("Settings", "DeviceGUID", text, ".\\FFBPlugin.ini");
+					this->SetIniValue(param, str);
 				}
 			}
+		}
+		Void Device1Selector_SelectedIndexChanged(Object^ sender, EventArgs^ e)
+		{
+			this->DeviceSelector_SelectedIndexChanged(sender, e, "DeviceGUID", this->device1SelectorComboBox);
+		}
+		Void Device2Selector_SelectedIndexChanged(Object^ sender, EventArgs^ e)
+		{
+			this->DeviceSelector_SelectedIndexChanged(sender, e, "Device2GUID", this->device2SelectorComboBox);
+		}
+		Void Device3Selector_SelectedIndexChanged(Object^ sender, EventArgs^ e)
+		{
+			this->DeviceSelector_SelectedIndexChanged(sender, e, "Device3GUID", this->device3SelectorComboBox);
+		}
+		Void Device4Selector_SelectedIndexChanged(Object^ sender, EventArgs^ e)
+		{
+			this->DeviceSelector_SelectedIndexChanged(sender, e, "Device4GUID", this->device4SelectorComboBox);
 		}
 
 		Void AddTextBox(String^ text, int locX, int locY, int width, int height, /*int buttonLocX, int buttonLocY, int buttonWidth, int buttonHeight,*/ String^ tooltip)
@@ -221,7 +308,7 @@ namespace FFBPluginGUI {
 			textBox->CustomButton->Theme = MetroFramework::MetroThemeStyle::Light;
 			textBox->CustomButton->UseSelectable = false;
 			textBox->CustomButton->Visible = false;*/
-			textBox->Lines = gcnew cli::array< System::String^  >(1) { text };
+			textBox->Lines = gcnew cli::array< String^  >(1) { text };
 			textBox->Location = System::Drawing::Point(locX, locY);
 			textBox->MaxLength = 32767;
 			textBox->Name = L"";
@@ -290,7 +377,7 @@ namespace FFBPluginGUI {
 				return this->AutoAddShortTextBoxOnLeftCol(text, tooltip);
 			}
 
-			if (this->lastItemType != "" && this->lastItemType != "TextBox")
+			if (this->lastItemType != "" && this->lastItemType != "TextBox" && this->lastItemType != "ComboBox")
 			{
 				this->leftColPosY += 12;
 			}
@@ -300,7 +387,7 @@ namespace FFBPluginGUI {
 		}
 		Void AutoAddShortTextBoxOnLeftCol(String^ text, String^ tooltip)
 		{
-			if (this->lastItemType != "" && this->lastItemType != "TextBox")
+			if (this->lastItemType != "" && this->lastItemType != "TextBox" && this->lastItemType != "ComboBox")
 			{
 				this->leftColPosY += 12;
 			}
@@ -329,15 +416,12 @@ namespace FFBPluginGUI {
 
 		Void AddTrackBar(String^ param, int locX, int locY, int width, int height, int min, int max)
 		{
-			msclr::interop::marshal_context context;
-			LPCTSTR pparam = context.marshal_as<const TCHAR*>(param);
-
 			MetroTrackBar^ trackBar = gcnew MetroTrackBar();
 
-			int config = GetPrivateProfileInt(TEXT("Settings"), pparam, 0, TEXT(".\\FFBPlugin.ini"));
-			if (!(config >= min && config <= max))
+			int value = this->GetIniValue(param);
+			if (!(value >= min && value <= max))
 			{
-				config = min;
+				value = min;
 			}
 			trackBar->BackColor = System::Drawing::Color::Transparent;
 			trackBar->Location = System::Drawing::Point(locX, locY);
@@ -350,7 +434,7 @@ namespace FFBPluginGUI {
 			trackBar->TabIndex = this->tabIndex++;
 			trackBar->TabStop = false;
 			trackBar->Text = L"";
-			trackBar->Value = config;
+			trackBar->Value = value;
 
 			this->trackBarList->Add(trackBar);
 			this->trackBarParamList->Add(param);
@@ -470,7 +554,7 @@ namespace FFBPluginGUI {
 				return this->AutoAddShortTrackBarBlockOnLeftCol(param, text, min, max, tooltip);
 			}
 
-			if (this->lastItemType != "" && this->lastItemType != "TrackBar" && this->lastItemType != "TextBox")
+			if (this->lastItemType != "" && this->lastItemType != "TrackBar" && this->lastItemType != "ComboBox" && this->lastItemType != "TextBox")
 			{
 				this->leftColPosY += 12;
 			}
@@ -480,7 +564,7 @@ namespace FFBPluginGUI {
 		}
 		Void AutoAddShortTrackBarBlockOnLeftCol(String^ param, String^ text, int min, int max, String^ tooltip)
 		{
-			if (this->lastItemType != "" && this->lastItemType != "TrackBar" && this->lastItemType != "TextBox")
+			if (this->lastItemType != "" && this->lastItemType != "TrackBar" && this->lastItemType != "ComboBox" && this->lastItemType != "TextBox")
 			{
 				this->leftColPosY += 12;
 			}
@@ -509,15 +593,10 @@ namespace FFBPluginGUI {
 
 		Void TrackBar_ValueChanged(Object^ sender, EventArgs^ e, int index)
 		{
-			msclr::interop::marshal_context context;
-			LPCSTR pparam = context.marshal_as<const CHAR*>(this->trackBarParamList[index]);
-
 			int value = this->trackBarList[index]->Value;
 			this->trackBarLabelList[index]->Text = System::Convert::ToString(value);
-			char Result[16];
-			sprintf_s(Result, "%d", value);
 			{
-				WritePrivateProfileStringA("Settings", pparam, Result, ".\\FFBPlugin.ini");
+				this->SetIniValue(this->trackBarParamList[index], System::Convert::ToString(value));
 			}
 		}
 		Void TrackBar0_ValueChanged(Object^ sender, EventArgs^ e) { this->TrackBar_ValueChanged(sender, e, 0); }
@@ -553,12 +632,9 @@ namespace FFBPluginGUI {
 
 		Void AddCheckBox(String^ param, String^ text, int locX, int locY, int width, int height, String^ tooltip)
 		{
-			msclr::interop::marshal_context context;
-			LPCTSTR pparam = context.marshal_as<const TCHAR*>(param);
-
 			MetroCheckBox^ checkBox = gcnew MetroCheckBox();
 
-			int ResetFB = GetPrivateProfileInt(TEXT("Settings"), pparam, 0, TEXT(".\\FFBPlugin.ini"));
+			int value = this->GetIniValue(param);
 			checkBox->AutoSize = true;
 			checkBox->Location = System::Drawing::Point(locX, locY);
 			checkBox->Name = "";
@@ -567,7 +643,7 @@ namespace FFBPluginGUI {
 			checkBox->TabStop = false;
 			checkBox->Text = text;
 			checkBox->UseSelectable = false;
-			checkBox->Checked = ResetFB;
+			checkBox->Checked = value;
 
 			this->checkBoxList->Add(checkBox);
 			this->checkBoxParamList->Add(param);
@@ -626,14 +702,14 @@ namespace FFBPluginGUI {
 				return this->AddShortCheckBoxOnLeftCol(param, text, locY, tooltip);
 			}
 
-			this->AddCheckBox(param, text, this->leftColX, locY, this->longWidth, 15, tooltip);
+			this->AddCheckBox(param, text, this->leftColX, locY, this->longWidth, this->checkBoxHeight, tooltip);
 
 			this->leftColPosY = this->rightColPosY = locY + this->checkBoxOuterHeight;
 			this->nextItemOnRightCol = false;
 		}
 		Void AddShortCheckBoxOnLeftCol(String^ param, String^ text, int locY, String^ tooltip)
 		{
-			this->AddCheckBox(param, text, this->leftColX, locY, this->shortWidth, 15, tooltip);
+			this->AddCheckBox(param, text, this->leftColX, locY, this->shortWidth, this->checkBoxHeight, tooltip);
 
 			this->rightColPosY = locY;
 			this->leftColPosY = locY + this->checkBoxOuterHeight;
@@ -646,7 +722,7 @@ namespace FFBPluginGUI {
 				return this->AddShortCheckBoxOnLeftCol(param, text, locY, tooltip);
 			}
 
-			this->AddCheckBox(param, text, this->rightColX, locY, this->shortWidth, 15, tooltip);
+			this->AddCheckBox(param, text, this->rightColX, locY, this->shortWidth, this->checkBoxHeight, tooltip);
 
 			this->rightColPosY = locY + this->checkBoxOuterHeight;
 			this->nextItemOnRightCol = false;
@@ -697,10 +773,7 @@ namespace FFBPluginGUI {
 
 		Void CheckBox_CheckedChanged(Object^ sender, EventArgs^ e, int index)
 		{
-			msclr::interop::marshal_context context;
-			LPCSTR pparam = context.marshal_as<const CHAR*>(this->checkBoxParamList[index]);
-
-			WritePrivateProfileStringA("Settings", pparam, this->checkBoxList[index]->Checked ? "1" : "0", ".\\FFBPlugin.ini");
+			this->SetIniValue(this->checkBoxParamList[index], this->checkBoxList[index]->Checked ? "1" : "0");
 		}
 		Void CheckBox0_CheckedChanged(Object^ sender, EventArgs^ e) { this->CheckBox_CheckedChanged(sender, e, 0); }
 		Void CheckBox1_CheckedChanged(Object^ sender, EventArgs^ e) { this->CheckBox_CheckedChanged(sender, e, 1); }
@@ -732,5 +805,176 @@ namespace FFBPluginGUI {
 		Void CheckBox27_CheckedChanged(Object^ sender, EventArgs^ e) { this->CheckBox_CheckedChanged(sender, e, 27); }
 		Void CheckBox28_CheckedChanged(Object^ sender, EventArgs^ e) { this->CheckBox_CheckedChanged(sender, e, 28); }
 		Void CheckBox29_CheckedChanged(Object^ sender, EventArgs^ e) { this->CheckBox_CheckedChanged(sender, e, 29); }
+
+		Void AddComboBox(String^ params, String^ choices, int locX, int locY, int width, int height)
+		{
+			MetroComboBox^ comboBox = gcnew MetroComboBox();
+			   
+			comboBox->FormattingEnabled = true;
+			comboBox->ItemHeight = height * 0.8;
+			comboBox->Location = System::Drawing::Point(locX, locY);
+			comboBox->Name = L"";
+			comboBox->Size = System::Drawing::Size(width, height);
+			comboBox->TabIndex = this->tabIndex++;
+			comboBox->TabStop = false;
+			comboBox->UseSelectable = false;
+
+			array<String^>^ choicesArray = choices->Split('|');
+			for each (String ^ choice in choicesArray)
+			{
+				comboBox->Items->Add(choice);
+			}
+
+			array<String^>^ paramsArray = params->Split('|');
+			if (paramsArray->Length > 1)
+			{
+				for (int i = 0; i < paramsArray->Length; i++)
+				{
+					if (this->GetIniValue(paramsArray[i]) == 1)
+					{
+						comboBox->Text = choicesArray[i];
+					}
+				}
+			}
+			else
+			{
+				int value = this->GetIniValue(params);
+				if (value >= 0)
+				{
+					comboBox->Text = choicesArray[value];
+				}
+			}
+
+			this->comboBoxList->Add(comboBox);
+			this->comboBoxParamList->Add(params);
+
+			int i = this->comboBoxList->Count - 1;
+
+			// It's ugly but I don't know how to make dynamic calls to member functions
+			switch (i)
+			{
+				case 0: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox0_SelectedIndexChanged); break;
+				case 1: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox1_SelectedIndexChanged); break;
+				case 2: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox2_SelectedIndexChanged); break;
+				case 3: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox3_SelectedIndexChanged); break;
+				case 4: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox4_SelectedIndexChanged); break;
+				case 5: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox5_SelectedIndexChanged); break;
+				case 6: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox6_SelectedIndexChanged); break;
+				case 7: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox7_SelectedIndexChanged); break;
+				case 8: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox8_SelectedIndexChanged); break;
+				case 9: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox9_SelectedIndexChanged); break;
+				default: break;
+			}
+
+			this->Controls->Add(comboBox);
+
+			this->lastItemType = "ComboBox";
+		}
+		Void AddComboBoxBlock(String^ params, String^ text, String^ choices, int locX, int locY, int width, String^ tooltip)
+		{
+			this->AddTextBox(text, locX, locY, width, this->textBoxHeight, tooltip);
+			this->AddComboBox(params, choices, locX, locY + this->textBoxOuterHeight, width, this->comboBoxHeight);
+		}
+		Void AddLongComboBoxBlock(String^ params, String^ text, String^ choices, int locY, String^ tooltip)
+		{
+			if (this->is1ColPage)
+			{
+				return this->AddShortComboBoxBlockOnLeftCol(params, text, choices, locY, tooltip);
+			}
+
+			this->AddComboBoxBlock(params, text, choices, this->leftColX, locY, this->longWidth, tooltip);
+
+			this->leftColPosY = this->rightColPosY = locY + this->textBoxOuterHeight + this->comboBoxOuterHeight;
+			this->nextItemOnRightCol = false;
+		}
+		Void AddShortComboBoxBlockOnLeftCol(String^ params, String^ text, String^ choices, int locY, String^ tooltip)
+		{
+			this->AddComboBoxBlock(params, text, choices, this->leftColX, locY, this->shortWidth, tooltip);
+
+			this->rightColPosY = locY;
+			this->leftColPosY = locY + this->textBoxOuterHeight + this->comboBoxOuterHeight;
+			this->nextItemOnRightCol = true;
+		}
+		Void AddShortComboBoxBlockOnRightCol(String^ params, String^ text, String^ choices, int locY, String^ tooltip)
+		{
+			if (this->is1ColPage)
+			{
+				return this->AddShortComboBoxBlockOnLeftCol(params, text, choices, locY, tooltip);
+			}
+
+			this->AddComboBoxBlock(params, text, choices, this->rightColX, locY, this->shortWidth, tooltip);
+
+			this->rightColPosY = locY + this->textBoxOuterHeight + this->comboBoxOuterHeight;
+			this->nextItemOnRightCol = false;
+		}
+		Void AutoAddLongComboBoxBlock(String^ params, String^ text, String^ choices, String^ tooltip)
+		{
+			if (this->is1ColPage)
+			{
+				return this->AutoAddShortComboBoxBlockOnLeftCol(params, text, choices, tooltip);
+			}
+
+			if (this->lastItemType != "" && this->lastItemType != "ComboBox" && this->lastItemType != "TextBox")
+			{
+				this->leftColPosY += 12;
+			}
+			int locY = this->leftColPosY > this->rightColPosY ? this->leftColPosY : this->rightColPosY;
+
+			this->AddLongComboBoxBlock(params, text, choices, locY, tooltip);
+		}
+		Void AutoAddShortComboBoxBlockOnLeftCol(String^ params, String^ text, String^ choices, String^ tooltip)
+		{
+			if (this->lastItemType != "" && this->lastItemType != "ComboBox" && this->lastItemType != "TextBox")
+			{
+				this->leftColPosY += 12;
+			}
+			this->AddShortComboBoxBlockOnLeftCol(params, text, choices, this->leftColPosY, tooltip);
+		}
+		Void AutoAddShortComboBoxBlockOnRightCol(String^ params, String^ text, String^ choices, String^ tooltip)
+		{
+			if (this->is1ColPage)
+			{
+				return this->AutoAddShortComboBoxBlockOnLeftCol(params, text, choices, tooltip);
+			}
+
+			this->AddShortComboBoxBlockOnRightCol(params, text, choices, this->rightColPosY, tooltip);
+		}
+		Void AutoAddShortComboBoxBlock(String^ params, String^ text, String^ choices, String^ tooltip)
+		{
+			if (this->nextItemOnRightCol && this->lastItemType == "ComboBox")
+			{
+				this->AutoAddShortComboBoxBlockOnRightCol(params, text, choices, tooltip);
+			}
+			else
+			{
+				this->AutoAddShortComboBoxBlockOnLeftCol(params, text, choices, tooltip);
+			}
+		}
+		Void ComboBox_SelectedIndexChanged(Object^ sender, EventArgs^ e, int index)
+		{
+			int value = this->comboBoxList[index]->SelectedIndex;
+			array<String^>^ paramsArray = this->comboBoxParamList[index]->Split('|');
+			if (paramsArray->Length > 1)
+			{
+				for (int i = 0; i < paramsArray->Length; i++)
+				{
+					this->SetIniValue(paramsArray[i], value == i ? "1" : "0");
+				}
+			}
+			else
+			{
+				this->SetIniValue(this->comboBoxParamList[index], System::Convert::ToString(value));
+			}
+		}
+		Void ComboBox0_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 0); }
+		Void ComboBox1_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 1); }
+		Void ComboBox2_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 2); }
+		Void ComboBox3_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 3); }
+		Void ComboBox4_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 4); }
+		Void ComboBox5_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 5); }
+		Void ComboBox6_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 6); }
+		Void ComboBox7_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 7); }
+		Void ComboBox8_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 8); }
+		Void ComboBox9_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 9); }
 	};
 }

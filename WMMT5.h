@@ -31,7 +31,7 @@ namespace FFBPluginGUI {
 		{
 			this->SuspendLayout();
 
-			this->AutoAddDeviceSelector();
+			this->AutoAddDevice1Selector();
 			this->AutoAddLongTrackBarBlock("FeedbackLength", L"Feedback Length", 16, 1000, L"Length of a feedback command");
 
 			this->AutoAddLongTextBox(L"Options", L"");
@@ -45,11 +45,11 @@ namespace FFBPluginGUI {
 
 			this->New2ColsPage();
 
-			this->AutoAddLongTextBox(L"Global force", L"Global FFB force which affects all effects");
+			this->AutoAddLongTextBox(L"Global Force", L"Global FFB force which affects all effects");
 			this->AutoAddShortTrackBarBlock("MinForce", L"Min Force", 0, 100, L"Minimum overrall force strength that will be applied to device");
 			this->AutoAddShortTrackBarBlock("MaxForce", L"Max Force", 0, 100, L"Maximum overrall force strength that will be applied to device");
 
-			this->AutoAddLongTextBox(L"Global force for alternative FFB", L"Global FFB force if using Alternative FFB");
+			this->AutoAddLongTextBox(L"Global Force For Alternative FFB", L"Global FFB force if using Alternative FFB");
 			this->AutoAddShortTrackBarBlock("AlternativeMinForceLeft", L"Min Force Left", -100, 100, L"Minimum overrall left force strength that will be applied to device");
 			this->AutoAddShortTrackBarBlock("AlternativeMaxForceLeft", L"Max Force Left", -100, 100, L"Maximum overrall left force strength that will be applied to device");
 			this->AutoAddShortTrackBarBlock("AlternativeMinForceRight", L"Min Force Right", -100, 100, L"Minimum overrall right force strength that will be applied to device");
@@ -57,7 +57,7 @@ namespace FFBPluginGUI {
 
 			this->New2ColsPage();
 
-			this->AutoAddLongTextBox(L"Effects strength", L"");
+			this->AutoAddLongTextBox(L"Effects Strength", L"");
 			this->AutoAddShortTrackBarBlock("SpringStrength", L"Spring", 0, 150, L"");
 			this->AutoAddShortTrackBarBlock("FrictionStrength", L"Friction", 0, 150, L"");
 			this->AutoAddShortTrackBarBlock("JointsAndStripesStrength", L"Joints & Stripes", 0, 150, L"Strength when going over a joint or some stripes");
