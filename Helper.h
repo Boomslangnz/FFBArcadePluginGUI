@@ -85,7 +85,7 @@ namespace FFBPluginGUI {
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &Helper::Form_FormClosing);
 
 			this->backLink->Location = System::Drawing::Point((this->wIndowsWidth - 173) / 2, 8);
-			this->backLink->Name = L"metroLink1";
+			this->backLink->Name = L"";
 			this->backLink->Size = System::Drawing::Size(173, 23);
 			this->backLink->TabStop = false;
 			this->backLink->Text = L"Go Back To Previous Menu";
@@ -174,6 +174,82 @@ namespace FFBPluginGUI {
 		Void AddSpace()
 		{
 			this->leftColPosY += 12;
+		}
+
+		Void AutoAddComponent(String^ component)
+		{
+			if (component == "FeedbackLength")
+			{
+				this->AutoAddLongTrackBarBlock("FeedbackLength", L"Feedback Length", 16, 1000, L"Length of a feedback command");
+			}
+			else if (component == "OptionsHeader")
+			{
+				this->AutoAddLongTextBox(L"Options", L"");
+			}
+			else if (component == "EnableRumble")
+			{
+				this->AutoAddShortCheckBox("EnableRumble", L"Enable Rumble", L"Enable or disable rumble");
+			}
+			else if (component == "ReverseRumble")
+			{
+				this->AutoAddShortCheckBox("ReverseRumble", L"Reverse Rumble", L"Reverse the rumble if works incorrectly to liking");
+			}
+			else if (component == "Logging")
+			{
+				this->AutoAddShortCheckBox("Logging", L"Enable Logging", L"Enable or disable FFBlog.txt to collect log data");
+			}
+			else if (component == "ResetFeedback")
+			{
+				this->AutoAddShortCheckBox("ResetFeedback", L"Reset Feedback", L"When a command contradicts a prior command, clear the prior command");
+			}
+			else if (component == "BeepWhenHook")
+			{
+				this->AutoAddShortCheckBox("BeepWhenHook", L"Beep When Hook", L"Beep will occur when FFBPlugin hooks application");
+			}
+			else if (component == "ForceShowDeviceGUIDMessageBox")
+			{
+				this->AutoAddShortCheckBox("ForceShowDeviceGUIDMessageBox", L"GUID MessageBox", L"Messagebox will appear when launching application to show guid number");
+			}
+			else if (component == "AlternativeFFB")
+			{
+				this->AutoAddShortCheckBox("AlternativeFFB", L"Alternative FFB", L"Use if wheel rotates incorrectly");
+			}
+			else if (component == "FFBMode")
+			{
+				this->AutoAddShortCheckBox("FFBMode", L"FFB Mode", L"Enable to raise strength of low effects");
+			}
+			else if (component == "GlobalForceHeader")
+			{
+				this->AutoAddLongTextBox(L"Global Force", L"Global FFB force which affects all effects");
+			}
+			else if (component == "MinForce")
+			{
+				this->AutoAddShortTrackBarBlock("MinForce", L"Min Force", 0, 100, L"Minimum overrall force strength that will be applied to device");
+			}
+			else if (component == "MaxForce")
+			{
+				this->AutoAddShortTrackBarBlock("MaxForce", L"Max Force", 0, 100, L"Maximum overrall force strength that will be applied to device");
+			}
+			else if (component == "AltGlobalForceHeader")
+			{
+				this->AutoAddLongTextBox(L"Global Force For Alternative FFB", L"Global FFB force if using Alternative FFB");
+			}
+			else if (component == "AlternativeMinForceLeft")
+			{
+				this->AutoAddShortTrackBarBlock("AlternativeMinForceLeft", L"Min Force Left", -100, 100, L"Minimum overrall left force strength that will be applied to device");
+			}
+			else if (component == "AlternativeMaxForceLeft")
+			{
+				this->AutoAddShortTrackBarBlock("AlternativeMaxForceLeft", L"Max Force Left", -100, 100, L"Maximum overrall left force strength that will be applied to device");
+			}
+			else if (component == "AlternativeMinForceRight")
+			{
+				this->AutoAddShortTrackBarBlock("AlternativeMinForceRight", L"Min Force Right", -100, 100, L"Minimum overrall right force strength that will be applied to device");
+			}
+			else if (component == "AlternativeMaxForceRight")
+			{
+				this->AutoAddShortTrackBarBlock("AlternativeMaxForceRight", L"Max Force Right", -100, 100, L"Maximum overrall right force strength that will be applied to device");
+			}
 		}
 
 		Void AddDeviceSelector(int device, LPCSTR param, String^ text, String^ tooltîp, MetroComboBox^ comboBox, int locY)
@@ -337,6 +413,7 @@ namespace FFBPluginGUI {
 			}
 
 			this->lastItemType = "TextBox";
+			this->nextItemOnRightCol = false;
 		}
 		Void AddLongTextBox(String^ text, int locY, String^ tooltip)
 		{
@@ -481,6 +558,7 @@ namespace FFBPluginGUI {
 			this->Controls->Add(trackBar);
 
 			this->lastItemType = "TrackBar";
+			this->nextItemOnRightCol = false;
 		}
 
 		Void AddTrackBarLabel(String^ param, int locX, int locY, int width, int height)
@@ -694,6 +772,7 @@ namespace FFBPluginGUI {
 			}
 
 			this->lastItemType = "CheckBox";
+			this->nextItemOnRightCol = false;
 		}
 		Void AddLongCheckBox(String^ param, String^ text, int locY, String^ tooltip)
 		{

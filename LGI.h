@@ -33,19 +33,19 @@ namespace FFBPluginGUI {
 
 			this->AutoAddDevice1Selector();
 			this->AutoAddDevice2Selector();
-			this->AutoAddLongTrackBarBlock("FeedbackLength", L"Feedback Length", 16, 1000, L"Length of a feedback command");
+			this->AutoAddComponent("FeedbackLength");
 
-			this->AutoAddLongTextBox(L"Options", L"");
-			this->AutoAddShortCheckBox("EnableRumble", L"Enable Rumble", L"Enable or disable rumble");
-			this->AutoAddShortCheckBox("ReverseRumble", L"Reverse Rumble", L"Reverse the rumble if works incorrectly to liking");
-			this->AutoAddShortCheckBox("Logging", L"Enable Logging", L"Enable or disable FFBlog.txt to collect log data");
-			this->AutoAddShortCheckBox("ResetFeedback", L"Reset Feedback", L"When a command contradicts a prior command, clear the prior command");
-			this->AutoAddShortCheckBox("BeepWhenHook", L"Beep When Hook", L"Beep will occur when FFBPlugin hooks application");
-			this->AutoAddShortCheckBox("ForceShowDeviceGUIDMessageBox", L"GUID MessageBox", L"Messagebox will appear when launching application to show guid number");
+			this->AutoAddComponent("OptionsHeader");
+			this->AutoAddComponent("EnableRumble");
+			this->AutoAddComponent("ReverseRumble");
+			this->AutoAddComponent("Logging");
+			this->AutoAddComponent("ResetFeedback");
+			this->AutoAddComponent("BeepWhenHook");
+			this->AutoAddComponent("ForceShowDeviceGUIDMessageBox");
 
-			this->AutoAddLongTextBox(L"Global Force", L"Global FFB force which affects all effects");
-			this->AutoAddShortTrackBarBlock("MinForce", L"Min Force", 0, 100, L"Minimum overrall force strength that will be applied to device");
-			this->AutoAddShortTrackBarBlock("MaxForce", L"Max Force", 0, 100, L"Maximum overrall force strength that will be applied to device");
+			this->AutoAddComponent("GlobalForceHeader");
+			this->AutoAddComponent("MinForce");
+			this->AutoAddComponent("MaxForce");
 
 			this->New2ColsPage();
 

@@ -32,28 +32,28 @@ namespace FFBPluginGUI {
 			this->SuspendLayout();
 
 			this->AutoAddDevice1Selector();
-			this->AutoAddLongTrackBarBlock("FeedbackLength", L"Feedback Length", 16, 1000, L"Length of a feedback command");
+			this->AutoAddComponent("FeedbackLength");
 
-			this->AutoAddLongTextBox(L"Options", L"");
-			this->AutoAddShortCheckBox("EnableRumble", L"Enable Rumble", L"Enable or disable rumble");
-			this->AutoAddShortCheckBox("ReverseRumble", L"Reverse Rumble", L"Reverse the rumble if works incorrectly to liking");
-			this->AutoAddShortCheckBox("Logging", L"Enable Logging", L"Enable or disable FFBlog.txt to collect log data");
-			this->AutoAddShortCheckBox("ResetFeedback", L"Reset Feedback", L"When a command contradicts a prior command, clear the prior command");
-			this->AutoAddShortCheckBox("BeepWhenHook", L"Beep When Hook", L"Beep will occur when FFBPlugin hooks application");
-			this->AutoAddShortCheckBox("ForceShowDeviceGUIDMessageBox", L"GUID MessageBox", L"Messagebox will appear when launching application to show guid number");
-			this->AutoAddShortCheckBox("AlternativeFFB", L"Alternative FFB", L"Use if wheel rotates incorrectly");
+			this->AutoAddComponent("OptionsHeader");
+			this->AutoAddComponent("EnableRumble");
+			this->AutoAddComponent("ReverseRumble");
+			this->AutoAddComponent("Logging");
+			this->AutoAddComponent("ResetFeedback");
+			this->AutoAddComponent("BeepWhenHook");
+			this->AutoAddComponent("ForceShowDeviceGUIDMessageBox");
+			this->AutoAddComponent("AlternativeFFB");
 
 			this->New2ColsPage();
 
-			this->AutoAddLongTextBox(L"Global Force", L"Global FFB force which affects all effects");
-			this->AutoAddShortTrackBarBlock("MinForce", L"Min Force", 0, 100, L"Minimum overrall force strength that will be applied to device");
-			this->AutoAddShortTrackBarBlock("MaxForce", L"Max Force", 0, 100, L"Maximum overrall force strength that will be applied to device");
+			this->AutoAddComponent("GlobalForceHeader");
+			this->AutoAddComponent("MinForce");
+			this->AutoAddComponent("MaxForce");
 
-			this->AutoAddLongTextBox(L"Global Force For Alternative FFB", L"Global FFB force if using Alternative FFB");
-			this->AutoAddShortTrackBarBlock("AlternativeMinForceLeft", L"Min Force Left", -100, 100, L"Minimum overrall left force strength that will be applied to device");
-			this->AutoAddShortTrackBarBlock("AlternativeMaxForceLeft", L"Max Force Left", -100, 100, L"Maximum overrall left force strength that will be applied to device");
-			this->AutoAddShortTrackBarBlock("AlternativeMinForceRight", L"Min Force Right", -100, 100, L"Minimum overrall right force strength that will be applied to device");
-			this->AutoAddShortTrackBarBlock("AlternativeMaxForceRight", L"Max Force Right", -100, 100, L"Maximum overrall right force strength that will be applied to device");
+			this->AutoAddComponent("AltGlobalForceHeader");
+			this->AutoAddComponent("AlternativeMinForceLeft");
+			this->AutoAddComponent("AlternativeMaxForceLeft");
+			this->AutoAddComponent("AlternativeMinForceRight");
+			this->AutoAddComponent("AlternativeMaxForceRight");
 
 			this->New2ColsPage();
 
