@@ -35,17 +35,9 @@ namespace FFBPluginGUI {
 			this->AutoAddDevice2Selector();
 			this->AutoAddComponent("FeedbackLength");
 
-			this->AutoAddComponent("OptionsHeader");
-			this->AutoAddComponent("EnableRumble");
-			this->AutoAddComponent("ReverseRumble");
-			this->AutoAddComponent("Logging");
-			this->AutoAddComponent("ResetFeedback");
-			this->AutoAddComponent("BeepWhenHook");
-			this->AutoAddComponent("ForceShowDeviceGUIDMessageBox");
+			this->AutoAddComponent("CommonOptions");
 
-			this->AutoAddComponent("GlobalForceHeader");
-			this->AutoAddComponent("MinForce");
-			this->AutoAddComponent("MaxForce");
+			this->AutoAddComponent("GlobalForce");
 
 			this->New2ColsPage();
 

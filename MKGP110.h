@@ -34,13 +34,7 @@ namespace FFBPluginGUI {
 			this->AutoAddDevice1Selector();
 			this->AutoAddComponent("FeedbackLength");
 
-			this->AutoAddComponent("OptionsHeader");
-			this->AutoAddComponent("EnableRumble");
-			this->AutoAddComponent("ReverseRumble");
-			this->AutoAddComponent("Logging");
-			this->AutoAddComponent("ResetFeedback");
-			this->AutoAddComponent("BeepWhenHook");
-			this->AutoAddComponent("ForceShowDeviceGUIDMessageBox");
+			this->AutoAddComponent("CommonOptions");
 			this->AutoAddComponent("AlternativeFFB");
 
 			int effectsY = this->leftColPosY + 30;
@@ -58,15 +52,9 @@ namespace FFBPluginGUI {
 
 			this->New2ColsPage();
 
-			this->AutoAddComponent("GlobalForceHeader");
-			this->AutoAddComponent("MinForce");
-			this->AutoAddComponent("MaxForce");
+			this->AutoAddComponent("GlobalForce");
 
-			this->AutoAddComponent("AltGlobalForceHeader");
-			this->AutoAddComponent("AlternativeMinForceLeft");
-			this->AutoAddComponent("AlternativeMaxForceLeft");
-			this->AutoAddComponent("AlternativeMinForceRight");
-			this->AutoAddComponent("AlternativeMaxForceRight");
+			this->AutoAddComponent("AltGlobalForce");
 
 			this->leftColPosY = effectsY;
 			this->lastItemType = "";

@@ -337,6 +337,16 @@ namespace FFBPluginGUI {
 			{
 				this->AutoAddShortCheckBox("FFBMode", L"FFB Mode", L"Enable to raise strength of low effects");
 			}
+			else if (component == "CommonOptions")
+			{
+				this->AutoAddComponent("OptionsHeader");
+				this->AutoAddComponent("EnableRumble");
+				this->AutoAddComponent("ReverseRumble");
+				this->AutoAddComponent("Logging");
+				this->AutoAddComponent("ResetFeedback");
+				this->AutoAddComponent("BeepWhenHook");
+				this->AutoAddComponent("ForceShowDeviceGUIDMessageBox");
+			}
 			else if (component == "GlobalForceHeader")
 			{
 				this->AutoAddLongTextBox(L"Global Force", L"Global FFB force which affects all effects");
@@ -348,6 +358,12 @@ namespace FFBPluginGUI {
 			else if (component == "MaxForce")
 			{
 				this->AutoAddShortTrackBarBlock("MaxForce", L"Max Force", 0, 100, L"Maximum overrall force strength that will be applied to device");
+			}
+			else if (component == "GlobalForce")
+			{
+				this->AutoAddComponent("GlobalForceHeader");
+				this->AutoAddComponent("MinForce");
+				this->AutoAddComponent("MaxForce");
 			}
 			else if (component == "AltGlobalForceHeader")
 			{
@@ -368,6 +384,14 @@ namespace FFBPluginGUI {
 			else if (component == "AlternativeMaxForceRight")
 			{
 				this->AutoAddShortTrackBarBlock("AlternativeMaxForceRight", L"Max Force Right", -100, 100, L"Maximum overrall right force strength that will be applied to device");
+			}
+			else if (component == "AltGlobalForce")
+			{
+				this->AutoAddComponent("AltGlobalForceHeader");
+				this->AutoAddComponent("AlternativeMinForceLeft");
+				this->AutoAddComponent("AlternativeMaxForceLeft");
+				this->AutoAddComponent("AlternativeMinForceRight");
+				this->AutoAddComponent("AlternativeMaxForceRight");
 			}
 		}
 
