@@ -49,6 +49,7 @@ namespace FFBPluginGUI {
 
 			this->AutoAddLongComboBoxBlock(
 				"BothRumbleMotor|LeftRumbleMotor|RightRumbleMotor",
+				"",
 				L"Which rumble motor when button pressed\?",
 				L"Both Rumble Motors|Left Rumble Motor|Right Rumble Motor",
 				L"Use both rumble motors, only left motor or only right motor"

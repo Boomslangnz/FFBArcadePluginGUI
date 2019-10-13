@@ -51,18 +51,21 @@ namespace FFBPluginGUI {
 
 			this->AutoAddLongComboBoxBlock(
 				"HowtoRumbleKnockEffect",
+				"",
 				L"Which rumble motor for Knock Effect\?",
 				L"Both Rumble Motors|Left Rumble Motor|Right Rumble Motor",
 				L"Rumble motor to use for Knock Effect"
 			);
 			this->AutoAddLongComboBoxBlock(
 				"HowtoRumbleMotorEffect",
+				"",
 				L"Which rumble motor for Motor Effect\?",
 				L"Both Rumble Motors|Left Rumble Motor|Right Rumble Motor",
 				L"Rumble motor to use for Motor Effect"
 			);
 			this->AutoAddLongComboBoxBlock(
 				"HowtoRumbleHealthEffect",
+				"",
 				L"Which rumble motor for Health Effect\?",
 				L"Both Rumble Motors|Left Rumble Motor|Right Rumble Motor",
 				L"Rumble motor to use for Health Effect"

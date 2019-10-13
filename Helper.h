@@ -15,7 +15,108 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include <Windows.h>
 #include <string>
 #include <msclr/marshal_cppstd.h>
+#include <vector>
 #include "SDL.h"
+
+static bool inputSelectDone = true;
+static std::vector<std::string> inputSelectParamList2;
+
+static DWORD WINAPI InputSelectButtonThread(LPVOID lpParam)
+{
+	inputSelectDone = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (inputSelectDone))
+		{
+			if (e1.type == SDL_JOYBUTTONDOWN)
+			{
+				if (e1.jbutton.button >= 0)
+				{
+					std::string param = *static_cast<std::string*>(lpParam);
+					System::String^ sparam = gcnew System::String(param.c_str());
+					msclr::interop::marshal_context context;
+					LPCSTR pparam = context.marshal_as<const CHAR*>(sparam);
+
+					char buff[100];
+					sprintf_s(buff, "%d", e1.jbutton.button);
+					WritePrivateProfileStringA("Settings", pparam, buff, ".\\FFBPlugin.ini");
+
+					inputSelectDone = false;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+static DWORD WINAPI InputSelectAxisThread(LPVOID lpParam)
+{
+	inputSelectDone = true;
+	SDL_Event e1;
+	for (int i = 0; i < SDL_NumJoysticks(); i++)
+	{
+		SDL_Joystick* js2 = SDL_JoystickOpen(i);
+		static int SETUP_DEAD_ZONE = 8000;
+		while (SDL_PollEvent(&e1))
+		{
+			if (e1.jaxis.axis == 0)
+			{
+				if (e1.jaxis.value < -SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 128 + e1.jaxis.value;
+				}
+				else if (e1.jaxis.value > SETUP_DEAD_ZONE)
+				{
+					e1.jaxis.value = (e1.jaxis.value / 255);
+					e1.jaxis.value = 127 + e1.jaxis.value;
+				}
+			}
+		}
+	}
+	static int SETUP_DEAD_ZONE = 10000;
+	{
+		while ((SDL_WaitEvent(&e1)) && (inputSelectDone))
+		{
+			if (e1.jaxis.value < -SETUP_DEAD_ZONE || e1.jaxis.value > SETUP_DEAD_ZONE)
+			{
+				std::string param = *static_cast<std::string*>(lpParam);
+				System::String^ sparam = gcnew System::String(param.c_str());
+				msclr::interop::marshal_context context;
+				LPCSTR pparam = context.marshal_as<const CHAR*>(sparam);
+
+				char buff[100];
+				sprintf_s(buff, "%d", e1.jaxis.axis);
+				WritePrivateProfileStringA("Settings", pparam, buff, ".\\FFBPlugin.ini");
+
+				inputSelectDone = false;
+			}
+		}
+	}
+	return 0;
+}
 
 namespace FFBPluginGUI {
 
@@ -27,6 +128,7 @@ namespace FFBPluginGUI {
 	{
 	protected:
 		System::ComponentModel::Container^ components;
+		System::Windows::Forms::Timer^ inputSelectTimer = gcnew System::Windows::Forms::Timer();
 		MetroForm^ obj;
 		MetroLink^ backLink = gcnew MetroLink();
 		MetroFramework::Components::MetroToolTip^ toolTip = gcnew MetroFramework::Components::MetroToolTip();
@@ -41,16 +143,22 @@ namespace FFBPluginGUI {
 		List<String^>^ checkBoxParamList = gcnew List<String^>();
 		List<MetroComboBox^>^ comboBoxList = gcnew List<MetroComboBox^>();
 		List<String^>^ comboBoxParamList = gcnew List<String^>();
-		const int page1ColWidth = 160;
-		const int page2ColsWidth = 300;
+		List<String^>^ comboBoxValueList = gcnew List<String^>();
+		List<MetroLink^>^ inputSelectLinkList = gcnew List<MetroLink^>();
+		List<MetroLabel^>^ inputSelectLabelList = gcnew List<MetroLabel^>();
+		List<String^>^ inputSelectParamList = gcnew List<String^>();
+		List<String^>^ inputSelectTypeList = gcnew List<String^>();
+		const int page1ColWidth = 165;
+		const int page2ColsWidth = 320;
 		bool is1ColPage = false;
 		int wIndowsWidth = this->page2ColsWidth;
+		const int margin = 10;
 		const int minPosY = 37;
 		int maxPosY = 0;
-		int leftColX = 20;
-		int rightColX = 163;
-		const int shortWidth = 118;
-		const int longWidth = 261;
+		int leftColX = this->margin;
+		int rightColX = 165;
+		const int shortWidth = 145;
+		const int longWidth = 300;
 		const int textBoxHeight = 20;
 		const int textBoxOuterHeight = 26;
 		const int trackBarHeight = 20;
@@ -59,7 +167,8 @@ namespace FFBPluginGUI {
 		const int checkBoxHeight = 15;
 		const int checkBoxOuterHeight = 21;
 		const int comboBoxHeight = 29;
-		const int comboBoxOuterHeight = 35;
+		const int comboBoxOuterHeight = 37;
+		const int inputSelectOuterHeight = 29;
 		int leftColPosY = this->minPosY;
 		int rightColPosY = this->minPosY;
 		bool nextItemOnRightCol = false;
@@ -124,12 +233,22 @@ namespace FFBPluginGUI {
 			this->obj->Show();
 		}
 
-		int GetIniValue(String^ param)
+		String^ GetIniValue(String^ param)
 		{
 			msclr::interop::marshal_context context;
-			LPCTSTR pparam = context.marshal_as<const TCHAR*>(param);
+			LPCSTR pparam = context.marshal_as<const CHAR*>(param);
 
-			return GetPrivateProfileInt(TEXT("Settings"), pparam, 0, TEXT(".\\FFBPlugin.ini"));
+			char buff[300];
+			GetPrivateProfileStringA("Settings", pparam, "", buff, _countof(buff), ".\\FFBPlugin.ini");
+			return gcnew String(buff);
+		}
+
+		int GetIniValueInt(String^ param)
+		{
+			msclr::interop::marshal_context context;
+			LPCSTR pparam = context.marshal_as<const CHAR*>(param);
+
+			return GetPrivateProfileIntA("Settings", pparam, 0, ".\\FFBPlugin.ini");
 		}
 
 		Void SetIniValue(String^ param, String^ value)
@@ -495,7 +614,7 @@ namespace FFBPluginGUI {
 		{
 			MetroTrackBar^ trackBar = gcnew MetroTrackBar();
 
-			int value = this->GetIniValue(param);
+			int value = this->GetIniValueInt(param);
 			if (!(value >= min && value <= max))
 			{
 				value = min;
@@ -564,20 +683,21 @@ namespace FFBPluginGUI {
 		Void AddTrackBarLabel(String^ param, int locX, int locY, int width, int height)
 		{
 			msclr::interop::marshal_context context;
-			LPCTSTR pparam = context.marshal_as<const TCHAR*>(param);
+			LPCSTR pparam = context.marshal_as<const CHAR*>(param);
 
 			int i = this->trackBarList->Count - 1;
 
 			MetroLabel^ label = this->trackBarLabelList[i];
 
-			int config = GetPrivateProfileInt(TEXT("Settings"), pparam, 0, TEXT(".\\FFBPlugin.ini"));
-			label->AutoSize = true;
+			int value = GetPrivateProfileIntA("Settings", pparam, 0, ".\\FFBPlugin.ini");
+			label->AutoSize = false;
 			label->Location = System::Drawing::Point(locX, locY);
 			label->Name = L"";
 			label->Size = System::Drawing::Size(width, height);
 			//label->TabIndex = 42;
 			label->TabStop = false;
-			label->Text = System::Convert::ToString(config);
+			label->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			label->Text = System::Convert::ToString(value);
 
 			this->trackBarLabelList[i] = label;
 			this->Controls->Add(label);
@@ -586,7 +706,7 @@ namespace FFBPluginGUI {
 		Void AddTrackBarWithLabel(String^ param, int locX, int locY, int width, int height, int min, int max)
 		{
 			this->AddTrackBar(param, locX, locY, width, height, min, max);
-			this->AddTrackBarLabel(param, locX + ((width - 20) / 2), locY + this->trackBarOuterHeight, 20, 19);
+			this->AddTrackBarLabel(param, locX, locY + this->trackBarOuterHeight, width, 19);
 		}
 		Void AddTrackBarBlock(String^ param, String^ text, int locX, int locY, int width, int min, int max, String^ tooltip)
 		{
@@ -712,7 +832,7 @@ namespace FFBPluginGUI {
 		{
 			MetroCheckBox^ checkBox = gcnew MetroCheckBox();
 
-			int value = this->GetIniValue(param);
+			int value = this->GetIniValueInt(param);
 			checkBox->AutoSize = true;
 			checkBox->Location = System::Drawing::Point(locX, locY);
 			checkBox->Name = "";
@@ -885,7 +1005,13 @@ namespace FFBPluginGUI {
 		Void CheckBox28_CheckedChanged(Object^ sender, EventArgs^ e) { this->CheckBox_CheckedChanged(sender, e, 28); }
 		Void CheckBox29_CheckedChanged(Object^ sender, EventArgs^ e) { this->CheckBox_CheckedChanged(sender, e, 29); }
 
-		Void AddComboBox(String^ params, String^ choices, int locX, int locY, int width, int height)
+		/*
+			"params" can contain one param, or a list of params separated by "|", in which case selected param will be set to 1 and other ones to 0
+			"values" contains the values saved separated by "|", each value can be empty
+			If "values" is empty, the index of the selected choice will be saved
+			"choices" contains the list of choices separated by "|"
+		*/
+		Void AddComboBox(String^ params, String^ values, String^ choices, int locX, int locY, int width, int height)
 		{
 			MetroComboBox^ comboBox = gcnew MetroComboBox();
 			   
@@ -909,7 +1035,7 @@ namespace FFBPluginGUI {
 			{
 				for (int i = 0; i < paramsArray->Length; i++)
 				{
-					if (this->GetIniValue(paramsArray[i]) == 1)
+					if (this->GetIniValueInt(paramsArray[i]) == 1)
 					{
 						comboBox->Text = choicesArray[i];
 					}
@@ -917,15 +1043,31 @@ namespace FFBPluginGUI {
 			}
 			else
 			{
-				int value = this->GetIniValue(params);
-				if (value >= 0)
+				if (values != "")
 				{
-					comboBox->Text = choicesArray[value];
+					array<String^>^ valuesArray = values->Split('|');
+					String^ value = this->GetIniValue(params);
+					for (int i = 0; i < valuesArray->Length; i++)
+					{
+						if (valuesArray[i] == value)
+						{
+							comboBox->Text = choicesArray[i];
+						}
+					}
+				}
+				else
+				{
+					int value = this->GetIniValueInt(params);
+					if (value >= 0)
+					{
+						comboBox->Text = choicesArray[value];
+					}
 				}
 			}
 
 			this->comboBoxList->Add(comboBox);
 			this->comboBoxParamList->Add(params);
+			this->comboBoxValueList->Add(values);
 
 			int i = this->comboBoxList->Count - 1;
 
@@ -942,6 +1084,26 @@ namespace FFBPluginGUI {
 				case 7: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox7_SelectedIndexChanged); break;
 				case 8: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox8_SelectedIndexChanged); break;
 				case 9: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox9_SelectedIndexChanged); break;
+				case 10: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox10_SelectedIndexChanged); break;
+				case 11: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox11_SelectedIndexChanged); break;
+				case 12: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox12_SelectedIndexChanged); break;
+				case 13: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox13_SelectedIndexChanged); break;
+				case 14: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox14_SelectedIndexChanged); break;
+				case 15: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox15_SelectedIndexChanged); break;
+				case 16: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox16_SelectedIndexChanged); break;
+				case 17: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox17_SelectedIndexChanged); break;
+				case 18: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox18_SelectedIndexChanged); break;
+				case 19: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox19_SelectedIndexChanged); break;
+				case 20: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox20_SelectedIndexChanged); break;
+				case 21: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox21_SelectedIndexChanged); break;
+				case 22: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox22_SelectedIndexChanged); break;
+				case 23: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox23_SelectedIndexChanged); break;
+				case 24: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox24_SelectedIndexChanged); break;
+				case 25: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox25_SelectedIndexChanged); break;
+				case 26: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox26_SelectedIndexChanged); break;
+				case 27: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox27_SelectedIndexChanged); break;
+				case 28: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox28_SelectedIndexChanged); break;
+				case 29: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox29_SelectedIndexChanged); break;
 				default: break;
 			}
 
@@ -949,48 +1111,48 @@ namespace FFBPluginGUI {
 
 			this->lastItemType = "ComboBox";
 		}
-		Void AddComboBoxBlock(String^ params, String^ text, String^ choices, int locX, int locY, int width, String^ tooltip)
+		Void AddComboBoxBlock(String^ params, String^ values, String^ text, String^ choices, int locX, int locY, int width, String^ tooltip)
 		{
 			this->AddTextBox(text, locX, locY, width, this->textBoxHeight, tooltip);
-			this->AddComboBox(params, choices, locX, locY + this->textBoxOuterHeight, width, this->comboBoxHeight);
+			this->AddComboBox(params, values, choices, locX, locY + this->textBoxOuterHeight, width, this->comboBoxHeight);
 		}
-		Void AddLongComboBoxBlock(String^ params, String^ text, String^ choices, int locY, String^ tooltip)
+		Void AddLongComboBoxBlock(String^ params, String^ values, String^ text, String^ choices, int locY, String^ tooltip)
 		{
 			if (this->is1ColPage)
 			{
-				return this->AddShortComboBoxBlockOnLeftCol(params, text, choices, locY, tooltip);
+				return this->AddShortComboBoxBlockOnLeftCol(params, values, text, choices, locY, tooltip);
 			}
 
-			this->AddComboBoxBlock(params, text, choices, this->leftColX, locY, this->longWidth, tooltip);
+			this->AddComboBoxBlock(params, values, text, choices, this->leftColX, locY, this->longWidth, tooltip);
 
 			this->leftColPosY = this->rightColPosY = locY + this->textBoxOuterHeight + this->comboBoxOuterHeight;
 			this->nextItemOnRightCol = false;
 		}
-		Void AddShortComboBoxBlockOnLeftCol(String^ params, String^ text, String^ choices, int locY, String^ tooltip)
+		Void AddShortComboBoxBlockOnLeftCol(String^ params, String^ values, String^ text, String^ choices, int locY, String^ tooltip)
 		{
-			this->AddComboBoxBlock(params, text, choices, this->leftColX, locY, this->shortWidth, tooltip);
+			this->AddComboBoxBlock(params, values, text, choices, this->leftColX, locY, this->shortWidth, tooltip);
 
 			this->rightColPosY = locY;
 			this->leftColPosY = locY + this->textBoxOuterHeight + this->comboBoxOuterHeight;
 			this->nextItemOnRightCol = true;
 		}
-		Void AddShortComboBoxBlockOnRightCol(String^ params, String^ text, String^ choices, int locY, String^ tooltip)
+		Void AddShortComboBoxBlockOnRightCol(String^ params, String^ values, String^ text, String^ choices, int locY, String^ tooltip)
 		{
 			if (this->is1ColPage)
 			{
-				return this->AddShortComboBoxBlockOnLeftCol(params, text, choices, locY, tooltip);
+				return this->AddShortComboBoxBlockOnLeftCol(params, values, text, choices, locY, tooltip);
 			}
 
-			this->AddComboBoxBlock(params, text, choices, this->rightColX, locY, this->shortWidth, tooltip);
+			this->AddComboBoxBlock(params, values, text, choices, this->rightColX, locY, this->shortWidth, tooltip);
 
 			this->rightColPosY = locY + this->textBoxOuterHeight + this->comboBoxOuterHeight;
 			this->nextItemOnRightCol = false;
 		}
-		Void AutoAddLongComboBoxBlock(String^ params, String^ text, String^ choices, String^ tooltip)
+		Void AutoAddLongComboBoxBlock(String^ params, String^ values, String^ text, String^ choices, String^ tooltip)
 		{
 			if (this->is1ColPage)
 			{
-				return this->AutoAddShortComboBoxBlockOnLeftCol(params, text, choices, tooltip);
+				return this->AutoAddShortComboBoxBlockOnLeftCol(params, values, text, choices, tooltip);
 			}
 
 			if (this->lastItemType != "" && this->lastItemType != "ComboBox" && this->lastItemType != "TextBox")
@@ -999,36 +1161,37 @@ namespace FFBPluginGUI {
 			}
 			int locY = this->leftColPosY > this->rightColPosY ? this->leftColPosY : this->rightColPosY;
 
-			this->AddLongComboBoxBlock(params, text, choices, locY, tooltip);
+			this->AddLongComboBoxBlock(params, values, text, choices, locY, tooltip);
 		}
-		Void AutoAddShortComboBoxBlockOnLeftCol(String^ params, String^ text, String^ choices, String^ tooltip)
+		Void AutoAddShortComboBoxBlockOnLeftCol(String^ params, String^ values, String^ text, String^ choices, String^ tooltip)
 		{
 			if (this->lastItemType != "" && this->lastItemType != "ComboBox" && this->lastItemType != "TextBox")
 			{
 				this->leftColPosY += 12;
 			}
-			this->AddShortComboBoxBlockOnLeftCol(params, text, choices, this->leftColPosY, tooltip);
+			this->AddShortComboBoxBlockOnLeftCol(params, values, text, choices, this->leftColPosY, tooltip);
 		}
-		Void AutoAddShortComboBoxBlockOnRightCol(String^ params, String^ text, String^ choices, String^ tooltip)
+		Void AutoAddShortComboBoxBlockOnRightCol(String^ params, String^ values, String^ text, String^ choices, String^ tooltip)
 		{
 			if (this->is1ColPage)
 			{
-				return this->AutoAddShortComboBoxBlockOnLeftCol(params, text, choices, tooltip);
+				return this->AutoAddShortComboBoxBlockOnLeftCol(params, values, text, choices, tooltip);
 			}
 
-			this->AddShortComboBoxBlockOnRightCol(params, text, choices, this->rightColPosY, tooltip);
+			this->AddShortComboBoxBlockOnRightCol(params, values, text, choices, this->rightColPosY, tooltip);
 		}
-		Void AutoAddShortComboBoxBlock(String^ params, String^ text, String^ choices, String^ tooltip)
+		Void AutoAddShortComboBoxBlock(String^ params, String^ values, String^ text, String^ choices, String^ tooltip)
 		{
 			if (this->nextItemOnRightCol && this->lastItemType == "ComboBox")
 			{
-				this->AutoAddShortComboBoxBlockOnRightCol(params, text, choices, tooltip);
+				this->AutoAddShortComboBoxBlockOnRightCol(params, values, text, choices, tooltip);
 			}
 			else
 			{
-				this->AutoAddShortComboBoxBlockOnLeftCol(params, text, choices, tooltip);
+				this->AutoAddShortComboBoxBlockOnLeftCol(params, values, text, choices, tooltip);
 			}
 		}
+
 		Void ComboBox_SelectedIndexChanged(Object^ sender, EventArgs^ e, int index)
 		{
 			int value = this->comboBoxList[index]->SelectedIndex;
@@ -1042,7 +1205,15 @@ namespace FFBPluginGUI {
 			}
 			else
 			{
-				this->SetIniValue(this->comboBoxParamList[index], System::Convert::ToString(value));
+				if (this->comboBoxValueList[index] != "")
+				{
+					array<String^>^ valuesArray = this->comboBoxValueList[index]->Split('|');
+					this->SetIniValue(this->comboBoxParamList[index], valuesArray[this->comboBoxList[index]->SelectedIndex]);
+				}
+				else
+				{
+					this->SetIniValue(this->comboBoxParamList[index], System::Convert::ToString(value));
+				}
 			}
 		}
 		Void ComboBox0_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 0); }
@@ -1055,5 +1226,371 @@ namespace FFBPluginGUI {
 		Void ComboBox7_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 7); }
 		Void ComboBox8_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 8); }
 		Void ComboBox9_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 9); }
+		Void ComboBox10_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 10); }
+		Void ComboBox11_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 11); }
+		Void ComboBox12_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 12); }
+		Void ComboBox13_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 13); }
+		Void ComboBox14_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 14); }
+		Void ComboBox15_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 15); }
+		Void ComboBox16_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 16); }
+		Void ComboBox17_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 17); }
+		Void ComboBox18_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 18); }
+		Void ComboBox19_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 19); }
+		Void ComboBox20_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 20); }
+		Void ComboBox21_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 21); }
+		Void ComboBox22_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 22); }
+		Void ComboBox23_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 23); }
+		Void ComboBox24_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 24); }
+		Void ComboBox25_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 25); }
+		Void ComboBox26_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 26); }
+		Void ComboBox27_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 27); }
+		Void ComboBox28_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 28); }
+		Void ComboBox29_SelectedIndexChanged(Object^ sender, EventArgs^ e) { this->ComboBox_SelectedIndexChanged(sender, e, 29); }
+
+		Void StartInputSelectTimer()
+		{
+			if (!this->inputSelectTimer->Enabled)
+			{
+				this->inputSelectTimer->Interval = 100;
+				//Add the tick event handler to set the text periodically
+				//this->timer->Tick += gcnew System::EventHandler(this, &DaytonaChampionshipUSAInput::timer_Tick);
+				this->inputSelectTimer->Start();
+			}
+		}
+		Void AddInputSelect(String^ type, String^ param, String^ text, int locX, int locY)
+		{
+			MetroLink^ link = gcnew MetroLink();
+			MetroLabel^ label = gcnew MetroLabel();
+
+			int value = this->GetIniValueInt(param);
+
+			link->Location = System::Drawing::Point(locX, locY);
+			link->Name = L"";
+			link->Size = System::Drawing::Size(this->shortWidth, 23);
+			//link->TabIndex = 7;
+			link->TabStop = false;
+			link->Text = text;
+			link->UseSelectable = false;
+
+			label->AutoSize = false;
+			label->Location = System::Drawing::Point(locX + this->rightColX - this->leftColX, locY);
+			label->Name = L"";
+			label->Size = System::Drawing::Size(this->shortWidth, 19);
+			label->Text = value == 99 ? "Not Defined" : System::Convert::ToString(value);
+			//label->TabIndex = 13;
+			label->TabStop = false;
+			label->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+
+			this->inputSelectLinkList->Add(link);
+			this->inputSelectLabelList->Add(label);
+			this->inputSelectParamList->Add(param);
+			this->inputSelectTypeList->Add(type == "Axis" ? "Axis" : "Button");
+
+			msclr::interop::marshal_context context;
+			std::string pparam = context.marshal_as<std::string>(param);
+			inputSelectParamList2.push_back(pparam);
+
+			this->StartInputSelectTimer();
+
+			int i = this->inputSelectLinkList->Count - 1;
+
+			// It's ugly but I don't know how to make dynamic calls to member functions
+			switch (i)
+			{
+				case 0:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink0_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel0_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer0_Tick);
+					break;
+				case 1:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink1_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel1_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer1_Tick);
+					break;
+				case 2:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink2_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel2_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer2_Tick);
+					break;
+				case 3:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink3_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel3_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer3_Tick);
+					break;
+				case 4:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink4_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel4_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer4_Tick);
+					break;
+				case 5:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink5_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel5_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer5_Tick);
+					break;
+				case 6:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink6_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel6_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer6_Tick);
+					break;
+				case 7:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink7_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel7_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer7_Tick);
+					break;
+				case 8:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink8_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel8_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer8_Tick);
+					break;
+				case 9:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink9_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel9_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer9_Tick);
+					break;
+				case 10:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink10_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel10_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer10_Tick);
+					break;
+				case 11:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink11_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel11_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer11_Tick);
+					break;
+				case 12:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink12_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel12_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer12_Tick);
+					break;
+				case 13:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink13_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel13_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer13_Tick);
+					break;
+				case 14:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink14_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel14_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer14_Tick);
+					break;
+				case 15:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink15_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel15_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer15_Tick);
+					break;
+				case 16:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink16_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel16_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer16_Tick);
+					break;
+				case 17:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink17_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel17_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer17_Tick);
+					break;
+				case 18:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink18_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel18_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer18_Tick);
+					break;
+				case 19:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink19_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel19_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer19_Tick);
+					break;
+				case 20:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink20_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel20_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer20_Tick);
+					break;
+				case 21:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink21_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel21_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer21_Tick);
+					break;
+				case 22:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink22_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel22_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer22_Tick);
+					break;
+				case 23:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink23_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel23_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer23_Tick);
+					break;
+				case 24:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink24_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel24_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer24_Tick);
+					break;
+				case 25:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink25_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel25_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer25_Tick);
+					break;
+				case 26:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink26_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel26_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer26_Tick);
+					break;
+				case 27:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink27_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel27_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer27_Tick);
+					break;
+				case 28:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink28_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel28_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer28_Tick);
+					break;
+				case 29:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink29_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel29_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer29_Tick);
+					break;
+				default: break;
+			}
+
+			this->Controls->Add(link);
+			this->Controls->Add(label);
+
+			this->lastItemType = "InputSelect";
+			this->nextItemOnRightCol = false;
+		}
+		Void AddLongInputSelect(String^ type, String^ param, String^ text, int locY)
+		{
+			this->AddInputSelect(type, param, text, this->leftColX, locY);
+
+			this->leftColPosY = this->rightColPosY = locY + this->inputSelectOuterHeight;
+			this->nextItemOnRightCol = false;
+		}
+		Void AutoAddLongInputSelect(String^ type, String^ param, String^ text)
+		{
+			if (this->lastItemType != "" && this->lastItemType != "InputSelect" && this->lastItemType != "TextBox")
+			{
+				this->leftColPosY += 12;
+			}
+			int locY = this->leftColPosY > this->rightColPosY ? this->leftColPosY : this->rightColPosY;
+
+			this->AddLongInputSelect(type, param, text, locY);
+		}
+
+		Void InputSelectLink_Click(Object^ sender, EventArgs^ e, int index)
+		{
+			if (this->inputSelectTypeList[index] == "Axis")
+			{
+				this->inputSelectLabelList[index]->Text = L"Move Axis";
+				CreateThread(NULL, 0, InputSelectAxisThread, &inputSelectParamList2[index], 0, NULL);
+			}
+			else
+			{
+				this->inputSelectLabelList[index]->Text = L"Press Button";
+				CreateThread(NULL, 0, InputSelectButtonThread, &inputSelectParamList2[index], 0, NULL);
+			}
+		}
+		Void InputSelectLink0_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 0); }
+		Void InputSelectLink1_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 1); }
+		Void InputSelectLink2_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 2); }
+		Void InputSelectLink3_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 3); }
+		Void InputSelectLink4_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 4); }
+		Void InputSelectLink5_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 5); }
+		Void InputSelectLink6_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 6); }
+		Void InputSelectLink7_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 7); }
+		Void InputSelectLink8_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 8); }
+		Void InputSelectLink9_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 9); }
+		Void InputSelectLink10_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 10); }
+		Void InputSelectLink11_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 11); }
+		Void InputSelectLink12_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 12); }
+		Void InputSelectLink13_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 13); }
+		Void InputSelectLink14_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 14); }
+		Void InputSelectLink15_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 15); }
+		Void InputSelectLink16_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 16); }
+		Void InputSelectLink17_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 17); }
+		Void InputSelectLink18_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 18); }
+		Void InputSelectLink19_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 19); }
+		Void InputSelectLink20_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 20); }
+		Void InputSelectLink21_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 21); }
+		Void InputSelectLink22_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 22); }
+		Void InputSelectLink23_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 23); }
+		Void InputSelectLink24_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 24); }
+		Void InputSelectLink25_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 25); }
+		Void InputSelectLink26_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 26); }
+		Void InputSelectLink27_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 27); }
+		Void InputSelectLink28_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 28); }
+		Void InputSelectLink29_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 29); }
+
+		Void InputSelectLabel_Click(Object^ sender, EventArgs^ e, int index)
+		{
+			this->SetIniValue(this->inputSelectParamList[index], "99");
+			inputSelectDone = false;
+		}
+		Void InputSelectLabel0_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 0); }
+		Void InputSelectLabel1_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 1); }
+		Void InputSelectLabel2_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 2); }
+		Void InputSelectLabel3_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 3); }
+		Void InputSelectLabel4_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 4); }
+		Void InputSelectLabel5_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 5); }
+		Void InputSelectLabel6_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 6); }
+		Void InputSelectLabel7_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 7); }
+		Void InputSelectLabel8_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 8); }
+		Void InputSelectLabel9_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 9); }
+		Void InputSelectLabel10_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 10); }
+		Void InputSelectLabel11_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 11); }
+		Void InputSelectLabel12_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 12); }
+		Void InputSelectLabel13_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 13); }
+		Void InputSelectLabel14_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 14); }
+		Void InputSelectLabel15_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 15); }
+		Void InputSelectLabel16_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 16); }
+		Void InputSelectLabel17_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 17); }
+		Void InputSelectLabel18_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 18); }
+		Void InputSelectLabel19_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 19); }
+		Void InputSelectLabel20_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 20); }
+		Void InputSelectLabel21_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 21); }
+		Void InputSelectLabel22_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 22); }
+		Void InputSelectLabel23_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 23); }
+		Void InputSelectLabel24_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 24); }
+		Void InputSelectLabel25_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 25); }
+		Void InputSelectLabel26_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 26); }
+		Void InputSelectLabel27_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 27); }
+		Void InputSelectLabel28_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 28); }
+		Void InputSelectLabel29_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 29); }
+
+		Void InputSelectTimer_Tick(Object^ sender, EventArgs^ e, int index)
+		{
+			int value = this->GetIniValueInt(this->inputSelectParamList[index]);
+			if (!inputSelectDone)
+			{
+				this->inputSelectLabelList[index]->Text = value == 99 ? "Not Defined" : System::Convert::ToString(value);
+			}
+		}
+		Void InputSelectTimer0_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 0); }
+		Void InputSelectTimer1_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 1); }
+		Void InputSelectTimer2_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 2); }
+		Void InputSelectTimer3_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 3); }
+		Void InputSelectTimer4_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 4); }
+		Void InputSelectTimer5_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 5); }
+		Void InputSelectTimer6_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 6); }
+		Void InputSelectTimer7_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 7); }
+		Void InputSelectTimer8_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 8); }
+		Void InputSelectTimer9_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 9); }
+		Void InputSelectTimer10_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 10); }
+		Void InputSelectTimer11_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 11); }
+		Void InputSelectTimer12_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 12); }
+		Void InputSelectTimer13_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 13); }
+		Void InputSelectTimer14_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 14); }
+		Void InputSelectTimer15_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 15); }
+		Void InputSelectTimer16_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 16); }
+		Void InputSelectTimer17_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 17); }
+		Void InputSelectTimer18_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 18); }
+		Void InputSelectTimer19_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 19); }
+		Void InputSelectTimer20_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 20); }
+		Void InputSelectTimer21_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 21); }
+		Void InputSelectTimer22_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 22); }
+		Void InputSelectTimer23_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 23); }
+		Void InputSelectTimer24_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 24); }
+		Void InputSelectTimer25_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 25); }
+		Void InputSelectTimer26_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 26); }
+		Void InputSelectTimer27_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 27); }
+		Void InputSelectTimer28_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 28); }
+		Void InputSelectTimer29_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 29); }
 	};
 }

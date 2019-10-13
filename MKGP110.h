@@ -44,7 +44,7 @@ namespace FFBPluginGUI {
 			this->AutoAddComponent("AlternativeFFB");
 
 			int effectsY = this->leftColPosY + 30;
-			this->AddTextBox(L"Effects Strength", this->leftColX, effectsY, (3 * this->longWidth) + (4 * this->leftColX), this->textBoxHeight, L"");
+			this->AddTextBox(L"Effects Strength", this->leftColX, effectsY, (3 * this->longWidth) + (4 * this->margin), this->textBoxHeight, L"");
 
 			effectsY += this->textBoxOuterHeight;
 			this->leftColPosY = effectsY;
