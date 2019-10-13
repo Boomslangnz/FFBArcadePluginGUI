@@ -34,7 +34,8 @@ namespace FFBPluginGUI {
 			this->AutoAddDevice1Selector();
 			this->AutoAddDevice2Selector();
 
-			this->AutoAddLongTextBox(L"Options", L"");
+			this->AutoAddComponent("OptionsHeader");
+			
 			this->AutoAddShortCheckBox("InputDeviceWheelEnable", L"Enable Input Support", L"");
 			this->AutoAddShortCheckBox("SequentialGears", L"Sequential Gears", L"Enable sequential gears");
 			this->AutoAddShortCheckBox("InputDeviceWheelReverseAxis", L"Reverse Pedal Axis", L"");

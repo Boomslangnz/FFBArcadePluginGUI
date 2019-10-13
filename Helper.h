@@ -371,18 +371,15 @@ namespace FFBPluginGUI {
 			}
 		}
 
-		Void AddDeviceSelector(int device, LPCSTR param, String^ text, String^ tooltîp, MetroComboBox^ comboBox, int locY)
+		Void AddDeviceSelector(int device, String^ param, String^ text, String^ tooltîp, MetroComboBox^ comboBox, int locY)
 		{
 			this->AddTextBox(text, this->leftColX, locY, this->longWidth, this->textBoxHeight, tooltîp);
 			locY += this->textBoxOuterHeight;
 			for (int i = 0; i < SDL_NumJoysticks(); i++)
 			{
 				SDL_Joystick* js1 = SDL_JoystickOpen(i);
-				char buff[300];
-				GetPrivateProfileStringA("Settings", param, "No FFBPlugin.ini found", buff, _countof(buff), ".\\FFBPlugin.ini");
-				String^ str = gcnew String(buff);
 				String^ bah1 = gcnew String(SDL_JoystickName(js1));
-				comboBox->Text = str;
+				comboBox->Text = this->GetIniValue(param);
 				comboBox->Items->Add(bah1);
 			}
 			if (SDL_NumJoysticks() == 0)
@@ -405,7 +402,6 @@ namespace FFBPluginGUI {
 				case 2: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::Device2Selector_SelectedIndexChanged); break;
 				case 3: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::Device3Selector_SelectedIndexChanged); break;
 				case 4: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::Device4Selector_SelectedIndexChanged); break;
-				default: break;
 			}
 
 			this->Controls->Add(comboBox);
@@ -671,7 +667,6 @@ namespace FFBPluginGUI {
 				case 27: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar27_ValueChanged); break;
 				case 28: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar28_ValueChanged); break;
 				case 29: trackBar->ValueChanged += gcnew System::EventHandler(this, &Helper::TrackBar29_ValueChanged); break;
-				default: break;
 			}
 
 			this->Controls->Add(trackBar);
@@ -682,14 +677,11 @@ namespace FFBPluginGUI {
 
 		Void AddTrackBarLabel(String^ param, int locX, int locY, int width, int height)
 		{
-			msclr::interop::marshal_context context;
-			LPCSTR pparam = context.marshal_as<const CHAR*>(param);
-
 			int i = this->trackBarList->Count - 1;
 
 			MetroLabel^ label = this->trackBarLabelList[i];
 
-			int value = GetPrivateProfileIntA("Settings", pparam, 0, ".\\FFBPlugin.ini");
+			int value = this->GetIniValueInt(param);
 			label->AutoSize = false;
 			label->Location = System::Drawing::Point(locX, locY);
 			label->Name = L"";
@@ -881,7 +873,6 @@ namespace FFBPluginGUI {
 				case 27: checkBox->CheckedChanged += gcnew System::EventHandler(this, &Helper::CheckBox27_CheckedChanged); break;
 				case 28: checkBox->CheckedChanged += gcnew System::EventHandler(this, &Helper::CheckBox28_CheckedChanged); break;
 				case 29: checkBox->CheckedChanged += gcnew System::EventHandler(this, &Helper::CheckBox29_CheckedChanged); break;
-				default: break;
 			}
 
 			this->Controls->Add(checkBox);
@@ -1104,7 +1095,6 @@ namespace FFBPluginGUI {
 				case 27: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox27_SelectedIndexChanged); break;
 				case 28: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox28_SelectedIndexChanged); break;
 				case 29: comboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Helper::ComboBox29_SelectedIndexChanged); break;
-				default: break;
 			}
 
 			this->Controls->Add(comboBox);
@@ -1252,8 +1242,6 @@ namespace FFBPluginGUI {
 			if (!this->inputSelectTimer->Enabled)
 			{
 				this->inputSelectTimer->Interval = 100;
-				//Add the tick event handler to set the text periodically
-				//this->timer->Tick += gcnew System::EventHandler(this, &DaytonaChampionshipUSAInput::timer_Tick);
 				this->inputSelectTimer->Start();
 			}
 		}
@@ -1447,7 +1435,6 @@ namespace FFBPluginGUI {
 					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel29_Click);
 					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer29_Tick);
 					break;
-				default: break;
 			}
 
 			this->Controls->Add(link);
