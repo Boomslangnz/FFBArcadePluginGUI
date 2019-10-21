@@ -793,7 +793,7 @@ namespace FFBPluginGUI {
 				this->metroComboBox2->ItemHeight = 23;
 				this->metroComboBox2->Location = System::Drawing::Point(20, 229);
 				this->metroComboBox2->Name = L"metroComboBox2";
-				this->metroComboBox1->Items->Add("Select no device");
+				this->metroComboBox2->Items->Add("Select no device");
 				this->metroComboBox2->Size = System::Drawing::Size(261, 29);
 				this->metroComboBox2->TabIndex = 31;
 				this->metroComboBox2->TabStop = false;
