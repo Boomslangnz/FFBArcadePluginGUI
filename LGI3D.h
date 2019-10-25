@@ -691,7 +691,6 @@ namespace FFBPluginGUI {
 			int Motor1pStrength = GetPrivateProfileInt(TEXT("Settings"), TEXT("Motor1pStrength"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroTrackBar5->BackColor = System::Drawing::Color::Transparent;
 			this->metroTrackBar5->Location = System::Drawing::Point(20, 751);
-			this->metroTrackBar5->Maximum = 5000;
 			this->metroTrackBar5->Name = L"metroTrackBar5";
 			this->metroTrackBar5->Size = System::Drawing::Size(118, 23);
 			this->metroTrackBar5->TabIndex = 22;
@@ -705,7 +704,6 @@ namespace FFBPluginGUI {
 			int Knock2pStrength = GetPrivateProfileInt(TEXT("Settings"), TEXT("Knock2pStrength"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroTrackBar6->BackColor = System::Drawing::Color::Transparent;
 			this->metroTrackBar6->Location = System::Drawing::Point(163, 677);
-			this->metroTrackBar6->Maximum = 5000;
 			this->metroTrackBar6->Name = L"metroTrackBar6";
 			this->metroTrackBar6->Size = System::Drawing::Size(118, 23);
 			this->metroTrackBar6->TabIndex = 23;
