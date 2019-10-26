@@ -46,6 +46,7 @@ namespace FFBPluginGUI {
 
 			this->AutoAddShortTrackBarBlock("SteeringDeadzone", L"Steering Deadzone", 0, 100, L"Set steering deadzone to set deadzone on device");
 			this->AutoAddShortTrackBarBlock("PedalDeadzone", L"Pedal Deadzone", 0, 100, L"Set pedal deadzone to set deadzone on device");
+			this->AutoAddLongComboBoxBlock("CabinetID", "1|2|3|4", L"Cabinet ID", L"1|2|3|4", L"");
 
 			this->New2ColsPage();
 
