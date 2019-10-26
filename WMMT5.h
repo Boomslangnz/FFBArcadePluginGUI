@@ -37,21 +37,23 @@ namespace FFBPluginGUI {
 			this->AutoAddComponent("CommonOptions");
 			this->AutoAddComponent("AlternativeFFB");
 
-			this->New2ColsPage();
-
 			this->AutoAddComponent("GlobalForce");
 
 			this->AutoAddComponent("AltGlobalForce");
 
 			this->New2ColsPage();
 
-			this->AutoAddLongTextBox(L"Effects Strength", L"");
+			this->AutoAddLongTextBox(L"Game's Effects Strength", L"");
 			this->AutoAddShortTrackBarBlock("SpringStrength", L"Spring", 0, 150, L"");
 			this->AutoAddShortTrackBarBlock("FrictionStrength", L"Friction", 0, 150, L"");
 			this->AutoAddShortTrackBarBlock("JointsAndStripesStrength", L"Joints & Stripes", 0, 150, L"Strength when going over a joint or some stripes");
 			this->AutoAddShortTrackBarBlock("CollisionsStrength", L"Collisions", 0, 150, L"Strength when hitting a car or a wall");
 			this->AutoAddShortTrackBarBlock("TiresSlipStrength", L"Tires Slip", 0, 150, L"Strength of vibrations when sliding");
-			this->AutoAddShortTrackBarBlock("HighSpeedVibrationsStrength", L"High Speed", 0, 150, L"Strength of vibrations at high speed\n(it's adviced to use the same value as tire slip strength)");
+			this->AutoAddShortTrackBarBlock("HighSpeedVibrationsStrength", L"High Speed Vibrations", 0, 150, L"Strength of vibrations at high speed\n(it's adviced to use the same value as tire slip strength)");
+
+			this->AutoAddLongTextBox(L"Additional Fake Effects Strength", L"");
+			this->AutoAddShortTrackBarBlock("GearChangeStrength", L"Gear Change", 0, 150, L"");
+			this->AutoAddShortTrackBarBlock("WheelSpinStrength", L"Wheel Spin", 0, 150, L"");
 
 			this->Init();
 		}

@@ -190,6 +190,7 @@
     <ClCompile Include="SonicAllStars.cpp" />
     <ClCompile Include="WackyRaces.cpp" />
     <ClCompile Include="WMMT5.cpp" />
+    <ClCompile Include="WMMT5Input.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AfterburnerClimax.h">
@@ -307,6 +308,9 @@
     <ClInclude Include="WMMT5.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="WMMT5Input.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AfterburnerClimax.resx">
@@ -419,6 +423,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WMMT5.resx">
       <DependentUpon>WMMT5.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WMMT5Input.resx">
+      <DependentUpon>WMMT5Input.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
