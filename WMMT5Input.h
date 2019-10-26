@@ -17,12 +17,12 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 
 namespace FFBPluginGUI {
 
-	public ref class DaytonaChampionshipUSAInput : Helper
+	public ref class WMMT5Input : Helper
 	{
 	public:
-		DaytonaChampionshipUSAInput(MetroForm^ obj1)
+		WMMT5Input(MetroForm^ obj)
 		{
-			this->obj = obj1;
+			this->obj = obj;
 			this->InitializeComponent();
 		}
 
@@ -31,21 +31,18 @@ namespace FFBPluginGUI {
 		{
 			this->SuspendLayout();
 
-			this->AutoAddShortCheckBox("ChangeGearsViaPlugin", L"Enable Gear Change", L"Enable to change gears");
-			this->AutoAddShortCheckBox("EscapeKeyExitViaPlugin", L"Enable Escape as Exit", L"Enable to exit game when press escape key");
-			this->AutoAddShortCheckBox("MenuMovementViaPlugin", L"Enable Menu Movement", L"Enable to move through menu with device");
-			this->AutoAddShortCheckBox("HideCursor", L"Hide Mouse Cursor", L"Hide Mouse Cursor when launch game");
+			this->AutoAddLongCheckBox("ForceFullTune", L"Force Full Tune", L"Forces full tune if you select a car which is not already fully tuned");
+			this->AutoAddLongCheckBox("DisableRaceTimer", L"Disable Race Timer", L"");
+			this->AutoAddLongCheckBox("EnableForceFinish", L"Enable Force Finish", L"Enable the option to end the race\n(with a win if you are leading, a lose if not)\nby pressing the button configured below");
+			this->AutoAddLongCheckBox("EnableForceTimeUp", L"Enable Force Time Up", L"Enable the option to force a time up to end the race\nby pressing the button configured below");
 
 			this->AutoAddLongTextBox(L"Set or remove button configuration below", L"Click then press any button");
 			this->AutoAddShortTextBox(L"Device Select Input", L"Button names for device, click below to set input for device");
 			this->AutoAddShortTextBox(L"Button Number", L"Button number set in FFBPlugin.ini for device");
+			this->AutoAddShortTextBox(L"Button Number", L"Button number set in FFBPlugin.ini for device");
 
-			this->AutoAddLongInputSelect("Button", "Gear1", L"Gear 1");
-			this->AutoAddLongInputSelect("Button", "Gear2", L"Gear 2");
-			this->AutoAddLongInputSelect("Button", "Gear3", L"Gear 3");
-			this->AutoAddLongInputSelect("Button", "Gear4", L"Gear 4");
-			this->AutoAddLongInputSelect("Button", "GearUp", L"Gear Uo");
-			this->AutoAddLongInputSelect("Button", "GearDown", L"Gear Down");
+			this->AutoAddLongInputSelect("Button", "ForceFinishButton", L"Force Finish");
+			this->AutoAddLongInputSelect("Button", "ForceTimeUpButton", L"Force Time Up");
 
 			this->Init();
 		}

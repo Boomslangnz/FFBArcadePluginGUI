@@ -51,6 +51,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "SonicAllStars.h"
 #include "WackyRaces.h"
 #include "WMMT5.h"
+#include "WMMT5Input.h"
 
 namespace FFBPluginGUI {
 
@@ -449,7 +450,9 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 9)
 		{
-			MessageBox::Show("WMMT5 contains no input features");
+			this->Hide();
+			WMMT5Input^ obj1 = gcnew WMMT5Input(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 11)
 		{

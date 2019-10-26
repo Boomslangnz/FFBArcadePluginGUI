@@ -162,6 +162,7 @@
     <ClCompile Include="FordRacing.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="GTIClub.cpp" />
+    <ClCompile Include="Helper.cpp" />
     <ClCompile Include="InitialD4.cpp" />
     <ClCompile Include="InitialD4Japan.cpp" />
     <ClCompile Include="InitialD5.cpp" />
@@ -189,234 +190,134 @@
     <ClCompile Include="SonicAllStars.cpp" />
     <ClCompile Include="WackyRaces.cpp" />
     <ClCompile Include="WMMT5.cpp" />
+    <ClCompile Include="WMMT5Input.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AfterburnerClimax.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="BG4.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="ButtonRumble.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="ButtonRumbleInput.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="ChaseHQ2.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="DaytonaChampionshipUSA.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="DaytonaChampionshipUSAInput.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="FFBTest.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FordRacing.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="GTIClub.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="Helper.h" />
     <ClInclude Include="InitialD4.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="InitialD4Japan.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="InitialD5.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="InitialD6.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="InitialD7.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="InitialD8.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="KODrive.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="LGI.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="LGI3D.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="M2Emulator.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="M2EmulatorInput.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="Machstorm.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="Mame0199.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="Mame0206.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="MKGP100.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="MKGP110.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="NascarRacing.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="Outrun2.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="Outrun2Input.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="PokkenTournament.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="RoadFighters3D.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="RoadFighters3DInput.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="SegaRacingClassic.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="SegaRally3.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="SonicAllStars.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="WackyRaces.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="WMMT5.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
+    </ClInclude>
+    <ClInclude Include="WMMT5Input.h">
+      <FileType>CppHeader</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AfterburnerClimax.resx">
-      <DependentUpon>AfterburnerClimax.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BG4.resx">
-      <DependentUpon>BG4.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ButtonRumble.resx">
-      <DependentUpon>ButtonRumble.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ButtonRumbleInput.resx">
-      <DependentUpon>ButtonRumbleInput.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChaseHQ2.resx">
-      <DependentUpon>ChaseHQ2.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DaytonaChampionshipUSA.resx">
-      <DependentUpon>DaytonaChampionshipUSA.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DaytonaChampionshipUSAInput.resx">
-      <DependentUpon>DaytonaChampionshipUSAInput.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FFBTest.resx">
       <DependentUpon>FFBTest.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FordRacing.resx">
-      <DependentUpon>FordRacing.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GTIClub.resx">
-      <DependentUpon>GTIClub.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InitialD4.resx">
-      <DependentUpon>InitialD4.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InitialD4Japan.resx">
-      <DependentUpon>InitialD4Japan.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InitialD5.resx">
-      <DependentUpon>InitialD5.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InitialD6.resx">
-      <DependentUpon>InitialD6.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InitialD7.resx">
-      <DependentUpon>InitialD7.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InitialD8.resx">
-      <DependentUpon>InitialD8.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LGI.resx">
-      <DependentUpon>LGI.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LGI3D.resx">
-      <DependentUpon>LGI3D.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="M2Emulator.resx">
-      <DependentUpon>M2Emulator.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="M2EmulatorInput.resx">
-      <DependentUpon>M2EmulatorInput.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Machstorm.resx">
-      <DependentUpon>Machstorm.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mame0199.resx">
-      <DependentUpon>Mame0199.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mame0206.resx">
-      <DependentUpon>Mame0206.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MKGP100.resx">
-      <DependentUpon>MKGP100.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MKGP110.resx">
-      <DependentUpon>MKGP110.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NascarRacing.resx">
-      <DependentUpon>NascarRacing.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Outrun2.resx">
-      <DependentUpon>Outrun2.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Outrun2Input.resx">
-      <DependentUpon>Outrun2Input.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PokkenTournament.resx">
-      <DependentUpon>PokkenTournament.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RoadFighters3D.resx">
-      <DependentUpon>RoadFighters3D.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RoadFighters3DInput.resx">
-      <DependentUpon>RoadFighters3DInput.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SegaRacingClassic.resx">
-      <DependentUpon>SegaRacingClassic.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SegaRally3.resx">
-      <DependentUpon>SegaRally3.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SonicAllStars.resx">
-      <DependentUpon>SonicAllStars.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WackyRaces.resx">
-      <DependentUpon>WackyRaces.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WMMT5.resx">
-      <DependentUpon>WMMT5.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
