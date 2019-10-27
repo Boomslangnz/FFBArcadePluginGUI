@@ -52,8 +52,10 @@ namespace FFBPluginGUI {
 			this->AutoAddShortTrackBarBlock("HighSpeedVibrationsStrength", L"High Speed Vibrations", 0, 150, L"Strength of vibrations at high speed\n(it's adviced to use the same value as tire slip strength)");
 
 			this->AutoAddLongTextBox(L"Additional Fake Effects Strength", L"");
-			this->AutoAddShortTrackBarBlock("GearChangeStrength", L"Gear Change", 0, 150, L"");
 			this->AutoAddShortTrackBarBlock("WheelSpinStrength", L"Wheel Spin", 0, 150, L"");
+			this->AutoAddShortTrackBarBlock("GearChangeStrength", L"Gear Change", 0, 100, L"");
+			this->AutoAddShortTrackBarBlock("GearChangeDelay", L"Gear Change Delay", 0, 500, L"");
+			this->AutoAddShortTrackBarBlock("GearChangeLength", L"Gear Change Length", 0, 500, L"");
 
 			this->Init();
 		}
