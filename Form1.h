@@ -24,6 +24,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "FFBTest.h"
 #include "FordRacing.h"
 #include "GTIClub.h"
+#include "HOTD4.h"
 #include "InitialD4.h"
 #include "InitialD4Japan.h"
 #include "InitialD5.h"
@@ -211,7 +212,7 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 4)
 		{
 			this->Hide();
-			Mame0199^ obj1 = gcnew Mame0199(this);
+			HOTD4^ obj1 = gcnew HOTD4(this);
 			obj1->ShowDialog();
 		}
 		else if (GameSelect == 5)
@@ -364,12 +365,6 @@ namespace FFBPluginGUI {
 			LGI^ obj1 = gcnew LGI(this);
 			obj1->ShowDialog();
 		}
-		else if (GameSelect == 32)
-		{
-			this->Hide();
-			Mame0206^ obj1 = gcnew Mame0206(this);
-			obj1->ShowDialog();
-		}
 		else if (GameSelect == 33)
 		{
 			this->Hide();
@@ -386,12 +381,6 @@ namespace FFBPluginGUI {
 		{
 			this->Hide();
 			Outrun2^ obj1 = gcnew Outrun2(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 36)
-		{
-			this->Hide();
-			ButtonRumble^ obj1 = gcnew ButtonRumble(this);
 			obj1->ShowDialog();
 		}
 		else if (GameSelect == 38)
@@ -430,7 +419,7 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 4)
 		{
-			MessageBox::Show("Mame 0.199 contains no input features");
+			MessageBox::Show("HOTD4 contains no input features");
 		}
 		else if (GameSelect == 5)
 		{
@@ -542,10 +531,6 @@ namespace FFBPluginGUI {
 		{
 		MessageBox::Show("Lets go island contains no input features");
 		}
-		else if (GameSelect == 32)
-		{
-		MessageBox::Show("Mame 0.206 contains no input features");
-		}
 		else if (GameSelect == 33)
 		{
 		MessageBox::Show("Mame 0.206 contains no input features");
@@ -559,12 +544,6 @@ namespace FFBPluginGUI {
 		this->Hide();
 		Outrun2Input^ obj1 = gcnew Outrun2Input(this);
 		obj1->ShowDialog();
-		}
-		else if (GameSelect == 36)
-		{
-			this->Hide();
-			ButtonRumbleInput^ obj1 = gcnew ButtonRumbleInput(this);
-			obj1->ShowDialog();
 		}
 		else if (GameSelect == 38)
 		{

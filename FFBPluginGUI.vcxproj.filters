@@ -135,6 +135,9 @@
     <ClCompile Include="WMMT5Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HOTD4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -255,6 +258,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="WMMT5Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HOTD4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

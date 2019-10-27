@@ -164,6 +164,7 @@
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="GTIClub.cpp" />
     <ClCompile Include="Helper.cpp" />
+    <ClCompile Include="HOTD4.cpp" />
     <ClCompile Include="InitialD4.cpp" />
     <ClCompile Include="InitialD4Japan.cpp" />
     <ClCompile Include="InitialD5.cpp" />
@@ -228,6 +229,7 @@
       <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="Helper.h" />
+    <ClInclude Include="HOTD4.h" />
     <ClInclude Include="InitialD4.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
