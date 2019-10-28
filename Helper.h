@@ -317,10 +317,6 @@ namespace FFBPluginGUI {
 			{
 				this->AutoAddShortCheckBox("Logging", L"Enable Logging", L"Enable or disable FFBlog.txt to collect log data");
 			}
-			else if (component == "ResetFeedback")
-			{
-				this->AutoAddShortCheckBox("ResetFeedback", L"Reset Feedback", L"When a command contradicts a prior command, clear the prior command");
-			}
 			else if (component == "BeepWhenHook")
 			{
 				this->AutoAddShortCheckBox("BeepWhenHook", L"Beep When Hook", L"Beep will occur when FFBPlugin hooks application");
@@ -343,7 +339,6 @@ namespace FFBPluginGUI {
 				this->AutoAddComponent("EnableRumble");
 				this->AutoAddComponent("ReverseRumble");
 				this->AutoAddComponent("Logging");
-				this->AutoAddComponent("ResetFeedback");
 				this->AutoAddComponent("BeepWhenHook");
 				this->AutoAddComponent("ForceShowDeviceGUIDMessageBox");
 			}
