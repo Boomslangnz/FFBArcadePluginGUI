@@ -45,6 +45,10 @@ namespace FFBPluginGUI {
 
 			this->AutoAddComponent("AltGlobalForce");
 
+			this->AutoAddLongTextBox(L"Additional Effects Strength", L"");
+			this->AutoAddShortTrackBarBlock("GearChangeStrength", L"Gear Change", 0, 100, L"");
+			this->AutoAddShortTrackBarBlock("GearChangeLength", L"Gear Change Length", 0, 500, L"");
+
 			this->Init();
 		}
 	};
