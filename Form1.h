@@ -23,6 +23,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "DaytonaChampionshipUSAInput.h"
 #include "FFBTest.h"
 #include "FordRacing.h"
+#include "GRID.h"
 #include "GTIClub.h"
 #include "HOTD4.h"
 #include "InitialD4.h"
@@ -245,6 +246,12 @@ namespace FFBPluginGUI {
 			WMMT5^ obj1 = gcnew WMMT5(this);
 			obj1->ShowDialog();
 		}
+		else if (GameSelect == 10)
+		{
+			this->Hide();
+			GRID^ obj1 = gcnew GRID(this);
+			obj1->ShowDialog();
+		}
 		else if (GameSelect == 11)
 		{
 			this->Hide();
@@ -442,6 +449,10 @@ namespace FFBPluginGUI {
 			this->Hide();
 			WMMT5Input^ obj1 = gcnew WMMT5Input(this);
 			obj1->ShowDialog();
+		}
+		else if (GameSelect == 10)
+		{
+			MessageBox::Show("GRID contains no input features");
 		}
 		else if (GameSelect == 11)
 		{

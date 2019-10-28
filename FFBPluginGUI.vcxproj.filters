@@ -138,6 +138,9 @@
     <ClCompile Include="HOTD4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GRID.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -261,6 +264,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HOTD4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GRID.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
