@@ -305,13 +305,13 @@ namespace FFBPluginGUI {
 			{
 				this->AutoAddLongTextBox(L"Options", L"");
 			}
-			else if (component == "EnableRumble")
+			else if (component == "FFBorRumble")
 			{
-				this->AutoAddShortCheckBox("EnableRumble", L"Enable Rumble", L"Enable or disable rumble");
+				this->AutoAddLongComboBoxBlock("FFBorRumble","",L"Force Feedback or Rumble",L"Force Feedback|Rumble",L"Use Force Feedback for wheel or Rumble for controller");
 			}
 			else if (component == "ReverseRumble")
 			{
-				this->AutoAddShortCheckBox("ReverseRumble", L"Reverse Rumble", L"Reverse the rumble if works incorrectly to liking");
+				this->AutoAddShortCheckBox("ReverseRumble", L"Reverse Rumble", L"Reverse the rumble motors if rumble enabled");
 			}
 			else if (component == "Logging")
 			{
@@ -336,7 +336,7 @@ namespace FFBPluginGUI {
 			else if (component == "CommonOptions")
 			{
 				this->AutoAddComponent("OptionsHeader");
-				this->AutoAddComponent("EnableRumble");
+				this->AutoAddComponent("FFBorRumble");
 				this->AutoAddComponent("ReverseRumble");
 				this->AutoAddComponent("Logging");
 				this->AutoAddComponent("BeepWhenHook");
