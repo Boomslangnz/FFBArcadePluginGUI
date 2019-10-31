@@ -47,7 +47,7 @@ namespace FFBPluginGUI {
 				L"Use both rumble motors, only left motor or only right motor"
 			);
 			this->AutoAddShortTrackBarBlock("RumbleStrength", L"Rumble Strength", 0, 100, L"Strength of rumble effect when button pressed");
-			this->AutoAddShortTrackBarBlock("RumbleLength", L"Rumble Length", 0, 100, L"Length of rumble effect when button pressed. 0 is to rumble forever until button released");
+			this->AutoAddShortTrackBarBlock("RumbleLength", L"Rumble Length", 0, 5000, L"Length of rumble effect when button pressed. 0 is to rumble forever until button released");
 
 			this->Init();
 		}
