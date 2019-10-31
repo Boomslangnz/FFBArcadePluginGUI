@@ -18,6 +18,13 @@ static SDL_Joystick* gGameController;
 static SDL_Haptic* gControllerHaptic;
 static int effect_id;
 
+static int StopRumbleEffectThread(void* ptr)
+{
+	Sleep(2000);
+	SDL_JoystickRumble(gGameController, 0, 0, 0);
+	return 0;
+}
+
 namespace FFBPluginGUI {
 
 	using namespace System;
@@ -415,6 +422,7 @@ namespace FFBPluginGUI {
 	{
 		if (e->CloseReason == CloseReason::UserClosing)
 		{
+			SDL_JoystickRumble(gGameController, 0, 0, 0);
 			SDL_HapticStopAll(gControllerHaptic);
 			SDL_HapticClose(gControllerHaptic);
 			SDL_Quit();
@@ -650,7 +658,7 @@ namespace FFBPluginGUI {
 	{
 
 	}
-	private: System::Void metroButton1_Click(System::Object^  sender, System::EventArgs^  e) //Rumble Left Motor
+	private: System::Void metroButton1_Click(System::Object^ sender, System::EventArgs^ e) //Rumble Left Motor
 	{
 		int DeviceID = GetPrivateProfileInt(TEXT("FFBTest"), TEXT("DeviceID"), 0, TEXT(".\\FFBPlugin.ini"));
 		gGameController = SDL_JoystickOpen(DeviceID);
@@ -660,33 +668,17 @@ namespace FFBPluginGUI {
 		}
 		else
 		{
-			//Get controller haptic device
-			gControllerHaptic = SDL_HapticOpenFromJoystick(gGameController);
-			if (gControllerHaptic == NULL)
+			int RumbleLeftMotor = SDL_JoystickRumble(gGameController, 0xFFFF, 0, 1);
+			if (RumbleLeftMotor == -1)
 			{
-				MessageBox::Show("Warning: Controller does not support haptics!");
+				MessageBox::Show("Warning: Controller does not support Rumble!");
 			}
 			else
 			{
-				//Get initialize rumble
-				if (SDL_HapticRumbleInit(gControllerHaptic) < 0)
-				{
-					MessageBox::Show("Warning: Unable to initialize rumble!");
-				}
-				else
-				{
-					SDL_HapticEffect tempEffect;
-					SDL_memset(&tempEffect, 0, sizeof(SDL_HapticEffect));
-					tempEffect.type = SDL_HAPTIC_LEFTRIGHT;
-					tempEffect.leftright.length = 2000;
-					tempEffect.leftright.small_magnitude = 0;
-					tempEffect.leftright.large_magnitude = 30000;
-					effect_id = SDL_HapticUpdateEffect(gControllerHaptic, 0, &tempEffect);
-					SDL_HapticRunEffect(gControllerHaptic, effect_id, 1);
-				}
+				SDL_Thread* StopRumblethread = SDL_CreateThread(StopRumbleEffectThread, "StopRumbleEffectThread", (void*)NULL);
 			}
 		}
-	}
+	}			
 	private: System::Void metroButton2_Click(System::Object^  sender, System::EventArgs^  e) //Rumble Right Motor
 	{
 		int DeviceID = GetPrivateProfileInt(TEXT("FFBTest"), TEXT("DeviceID"), 0, TEXT(".\\FFBPlugin.ini"));
@@ -697,30 +689,14 @@ namespace FFBPluginGUI {
 		}
 		else
 		{
-			//Get controller haptic device
-			gControllerHaptic = SDL_HapticOpenFromJoystick(gGameController);
-			if (gControllerHaptic == NULL)
+			int RumbleLeftMotor = SDL_JoystickRumble(gGameController, 0, 0xFFFF, 1);
+			if (RumbleLeftMotor == -1)
 			{
-				MessageBox::Show("Warning: Controller does not support haptics!");
+				MessageBox::Show("Warning: Controller does not support Rumble!");
 			}
 			else
 			{
-				//Get initialize rumble
-				if (SDL_HapticRumbleInit(gControllerHaptic) < 0)
-				{
-					MessageBox::Show("Warning: Unable to initialize rumble!");
-				}
-				else
-				{
-					SDL_HapticEffect tempEffect;
-					SDL_memset(&tempEffect, 0, sizeof(SDL_HapticEffect));
-					tempEffect.type = SDL_HAPTIC_LEFTRIGHT;
-					tempEffect.leftright.length = 2000;
-					tempEffect.leftright.small_magnitude = 30000;
-					tempEffect.leftright.large_magnitude = 0;
-					effect_id = SDL_HapticUpdateEffect(gControllerHaptic, 0, &tempEffect);
-					SDL_HapticRunEffect(gControllerHaptic, effect_id, 1);			
-				}
+				SDL_Thread* StopRumblethread = SDL_CreateThread(StopRumbleEffectThread, "StopRumbleEffectThread", (void*)NULL);
 			}
 		}
 	}
