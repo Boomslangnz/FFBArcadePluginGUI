@@ -36,7 +36,7 @@ namespace FFBPluginGUI {
 
 			this->AutoAddComponent("CommonOptions");
 			this->AutoAddComponent("AlternativeFFB");
-			this->AutoAddComponent("FFBMode");
+			this->AutoAddComponent("PowerMode");
 
 			this->AutoAddLongTrackBarBlock("SpringStrength", L"Spring Strength", 0, 100, L"Spring Strength for wheels only");
 

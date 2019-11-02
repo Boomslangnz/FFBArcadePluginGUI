@@ -36,7 +36,7 @@ namespace FFBPluginGUI {
 
 			this->AutoAddComponent("CommonOptions");
 			this->AutoAddComponent("AlternativeFFB");
-			this->AutoAddComponent("FFBMode");
+			this->AutoAddComponent("PowerMode");
 
 			this->New2ColsPage();
 

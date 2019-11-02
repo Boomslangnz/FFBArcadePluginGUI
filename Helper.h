@@ -329,9 +329,9 @@ namespace FFBPluginGUI {
 			{
 				this->AutoAddShortCheckBox("AlternativeFFB", L"Alternative FFB", L"Use if wheel rotates incorrectly");
 			}
-			else if (component == "FFBMode")
+			else if (component == "PowerMode")
 			{
-				this->AutoAddShortCheckBox("FFBMode", L"FFB Mode", L"Enable to raise strength of low effects");
+				this->AutoAddShortCheckBox("PowerMode", L"Power Mode", L"Enable to raise strength of low effects");
 			}
 			else if (component == "CommonOptions")
 			{
