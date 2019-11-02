@@ -38,8 +38,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "M2Emulator.h"
 #include "M2EmulatorInput.h"
 #include "Machstorm.h"
-#include "Mame0199.h"
-#include "Mame0206.h"
+#include "Mame.h"
 #include "MKGP100.h"
 #include "MKGP110.h"
 #include "NascarRacing.h"
@@ -375,13 +374,7 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 33)
 		{
 			this->Hide();
-			Mame0206^ obj1 = gcnew Mame0206(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 34)
-		{
-			this->Hide();
-			Mame0199^ obj1 = gcnew Mame0199(this);
+			Mame^ obj1 = gcnew Mame(this);
 			obj1->ShowDialog();
 		}
 		else if (GameSelect == 35)
@@ -544,11 +537,7 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 33)
 		{
-		MessageBox::Show("Mame 0.206 contains no input features");
-		}
-		else if (GameSelect == 34)
-		{
-		MessageBox::Show("Mame 0.199 contains no input features");
+		MessageBox::Show("Mame contains no input features");
 		}
 		else if (GameSelect == 35)
 		{

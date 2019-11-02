@@ -69,12 +69,6 @@
     <ClCompile Include="Machstorm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Mame0199.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Mame0206.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MKGP100.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -141,6 +135,9 @@
     <ClCompile Include="GRID.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Mame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -195,12 +192,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Machstorm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Mame0199.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Mame0206.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MKGP100.h">
@@ -267,6 +258,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GRID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

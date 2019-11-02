@@ -11,40 +11,5 @@ You should have received a copy of the GNU General Public License
 along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 */
 
-#pragma once
-#include <Windows.h>
-#include "Helper.h"
+#include "Mame.h"
 
-namespace FFBPluginGUI {
-
-	public ref class Mame0206 : Helper
-	{
-	public:
-		Mame0206(MetroForm^ obj1)
-		{
-			this->obj = obj1;
-			this->InitializeComponent();
-		}
-
-	private:
-		void InitializeComponent(void)
-		{
-			this->SuspendLayout();
-
-			this->AutoAddDevice1Selector();
-			this->AutoAddComponent("FeedbackLength");
-
-			this->AutoAddComponent("CommonOptions");
-			this->AutoAddComponent("AlternativeFFB");
-			this->AutoAddComponent("PowerMode");
-
-			this->New2ColsPage();
-
-			this->AutoAddComponent("GlobalForce");
-
-			this->AutoAddComponent("AltGlobalForce");
-
-			this->Init();
-		}
-	};
-}

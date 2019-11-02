@@ -17,10 +17,10 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 
 namespace FFBPluginGUI {
 
-	public ref class Mame0199 : Helper
+	public ref class Mame : Helper
 	{
 	public:
-		Mame0199(MetroForm^ obj1)
+		Mame(MetroForm^ obj1)
 		{
 			this->obj = obj1;
 			this->InitializeComponent();
@@ -37,6 +37,8 @@ namespace FFBPluginGUI {
 			this->AutoAddComponent("CommonOptions");
 			this->AutoAddComponent("AlternativeFFB");
 			this->AutoAddComponent("PowerMode");
+
+			this->AutoAddLongComboBoxBlock("MameVersion", "MAME019932bit|MAME019964bit|MAME0199UI64bit|MAME019964bitHack|MAME020632bit|MAME020664bit|MAME0206UI64bit", L"Mame Version", L"MAME 0.199 32bit|MAME 0.199 64bit|MAME 0.199 64bit UI|MAME 0.199 Hacked|MAME 0.206 32bit|MAME 0.206 64bit|MAME 0.206 64bit UI", L"");
 
 			this->New2ColsPage();
 

@@ -178,8 +178,7 @@
     <ClCompile Include="M2Emulator.cpp" />
     <ClCompile Include="M2EmulatorInput.cpp" />
     <ClCompile Include="Machstorm.cpp" />
-    <ClCompile Include="Mame0199.cpp" />
-    <ClCompile Include="Mame0206.cpp" />
+    <ClCompile Include="Mame.cpp" />
     <ClCompile Include="MKGP100.cpp" />
     <ClCompile Include="MKGP110.cpp" />
     <ClCompile Include="NascarRacing.cpp" />
@@ -268,10 +267,7 @@
     <ClInclude Include="Machstorm.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
-    <ClInclude Include="Mame0199.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="Mame0206.h">
+    <ClInclude Include="Mame.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="MKGP100.h">
