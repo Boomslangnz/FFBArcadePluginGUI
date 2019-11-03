@@ -39,7 +39,6 @@ namespace FFBPluginGUI {
 			this->AutoAddLongTextBox(L"Set or remove button configuration below", L"Click then press any button");
 			this->AutoAddShortTextBox(L"Device Select Input", L"Button names for device, click below to set input for device");
 			this->AutoAddShortTextBox(L"Button Number", L"Button number set in FFBPlugin.ini for device");
-			this->AutoAddShortTextBox(L"Button Number", L"Button number set in FFBPlugin.ini for device");
 
 			this->AutoAddLongInputSelect("Button", "ForceFinishButton", L"Force Finish");
 			this->AutoAddLongInputSelect("Button", "ForceTimeUpButton", L"Force Time Up");
