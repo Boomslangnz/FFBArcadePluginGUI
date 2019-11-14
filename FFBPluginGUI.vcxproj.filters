@@ -138,10 +138,10 @@
     <ClCompile Include="Mame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FastBeatLoopPCInput.cpp">
+    <ClCompile Include="InitialD0.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FastBeatLoopPC.cpp">
+    <ClCompile Include="ChaseHQ2Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -269,10 +269,10 @@
     <ClInclude Include="Mame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FastBeatLoopPCInput.h">
+    <ClInclude Include="InitialD0.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FastBeatLoopPC.h">
+    <ClInclude Include="ChaseHQ2Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -157,10 +157,9 @@
     <ClCompile Include="ButtonRumble.cpp" />
     <ClCompile Include="ButtonRumbleInput.cpp" />
     <ClCompile Include="ChaseHQ2.cpp" />
+    <ClCompile Include="ChaseHQ2Input.cpp" />
     <ClCompile Include="DaytonaChampionshipUSA.cpp" />
     <ClCompile Include="DaytonaChampionshipUSAInput.cpp" />
-    <ClCompile Include="FastBeatLoopPC.cpp" />
-    <ClCompile Include="FastBeatLoopPCInput.cpp" />
     <ClCompile Include="FFBTest.cpp" />
     <ClCompile Include="FordRacing.cpp" />
     <ClCompile Include="Form1.cpp" />
@@ -168,6 +167,7 @@
     <ClCompile Include="GTIClub.cpp" />
     <ClCompile Include="Helper.cpp" />
     <ClCompile Include="HOTD4.cpp" />
+    <ClCompile Include="InitialD0.cpp" />
     <ClCompile Include="InitialD4.cpp" />
     <ClCompile Include="InitialD4Japan.cpp" />
     <ClCompile Include="InitialD5.cpp" />
@@ -212,14 +212,13 @@
     <ClInclude Include="ChaseHQ2.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="ChaseHQ2Input.h" />
     <ClInclude Include="DaytonaChampionshipUSA.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="DaytonaChampionshipUSAInput.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
-    <ClInclude Include="FastBeatLoopPC.h" />
-    <ClInclude Include="FastBeatLoopPCInput.h" />
     <ClInclude Include="FFBTest.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -235,6 +234,7 @@
     </ClInclude>
     <ClInclude Include="Helper.h" />
     <ClInclude Include="HOTD4.h" />
+    <ClInclude Include="InitialD0.h" />
     <ClInclude Include="InitialD4.h">
       <FileType>CppHeader</FileType>
     </ClInclude>

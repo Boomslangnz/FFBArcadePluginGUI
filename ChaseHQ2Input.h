@@ -11,4 +11,29 @@ You should have received a copy of the GNU General Public License
 along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 */
 
-#include "FastBeatLoopPCInput.h"
+#pragma once
+#include <Windows.h>
+#include "Helper.h"
+
+namespace FFBPluginGUI {
+
+	public ref class ChaseHQ2Input : Helper
+	{
+	public:
+		ChaseHQ2Input(MetroForm^ obj1)
+		{
+			this->obj = obj1;
+			this->InitializeComponent();
+		}
+
+	private:
+		void InitializeComponent(void)
+		{
+			this->SuspendLayout();
+
+			this->AutoAddShortCheckBox("RemoveCelShadedFilter", L"Remove Cel Shaded Filter", L"Enable to remove cel shaded look");
+
+			this->Init();
+		}
+	};
+}

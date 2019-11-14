@@ -19,15 +19,15 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "ButtonRumble.h"
 #include "ButtonRumbleInput.h"
 #include "ChaseHQ2.h"
+#include "ChaseHQ2Input.h"
 #include "DaytonaChampionshipUSA.h"
 #include "DaytonaChampionshipUSAInput.h"
-#include "FastBeatLoopPC.h"
-#include "FastBeatLoopPCInput.h"
 #include "FFBTest.h"
 #include "FordRacing.h"
 #include "GRID.h"
 #include "GTIClub.h"
 #include "HOTD4.h"
+#include "InitialD0.h"
 #include "InitialD4.h"
 #include "InitialD4Japan.h"
 #include "InitialD5.h"
@@ -319,12 +319,6 @@ namespace FFBPluginGUI {
 			SonicAllStars^ obj1 = gcnew SonicAllStars(this);
 			obj1->ShowDialog();
 		}
-		else if (GameSelect == 22)
-		{
-		this->Hide();
-		FastBeatLoopPC^ obj1 = gcnew FastBeatLoopPC(this);
-		obj1->ShowDialog();
-		}
 		else if (GameSelect == 23)
 		{
 			this->Hide();
@@ -379,6 +373,12 @@ namespace FFBPluginGUI {
 			LGI^ obj1 = gcnew LGI(this);
 			obj1->ShowDialog();
 		}
+		else if (GameSelect == 32)
+		{
+		this->Hide();
+		InitialD0^ obj1 = gcnew InitialD0(this);
+		obj1->ShowDialog();
+		}
 		else if (GameSelect == 33)
 		{
 			this->Hide();
@@ -423,7 +423,9 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 3)
 		{
-			MessageBox::Show("ChaseHQ2 contains no input features");
+			this->Hide();
+			ChaseHQ2Input^ obj1 = gcnew ChaseHQ2Input(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 4)
 		{
@@ -501,12 +503,6 @@ namespace FFBPluginGUI {
 		{
 			MessageBox::Show("Sonic & Sega All Star Racing contains no input features");
 		}
-		else if (GameSelect == 22)
-		{
-			this->Hide();
-			FastBeatLoopPCInput^ obj1 = gcnew FastBeatLoopPCInput(this);
-			obj1->ShowDialog();
-		}
 		else if (GameSelect == 23)
 		{
 			MessageBox::Show("Initial D5 contains no input features");
@@ -548,6 +544,10 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 31)
 		{
 		MessageBox::Show("Lets go island contains no input features");
+		}
+		else if (GameSelect == 32)
+		{
+		MessageBox::Show("Initial D Zero contains no input features");
 		}
 		else if (GameSelect == 33)
 		{
