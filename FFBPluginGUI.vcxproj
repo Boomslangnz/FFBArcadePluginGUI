@@ -159,6 +159,8 @@
     <ClCompile Include="ChaseHQ2.cpp" />
     <ClCompile Include="DaytonaChampionshipUSA.cpp" />
     <ClCompile Include="DaytonaChampionshipUSAInput.cpp" />
+    <ClCompile Include="FastBeatLoopPC.cpp" />
+    <ClCompile Include="FastBeatLoopPCInput.cpp" />
     <ClCompile Include="FFBTest.cpp" />
     <ClCompile Include="FordRacing.cpp" />
     <ClCompile Include="Form1.cpp" />
@@ -216,6 +218,8 @@
     <ClInclude Include="DaytonaChampionshipUSAInput.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="FastBeatLoopPC.h" />
+    <ClInclude Include="FastBeatLoopPCInput.h" />
     <ClInclude Include="FFBTest.h">
       <FileType>CppForm</FileType>
     </ClInclude>

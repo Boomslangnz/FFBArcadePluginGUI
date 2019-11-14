@@ -21,6 +21,8 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "ChaseHQ2.h"
 #include "DaytonaChampionshipUSA.h"
 #include "DaytonaChampionshipUSAInput.h"
+#include "FastBeatLoopPC.h"
+#include "FastBeatLoopPCInput.h"
 #include "FFBTest.h"
 #include "FordRacing.h"
 #include "GRID.h"
@@ -317,6 +319,12 @@ namespace FFBPluginGUI {
 			SonicAllStars^ obj1 = gcnew SonicAllStars(this);
 			obj1->ShowDialog();
 		}
+		else if (GameSelect == 22)
+		{
+		this->Hide();
+		FastBeatLoopPC^ obj1 = gcnew FastBeatLoopPC(this);
+		obj1->ShowDialog();
+		}
 		else if (GameSelect == 23)
 		{
 			this->Hide();
@@ -492,6 +500,12 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 21)
 		{
 			MessageBox::Show("Sonic & Sega All Star Racing contains no input features");
+		}
+		else if (GameSelect == 22)
+		{
+			this->Hide();
+			FastBeatLoopPCInput^ obj1 = gcnew FastBeatLoopPCInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 23)
 		{
