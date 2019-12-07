@@ -36,6 +36,8 @@ namespace FFBPluginGUI {
 			this->AutoAddComponent("FeedbackLength");
 
 			this->AutoAddComponent("CommonOptions");
+			this->AutoAddComponent("EnableRumbleDevice2");
+			this->AutoAddComponent("ReverseRumbleDevice2");
 
 			this->AutoAddComponent("GlobalForce");
 
