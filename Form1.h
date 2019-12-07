@@ -44,6 +44,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "MKGP100.h"
 #include "MKGP110.h"
 #include "NascarRacing.h"
+#include "OutputReading.h"
 #include "Outrun2.h"
 #include "Outrun2Input.h"
 #include "PokkenTournament.h"
@@ -319,6 +320,12 @@ namespace FFBPluginGUI {
 			SonicAllStars^ obj1 = gcnew SonicAllStars(this);
 			obj1->ShowDialog();
 		}
+		else if (GameSelect == 22)
+		{
+		this->Hide();
+		OutputReading^ obj1 = gcnew OutputReading(this);
+		obj1->ShowDialog();
+		}
 		else if (GameSelect == 23)
 		{
 			this->Hide();
@@ -502,6 +509,10 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 21)
 		{
 			MessageBox::Show("Sonic & Sega All Star Racing contains no input features");
+		}
+		else if (GameSelect == 22)
+		{
+			MessageBox::Show("Output Reading contains no input features");
 		}
 		else if (GameSelect == 23)
 		{

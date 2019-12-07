@@ -184,6 +184,7 @@
     <ClCompile Include="MKGP100.cpp" />
     <ClCompile Include="MKGP110.cpp" />
     <ClCompile Include="NascarRacing.cpp" />
+    <ClCompile Include="OutputReading.cpp" />
     <ClCompile Include="Outrun2.cpp" />
     <ClCompile Include="Outrun2Input.cpp" />
     <ClCompile Include="PokkenTournament.cpp" />
@@ -281,6 +282,9 @@
       <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="NascarRacing.h">
+      <FileType>CppHeader</FileType>
+    </ClInclude>
+    <ClInclude Include="OutputReading.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="Outrun2.h">
