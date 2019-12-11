@@ -147,6 +147,9 @@
     <ClCompile Include="OutputReading.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Supermodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -279,6 +282,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="OutputReading.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Supermodel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

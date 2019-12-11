@@ -193,6 +193,7 @@
     <ClCompile Include="SegaRacingClassic.cpp" />
     <ClCompile Include="SegaRally3.cpp" />
     <ClCompile Include="SonicAllStars.cpp" />
+    <ClCompile Include="Supermodel.cpp" />
     <ClCompile Include="WackyRaces.cpp" />
     <ClCompile Include="WMMT5.cpp" />
     <ClCompile Include="WMMT5Input.cpp" />
@@ -311,6 +312,7 @@
     <ClInclude Include="SonicAllStars.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="Supermodel.h" />
     <ClInclude Include="WackyRaces.h">
       <FileType>CppHeader</FileType>
     </ClInclude>

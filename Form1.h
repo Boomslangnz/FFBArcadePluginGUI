@@ -53,6 +53,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "SegaRacingClassic.h"
 #include "SegaRally3.h"
 #include "SonicAllStars.h"
+#include "Supermodel.h"
 #include "WackyRaces.h"
 #include "WMMT5.h"
 #include "WMMT5Input.h"
@@ -382,14 +383,20 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 32)
 		{
-		this->Hide();
-		InitialD0^ obj1 = gcnew InitialD0(this);
-		obj1->ShowDialog();
+			this->Hide();
+			InitialD0^ obj1 = gcnew InitialD0(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 33)
 		{
 			this->Hide();
 			Mame^ obj1 = gcnew Mame(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 34)
+		{
+			this->Hide();
+			Supermodel^ obj1 = gcnew Supermodel(this);
 			obj1->ShowDialog();
 		}
 		else if (GameSelect == 35)
@@ -563,6 +570,10 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 33)
 		{
 		MessageBox::Show("Mame contains no input features");
+		}
+		else if (GameSelect == 34)
+		{
+		MessageBox::Show("Supermodel Reading contains no input features");
 		}
 		else if (GameSelect == 35)
 		{
