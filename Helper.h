@@ -313,6 +313,10 @@ namespace FFBPluginGUI {
 			{
 				this->AutoAddShortCheckBox("EnableRumbleDevice2", L"Enable Rumble Device 2", L"Enable or disable rumble on device 2");
 			}
+			else if (component == "EnableRumbleDevice3")
+			{
+				this->AutoAddShortCheckBox("EnableRumbleDevice3", L"Enable Rumble Device 3", L"Enable or disable rumble on device 3");
+			}
 			else if (component == "ReverseRumble")
 			{
 				this->AutoAddShortCheckBox("ReverseRumble", L"Reverse Rumble", L"Reverse the rumble if works incorrectly to liking");
@@ -320,6 +324,10 @@ namespace FFBPluginGUI {
 			else if (component == "ReverseRumbleDevice2")
 			{
 				this->AutoAddShortCheckBox("ReverseRumbleDevice2", L"Reverse Rumble Device 2", L"Reverse the rumble if works incorrectly to liking on device 2");
+			}
+			else if (component == "ReverseRumbleDevice3")
+			{
+				this->AutoAddShortCheckBox("ReverseRumbleDevice3", L"Reverse Rumble Device 3", L"Reverse the rumble if works incorrectly to liking on device 3");
 			}
 			else if (component == "Logging")
 			{
@@ -340,6 +348,10 @@ namespace FFBPluginGUI {
 			else if (component == "AlternativeFFBDevice2")
 			{
 				this->AutoAddShortCheckBox("AlternativeFFBDevice2", L"Alternative FFB Device 2", L"Use if wheel rotates incorrectly on device 2");
+			}
+			else if (component == "AlternativeFFBDevice3")
+			{
+				this->AutoAddShortCheckBox("AlternativeFFBDevice3", L"Alternative FFB Device 3", L"Use if wheel rotates incorrectly on device 3");
 			}
 			else if (component == "PowerMode")
 			{
@@ -362,6 +374,10 @@ namespace FFBPluginGUI {
 			{
 				this->AutoAddLongTextBox(L"Global Force Device 2", L"Global FFB force which affects all effects on device 2");
 			}
+			else if (component == "GlobalForceHeaderDevice3")
+			{
+				this->AutoAddLongTextBox(L"Global Force Device 3", L"Global FFB force which affects all effects on device 3");
+			}
 			else if (component == "MinForce")
 			{
 				this->AutoAddShortTrackBarBlock("MinForce", L"Min Force", 0, 100, L"Minimum overrall force strength that will be applied to device");
@@ -378,6 +394,14 @@ namespace FFBPluginGUI {
 			{
 				this->AutoAddShortTrackBarBlock("MaxForceDevice2", L"Max Force", 0, 100, L"Maximum overrall force strength that will be applied to device 2");
 			}
+			else if (component == "MinForceDevice3")
+			{
+				this->AutoAddShortTrackBarBlock("MinForceDevice3", L"Min Force", 0, 100, L"Minimum overrall force strength that will be applied to device 3");
+			}
+			else if (component == "MaxForceDevice3")
+			{
+				this->AutoAddShortTrackBarBlock("MaxForceDevice3", L"Max Force", 0, 100, L"Maximum overrall force strength that will be applied to device 3");
+			}
 			else if (component == "GlobalForce")
 			{
 				this->AutoAddComponent("GlobalForceHeader");
@@ -390,6 +414,12 @@ namespace FFBPluginGUI {
 				this->AutoAddComponent("MinForceDevice2");
 				this->AutoAddComponent("MaxForceDevice2");
 			}
+			else if (component == "GlobalForceDevice3")
+			{
+			this->AutoAddComponent("GlobalForceHeaderDevice3");
+			this->AutoAddComponent("MinForceDevice3");
+			this->AutoAddComponent("MaxForceDevice3");
+			}
 			else if (component == "AltGlobalForceHeader")
 			{
 				this->AutoAddLongTextBox(L"Global Force For Alternative FFB", L"Global FFB force if using Alternative FFB");
@@ -397,6 +427,10 @@ namespace FFBPluginGUI {
 			else if (component == "AltGlobalForceHeaderDevice2")
 			{
 				this->AutoAddLongTextBox(L"Global Force For Alternative FFB Device 2", L"Global FFB force if using Alternative FFB on Device 2");
+			}
+			else if (component == "AltGlobalForceHeaderDevice3")
+			{
+			this->AutoAddLongTextBox(L"Global Force For Alternative FFB Device 3", L"Global FFB force if using Alternative FFB on Device 3");
 			}
 			else if (component == "AlternativeMinForceLeft")
 			{
@@ -430,6 +464,22 @@ namespace FFBPluginGUI {
 			{
 			this->AutoAddShortTrackBarBlock("AlternativeMaxForceRightDevice2", L"Max Force Right", -100, 100, L"Maximum overrall right force strength that will be applied to device 2");
 			}
+			else if (component == "AlternativeMinForceLeftDevice3")
+			{
+			this->AutoAddShortTrackBarBlock("AlternativeMinForceLeftDevice3", L"Min Force Left", -100, 100, L"Minimum overrall left force strength that will be applied to device 3");
+			}
+			else if (component == "AlternativeMaxForceLeftDevice3")
+			{
+			this->AutoAddShortTrackBarBlock("AlternativeMaxForceLeftDevice3", L"Max Force Left", -100, 100, L"Maximum overrall left force strength that will be applied to device 3");
+			}
+			else if (component == "AlternativeMinForceRightDevice3")
+			{
+			this->AutoAddShortTrackBarBlock("AlternativeMinForceRightDevice3", L"Min Force Right", -100, 100, L"Minimum overrall right force strength that will be applied to device 3");
+			}
+			else if (component == "AlternativeMaxForceRightDevice3")
+			{
+			this->AutoAddShortTrackBarBlock("AlternativeMaxForceRightDevice3", L"Max Force Right", -100, 100, L"Maximum overrall right force strength that will be applied to device 3");
+			}
 			else if (component == "AltGlobalForce")
 			{
 				this->AutoAddComponent("AltGlobalForceHeader");
@@ -445,6 +495,14 @@ namespace FFBPluginGUI {
 			this->AutoAddComponent("AlternativeMaxForceLeftDevice2");
 			this->AutoAddComponent("AlternativeMinForceRightDevice2");
 			this->AutoAddComponent("AlternativeMaxForceRightDevice2");
+			}
+			else if (component == "AltGlobalForceDevice3")
+			{
+			this->AutoAddComponent("AltGlobalForceHeaderDevice3");
+			this->AutoAddComponent("AlternativeMinForceLeftDevice3");
+			this->AutoAddComponent("AlternativeMaxForceLeftDevice3");
+			this->AutoAddComponent("AlternativeMinForceRightDevice3");
+			this->AutoAddComponent("AlternativeMaxForceRightDevice3");
 			}
 		}
 

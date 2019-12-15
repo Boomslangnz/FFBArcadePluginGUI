@@ -33,6 +33,7 @@ namespace FFBPluginGUI {
 
 			this->AutoAddDevice1Selector();
 			this->AutoAddDevice2Selector();
+			this->AutoAddDevice3Selector();
 			this->AutoAddComponent("FeedbackLength");
 
 			this->AutoAddComponent("CommonOptions");
@@ -40,15 +41,18 @@ namespace FFBPluginGUI {
 			this->AutoAddComponent("PowerMode");
 
 			this->AutoAddComponent("EnableRumbleDevice2");
+			this->AutoAddComponent("EnableRumbleDevice3");
 			this->AutoAddComponent("ReverseRumbleDevice2");
-			this->AutoAddComponent("AlternativeFFBDevice2");
+			this->AutoAddComponent("ReverseRumbleDevice3");
+			this->AutoAddComponent("AlternativeFFBDevice2");			
+			this->AutoAddComponent("AlternativeFFBDevice3");
 
 			this->AutoAddLongTextBox(L"Force Spring Effect", L"Force Spring effect over using default game spring");
 
 			this->AutoAddShortCheckBox("EnableForceSpringEffect", L"Force Spring Effect", L"Forces spring effect to work all the time");
 			this->AutoAddShortTrackBarBlock("ForceSpringStrength", L"Forced Spring Strength", 0, 100, L"How strong the spring effect is when forced on");
 
-			this->AutoAddLongTextBox(L"Shaker Motor Games Only", L"For games which use shaker motor for effects");
+			this->AutoAddLongTextBox(L"Shaker Motor / Light Gun Games Only", L"For games which use shaker motor for effects");
 
 			this->AutoAddShortTrackBarBlock("SinePeriod", L"Sine Period", 0, 100, L"Period of the sine wave");
 			this->AutoAddShortTrackBarBlock("SineFadePeriod", L"Sine Fade Period", 0, 100, L"Duration of the sine fade");
@@ -65,6 +69,10 @@ namespace FFBPluginGUI {
 			this->AutoAddComponent("GlobalForceDevice2");
 
 			this->AutoAddComponent("AltGlobalForceDevice2");
+
+			this->AutoAddComponent("GlobalForceDevice3");
+
+			this->AutoAddComponent("AltGlobalForceDevice3");
 
 			this->Init();
 		}
