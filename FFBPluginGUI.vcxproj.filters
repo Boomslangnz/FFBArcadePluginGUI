@@ -150,6 +150,9 @@
     <ClCompile Include="Supermodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AliensExtermination.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -285,6 +288,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Supermodel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AliensExtermination.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

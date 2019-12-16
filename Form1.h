@@ -14,6 +14,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #pragma once
 #include <Windows.h>
 #include <string>
+#include "AliensExtermination.h"
 #include "AfterburnerClimax.h"
 #include "BG4.h"
 #include "ButtonRumble.h"
@@ -405,6 +406,12 @@ namespace FFBPluginGUI {
 			Outrun2^ obj1 = gcnew Outrun2(this);
 			obj1->ShowDialog();
 		}
+		else if (GameSelect == 36)
+		{
+		this->Hide();
+		AliensExtermination^ obj1 = gcnew AliensExtermination(this);
+		obj1->ShowDialog();
+		}
 		else if (GameSelect == 38)
 		{
 		this->Hide();
@@ -580,6 +587,10 @@ namespace FFBPluginGUI {
 		this->Hide();
 		Outrun2Input^ obj1 = gcnew Outrun2Input(this);
 		obj1->ShowDialog();
+		}
+		else if (GameSelect == 36)
+		{
+		MessageBox::Show("Aliens Extermination contains no input features");
 		}
 		else if (GameSelect == 38)
 		{

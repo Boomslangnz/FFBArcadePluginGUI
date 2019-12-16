@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AfterburnerClimax.cpp" />
+    <ClCompile Include="AliensExtermination.cpp" />
     <ClCompile Include="BG4.cpp" />
     <ClCompile Include="ButtonRumble.cpp" />
     <ClCompile Include="ButtonRumbleInput.cpp" />
@@ -202,6 +203,7 @@
     <ClInclude Include="AfterburnerClimax.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="AliensExtermination.h" />
     <ClInclude Include="BG4.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
