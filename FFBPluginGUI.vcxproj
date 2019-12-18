@@ -189,12 +189,14 @@
     <ClCompile Include="Outrun2.cpp" />
     <ClCompile Include="Outrun2Input.cpp" />
     <ClCompile Include="PokkenTournament.cpp" />
+    <ClCompile Include="Rambo.cpp" />
     <ClCompile Include="RoadFighters3D.cpp" />
     <ClCompile Include="RoadFighters3DInput.cpp" />
     <ClCompile Include="SegaRacingClassic.cpp" />
     <ClCompile Include="SegaRally3.cpp" />
     <ClCompile Include="SonicAllStars.cpp" />
     <ClCompile Include="Supermodel.cpp" />
+    <ClCompile Include="Transformers.cpp" />
     <ClCompile Include="WackyRaces.cpp" />
     <ClCompile Include="WMMT5.cpp" />
     <ClCompile Include="WMMT5Input.cpp" />
@@ -299,6 +301,7 @@
     <ClInclude Include="PokkenTournament.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="Rambo.h" />
     <ClInclude Include="RoadFighters3D.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
@@ -315,6 +318,7 @@
       <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="Supermodel.h" />
+    <ClInclude Include="Transformers.h" />
     <ClInclude Include="WackyRaces.h">
       <FileType>CppHeader</FileType>
     </ClInclude>

@@ -153,6 +153,12 @@
     <ClCompile Include="AliensExtermination.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Rambo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Transformers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -291,6 +297,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AliensExtermination.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rambo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Transformers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

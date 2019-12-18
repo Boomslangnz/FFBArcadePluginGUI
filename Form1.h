@@ -58,6 +58,8 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "WackyRaces.h"
 #include "WMMT5.h"
 #include "WMMT5Input.h"
+#include "Rambo.h"
+#include "Transformers.h"
 
 namespace FFBPluginGUI {
 
@@ -412,6 +414,12 @@ namespace FFBPluginGUI {
 		AliensExtermination^ obj1 = gcnew AliensExtermination(this);
 		obj1->ShowDialog();
 		}
+		else if (GameSelect == 37)
+		{
+		this->Hide();
+		Rambo^ obj1 = gcnew Rambo(this);
+		obj1->ShowDialog();
+		}
 		else if (GameSelect == 38)
 		{
 		this->Hide();
@@ -422,6 +430,12 @@ namespace FFBPluginGUI {
 		{
 		this->Hide();
 		KODrive^ obj1 = gcnew KODrive(this);
+		obj1->ShowDialog();
+		}
+		else if (GameSelect == 40)
+		{
+		this->Hide();
+		Transformers^ obj1 = gcnew Transformers(this);
 		obj1->ShowDialog();
 		}
 		else
@@ -592,6 +606,10 @@ namespace FFBPluginGUI {
 		{
 		MessageBox::Show("Aliens Extermination contains no input features");
 		}
+		else if (GameSelect == 37)
+		{
+		MessageBox::Show("Rambo contains no input features");
+		}
 		else if (GameSelect == 38)
 		{
 		MessageBox::Show("Ford Racing Other contains no input features");
@@ -599,6 +617,10 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 39)
 		{
 		MessageBox::Show("KO Drive contains no input features");
+		}
+		else if (GameSelect == 40)
+		{
+		MessageBox::Show("Transformers contains no input features");
 		}
 		else
 		{
