@@ -164,6 +164,7 @@
     <ClCompile Include="FFBTest.cpp" />
     <ClCompile Include="FordRacing.cpp" />
     <ClCompile Include="Form1.cpp" />
+    <ClCompile Include="GoldenGun.cpp" />
     <ClCompile Include="GRID.cpp" />
     <ClCompile Include="GTIClub.cpp" />
     <ClCompile Include="Helper.cpp" />
@@ -234,6 +235,7 @@
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="GoldenGun.h" />
     <ClInclude Include="GRID.h" />
     <ClInclude Include="GTIClub.h">
       <FileType>CppHeader</FileType>

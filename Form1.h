@@ -25,6 +25,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "DaytonaChampionshipUSAInput.h"
 #include "FFBTest.h"
 #include "FordRacing.h"
+#include "GoldenGun.h"
 #include "GRID.h"
 #include "GTIClub.h"
 #include "HOTD4.h"
@@ -438,6 +439,12 @@ namespace FFBPluginGUI {
 		Transformers^ obj1 = gcnew Transformers(this);
 		obj1->ShowDialog();
 		}
+		else if (GameSelect == 41)
+		{
+		this->Hide();
+		GoldenGun^ obj1 = gcnew GoldenGun(this);
+		obj1->ShowDialog();
+		}
 		else
 		{
 			MessageBox::Show("FFBPlugin.ini does not contain GameId or does not exist");
@@ -621,6 +628,10 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 40)
 		{
 		MessageBox::Show("Transformers contains no input features");
+		}
+		else if (GameSelect == 41)
+		{
+		MessageBox::Show("Golden Gun contains no input features");
 		}
 		else
 		{

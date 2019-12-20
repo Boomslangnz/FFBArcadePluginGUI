@@ -159,6 +159,9 @@
     <ClCompile Include="Transformers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GoldenGun.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -303,6 +306,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Transformers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GoldenGun.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
