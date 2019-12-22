@@ -328,9 +328,9 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 22)
 		{
-		this->Hide();
-		MameSelect^ obj1 = gcnew MameSelect(this);
-		obj1->ShowDialog();
+			this->Hide();
+			MameSelect^ obj1 = gcnew MameSelect(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 23)
 		{
@@ -412,39 +412,39 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 36)
 		{
-		this->Hide();
-		AliensExtermination^ obj1 = gcnew AliensExtermination(this);
-		obj1->ShowDialog();
+			this->Hide();
+			AliensExtermination^ obj1 = gcnew AliensExtermination(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 37)
 		{
-		this->Hide();
-		Rambo^ obj1 = gcnew Rambo(this);
-		obj1->ShowDialog();
+			this->Hide();
+			Rambo^ obj1 = gcnew Rambo(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 38)
 		{
-		this->Hide();
-		FordRacing^ obj1 = gcnew FordRacing(this);
-		obj1->ShowDialog();
+			this->Hide();
+			FordRacing^ obj1 = gcnew FordRacing(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 39)
 		{
-		this->Hide();
-		KODrive^ obj1 = gcnew KODrive(this);
-		obj1->ShowDialog();
+			this->Hide();
+			KODrive^ obj1 = gcnew KODrive(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 40)
 		{
-		this->Hide();
-		Transformers^ obj1 = gcnew Transformers(this);
-		obj1->ShowDialog();
+			this->Hide();
+			Transformers^ obj1 = gcnew Transformers(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 41)
 		{
-		this->Hide();
-		GoldenGun^ obj1 = gcnew GoldenGun(this);
-		obj1->ShowDialog();
+			this->Hide();
+			GoldenGun^ obj1 = gcnew GoldenGun(this);
+			obj1->ShowDialog();
 		}
 		else
 		{
@@ -574,15 +574,15 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 28)
 		{
-		this->Hide();
-		ButtonRumbleInput^ obj1 = gcnew ButtonRumbleInput(this);
-		obj1->ShowDialog();
+			this->Hide();
+			ButtonRumbleInput^ obj1 = gcnew ButtonRumbleInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 29)
 		{
-		this->Hide();
-		RoadFighters3DInput^ obj1 = gcnew RoadFighters3DInput(this);
-		obj1->ShowDialog();
+			this->Hide();
+			RoadFighters3DInput^ obj1 = gcnew RoadFighters3DInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 30)
 		{
@@ -590,49 +590,49 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 31)
 		{
-		MessageBox::Show("Lets go island contains no input features");
+			MessageBox::Show("Lets go island contains no input features");
 		}
 		else if (GameSelect == 32)
 		{
-		MessageBox::Show("Initial D Zero contains no input features");
+			MessageBox::Show("Initial D Zero contains no input features");
 		}
 		else if (GameSelect == 33)
 		{
-		MessageBox::Show("Mame contains no input features");
+			MessageBox::Show("Mame contains no input features");
 		}
 		else if (GameSelect == 34)
 		{
-		MessageBox::Show("Supermodel Reading contains no input features");
+			MessageBox::Show("Supermodel Reading contains no input features");
 		}
 		else if (GameSelect == 35)
 		{
-		this->Hide();
-		Outrun2Input^ obj1 = gcnew Outrun2Input(this);
-		obj1->ShowDialog();
+			this->Hide();
+			Outrun2Input^ obj1 = gcnew Outrun2Input(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 36)
 		{
-		MessageBox::Show("Aliens Extermination contains no input features");
+			MessageBox::Show("Aliens Extermination contains no input features");
 		}
 		else if (GameSelect == 37)
 		{
-		MessageBox::Show("Rambo contains no input features");
+			MessageBox::Show("Rambo contains no input features");
 		}
 		else if (GameSelect == 38)
 		{
-		MessageBox::Show("Ford Racing Other contains no input features");
+			MessageBox::Show("Ford Racing Other contains no input features");
 		}
 		else if (GameSelect == 39)
 		{
-		MessageBox::Show("KO Drive contains no input features");
+			MessageBox::Show("KO Drive contains no input features");
 		}
 		else if (GameSelect == 40)
 		{
-		MessageBox::Show("Transformers contains no input features");
+			MessageBox::Show("Transformers contains no input features");
 		}
 		else if (GameSelect == 41)
 		{
-		MessageBox::Show("Golden Gun contains no input features");
+			MessageBox::Show("Golden Gun contains no input features");
 		}
 		else
 		{
