@@ -12,4 +12,3 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 */
 
 #include "ChaseHQ2.h"
-

@@ -147,9 +147,6 @@
     <ClCompile Include="OutputReading.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Supermodel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AliensExtermination.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -160,6 +157,132 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GoldenGun.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MameSelect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ZombieRaid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UnderFire.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TurkeyShoot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeCrisis.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Terminator2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Spacegun.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RevolutionX.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RailChase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PointBlank2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OperationWolf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OperationThunderbolt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MechanizedAttack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LaserGhost.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GunBuster.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F1GrandPrixStar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F1GrandPrixStar2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GhoulPanic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CiscoHeat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChaseBombers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BeastBusters.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Alien3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AfterburnerII.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtuaRacing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SanFranciscoRush.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SanFranciscoRushTheRock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SanFranciscoRush2049.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CrusnWorld.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CrusnUSA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CaliforniaSpeed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Outrun.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TurboOutrun.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PowerDrift.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OutRunners.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OffRoadChallenge.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SupermodelSelect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DaytonaUSA2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DirtDevils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EmergencyCallAmbulance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LeMans24.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SegaRally2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScudRace.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -296,9 +419,6 @@
     <ClInclude Include="OutputReading.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Supermodel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="AliensExtermination.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -309,6 +429,132 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GoldenGun.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MameSelect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ZombieRaid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UnderFire.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TurkeyShoot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeCrisis.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Terminator2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spacegun.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RevolutionX.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RailChase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PointBlank2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OperationWolf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OperationThunderbolt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LaserGhost.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MechanizedAttack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GunBuster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F1GrandPrixStar2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F1GrandPrixStar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GhoulPanic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CiscoHeat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChaseBombers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BeastBusters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Alien3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AfterburnerII.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtuaRacing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SanFranciscoRush.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SanFranciscoRushTheRock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SanFranciscoRush2049.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CrusnWorld.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CrusnUSA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OffRoadChallenge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CaliforniaSpeed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Outrun.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TurboOutrun.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PowerDrift.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OutRunners.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SupermodelSelect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DaytonaUSA2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirtDevils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EmergencyCallAmbulance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LeMans24.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SegaRally2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScudRace.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -17,10 +17,10 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 
 namespace FFBPluginGUI {
 
-	public ref class Supermodel : Helper
+	public ref class OperationWolf : Helper
 	{
 	public:
-		Supermodel(MetroForm^ obj1)
+		OperationWolf(MetroForm^ obj1)
 		{
 			this->obj = obj1;
 			this->InitializeComponent();
@@ -31,22 +31,16 @@ namespace FFBPluginGUI {
 		{
 			this->SuspendLayout();
 
-			this->AutoAddDevice1Selector();
-			this->AutoAddComponent("FeedbackLength");
+			this->AutoAddLongTextBox(L"Modify how rumble works", L"You can modify each motor for how you want effect");
 
-			this->AutoAddComponent("CommonOptions");
-			this->AutoAddComponent("AlternativeFFB");
-
-			this->AutoAddLongTextBox(L"Force Spring Effect", L"Force Spring effect over using default game spring");
-
-			this->AutoAddShortCheckBox("EnableForceSpringEffect", L"Force Spring Effect", L"Forces spring effect to work all the time");
-			this->AutoAddShortTrackBarBlock("ForceSpringStrength", L"Forced Spring Strength", 0, 100, L"How strong the spring effect is when forced on");
+			this->AutoAddShortTrackBarBlock("RumbleStrengthLeftMotorOpWolf", L"L Rumble Motor Strength", 0, 100, L"Strength of Left Rumble Motor");
+			this->AutoAddShortTrackBarBlock("RumbleStrengthRightMotorOpWolf", L"R Rumble Motor Strength", 0, 100, L"Strength of Right Rumble Motor");
 
 			this->New2ColsPage();
 
-			this->AutoAddComponent("GlobalForce");
-
-			this->AutoAddComponent("AltGlobalForce");
+			this->AutoAddComponent("GlobalForceHeader");
+			this->AutoAddShortTrackBarBlock("MinForceOpWolf", L"Min Force", 0, 100, L"Minimum overrall force strength that will be applied to device");
+			this->AutoAddShortTrackBarBlock("MaxForceOpWolf", L"Max Force", 0, 100, L"Maximum overrall force strength that will be applied to device");
 
 			this->Init();
 		}

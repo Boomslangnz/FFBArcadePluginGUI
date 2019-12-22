@@ -43,6 +43,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "M2EmulatorInput.h"
 #include "Machstorm.h"
 #include "Mame.h"
+#include "MameSelect.h"
 #include "MKGP100.h"
 #include "MKGP110.h"
 #include "NascarRacing.h"
@@ -55,7 +56,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "SegaRacingClassic.h"
 #include "SegaRally3.h"
 #include "SonicAllStars.h"
-#include "Supermodel.h"
+#include "SupermodelSelect.h"
 #include "WackyRaces.h"
 #include "WMMT5.h"
 #include "WMMT5Input.h"
@@ -328,7 +329,7 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 22)
 		{
 		this->Hide();
-		OutputReading^ obj1 = gcnew OutputReading(this);
+		MameSelect^ obj1 = gcnew MameSelect(this);
 		obj1->ShowDialog();
 		}
 		else if (GameSelect == 23)
@@ -400,7 +401,7 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 34)
 		{
 			this->Hide();
-			Supermodel^ obj1 = gcnew Supermodel(this);
+			SupermodelSelect^ obj1 = gcnew SupermodelSelect(this);
 			obj1->ShowDialog();
 		}
 		else if (GameSelect == 35)
