@@ -23,6 +23,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "ChaseHQ2Input.h"
 #include "DaytonaChampionshipUSA.h"
 #include "DaytonaChampionshipUSAInput.h"
+#include "DirtyDrivin.h"
 #include "FFBTest.h"
 #include "FordRacing.h"
 #include "GoldenGun.h"
@@ -47,7 +48,6 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "MKGP100.h"
 #include "MKGP110.h"
 #include "NascarRacing.h"
-#include "OutputReading.h"
 #include "Outrun2.h"
 #include "Outrun2Input.h"
 #include "PokkenTournament.h"
@@ -446,6 +446,12 @@ namespace FFBPluginGUI {
 			GoldenGun^ obj1 = gcnew GoldenGun(this);
 			obj1->ShowDialog();
 		}
+		else if (GameSelect == 42)
+		{
+		this->Hide();
+		DirtyDrivin^ obj1 = gcnew DirtyDrivin(this);
+		obj1->ShowDialog();
+		}
 		else
 		{
 			MessageBox::Show("FFBPlugin.ini does not contain GameId or does not exist");
@@ -633,6 +639,10 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 41)
 		{
 			MessageBox::Show("Golden Gun contains no input features");
+		}
+		else if (GameSelect == 42)
+		{
+		MessageBox::Show("Dirty Drivin' contains no input features");
 		}
 		else
 		{

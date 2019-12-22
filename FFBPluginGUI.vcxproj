@@ -171,6 +171,7 @@
     <ClCompile Include="DaytonaChampionshipUSAInput.cpp" />
     <ClCompile Include="DaytonaUSA2.cpp" />
     <ClCompile Include="DirtDevils.cpp" />
+    <ClCompile Include="DirtyDrivin.cpp" />
     <ClCompile Include="EmergencyCallAmbulance.cpp" />
     <ClCompile Include="F1GrandPrixStar.cpp" />
     <ClCompile Include="F1GrandPrixStar2.cpp" />
@@ -208,7 +209,6 @@
     <ClCompile Include="OffRoadChallenge.cpp" />
     <ClCompile Include="OperationThunderbolt.cpp" />
     <ClCompile Include="OperationWolf.cpp" />
-    <ClCompile Include="OutputReading.cpp" />
     <ClCompile Include="Outrun.cpp" />
     <ClCompile Include="Outrun2.cpp" />
     <ClCompile Include="Outrun2Input.cpp" />
@@ -277,6 +277,7 @@
     </ClInclude>
     <ClInclude Include="DaytonaUSA2.h" />
     <ClInclude Include="DirtDevils.h" />
+    <ClInclude Include="DirtyDrivin.h" />
     <ClInclude Include="EmergencyCallAmbulance.h" />
     <ClInclude Include="F1GrandPrixStar2.h" />
     <ClInclude Include="F1GrandPrixStar.h" />
@@ -356,9 +357,6 @@
     <ClInclude Include="OffRoadChallenge.h" />
     <ClInclude Include="OperationThunderbolt.h" />
     <ClInclude Include="OperationWolf.h" />
-    <ClInclude Include="OutputReading.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
     <ClInclude Include="Outrun.h" />
     <ClInclude Include="Outrun2.h">
       <FileType>CppHeader</FileType>

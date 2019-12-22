@@ -144,9 +144,6 @@
     <ClCompile Include="ChaseHQ2Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OutputReading.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AliensExtermination.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -285,6 +282,9 @@
     <ClCompile Include="ScudRace.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DirtyDrivin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -414,9 +414,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ChaseHQ2Input.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="OutputReading.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AliensExtermination.h">
@@ -555,6 +552,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ScudRace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirtyDrivin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

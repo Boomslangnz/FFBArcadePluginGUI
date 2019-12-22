@@ -759,14 +759,14 @@ namespace FFBPluginGUI {
 			// 
 			// metroCheckBox4
 			// 
-			int EnableLoggingA = GetPrivateProfileInt(TEXT("Settings"), TEXT("EnableLogging"), 0, TEXT(".\\FFBPlugin.ini"));
+			int LoggingA = GetPrivateProfileInt(TEXT("Settings"), TEXT("Logging"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroCheckBox4->AutoSize = true;
 			this->metroCheckBox4->Location = System::Drawing::Point(23, 149);
 			this->metroCheckBox4->Name = L"metroCheckBox4";
 			this->metroCheckBox4->Size = System::Drawing::Size(105, 15);
 			this->metroCheckBox4->TabIndex = 43;
 			this->metroCheckBox4->TabStop = false;
-			this->metroCheckBox4->Checked = EnableLoggingA;
+			this->metroCheckBox4->Checked = LoggingA;
 			this->metroCheckBox4->Text = L"Enable Logging";
 			this->metroCheckBox4->UseSelectable = true;
 			this->metroCheckBox4->CheckedChanged += gcnew System::EventHandler(this, &MameSelect::metroCheckBox4_CheckedChanged);
@@ -871,11 +871,11 @@ namespace FFBPluginGUI {
 	{
 		if (metroCheckBox4->Checked)
 		{
-			WritePrivateProfileString(TEXT("Settings"), TEXT("EnableLogging"), TEXT("1"), TEXT(".\\FFBPlugin.ini"));
+			WritePrivateProfileString(TEXT("Settings"), TEXT("Logging"), TEXT("1"), TEXT(".\\FFBPlugin.ini"));
 		}
 		else
 		{
-			WritePrivateProfileString(TEXT("Settings"), TEXT("EnableLogging"), TEXT("0"), TEXT(".\\FFBPlugin.ini"));
+			WritePrivateProfileString(TEXT("Settings"), TEXT("Logging"), TEXT("0"), TEXT(".\\FFBPlugin.ini"));
 		}
 	}
 	private: System::Void metroComboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)
