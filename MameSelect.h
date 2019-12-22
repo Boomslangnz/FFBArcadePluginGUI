@@ -205,7 +205,7 @@ namespace FFBPluginGUI {
 			this->metroButton1->Size = System::Drawing::Size(216, 23);
 			this->metroButton1->TabIndex = 0;
 			this->metroButton1->TabStop = false;
-			this->metroButton1->Text = L"San Francisco Rush";
+			this->metroButton1->Text = L"Afterburner II";
 			this->metroButton1->UseSelectable = true;
 			this->metroButton1->Click += gcnew System::EventHandler(this, &MameSelect::metroButton1_Click);
 			// 
@@ -252,7 +252,7 @@ namespace FFBPluginGUI {
 			this->metroButton2->Size = System::Drawing::Size(216, 23);
 			this->metroButton2->TabIndex = 4;
 			this->metroButton2->TabStop = false;
-			this->metroButton2->Text = L"San Francisco Rush: The Rock";
+			this->metroButton2->Text = L"Alien 3";
 			this->metroButton2->UseSelectable = true;
 			this->metroButton2->Click += gcnew System::EventHandler(this, &MameSelect::metroButton2_Click);
 			// 
@@ -263,7 +263,7 @@ namespace FFBPluginGUI {
 			this->metroButton3->Size = System::Drawing::Size(216, 23);
 			this->metroButton3->TabIndex = 5;
 			this->metroButton3->TabStop = false;
-			this->metroButton3->Text = L"San Francisco Rush 2049";
+			this->metroButton3->Text = L"Beast Busters";
 			this->metroButton3->UseSelectable = true;
 			this->metroButton3->Click += gcnew System::EventHandler(this, &MameSelect::metroButton3_Click);
 			// 
@@ -274,7 +274,7 @@ namespace FFBPluginGUI {
 			this->metroButton4->Size = System::Drawing::Size(216, 23);
 			this->metroButton4->TabIndex = 7;
 			this->metroButton4->TabStop = false;
-			this->metroButton4->Text = L"Cruis\'n USA";
+			this->metroButton4->Text = L"California Speed";
 			this->metroButton4->UseSelectable = true;
 			this->metroButton4->Click += gcnew System::EventHandler(this, &MameSelect::metroButton4_Click);
 			// 
@@ -285,7 +285,7 @@ namespace FFBPluginGUI {
 			this->metroButton5->Size = System::Drawing::Size(216, 23);
 			this->metroButton5->TabIndex = 8;
 			this->metroButton5->TabStop = false;
-			this->metroButton5->Text = L"Cruis\'n World";
+			this->metroButton5->Text = L"Chase Bombers";
 			this->metroButton5->UseSelectable = true;
 			this->metroButton5->Click += gcnew System::EventHandler(this, &MameSelect::metroButton5_Click);
 			// 
@@ -296,7 +296,7 @@ namespace FFBPluginGUI {
 			this->metroButton6->Size = System::Drawing::Size(216, 23);
 			this->metroButton6->TabIndex = 9;
 			this->metroButton6->TabStop = false;
-			this->metroButton6->Text = L"Off Road Challenge";
+			this->metroButton6->Text = L"Cisco Heat";
 			this->metroButton6->UseSelectable = true;
 			this->metroButton6->Click += gcnew System::EventHandler(this, &MameSelect::metroButton6_Click);
 			// 
@@ -307,7 +307,7 @@ namespace FFBPluginGUI {
 			this->metroButton7->Size = System::Drawing::Size(216, 23);
 			this->metroButton7->TabIndex = 10;
 			this->metroButton7->TabStop = false;
-			this->metroButton7->Text = L"California Speed";
+			this->metroButton7->Text = L"Cruis\'n USA";
 			this->metroButton7->UseSelectable = true;
 			this->metroButton7->Click += gcnew System::EventHandler(this, &MameSelect::metroButton7_Click);
 			// 
@@ -329,7 +329,7 @@ namespace FFBPluginGUI {
 			this->metroButton8->Size = System::Drawing::Size(216, 23);
 			this->metroButton8->TabIndex = 12;
 			this->metroButton8->TabStop = false;
-			this->metroButton8->Text = L"Virtua Racing";
+			this->metroButton8->Text = L"Cruis\'n World";
 			this->metroButton8->UseSelectable = true;
 			this->metroButton8->Click += gcnew System::EventHandler(this, &MameSelect::metroButton8_Click);
 			// 
@@ -340,7 +340,7 @@ namespace FFBPluginGUI {
 			this->metroButton9->Size = System::Drawing::Size(216, 23);
 			this->metroButton9->TabIndex = 13;
 			this->metroButton9->TabStop = false;
-			this->metroButton9->Text = L"OutRun";
+			this->metroButton9->Text = L"F-1 Grand Prix Star";
 			this->metroButton9->UseSelectable = true;
 			this->metroButton9->Click += gcnew System::EventHandler(this, &MameSelect::metroButton9_Click);
 			// 
@@ -351,7 +351,7 @@ namespace FFBPluginGUI {
 			this->metroButton10->Size = System::Drawing::Size(216, 23);
 			this->metroButton10->TabIndex = 14;
 			this->metroButton10->TabStop = false;
-			this->metroButton10->Text = L"Turbo OutRun";
+			this->metroButton10->Text = L"F-1 Grand Prix Star II";
 			this->metroButton10->UseSelectable = true;
 			this->metroButton10->Click += gcnew System::EventHandler(this, &MameSelect::metroButton10_Click);
 			// 
@@ -362,7 +362,7 @@ namespace FFBPluginGUI {
 			this->metroButton11->Size = System::Drawing::Size(216, 23);
 			this->metroButton11->TabIndex = 15;
 			this->metroButton11->TabStop = false;
-			this->metroButton11->Text = L"OutRunners";
+			this->metroButton11->Text = L"Ghoul Panic";
 			this->metroButton11->UseSelectable = true;
 			this->metroButton11->Click += gcnew System::EventHandler(this, &MameSelect::metroButton11_Click);
 			// 
@@ -373,7 +373,7 @@ namespace FFBPluginGUI {
 			this->metroButton12->Size = System::Drawing::Size(216, 23);
 			this->metroButton12->TabIndex = 16;
 			this->metroButton12->TabStop = false;
-			this->metroButton12->Text = L"Power Drift";
+			this->metroButton12->Text = L"Gunbuster";
 			this->metroButton12->UseSelectable = true;
 			this->metroButton12->Click += gcnew System::EventHandler(this, &MameSelect::metroButton12_Click);
 			// 
@@ -384,7 +384,7 @@ namespace FFBPluginGUI {
 			this->metroButton13->Size = System::Drawing::Size(216, 23);
 			this->metroButton13->TabIndex = 17;
 			this->metroButton13->TabStop = false;
-			this->metroButton13->Text = L"Afterburner II";
+			this->metroButton13->Text = L"Laser Ghost";
 			this->metroButton13->UseSelectable = true;
 			this->metroButton13->Click += gcnew System::EventHandler(this, &MameSelect::metroButton13_Click);
 			// 
@@ -395,7 +395,7 @@ namespace FFBPluginGUI {
 			this->metroButton14->Size = System::Drawing::Size(216, 23);
 			this->metroButton14->TabIndex = 18;
 			this->metroButton14->TabStop = false;
-			this->metroButton14->Text = L"Alien3";
+			this->metroButton14->Text = L"Mechanized Attack";
 			this->metroButton14->UseSelectable = true;
 			this->metroButton14->Click += gcnew System::EventHandler(this, &MameSelect::metroButton14_Click);
 			// 
@@ -406,7 +406,7 @@ namespace FFBPluginGUI {
 			this->metroButton15->Size = System::Drawing::Size(216, 23);
 			this->metroButton15->TabIndex = 19;
 			this->metroButton15->TabStop = false;
-			this->metroButton15->Text = L"Beast Busters";
+			this->metroButton15->Text = L"Off Road Challenge";
 			this->metroButton15->UseSelectable = true;
 			this->metroButton15->Click += gcnew System::EventHandler(this, &MameSelect::metroButton15_Click);
 			// 
@@ -417,7 +417,7 @@ namespace FFBPluginGUI {
 			this->metroButton16->Size = System::Drawing::Size(216, 23);
 			this->metroButton16->TabIndex = 20;
 			this->metroButton16->TabStop = false;
-			this->metroButton16->Text = L"Chase Bombers";
+			this->metroButton16->Text = L"Operation Thunderbolt";
 			this->metroButton16->UseSelectable = true;
 			this->metroButton16->Click += gcnew System::EventHandler(this, &MameSelect::metroButton16_Click);
 			// 
@@ -428,7 +428,7 @@ namespace FFBPluginGUI {
 			this->metroButton17->Size = System::Drawing::Size(216, 23);
 			this->metroButton17->TabIndex = 21;
 			this->metroButton17->TabStop = false;
-			this->metroButton17->Text = L"Cisco Heat";
+			this->metroButton17->Text = L"Operation Wolf";
 			this->metroButton17->UseSelectable = true;
 			this->metroButton17->Click += gcnew System::EventHandler(this, &MameSelect::metroButton17_Click);
 			// 
@@ -439,7 +439,7 @@ namespace FFBPluginGUI {
 			this->metroButton18->Size = System::Drawing::Size(216, 23);
 			this->metroButton18->TabIndex = 22;
 			this->metroButton18->TabStop = false;
-			this->metroButton18->Text = L"Ghoul Panic";
+			this->metroButton18->Text = L"Outrun";
 			this->metroButton18->UseSelectable = true;
 			this->metroButton18->Click += gcnew System::EventHandler(this, &MameSelect::metroButton18_Click);
 			// 
@@ -450,7 +450,7 @@ namespace FFBPluginGUI {
 			this->metroButton19->Size = System::Drawing::Size(216, 23);
 			this->metroButton19->TabIndex = 23;
 			this->metroButton19->TabStop = false;
-			this->metroButton19->Text = L"Grand Prix Star";
+			this->metroButton19->Text = L"Outrunners";
 			this->metroButton19->UseSelectable = true;
 			this->metroButton19->Click += gcnew System::EventHandler(this, &MameSelect::metroButton19_Click);
 			// 
@@ -461,7 +461,7 @@ namespace FFBPluginGUI {
 			this->metroButton20->Size = System::Drawing::Size(216, 23);
 			this->metroButton20->TabIndex = 24;
 			this->metroButton20->TabStop = false;
-			this->metroButton20->Text = L"F-1 Grand Prix Star II";
+			this->metroButton20->Text = L"Point Blank 2";
 			this->metroButton20->UseSelectable = true;
 			this->metroButton20->Click += gcnew System::EventHandler(this, &MameSelect::metroButton20_Click);
 			// 
@@ -472,7 +472,7 @@ namespace FFBPluginGUI {
 			this->metroButton21->Size = System::Drawing::Size(216, 23);
 			this->metroButton21->TabIndex = 25;
 			this->metroButton21->TabStop = false;
-			this->metroButton21->Text = L"GunBuster";
+			this->metroButton21->Text = L"Power Drift";
 			this->metroButton21->UseSelectable = true;
 			this->metroButton21->Click += gcnew System::EventHandler(this, &MameSelect::metroButton21_Click);
 			// 
@@ -483,7 +483,7 @@ namespace FFBPluginGUI {
 			this->metroButton22->Size = System::Drawing::Size(216, 23);
 			this->metroButton22->TabIndex = 26;
 			this->metroButton22->TabStop = false;
-			this->metroButton22->Text = L"Mechanized Attack";
+			this->metroButton22->Text = L"Rail Chase";
 			this->metroButton22->UseSelectable = true;
 			this->metroButton22->Click += gcnew System::EventHandler(this, &MameSelect::metroButton22_Click);
 			// 
@@ -494,7 +494,7 @@ namespace FFBPluginGUI {
 			this->metroButton23->Size = System::Drawing::Size(216, 23);
 			this->metroButton23->TabIndex = 27;
 			this->metroButton23->TabStop = false;
-			this->metroButton23->Text = L"Laser Ghost";
+			this->metroButton23->Text = L"Revolution X";
 			this->metroButton23->UseSelectable = true;
 			this->metroButton23->Click += gcnew System::EventHandler(this, &MameSelect::metroButton23_Click);
 			// 
@@ -505,7 +505,7 @@ namespace FFBPluginGUI {
 			this->metroButton24->Size = System::Drawing::Size(216, 23);
 			this->metroButton24->TabIndex = 28;
 			this->metroButton24->TabStop = false;
-			this->metroButton24->Text = L"Operation Thunderbolt";
+			this->metroButton24->Text = L"San Francisco Rush";
 			this->metroButton24->UseSelectable = true;
 			this->metroButton24->Click += gcnew System::EventHandler(this, &MameSelect::metroButton24_Click);
 			// 
@@ -516,7 +516,7 @@ namespace FFBPluginGUI {
 			this->metroButton25->Size = System::Drawing::Size(216, 23);
 			this->metroButton25->TabIndex = 29;
 			this->metroButton25->TabStop = false;
-			this->metroButton25->Text = L"Operation Wolf";
+			this->metroButton25->Text = L"San Francisco Rush: The Rock";
 			this->metroButton25->UseSelectable = true;
 			this->metroButton25->Click += gcnew System::EventHandler(this, &MameSelect::metroButton25_Click);
 			// 
@@ -527,7 +527,7 @@ namespace FFBPluginGUI {
 			this->metroButton26->Size = System::Drawing::Size(216, 23);
 			this->metroButton26->TabIndex = 30;
 			this->metroButton26->TabStop = false;
-			this->metroButton26->Text = L"Point Blank 2";
+			this->metroButton26->Text = L"San Francisco Rush 2049";
 			this->metroButton26->UseSelectable = true;
 			this->metroButton26->Click += gcnew System::EventHandler(this, &MameSelect::metroButton26_Click);
 			// 
@@ -538,7 +538,7 @@ namespace FFBPluginGUI {
 			this->metroButton27->Size = System::Drawing::Size(216, 23);
 			this->metroButton27->TabIndex = 31;
 			this->metroButton27->TabStop = false;
-			this->metroButton27->Text = L"Rail Chase";
+			this->metroButton27->Text = L"Space Gun";
 			this->metroButton27->UseSelectable = true;
 			this->metroButton27->Click += gcnew System::EventHandler(this, &MameSelect::metroButton27_Click);
 			// 
@@ -549,7 +549,7 @@ namespace FFBPluginGUI {
 			this->metroButton28->Size = System::Drawing::Size(216, 23);
 			this->metroButton28->TabIndex = 32;
 			this->metroButton28->TabStop = false;
-			this->metroButton28->Text = L"Revolution X";
+			this->metroButton28->Text = L"Terminator 2";
 			this->metroButton28->UseSelectable = true;
 			this->metroButton28->Click += gcnew System::EventHandler(this, &MameSelect::metroButton28_Click);
 			// 
@@ -560,7 +560,7 @@ namespace FFBPluginGUI {
 			this->metroButton29->Size = System::Drawing::Size(216, 23);
 			this->metroButton29->TabIndex = 33;
 			this->metroButton29->TabStop = false;
-			this->metroButton29->Text = L"Space Gun";
+			this->metroButton29->Text = L"Time Crisis";
 			this->metroButton29->UseSelectable = true;
 			this->metroButton29->Click += gcnew System::EventHandler(this, &MameSelect::metroButton29_Click);
 			// 
@@ -571,7 +571,7 @@ namespace FFBPluginGUI {
 			this->metroButton30->Size = System::Drawing::Size(216, 23);
 			this->metroButton30->TabIndex = 34;
 			this->metroButton30->TabStop = false;
-			this->metroButton30->Text = L"Terminator 2";
+			this->metroButton30->Text = L"Turbo Outrun";
 			this->metroButton30->UseSelectable = true;
 			this->metroButton30->Click += gcnew System::EventHandler(this, &MameSelect::metroButton30_Click);
 			// 
@@ -582,7 +582,7 @@ namespace FFBPluginGUI {
 			this->metroButton31->Size = System::Drawing::Size(216, 23);
 			this->metroButton31->TabIndex = 35;
 			this->metroButton31->TabStop = false;
-			this->metroButton31->Text = L"Time Crisis";
+			this->metroButton31->Text = L"Turkey Shoot";
 			this->metroButton31->UseSelectable = true;
 			this->metroButton31->Click += gcnew System::EventHandler(this, &MameSelect::metroButton31_Click);
 			// 
@@ -593,7 +593,7 @@ namespace FFBPluginGUI {
 			this->metroButton32->Size = System::Drawing::Size(216, 23);
 			this->metroButton32->TabIndex = 36;
 			this->metroButton32->TabStop = false;
-			this->metroButton32->Text = L"Turkey Shoot";
+			this->metroButton32->Text = L"Under Fire";
 			this->metroButton32->UseSelectable = true;
 			this->metroButton32->Click += gcnew System::EventHandler(this, &MameSelect::metroButton32_Click);
 			// 
@@ -604,7 +604,7 @@ namespace FFBPluginGUI {
 			this->metroButton33->Size = System::Drawing::Size(216, 23);
 			this->metroButton33->TabIndex = 37;
 			this->metroButton33->TabStop = false;
-			this->metroButton33->Text = L"Under Fire";
+			this->metroButton33->Text = L"Virtua Racing";
 			this->metroButton33->UseSelectable = true;
 			this->metroButton33->Click += gcnew System::EventHandler(this, &MameSelect::metroButton33_Click);
 			// 
@@ -1089,46 +1089,46 @@ namespace FFBPluginGUI {
 	{
 
 	}
-	private: System::Void metroButton1_Click(System::Object^ sender, System::EventArgs^ e) //San Francisco Rush
+	private: System::Void metroButton1_Click(System::Object^ sender, System::EventArgs^ e) //Afterburner II
 	{
 		this->Hide();
-		SanFranciscoRush^ obj1 = gcnew SanFranciscoRush(this);
+		AfterburnerII^ obj1 = gcnew AfterburnerII(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton2_Click(System::Object^ sender, System::EventArgs^ e) //San Francisco Rush The Rock
+	private: System::Void metroButton2_Click(System::Object^ sender, System::EventArgs^ e) //Alien3
 	{
 		this->Hide();
-		SanFranciscoRushTheRock^ obj1 = gcnew SanFranciscoRushTheRock(this);
+		Alien3^ obj1 = gcnew Alien3(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton3_Click(System::Object^ sender, System::EventArgs^ e) //San Francisco Rush 2049
+	private: System::Void metroButton3_Click(System::Object^ sender, System::EventArgs^ e) //Beast Busters
 	{
 		this->Hide();
-		SanFranciscoRush2049^ obj1 = gcnew SanFranciscoRush2049(this);
+		BeastBusters^ obj1 = gcnew BeastBusters(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton4_Click(System::Object^ sender, System::EventArgs^ e) //Crusn USA
-	{
-		this->Hide();
-		CrusnUSA^ obj1 = gcnew CrusnUSA(this);
-		obj1->ShowDialog();
-	}
-	private: System::Void metroButton5_Click(System::Object^ sender, System::EventArgs^ e) //Crusn World
-	{
-		this->Hide();
-		CrusnWorld^ obj1 = gcnew CrusnWorld(this);
-		obj1->ShowDialog();
-	}
-	private: System::Void metroButton6_Click(System::Object^ sender, System::EventArgs^ e) //Off Road Challenge
-	{
-		this->Hide();
-		OffRoadChallenge^ obj1 = gcnew OffRoadChallenge(this);
-		obj1->ShowDialog();
-	}
-	private: System::Void metroButton7_Click(System::Object^ sender, System::EventArgs^ e) //California Speed
+	private: System::Void metroButton4_Click(System::Object^ sender, System::EventArgs^ e) //California Speed
 	{
 		this->Hide();
 		CaliforniaSpeed^ obj1 = gcnew CaliforniaSpeed(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton5_Click(System::Object^ sender, System::EventArgs^ e) //Chase Bombers
+	{
+		this->Hide();
+		ChaseBombers^ obj1 = gcnew ChaseBombers(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton6_Click(System::Object^ sender, System::EventArgs^ e) //Cisco Heat
+	{
+		this->Hide();
+		CiscoHeat^ obj1 = gcnew CiscoHeat(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton7_Click(System::Object^ sender, System::EventArgs^ e) //Crusn USA
+	{
+		this->Hide();
+		CrusnUSA^ obj1 = gcnew CrusnUSA(this);
 		obj1->ShowDialog();
 	}
 	private: System::Void metroLink1_Click(System::Object^ sender, System::EventArgs^ e) //Go Back To Previous Menu
@@ -1136,160 +1136,160 @@ namespace FFBPluginGUI {
 		this->Hide();
 		obj->Show();
 	}
-	private: System::Void metroButton8_Click(System::Object^ sender, System::EventArgs^ e) //Virtua Racing
+	private: System::Void metroButton8_Click(System::Object^ sender, System::EventArgs^ e) //Crusn World
 	{
 		this->Hide();
-		VirtuaRacing^ obj1 = gcnew VirtuaRacing(this);
+		CrusnWorld^ obj1 = gcnew CrusnWorld(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton9_Click(System::Object^ sender, System::EventArgs^ e) //Outrun
-	{
-		this->Hide();
-		Outrun^ obj1 = gcnew Outrun(this);
-		obj1->ShowDialog();
-	}
-	private: System::Void metroButton10_Click(System::Object^ sender, System::EventArgs^ e) //Turbo Outrun
-	{
-		this->Hide();
-		TurboOutrun^ obj1 = gcnew TurboOutrun(this);
-		obj1->ShowDialog();
-	}
-	private: System::Void metroButton11_Click(System::Object^ sender, System::EventArgs^ e)//Outrunners
-	{
-		this->Hide();
-		OutRunners^ obj1 = gcnew OutRunners(this);
-		obj1->ShowDialog();
-	}
-	private: System::Void metroButton12_Click(System::Object^ sender, System::EventArgs^ e) //Power Drift
-	{
-		this->Hide();
-		PowerDrift^ obj1 = gcnew PowerDrift(this);
-		obj1->ShowDialog();
-	}
-	private: System::Void metroButton13_Click(System::Object^ sender, System::EventArgs^ e)//Afterburner II
-	{
-		this->Hide();
-		AfterburnerII^ obj1 = gcnew AfterburnerII(this);
-		obj1->ShowDialog();
-	}
-	private: System::Void metroButton14_Click(System::Object^ sender, System::EventArgs^ e)//Alien 3
-	{
-		this->Hide();
-		Alien3^ obj1 = gcnew Alien3(this);
-		obj1->ShowDialog();
-	}
-	private: System::Void metroButton15_Click(System::Object^ sender, System::EventArgs^ e)//Beast Busters
-	{
-		this->Hide();
-		BeastBusters^ obj1 = gcnew BeastBusters(this);
-		obj1->ShowDialog();
-	}
-	private: System::Void metroButton16_Click(System::Object^ sender, System::EventArgs^ e)//Chase Bombers
-	{
-		this->Hide();
-		ChaseBombers^ obj1 = gcnew ChaseBombers(this);
-		obj1->ShowDialog();
-	}
-	private: System::Void metroButton17_Click(System::Object^ sender, System::EventArgs^ e)//Cisco Heat
-	{
-		this->Hide();
-		CiscoHeat^ obj1 = gcnew CiscoHeat(this);
-		obj1->ShowDialog();
-	}
-	private: System::Void metroButton18_Click(System::Object^ sender, System::EventArgs^ e)//Ghoul Panic
-	{
-		this->Hide();
-		GhoulPanic^ obj1 = gcnew GhoulPanic(this);
-		obj1->ShowDialog();
-	}
-	private: System::Void metroButton19_Click(System::Object^ sender, System::EventArgs^ e)//Grand Prix Star 
+	private: System::Void metroButton9_Click(System::Object^ sender, System::EventArgs^ e) //F1 GP Star
 	{
 		this->Hide();
 		F1GrandPrixStar^ obj1 = gcnew F1GrandPrixStar(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton20_Click(System::Object^ sender, System::EventArgs^ e)//F1 Grand Prix Star II
+	private: System::Void metroButton10_Click(System::Object^ sender, System::EventArgs^ e) //F1 GP Star 2
 	{
 		this->Hide();
 		F1GrandPrixStar2^ obj1 = gcnew F1GrandPrixStar2(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton21_Click(System::Object^ sender, System::EventArgs^ e)//GunBuster
+	private: System::Void metroButton11_Click(System::Object^ sender, System::EventArgs^ e)//Ghoul Panic
+	{
+		this->Hide();
+		GhoulPanic^ obj1 = gcnew GhoulPanic(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton12_Click(System::Object^ sender, System::EventArgs^ e) //Gunbuster
 	{
 		this->Hide();
 		GunBuster^ obj1 = gcnew GunBuster(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton22_Click(System::Object^ sender, System::EventArgs^ e)//Mechanized Attack
-	{
-		this->Hide();
-		MechanizedAttack^ obj1 = gcnew MechanizedAttack(this);
-		obj1->ShowDialog();
-	}
-	private: System::Void metroButton23_Click(System::Object^ sender, System::EventArgs^ e)//Laser Ghost
+	private: System::Void metroButton13_Click(System::Object^ sender, System::EventArgs^ e)//Laser Ghost
 	{
 		this->Hide();
 		LaserGhost^ obj1 = gcnew LaserGhost(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton24_Click(System::Object^ sender, System::EventArgs^ e)//Operation Thunderbolt
+	private: System::Void metroButton14_Click(System::Object^ sender, System::EventArgs^ e)//Mechanized Attack
+	{
+		this->Hide();
+		MechanizedAttack^ obj1 = gcnew MechanizedAttack(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton15_Click(System::Object^ sender, System::EventArgs^ e)//Off Road Challenge
+	{
+		this->Hide();
+		OffRoadChallenge^ obj1 = gcnew OffRoadChallenge(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton16_Click(System::Object^ sender, System::EventArgs^ e)//Operation Thunderbolt
 	{
 		this->Hide();
 		OperationThunderbolt^ obj1 = gcnew OperationThunderbolt(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton25_Click(System::Object^ sender, System::EventArgs^ e)//Operation Wolf
+	private: System::Void metroButton17_Click(System::Object^ sender, System::EventArgs^ e)//Operation Wolf
 	{
 		this->Hide();
 		OperationWolf^ obj1 = gcnew OperationWolf(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton26_Click(System::Object^ sender, System::EventArgs^ e)//Point Blank 2
+	private: System::Void metroButton18_Click(System::Object^ sender, System::EventArgs^ e)//Outrun
+	{
+		this->Hide();
+		Outrun^ obj1 = gcnew Outrun(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton19_Click(System::Object^ sender, System::EventArgs^ e)//OutRunners 
+	{
+		this->Hide();
+		OutRunners^ obj1 = gcnew OutRunners(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton20_Click(System::Object^ sender, System::EventArgs^ e)//Point Blank 2
 	{
 		this->Hide();
 		PointBlank2^ obj1 = gcnew PointBlank2(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton27_Click(System::Object^ sender, System::EventArgs^ e)//Rail Chase
+	private: System::Void metroButton21_Click(System::Object^ sender, System::EventArgs^ e)//Power Drift
+	{
+		this->Hide();
+		PowerDrift^ obj1 = gcnew PowerDrift(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton22_Click(System::Object^ sender, System::EventArgs^ e)//Rail Chase
 	{
 		this->Hide();
 		RailChase^ obj1 = gcnew RailChase(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton28_Click(System::Object^ sender, System::EventArgs^ e)//Revolution X
+	private: System::Void metroButton23_Click(System::Object^ sender, System::EventArgs^ e)//Revolution X
 	{
 		this->Hide();
 		RevolutionX^ obj1 = gcnew RevolutionX(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton29_Click(System::Object^ sender, System::EventArgs^ e)//Space Gun
+	private: System::Void metroButton24_Click(System::Object^ sender, System::EventArgs^ e)//San Francisco Rush
+	{
+		this->Hide();
+		SanFranciscoRush^ obj1 = gcnew SanFranciscoRush(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton25_Click(System::Object^ sender, System::EventArgs^ e)//San Francisco Rush The Rock
+	{
+		this->Hide();
+		SanFranciscoRushTheRock^ obj1 = gcnew SanFranciscoRushTheRock(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton26_Click(System::Object^ sender, System::EventArgs^ e)//San Francisco Rush 2049
+	{
+		this->Hide();
+		SanFranciscoRush2049^ obj1 = gcnew SanFranciscoRush2049(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton27_Click(System::Object^ sender, System::EventArgs^ e)//Space gun
 	{
 		this->Hide();
 		Spacegun^ obj1 = gcnew Spacegun(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton30_Click(System::Object^ sender, System::EventArgs^ e)//Terminator 2
+	private: System::Void metroButton28_Click(System::Object^ sender, System::EventArgs^ e)//Terminator 2
 	{
 		this->Hide();
 		Terminator2^ obj1 = gcnew Terminator2(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton31_Click(System::Object^ sender, System::EventArgs^ e) //Time Crisis
+	private: System::Void metroButton29_Click(System::Object^ sender, System::EventArgs^ e)//Time Crisis
 	{
 		this->Hide();
 		TimeCrisis^ obj1 = gcnew TimeCrisis(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton32_Click(System::Object^ sender, System::EventArgs^ e)//Turkey Shoot
+	private: System::Void metroButton30_Click(System::Object^ sender, System::EventArgs^ e)//Turbo Outrun
+	{
+		this->Hide();
+		TurboOutrun^ obj1 = gcnew TurboOutrun(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton31_Click(System::Object^ sender, System::EventArgs^ e) //Turkey Shoot
 	{
 		this->Hide();
 		TurkeyShoot^ obj1 = gcnew TurkeyShoot(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton33_Click(System::Object^ sender, System::EventArgs^ e)//Under Fire
+	private: System::Void metroButton32_Click(System::Object^ sender, System::EventArgs^ e)//Under Fire
 	{
 		this->Hide();
 		UnderFire^ obj1 = gcnew UnderFire(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton33_Click(System::Object^ sender, System::EventArgs^ e)//Virtua Racing
+	{
+		this->Hide();
+		VirtuaRacing^ obj1 = gcnew VirtuaRacing(this);
 		obj1->ShowDialog();
 	}
 	private: System::Void metroButton34_Click(System::Object^ sender, System::EventArgs^ e)//Zombie Raid
