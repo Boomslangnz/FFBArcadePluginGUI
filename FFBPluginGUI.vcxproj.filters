@@ -285,6 +285,15 @@
     <ClCompile Include="DirtyDrivin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LindberghHelp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Help.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="H2Overdrive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -555,6 +564,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DirtyDrivin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LindberghHelp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Help.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="H2Overdrive.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

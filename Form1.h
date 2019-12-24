@@ -29,6 +29,8 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "GoldenGun.h"
 #include "GRID.h"
 #include "GTIClub.h"
+#include "H2Overdrive.h"
+#include "Help.h"
 #include "HOTD4.h"
 #include "InitialD0.h"
 #include "InitialD4.h"
@@ -40,6 +42,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "KODrive.h"
 #include "LGI.h"
 #include "LGI3D.h"
+#include "LindberghHelp.h"
 #include "M2Emulator.h"
 #include "M2EmulatorInput.h"
 #include "Machstorm.h"
@@ -103,6 +106,7 @@ namespace FFBPluginGUI {
 	private: MetroFramework::Controls::MetroButton^  metroButton2;
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
 	private: MetroFramework::Controls::MetroButton^  metroButton3;
+	private: MetroFramework::Controls::MetroButton^ metroButton4;
 
 	private:
 		/// <summary>
@@ -117,11 +121,12 @@ namespace FFBPluginGUI {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
 			this->metroButton1 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroButton2 = (gcnew MetroFramework::Controls::MetroButton());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->metroButton3 = (gcnew MetroFramework::Controls::MetroButton());
+			this->metroButton4 = (gcnew MetroFramework::Controls::MetroButton());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -168,11 +173,23 @@ namespace FFBPluginGUI {
 			this->metroButton3->UseSelectable = true;
 			this->metroButton3->Click += gcnew System::EventHandler(this, &Form1::metroButton3_Click);
 			// 
+			// metroButton4
+			// 
+			this->metroButton4->Location = System::Drawing::Point(3, 466);
+			this->metroButton4->Name = L"metroButton4";
+			this->metroButton4->Size = System::Drawing::Size(294, 82);
+			this->metroButton4->TabIndex = 4;
+			this->metroButton4->TabStop = false;
+			this->metroButton4->Text = L"Setup Help";
+			this->metroButton4->UseSelectable = true;
+			this->metroButton4->Click += gcnew System::EventHandler(this, &Form1::metroButton4_Click);
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(300, 471);
+			this->ClientSize = System::Drawing::Size(300, 566);
+			this->Controls->Add(this->metroButton4);
 			this->Controls->Add(this->metroButton3);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->metroButton2);
@@ -452,6 +469,12 @@ namespace FFBPluginGUI {
 		DirtyDrivin^ obj1 = gcnew DirtyDrivin(this);
 		obj1->ShowDialog();
 		}
+		else if (GameSelect == 43)
+		{
+		this->Hide();
+		H2Overdrive^ obj1 = gcnew H2Overdrive(this);
+		obj1->ShowDialog();
+		}
 		else
 		{
 			MessageBox::Show("FFBPlugin.ini does not contain GameId or does not exist");
@@ -644,6 +667,10 @@ namespace FFBPluginGUI {
 		{
 		MessageBox::Show("Dirty Drivin' contains no input features");
 		}
+		else if (GameSelect == 43)
+		{
+		MessageBox::Show("H2Overdrive contains no input features");
+		}
 		else
 		{
 			MessageBox::Show("FFBPlugin.ini contains no input features or does not exist");
@@ -654,6 +681,29 @@ namespace FFBPluginGUI {
 		this->Hide();
 		FFBTest^ obj1 = gcnew FFBTest(this);
 		obj1->ShowDialog();
+	}
+	private: System::Void metroButton4_Click(System::Object^ sender, System::EventArgs^ e) //Help
+	{
+		int GameSelect = GetPrivateProfileInt(TEXT("Settings"), TEXT("GameId"), 0, TEXT(".\\FFBPlugin.ini"));
+		if (GameSelect == 4 || GameSelect == 12 || GameSelect == 15 || GameSelect == 16 || GameSelect == 23 || GameSelect == 24 || GameSelect == 35 || GameSelect == 37)
+		{
+			this->Hide();
+			LindberghHelp^ obj1 = gcnew LindberghHelp(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 1 || GameSelect == 2 || GameSelect == 3 || GameSelect == 5 || GameSelect == 6 || GameSelect == 7 || GameSelect == 8 || GameSelect == 9 || GameSelect == 10 || GameSelect == 11 || GameSelect == 13 ||
+			GameSelect == 14 || GameSelect == 17 || GameSelect == 18 || GameSelect == 19 || GameSelect == 20 || GameSelect == 21 || GameSelect == 22 || GameSelect == 25 || GameSelect == 26 || GameSelect == 27 || GameSelect == 28 || 
+			GameSelect == 29 || GameSelect == 30 || GameSelect == 31 || GameSelect == 32 || GameSelect == 33 || GameSelect == 34 || GameSelect == 36 || GameSelect == 38 || GameSelect == 39 || GameSelect == 40 || 
+			GameSelect == 41 || GameSelect == 42 || GameSelect == 43)
+		{
+			this->Hide();
+			Help^ obj1 = gcnew Help(this);
+			obj1->ShowDialog();
+		}
+		else
+		{
+			MessageBox::Show("FFBPlugin.ini does not contain GameId or does not exist");
+		}
 	}
 };
 }

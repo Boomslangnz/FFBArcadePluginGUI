@@ -153,6 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AfterburnerClimax.cpp" />
+    <ClCompile Include="H2Overdrive.cpp" />
+    <ClCompile Include="Help.cpp" />
+    <ClCompile Include="LindberghHelp.cpp" />
     <ClCompile Include="AfterburnerII.cpp" />
     <ClCompile Include="Alien3.cpp" />
     <ClCompile Include="AliensExtermination.cpp" />
@@ -246,6 +249,13 @@
   <ItemGroup>
     <ClInclude Include="AfterburnerClimax.h">
       <FileType>CppHeader</FileType>
+    </ClInclude>
+    <ClInclude Include="H2Overdrive.h" />
+    <ClInclude Include="Help.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="LindberghHelp.h">
+      <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="AfterburnerII.h" />
     <ClInclude Include="Alien3.h" />
@@ -416,6 +426,12 @@
     <ClInclude Include="ZombieRaid.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Help.resx">
+      <DependentUpon>Help.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LindberghHelp.resx">
+      <DependentUpon>LindberghHelp.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FFBTest.resx">
       <DependentUpon>FFBTest.h</DependentUpon>
     </EmbeddedResource>
