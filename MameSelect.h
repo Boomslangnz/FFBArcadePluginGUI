@@ -28,6 +28,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "F1GrandPrixStar.h"
 #include "F1GrandPrixStar2.h"
 #include "GunBuster.h"
+#include "Hyperdrive.h"
 #include "LaserGhost.h"
 #include "MechanizedAttack.h"
 #include "OffRoadChallenge.h"
@@ -48,6 +49,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "TurboOutrun.h"
 #include "TurkeyShoot.h"
 #include "UnderFire.h"
+#include "VaporTrx.h"
 #include "VirtuaRacing.h"
 #include "ZombieRaid.h"
 
@@ -101,6 +103,8 @@ namespace FFBPluginGUI {
 	private: MetroFramework::Controls::MetroCheckBox^ metroCheckBox2;
 	private: MetroFramework::Controls::MetroCheckBox^ metroCheckBox3;
 	private: MetroFramework::Controls::MetroCheckBox^ metroCheckBox4;
+	private: MetroFramework::Controls::MetroButton^ metroButton35;
+	private: MetroFramework::Controls::MetroButton^ metroButton36;
 
 	public:
 
@@ -196,6 +200,8 @@ namespace FFBPluginGUI {
 			this->metroCheckBox2 = (gcnew MetroFramework::Controls::MetroCheckBox());
 			this->metroCheckBox3 = (gcnew MetroFramework::Controls::MetroCheckBox());
 			this->metroCheckBox4 = (gcnew MetroFramework::Controls::MetroCheckBox());
+			this->metroButton35 = (gcnew MetroFramework::Controls::MetroButton());
+			this->metroButton36 = (gcnew MetroFramework::Controls::MetroButton());
 			this->SuspendLayout();
 			// 
 			// metroButton1
@@ -379,7 +385,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton13
 			// 
-			this->metroButton13->Location = System::Drawing::Point(23, 373);
+			this->metroButton13->Location = System::Drawing::Point(23, 402);
 			this->metroButton13->Name = L"metroButton13";
 			this->metroButton13->Size = System::Drawing::Size(216, 23);
 			this->metroButton13->TabIndex = 17;
@@ -401,7 +407,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton15
 			// 
-			this->metroButton15->Location = System::Drawing::Point(23, 402);
+			this->metroButton15->Location = System::Drawing::Point(23, 431);
 			this->metroButton15->Name = L"metroButton15";
 			this->metroButton15->Size = System::Drawing::Size(216, 23);
 			this->metroButton15->TabIndex = 19;
@@ -423,7 +429,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton17
 			// 
-			this->metroButton17->Location = System::Drawing::Point(23, 431);
+			this->metroButton17->Location = System::Drawing::Point(23, 460);
 			this->metroButton17->Name = L"metroButton17";
 			this->metroButton17->Size = System::Drawing::Size(216, 23);
 			this->metroButton17->TabIndex = 21;
@@ -445,7 +451,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton19
 			// 
-			this->metroButton19->Location = System::Drawing::Point(23, 460);
+			this->metroButton19->Location = System::Drawing::Point(23, 489);
 			this->metroButton19->Name = L"metroButton19";
 			this->metroButton19->Size = System::Drawing::Size(216, 23);
 			this->metroButton19->TabIndex = 23;
@@ -467,7 +473,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton21
 			// 
-			this->metroButton21->Location = System::Drawing::Point(23, 489);
+			this->metroButton21->Location = System::Drawing::Point(23, 518);
 			this->metroButton21->Name = L"metroButton21";
 			this->metroButton21->Size = System::Drawing::Size(216, 23);
 			this->metroButton21->TabIndex = 25;
@@ -489,7 +495,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton23
 			// 
-			this->metroButton23->Location = System::Drawing::Point(23, 518);
+			this->metroButton23->Location = System::Drawing::Point(254, 518);
 			this->metroButton23->Name = L"metroButton23";
 			this->metroButton23->Size = System::Drawing::Size(216, 23);
 			this->metroButton23->TabIndex = 27;
@@ -500,7 +506,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton24
 			// 
-			this->metroButton24->Location = System::Drawing::Point(254, 518);
+			this->metroButton24->Location = System::Drawing::Point(23, 547);
 			this->metroButton24->Name = L"metroButton24";
 			this->metroButton24->Size = System::Drawing::Size(216, 23);
 			this->metroButton24->TabIndex = 28;
@@ -511,7 +517,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton25
 			// 
-			this->metroButton25->Location = System::Drawing::Point(23, 547);
+			this->metroButton25->Location = System::Drawing::Point(23, 576);
 			this->metroButton25->Name = L"metroButton25";
 			this->metroButton25->Size = System::Drawing::Size(216, 23);
 			this->metroButton25->TabIndex = 29;
@@ -533,7 +539,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton27
 			// 
-			this->metroButton27->Location = System::Drawing::Point(23, 576);
+			this->metroButton27->Location = System::Drawing::Point(23, 605);
 			this->metroButton27->Name = L"metroButton27";
 			this->metroButton27->Size = System::Drawing::Size(216, 23);
 			this->metroButton27->TabIndex = 31;
@@ -555,7 +561,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton29
 			// 
-			this->metroButton29->Location = System::Drawing::Point(23, 605);
+			this->metroButton29->Location = System::Drawing::Point(23, 634);
 			this->metroButton29->Name = L"metroButton29";
 			this->metroButton29->Size = System::Drawing::Size(216, 23);
 			this->metroButton29->TabIndex = 33;
@@ -577,7 +583,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton31
 			// 
-			this->metroButton31->Location = System::Drawing::Point(23, 634);
+			this->metroButton31->Location = System::Drawing::Point(23, 663);
 			this->metroButton31->Name = L"metroButton31";
 			this->metroButton31->Size = System::Drawing::Size(216, 23);
 			this->metroButton31->TabIndex = 35;
@@ -599,7 +605,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton33
 			// 
-			this->metroButton33->Location = System::Drawing::Point(23, 663);
+			this->metroButton33->Location = System::Drawing::Point(23, 696);
 			this->metroButton33->Name = L"metroButton33";
 			this->metroButton33->Size = System::Drawing::Size(216, 23);
 			this->metroButton33->TabIndex = 37;
@@ -610,7 +616,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton34
 			// 
-			this->metroButton34->Location = System::Drawing::Point(254, 663);
+			this->metroButton34->Location = System::Drawing::Point(254, 696);
 			this->metroButton34->Name = L"metroButton34";
 			this->metroButton34->Size = System::Drawing::Size(216, 23);
 			this->metroButton34->TabIndex = 38;
@@ -670,6 +676,7 @@ namespace FFBPluginGUI {
 			{
 				this->metroComboBox1->Text = "SDL2 Cannot Detect Any Joystick";
 			}
+
 			this->metroComboBox1->FormattingEnabled = true;
 			this->metroComboBox1->ItemHeight = 23;
 			this->metroComboBox1->Location = System::Drawing::Point(23, 64);
@@ -771,9 +778,33 @@ namespace FFBPluginGUI {
 			this->metroCheckBox4->UseSelectable = true;
 			this->metroCheckBox4->CheckedChanged += gcnew System::EventHandler(this, &MameSelect::metroCheckBox4_CheckedChanged);
 			// 
+			// metroButton35
+			// 
+			this->metroButton35->Location = System::Drawing::Point(23, 373);
+			this->metroButton35->Name = L"metroButton35";
+			this->metroButton35->Size = System::Drawing::Size(216, 23);
+			this->metroButton35->TabIndex = 44;
+			this->metroButton35->TabStop = false;
+			this->metroButton35->Text = L"Hyperdrive";
+			this->metroButton35->UseSelectable = true;
+			this->metroButton35->Click += gcnew System::EventHandler(this, &MameSelect::metroButton35_Click);
+			// 
+			// metroButton36
+			// 
+			this->metroButton36->Location = System::Drawing::Point(254, 663);
+			this->metroButton36->Name = L"metroButton36";
+			this->metroButton36->Size = System::Drawing::Size(216, 23);
+			this->metroButton36->TabIndex = 45;
+			this->metroButton36->TabStop = false;
+			this->metroButton36->Text = L"Vapor TRX";
+			this->metroButton36->UseSelectable = true;
+			this->metroButton36->Click += gcnew System::EventHandler(this, &MameSelect::metroButton36_Click);
+			// 
 			// MameSelect
 			// 
-			this->ClientSize = System::Drawing::Size(493, 710);
+			this->ClientSize = System::Drawing::Size(493, 740);
+			this->Controls->Add(this->metroButton36);
+			this->Controls->Add(this->metroButton35);
 			this->Controls->Add(this->metroCheckBox4);
 			this->Controls->Add(this->metroCheckBox3);
 			this->Controls->Add(this->metroCheckBox2);
@@ -1296,6 +1327,18 @@ namespace FFBPluginGUI {
 	{
 		this->Hide();
 		ZombieRaid^ obj1 = gcnew ZombieRaid(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton35_Click(System::Object^ sender, System::EventArgs^ e) //Hyperdrive
+	{
+		this->Hide();
+		Hyperdrive^ obj1 = gcnew Hyperdrive(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton36_Click(System::Object^ sender, System::EventArgs^ e) //Vapor TRX
+	{
+		this->Hide();
+		VaporTrx^ obj1 = gcnew VaporTrx(this);
 		obj1->ShowDialog();
 	}
 };

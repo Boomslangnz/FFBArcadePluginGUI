@@ -294,6 +294,12 @@
     <ClCompile Include="H2Overdrive.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Hyperdrive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VaporTrx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -573,6 +579,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="H2Overdrive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VaporTrx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Hyperdrive.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

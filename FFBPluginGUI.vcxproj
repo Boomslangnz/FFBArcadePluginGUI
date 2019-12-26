@@ -155,6 +155,7 @@
     <ClCompile Include="AfterburnerClimax.cpp" />
     <ClCompile Include="H2Overdrive.cpp" />
     <ClCompile Include="Help.cpp" />
+    <ClCompile Include="Hyperdrive.cpp" />
     <ClCompile Include="LindberghHelp.cpp" />
     <ClCompile Include="AfterburnerII.cpp" />
     <ClCompile Include="Alien3.cpp" />
@@ -240,6 +241,7 @@
     <ClCompile Include="TurboOutrun.cpp" />
     <ClCompile Include="TurkeyShoot.cpp" />
     <ClCompile Include="UnderFire.cpp" />
+    <ClCompile Include="VaporTrx.cpp" />
     <ClCompile Include="VirtuaRacing.cpp" />
     <ClCompile Include="WackyRaces.cpp" />
     <ClCompile Include="WMMT5.cpp" />
@@ -254,6 +256,7 @@
     <ClInclude Include="Help.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Hyperdrive.h" />
     <ClInclude Include="LindberghHelp.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -413,6 +416,7 @@
     <ClInclude Include="TurboOutrun.h" />
     <ClInclude Include="TurkeyShoot.h" />
     <ClInclude Include="UnderFire.h" />
+    <ClInclude Include="VaporTrx.h" />
     <ClInclude Include="VirtuaRacing.h" />
     <ClInclude Include="WackyRaces.h">
       <FileType>CppHeader</FileType>
