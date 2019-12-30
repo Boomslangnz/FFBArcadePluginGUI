@@ -36,11 +36,6 @@ namespace FFBPluginGUI {
 
 			this->AutoAddLongTrackBarBlock("FeedbackLengthLeMans", L"Feedback Length", 16, 1000, L"Length of a feedback command");
 
-			this->AutoAddLongTextBox(L"Force Spring Effect", L"Force Spring effect over using default game spring");
-
-			this->AutoAddShortCheckBox("EnableForceSpringEffectLeMans", L"Force Spring Effect", L"Forces spring effect to work all the time");
-			this->AutoAddShortTrackBarBlock("ForceSpringStrengthLeMans", L"Forced Spring Strength", 0, 100, L"How strong the spring effect is when forced on");
-
 			this->New2ColsPage();
 
 			this->AutoAddComponent("GlobalForceHeader");
