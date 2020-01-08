@@ -58,6 +58,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "RoadFighters3DInput.h"
 #include "SegaRacingClassic.h"
 #include "SegaRally3.h"
+#include "SnoCross.h"
 #include "SonicAllStars.h"
 #include "SupermodelSelect.h"
 #include "WackyRaces.h"
@@ -465,15 +466,21 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 42)
 		{
-		this->Hide();
-		DirtyDrivin^ obj1 = gcnew DirtyDrivin(this);
-		obj1->ShowDialog();
+			this->Hide();
+			DirtyDrivin^ obj1 = gcnew DirtyDrivin(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 43)
 		{
-		this->Hide();
-		H2Overdrive^ obj1 = gcnew H2Overdrive(this);
-		obj1->ShowDialog();
+			this->Hide();
+			H2Overdrive^ obj1 = gcnew H2Overdrive(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 44)
+		{
+			this->Hide();
+			SnoCross^ obj1 = gcnew SnoCross(this);
+			obj1->ShowDialog();
 		}
 		else
 		{
@@ -665,11 +672,15 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 42)
 		{
-		MessageBox::Show("Dirty Drivin' contains no input features");
+			MessageBox::Show("Dirty Drivin' contains no input features");
 		}
 		else if (GameSelect == 43)
 		{
-		MessageBox::Show("H2Overdrive contains no input features");
+			MessageBox::Show("H2Overdrive contains no input features");
+		}
+		else if (GameSelect == 44)
+		{
+			MessageBox::Show("Winter X Games Snocross contains no input features");
 		}
 		else
 		{

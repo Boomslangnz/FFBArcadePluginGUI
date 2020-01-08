@@ -300,6 +300,9 @@
     <ClCompile Include="VaporTrx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SnoCross.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -585,6 +588,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Hyperdrive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SnoCross.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

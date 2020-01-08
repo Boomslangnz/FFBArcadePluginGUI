@@ -232,6 +232,7 @@
     <ClCompile Include="SegaRacingClassic.cpp" />
     <ClCompile Include="SegaRally2.cpp" />
     <ClCompile Include="SegaRally3.cpp" />
+    <ClCompile Include="SnoCross.cpp" />
     <ClCompile Include="SonicAllStars.cpp" />
     <ClCompile Include="Spacegun.cpp" />
     <ClCompile Include="SupermodelSelect.cpp" />
@@ -403,6 +404,7 @@
     <ClInclude Include="SegaRally3.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="SnoCross.h" />
     <ClInclude Include="SonicAllStars.h">
       <FileType>CppHeader</FileType>
     </ClInclude>

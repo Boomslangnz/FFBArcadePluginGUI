@@ -17,10 +17,10 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 
 namespace FFBPluginGUI {
 
-	public ref class InitialD0 : Helper
+	public ref class SnoCross : Helper
 	{
 	public:
-		InitialD0(MetroForm^ obj1)
+		SnoCross(MetroForm^ obj1)
 		{
 			this->obj = obj1;
 			this->InitializeComponent();
@@ -36,13 +36,6 @@ namespace FFBPluginGUI {
 
 			this->AutoAddComponent("CommonOptions");
 			this->AutoAddComponent("AlternativeFFB");
-			this->AutoAddComponent("PowerMode");
-			this->AutoAddShortCheckBox("EscapeKeyExitViaPlugin", L"Enable Escape as Exit", L"Enable to exit game when press escape key");
-
-			this->AutoAddLongTextBox(L"Force Spring Effect", L"Force Spring effect over using default game spring");
-
-			this->AutoAddShortCheckBox("EnableForceSpringEffect", L"Force Spring Effect", L"Forces spring effect to work all the time");
-			this->AutoAddShortTrackBarBlock("ForceSpringStrength", L"Forced Spring Strength", 0, 100, L"How strong the spring effect is when forced on");
 
 			this->New2ColsPage();
 
