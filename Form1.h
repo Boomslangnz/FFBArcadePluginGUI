@@ -16,6 +16,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include <string>
 #include "AliensExtermination.h"
 #include "AfterburnerClimax.h"
+#include "Batman.h"
 #include "BG4.h"
 #include "ButtonRumble.h"
 #include "ButtonRumbleInput.h"
@@ -482,6 +483,12 @@ namespace FFBPluginGUI {
 			SnoCross^ obj1 = gcnew SnoCross(this);
 			obj1->ShowDialog();
 		}
+		else if (GameSelect == 45)
+		{
+			this->Hide();
+			Batman^ obj1 = gcnew Batman(this);
+			obj1->ShowDialog();
+		}
 		else
 		{
 			MessageBox::Show("FFBPlugin.ini does not contain GameId or does not exist");
@@ -682,6 +689,10 @@ namespace FFBPluginGUI {
 		{
 			MessageBox::Show("Winter X Games Snocross contains no input features");
 		}
+		else if (GameSelect == 45)
+		{
+			MessageBox::Show("Batman contains no input features");
+		}
 		else
 		{
 			MessageBox::Show("FFBPlugin.ini contains no input features or does not exist");
@@ -705,7 +716,7 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 1 || GameSelect == 2 || GameSelect == 3 || GameSelect == 5 || GameSelect == 6 || GameSelect == 7 || GameSelect == 8 || GameSelect == 9 || GameSelect == 10 || GameSelect == 11 || GameSelect == 13 ||
 			GameSelect == 14 || GameSelect == 17 || GameSelect == 18 || GameSelect == 19 || GameSelect == 20 || GameSelect == 21 || GameSelect == 22 || GameSelect == 25 || GameSelect == 26 || GameSelect == 27 || GameSelect == 28 || 
 			GameSelect == 29 || GameSelect == 30 || GameSelect == 31 || GameSelect == 32 || GameSelect == 33 || GameSelect == 34 || GameSelect == 36 || GameSelect == 38 || GameSelect == 39 || GameSelect == 40 || 
-			GameSelect == 41 || GameSelect == 42 || GameSelect == 43)
+			GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45)
 		{
 			this->Hide();
 			Help^ obj1 = gcnew Help(this);

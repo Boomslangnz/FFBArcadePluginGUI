@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AfterburnerClimax.cpp" />
+    <ClCompile Include="Batman.cpp" />
     <ClCompile Include="H2Overdrive.cpp" />
     <ClCompile Include="Help.cpp" />
     <ClCompile Include="Hyperdrive.cpp" />
@@ -253,6 +254,7 @@
     <ClInclude Include="AfterburnerClimax.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="Batman.h" />
     <ClInclude Include="H2Overdrive.h" />
     <ClInclude Include="Help.h">
       <FileType>CppForm</FileType>
