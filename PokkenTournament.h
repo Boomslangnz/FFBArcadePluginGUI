@@ -40,16 +40,6 @@ namespace FFBPluginGUI {
 
 			this->AutoAddComponent("GlobalForce");
 
-			this->AutoAddLongComboBoxBlock(
-				"HowtoRumble",
-				"",
-				L"Which rumble motor to use\?",
-				L"Both Rumble Motors|Left Rumble Motor|Right Rumble Motor",
-				L"Use both, left or right rumble motor"
-			);
-			this->AutoAddShortTrackBarBlock("RumbleStrength", L"Rumble Strength", 0, 100, L"Strength of rumble");
-			this->AutoAddShortTrackBarBlock("RumbleLength", L"Rumble Length", 16, 1000, L"Length of rumble");
-
 			this->Init();
 		}
 	};
