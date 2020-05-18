@@ -306,6 +306,9 @@
     <ClCompile Include="Batman.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="R_Tuned.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -597,6 +600,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Batman.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="R-Tuned.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

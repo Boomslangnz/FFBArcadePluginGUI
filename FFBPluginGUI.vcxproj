@@ -226,6 +226,7 @@
     <ClCompile Include="RevolutionX.cpp" />
     <ClCompile Include="RoadFighters3D.cpp" />
     <ClCompile Include="RoadFighters3DInput.cpp" />
+    <ClCompile Include="R_Tuned.cpp" />
     <ClCompile Include="SanFranciscoRush.cpp" />
     <ClCompile Include="SanFranciscoRush2049.cpp" />
     <ClCompile Include="SanFranciscoRushTheRock.cpp" />
@@ -386,6 +387,7 @@
       <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="PowerDrift.h" />
+    <ClInclude Include="R-Tuned.h" />
     <ClInclude Include="RailChase.h" />
     <ClInclude Include="Rambo.h" />
     <ClInclude Include="RevolutionX.h" />

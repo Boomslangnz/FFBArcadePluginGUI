@@ -66,6 +66,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "WMMT5.h"
 #include "WMMT5Input.h"
 #include "Rambo.h"
+#include "R-Tuned.h"
 #include "Transformers.h"
 
 namespace FFBPluginGUI {
@@ -489,6 +490,12 @@ namespace FFBPluginGUI {
 			Batman^ obj1 = gcnew Batman(this);
 			obj1->ShowDialog();
 		}
+		else if (GameSelect == 46)
+		{
+		this->Hide();
+		RTuned^ obj1 = gcnew RTuned(this);
+		obj1->ShowDialog();
+		}
 		else
 		{
 			MessageBox::Show("FFBPlugin.ini does not contain GameId or does not exist");
@@ -693,6 +700,10 @@ namespace FFBPluginGUI {
 		{
 			MessageBox::Show("Batman contains no input features");
 		}
+		else if (GameSelect == 46)
+		{
+		MessageBox::Show("R-Tuned contains no input features");
+		}
 		else
 		{
 			MessageBox::Show("FFBPlugin.ini contains no input features or does not exist");
@@ -707,7 +718,7 @@ namespace FFBPluginGUI {
 	private: System::Void metroButton4_Click(System::Object^ sender, System::EventArgs^ e) //Help
 	{
 		int GameSelect = GetPrivateProfileInt(TEXT("Settings"), TEXT("GameId"), 0, TEXT(".\\FFBPlugin.ini"));
-		if (GameSelect == 4 || GameSelect == 12 || GameSelect == 15 || GameSelect == 16 || GameSelect == 23 || GameSelect == 24 || GameSelect == 35 || GameSelect == 37)
+		if (GameSelect == 4 || GameSelect == 12 || GameSelect == 15 || GameSelect == 16 || GameSelect == 23 || GameSelect == 24 || GameSelect == 35 || GameSelect == 37 || GameSelect == 46)
 		{
 			this->Hide();
 			LindberghHelp^ obj1 = gcnew LindberghHelp(this);
