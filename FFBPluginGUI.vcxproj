@@ -154,9 +154,11 @@
   <ItemGroup>
     <ClCompile Include="AfterburnerClimax.cpp" />
     <ClCompile Include="Batman.cpp" />
+    <ClCompile Include="DaytonaUSA.cpp" />
     <ClCompile Include="H2Overdrive.cpp" />
     <ClCompile Include="Help.cpp" />
     <ClCompile Include="Hyperdrive.cpp" />
+    <ClCompile Include="Indy500.cpp" />
     <ClCompile Include="LindberghHelp.cpp" />
     <ClCompile Include="AfterburnerII.cpp" />
     <ClCompile Include="Alien3.cpp" />
@@ -202,8 +204,8 @@
     <ClCompile Include="LeMans24.cpp" />
     <ClCompile Include="LGI.cpp" />
     <ClCompile Include="LGI3D.cpp" />
-    <ClCompile Include="M2Emulator.cpp" />
     <ClCompile Include="M2EmulatorInput.cpp" />
+    <ClCompile Include="M2EmulatorSelect.cpp" />
     <ClCompile Include="Machstorm.cpp" />
     <ClCompile Include="Mame.cpp" />
     <ClCompile Include="MameSelect.cpp" />
@@ -218,6 +220,7 @@
     <ClCompile Include="Outrun2.cpp" />
     <ClCompile Include="Outrun2Input.cpp" />
     <ClCompile Include="OutRunners.cpp" />
+    <ClCompile Include="OverRev.cpp" />
     <ClCompile Include="PointBlank2.cpp" />
     <ClCompile Include="PokkenTournament.cpp" />
     <ClCompile Include="PowerDrift.cpp" />
@@ -232,11 +235,14 @@
     <ClCompile Include="SanFranciscoRushTheRock.cpp" />
     <ClCompile Include="ScudRace.cpp" />
     <ClCompile Include="SegaRacingClassic.cpp" />
+    <ClCompile Include="SegaRally.cpp" />
     <ClCompile Include="SegaRally2.cpp" />
     <ClCompile Include="SegaRally3.cpp" />
     <ClCompile Include="SnoCross.cpp" />
     <ClCompile Include="SonicAllStars.cpp" />
     <ClCompile Include="Spacegun.cpp" />
+    <ClCompile Include="STCC.cpp" />
+    <ClCompile Include="SuperGT.cpp" />
     <ClCompile Include="SupermodelSelect.cpp" />
     <ClCompile Include="Terminator2.cpp" />
     <ClCompile Include="TimeCrisis.cpp" />
@@ -256,11 +262,13 @@
       <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="Batman.h" />
+    <ClInclude Include="DaytonaUSA.h" />
     <ClInclude Include="H2Overdrive.h" />
     <ClInclude Include="Help.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Hyperdrive.h" />
+    <ClInclude Include="Indy500.h" />
     <ClInclude Include="LindberghHelp.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -346,11 +354,11 @@
     <ClInclude Include="LGI3D.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
-    <ClInclude Include="M2Emulator.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
     <ClInclude Include="M2EmulatorInput.h">
       <FileType>CppHeader</FileType>
+    </ClInclude>
+    <ClInclude Include="M2EmulatorSelect.h">
+      <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Machstorm.h">
       <FileType>CppHeader</FileType>
@@ -382,6 +390,7 @@
       <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="OutRunners.h" />
+    <ClInclude Include="OverRev.h" />
     <ClInclude Include="PointBlank2.h" />
     <ClInclude Include="PokkenTournament.h">
       <FileType>CppHeader</FileType>
@@ -404,6 +413,7 @@
     <ClInclude Include="SegaRacingClassic.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="SegaRally.h" />
     <ClInclude Include="SegaRally2.h" />
     <ClInclude Include="SegaRally3.h">
       <FileType>CppHeader</FileType>
@@ -413,6 +423,8 @@
       <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="Spacegun.h" />
+    <ClInclude Include="STCC.h" />
+    <ClInclude Include="SuperGT.h" />
     <ClInclude Include="SupermodelSelect.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -447,6 +459,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M2EmulatorSelect.resx">
+      <DependentUpon>M2EmulatorSelect.h</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MameSelect.resx">
       <DependentUpon>MameSelect.h</DependentUpon>

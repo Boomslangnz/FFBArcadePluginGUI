@@ -44,7 +44,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "LGI.h"
 #include "LGI3D.h"
 #include "LindberghHelp.h"
-#include "M2Emulator.h"
+#include "M2EmulatorSelect.h"
 #include "M2EmulatorInput.h"
 #include "Machstorm.h"
 #include "Mame.h"
@@ -367,7 +367,7 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 25)
 		{
 			this->Hide();
-			M2Emulator^ obj1 = gcnew M2Emulator(this);
+			M2EmulatorSelect^ obj1 = gcnew M2EmulatorSelect(this);
 			obj1->ShowDialog();
 		}
 		else if (GameSelect == 26)
@@ -702,7 +702,7 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 46)
 		{
-		MessageBox::Show("R-Tuned contains no input features");
+			MessageBox::Show("R-Tuned contains no input features");
 		}
 		else
 		{

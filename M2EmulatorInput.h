@@ -33,6 +33,7 @@ namespace FFBPluginGUI {
 
 			this->AutoAddShortCheckBox("DaytonaAIMultiplayerHack", L"Multiplayer AI Hack", L"Enable hack to allow AI car positions while using network");
 			this->AutoAddShortCheckBox("DaytonaForcePanoramicAttract", L"Panoramic Hack", L"Hack to force panoramic mode for 2p etc");
+			this->AutoAddShortCheckBox("EnableOutputs", L"Enable Outputs", L"Enable Outputs with Output Blaster");
 
 			this->Init();
 		}

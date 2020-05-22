@@ -63,9 +63,6 @@
     <ClCompile Include="LGI3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="M2Emulator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Machstorm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -309,6 +306,27 @@
     <ClCompile Include="R_Tuned.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="M2EmulatorSelect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DaytonaUSA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Indy500.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OverRev.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SegaRally.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="STCC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SuperGT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -357,9 +375,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LGI3D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="M2Emulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Machstorm.h">
@@ -603,6 +618,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="R-Tuned.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="M2EmulatorSelect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DaytonaUSA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Indy500.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OverRev.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SegaRally.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="STCC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SuperGT.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
