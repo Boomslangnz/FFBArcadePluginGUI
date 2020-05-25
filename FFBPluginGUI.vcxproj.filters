@@ -72,9 +72,6 @@
     <ClCompile Include="MKGP110.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="NascarRacing.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Outrun2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -327,6 +324,12 @@
     <ClCompile Include="SuperGT.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Demul.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RaveRacer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -384,9 +387,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MKGP110.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="NascarRacing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Outrun2.h">
@@ -639,6 +639,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SuperGT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Demul.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RaveRacer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -212,7 +212,7 @@
     <ClCompile Include="MechanizedAttack.cpp" />
     <ClCompile Include="MKGP100.cpp" />
     <ClCompile Include="MKGP110.cpp" />
-    <ClCompile Include="NascarRacing.cpp" />
+    <ClCompile Include="Demul.cpp" />
     <ClCompile Include="OffRoadChallenge.cpp" />
     <ClCompile Include="OperationThunderbolt.cpp" />
     <ClCompile Include="OperationWolf.cpp" />
@@ -226,6 +226,7 @@
     <ClCompile Include="PowerDrift.cpp" />
     <ClCompile Include="RailChase.cpp" />
     <ClCompile Include="Rambo.cpp" />
+    <ClCompile Include="RaveRacer.cpp" />
     <ClCompile Include="RevolutionX.cpp" />
     <ClCompile Include="RoadFighters3D.cpp" />
     <ClCompile Include="RoadFighters3DInput.cpp" />
@@ -376,7 +377,7 @@
     <ClInclude Include="MKGP110.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
-    <ClInclude Include="NascarRacing.h">
+    <ClInclude Include="Demul.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="OffRoadChallenge.h" />
@@ -399,6 +400,7 @@
     <ClInclude Include="R-Tuned.h" />
     <ClInclude Include="RailChase.h" />
     <ClInclude Include="Rambo.h" />
+    <ClInclude Include="RaveRacer.h" />
     <ClInclude Include="RevolutionX.h" />
     <ClInclude Include="RoadFighters3D.h">
       <FileType>CppHeader</FileType>

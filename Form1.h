@@ -24,6 +24,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "ChaseHQ2Input.h"
 #include "DaytonaChampionshipUSA.h"
 #include "DaytonaChampionshipUSAInput.h"
+#include "Demul.h"
 #include "DirtyDrivin.h"
 #include "FFBTest.h"
 #include "FordRacing.h"
@@ -51,7 +52,6 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "MameSelect.h"
 #include "MKGP100.h"
 #include "MKGP110.h"
-#include "NascarRacing.h"
 #include "Outrun2.h"
 #include "Outrun2Input.h"
 #include "PokkenTournament.h"
@@ -373,7 +373,7 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 26)
 		{
 			this->Hide();
-			NascarRacing^ obj1 = gcnew NascarRacing(this);
+			Demul^ obj1 = gcnew Demul(this);
 			obj1->ShowDialog();
 		}
 		else if (GameSelect == 27)
@@ -616,7 +616,7 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 26)
 		{
-			MessageBox::Show("Nascar Racing contains no input features");
+			MessageBox::Show("Demul Emulator contains no input features");
 		}
 		else if (GameSelect == 27)
 		{
