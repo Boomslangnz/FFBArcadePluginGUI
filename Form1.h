@@ -492,9 +492,15 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 46)
 		{
-		this->Hide();
-		RTuned^ obj1 = gcnew RTuned(this);
-		obj1->ShowDialog();
+			this->Hide();
+			RTuned^ obj1 = gcnew RTuned(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 47)
+		{
+			this->Hide();
+			SegaRally3^ obj1 = gcnew SegaRally3(this);
+			obj1->ShowDialog();
 		}
 		else
 		{
@@ -704,6 +710,10 @@ namespace FFBPluginGUI {
 		{
 			MessageBox::Show("R-Tuned contains no input features");
 		}
+		else if (GameSelect == 47)
+		{
+			MessageBox::Show("Sega Rally 3 Other contains no input features");
+		}
 		else
 		{
 			MessageBox::Show("FFBPlugin.ini contains no input features or does not exist");
@@ -727,7 +737,7 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 1 || GameSelect == 2 || GameSelect == 3 || GameSelect == 5 || GameSelect == 6 || GameSelect == 7 || GameSelect == 8 || GameSelect == 9 || GameSelect == 10 || GameSelect == 11 || GameSelect == 13 ||
 			GameSelect == 14 || GameSelect == 17 || GameSelect == 18 || GameSelect == 19 || GameSelect == 20 || GameSelect == 21 || GameSelect == 22 || GameSelect == 25 || GameSelect == 26 || GameSelect == 27 || GameSelect == 28 || 
 			GameSelect == 29 || GameSelect == 30 || GameSelect == 31 || GameSelect == 32 || GameSelect == 33 || GameSelect == 34 || GameSelect == 36 || GameSelect == 38 || GameSelect == 39 || GameSelect == 40 || 
-			GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45)
+			GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45 || GameSelect == 47)
 		{
 			this->Hide();
 			Help^ obj1 = gcnew Help(this);
