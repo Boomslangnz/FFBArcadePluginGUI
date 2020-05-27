@@ -24,7 +24,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "ChaseHQ2Input.h"
 #include "DaytonaChampionshipUSA.h"
 #include "DaytonaChampionshipUSAInput.h"
-#include "Demul.h"
+#include "DemulSelect.h"
 #include "DirtyDrivin.h"
 #include "FFBTest.h"
 #include "FordRacing.h"
@@ -373,7 +373,7 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 26)
 		{
 			this->Hide();
-			Demul^ obj1 = gcnew Demul(this);
+			DemulSelect^ obj1 = gcnew DemulSelect(this);
 			obj1->ShowDialog();
 		}
 		else if (GameSelect == 27)

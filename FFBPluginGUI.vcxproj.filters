@@ -324,10 +324,22 @@
     <ClCompile Include="SuperGT.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Demul.cpp">
+    <ClCompile Include="RaveRacer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RaveRacer.cpp">
+    <ClCompile Include="SuperChase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DemulSelect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NascarRacing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SmashingDrive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InitialDDemul.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -641,10 +653,22 @@
     <ClInclude Include="SuperGT.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Demul.h">
+    <ClInclude Include="RaveRacer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RaveRacer.h">
+    <ClInclude Include="SuperChase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DemulSelect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InitialDDemul.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SmashingDrive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NascarRacing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -654,6 +678,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FFBTest.resx">
       <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemulSelect.resx">
+      <Filter>Header Files</Filter>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

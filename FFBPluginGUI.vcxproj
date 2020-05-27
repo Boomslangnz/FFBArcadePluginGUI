@@ -155,10 +155,12 @@
     <ClCompile Include="AfterburnerClimax.cpp" />
     <ClCompile Include="Batman.cpp" />
     <ClCompile Include="DaytonaUSA.cpp" />
+    <ClCompile Include="DemulSelect.cpp" />
     <ClCompile Include="H2Overdrive.cpp" />
     <ClCompile Include="Help.cpp" />
     <ClCompile Include="Hyperdrive.cpp" />
     <ClCompile Include="Indy500.cpp" />
+    <ClCompile Include="InitialDDemul.cpp" />
     <ClCompile Include="LindberghHelp.cpp" />
     <ClCompile Include="AfterburnerII.cpp" />
     <ClCompile Include="Alien3.cpp" />
@@ -212,7 +214,7 @@
     <ClCompile Include="MechanizedAttack.cpp" />
     <ClCompile Include="MKGP100.cpp" />
     <ClCompile Include="MKGP110.cpp" />
-    <ClCompile Include="Demul.cpp" />
+    <ClCompile Include="NascarRacing.cpp" />
     <ClCompile Include="OffRoadChallenge.cpp" />
     <ClCompile Include="OperationThunderbolt.cpp" />
     <ClCompile Include="OperationWolf.cpp" />
@@ -239,10 +241,12 @@
     <ClCompile Include="SegaRally.cpp" />
     <ClCompile Include="SegaRally2.cpp" />
     <ClCompile Include="SegaRally3.cpp" />
+    <ClCompile Include="SmashingDrive.cpp" />
     <ClCompile Include="SnoCross.cpp" />
     <ClCompile Include="SonicAllStars.cpp" />
     <ClCompile Include="Spacegun.cpp" />
     <ClCompile Include="STCC.cpp" />
+    <ClCompile Include="SuperChase.cpp" />
     <ClCompile Include="SuperGT.cpp" />
     <ClCompile Include="SupermodelSelect.cpp" />
     <ClCompile Include="Terminator2.cpp" />
@@ -264,12 +268,16 @@
     </ClInclude>
     <ClInclude Include="Batman.h" />
     <ClInclude Include="DaytonaUSA.h" />
+    <ClInclude Include="DemulSelect.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="H2Overdrive.h" />
     <ClInclude Include="Help.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Hyperdrive.h" />
     <ClInclude Include="Indy500.h" />
+    <ClInclude Include="InitialDDemul.h" />
     <ClInclude Include="LindberghHelp.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -377,9 +385,7 @@
     <ClInclude Include="MKGP110.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
-    <ClInclude Include="Demul.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
+    <ClInclude Include="NascarRacing.h" />
     <ClInclude Include="OffRoadChallenge.h" />
     <ClInclude Include="OperationThunderbolt.h" />
     <ClInclude Include="OperationWolf.h" />
@@ -420,12 +426,14 @@
     <ClInclude Include="SegaRally3.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="SmashingDrive.h" />
     <ClInclude Include="SnoCross.h" />
     <ClInclude Include="SonicAllStars.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="Spacegun.h" />
     <ClInclude Include="STCC.h" />
+    <ClInclude Include="SuperChase.h" />
     <ClInclude Include="SuperGT.h" />
     <ClInclude Include="SupermodelSelect.h">
       <FileType>CppForm</FileType>
@@ -450,6 +458,7 @@
     <ClInclude Include="ZombieRaid.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DemulSelect.resx" />
     <EmbeddedResource Include="Help.resx">
       <DependentUpon>Help.h</DependentUpon>
     </EmbeddedResource>
