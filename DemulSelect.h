@@ -19,6 +19,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "NascarRacing.h"
 #include "InitialDDemul.h"
 #include "SmashingDrive.h"
+#include "MaximumSpeed.h"
 
 namespace FFBPluginGUI {
 
@@ -50,6 +51,7 @@ namespace FFBPluginGUI {
 	private: MetroFramework::Controls::MetroCheckBox^ metroCheckBox2;
 	private: MetroFramework::Controls::MetroCheckBox^ metroCheckBox3;
 	private: MetroFramework::Controls::MetroCheckBox^ metroCheckBox4;
+	private: MetroFramework::Controls::MetroButton^ metroButton4;
 
 	public:
 
@@ -104,6 +106,7 @@ namespace FFBPluginGUI {
 			this->metroCheckBox2 = (gcnew MetroFramework::Controls::MetroCheckBox());
 			this->metroCheckBox3 = (gcnew MetroFramework::Controls::MetroCheckBox());
 			this->metroCheckBox4 = (gcnew MetroFramework::Controls::MetroCheckBox());
+			this->metroButton4 = (gcnew MetroFramework::Controls::MetroButton());
 			this->SuspendLayout();
 			// 
 			// metroButton1
@@ -284,6 +287,18 @@ namespace FFBPluginGUI {
 			// 
 			// metroCheckBox1
 			// 
+			this->metroCheckBox1->AutoSize = true;
+			this->metroCheckBox1->Location = System::Drawing::Point(23, 128);
+			this->metroCheckBox1->Name = L"metroCheckBox1";
+			this->metroCheckBox1->Size = System::Drawing::Size(102, 15);
+			this->metroCheckBox1->TabIndex = 6;
+			this->metroCheckBox1->TabStop = false;
+			this->metroCheckBox1->Text = L"Enable Rumble";
+			this->metroCheckBox1->UseSelectable = true;
+			this->metroCheckBox1->CheckedChanged += gcnew System::EventHandler(this, &DemulSelect::metroCheckBox1_CheckedChanged);
+			// 
+			// metroCheckBox1
+			// 
 			int EnableRumbleA = GetPrivateProfileInt(TEXT("Settings"), TEXT("EnableRumble"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroCheckBox1->AutoSize = true;
 			this->metroCheckBox1->Location = System::Drawing::Point(23, 128);
@@ -338,9 +353,21 @@ namespace FFBPluginGUI {
 			this->metroCheckBox4->UseSelectable = true;
 			this->metroCheckBox4->CheckedChanged += gcnew System::EventHandler(this, &DemulSelect::metroCheckBox4_CheckedChanged);
 			// 
+			// metroButton4
+			// 
+			this->metroButton4->Location = System::Drawing::Point(254, 228);
+			this->metroButton4->Name = L"metroButton4";
+			this->metroButton4->Size = System::Drawing::Size(216, 23);
+			this->metroButton4->TabIndex = 44;
+			this->metroButton4->TabStop = false;
+			this->metroButton4->Text = L"Maximum Speed";
+			this->metroButton4->UseSelectable = true;
+			this->metroButton4->Click += gcnew System::EventHandler(this, &DemulSelect::metroButton4_Click);
+			// 
 			// DemulSelect
 			// 
 			this->ClientSize = System::Drawing::Size(493, 267);
+			this->Controls->Add(this->metroButton4);
 			this->Controls->Add(this->metroCheckBox4);
 			this->Controls->Add(this->metroCheckBox3);
 			this->Controls->Add(this->metroCheckBox2);
@@ -648,5 +675,11 @@ namespace FFBPluginGUI {
 		SmashingDrive^ obj1 = gcnew SmashingDrive(this);
 		obj1->ShowDialog();
 	}
-	};
+	private: System::Void metroButton4_Click(System::Object^ sender, System::EventArgs^ e) //Maximum Speed
+	{
+		this->Hide();
+		MaximumSpeed^ obj1 = gcnew MaximumSpeed(this);
+		obj1->ShowDialog();
+	}
+};
 }

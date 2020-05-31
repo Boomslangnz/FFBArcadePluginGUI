@@ -342,6 +342,9 @@
     <ClCompile Include="InitialDDemul.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MaximumSpeed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -669,6 +672,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="NascarRacing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MaximumSpeed.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

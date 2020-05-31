@@ -211,6 +211,7 @@
     <ClCompile Include="Machstorm.cpp" />
     <ClCompile Include="Mame.cpp" />
     <ClCompile Include="MameSelect.cpp" />
+    <ClCompile Include="MaximumSpeed.cpp" />
     <ClCompile Include="MechanizedAttack.cpp" />
     <ClCompile Include="MKGP100.cpp" />
     <ClCompile Include="MKGP110.cpp" />
@@ -378,6 +379,7 @@
     <ClInclude Include="MameSelect.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MaximumSpeed.h" />
     <ClInclude Include="MechanizedAttack.h" />
     <ClInclude Include="MKGP100.h">
       <FileType>CppHeader</FileType>
