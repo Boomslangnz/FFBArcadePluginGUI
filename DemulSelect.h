@@ -117,7 +117,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton1
 			// 
-			this->metroButton1->Location = System::Drawing::Point(23, 226);
+			this->metroButton1->Location = System::Drawing::Point(23, 228);
 			this->metroButton1->Name = L"metroButton1";
 			this->metroButton1->Size = System::Drawing::Size(216, 23);
 			this->metroButton1->TabIndex = 0;
@@ -164,7 +164,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton2
 			// 
-			this->metroButton2->Location = System::Drawing::Point(23, 255);
+			this->metroButton2->Location = System::Drawing::Point(23, 257);
 			this->metroButton2->Name = L"metroButton2";
 			this->metroButton2->Size = System::Drawing::Size(216, 23);
 			this->metroButton2->TabIndex = 4;
@@ -175,7 +175,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton3
 			// 
-			this->metroButton3->Location = System::Drawing::Point(254, 255);
+			this->metroButton3->Location = System::Drawing::Point(254, 257);
 			this->metroButton3->Name = L"metroButton3";
 			this->metroButton3->Size = System::Drawing::Size(216, 23);
 			this->metroButton3->TabIndex = 5;
@@ -382,7 +382,7 @@ namespace FFBPluginGUI {
 			// 
 			// DemulSelect
 			// 
-			this->ClientSize = System::Drawing::Size(493, 290);
+			this->ClientSize = System::Drawing::Size(493, 291);
 			this->Controls->Add(this->metroButton6);
 			this->Controls->Add(this->metroButton5);
 			this->Controls->Add(this->metroButton4);
