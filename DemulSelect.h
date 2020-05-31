@@ -21,6 +21,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "SmashingDrive.h"
 #include "MaximumSpeed.h"
 #include "FasterThanSpeed.h"
+#include "ATVTrack.h"
 
 namespace FFBPluginGUI {
 
@@ -54,6 +55,7 @@ namespace FFBPluginGUI {
 	private: MetroFramework::Controls::MetroCheckBox^ metroCheckBox4;
 	private: MetroFramework::Controls::MetroButton^ metroButton4;
 	private: MetroFramework::Controls::MetroButton^ metroButton5;
+	private: MetroFramework::Controls::MetroButton^ metroButton6;
 
 	public:
 
@@ -110,11 +112,12 @@ namespace FFBPluginGUI {
 			this->metroCheckBox4 = (gcnew MetroFramework::Controls::MetroCheckBox());
 			this->metroButton4 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroButton5 = (gcnew MetroFramework::Controls::MetroButton());
+			this->metroButton6 = (gcnew MetroFramework::Controls::MetroButton());
 			this->SuspendLayout();
 			// 
 			// metroButton1
 			// 
-			this->metroButton1->Location = System::Drawing::Point(23, 199);
+			this->metroButton1->Location = System::Drawing::Point(23, 226);
 			this->metroButton1->Name = L"metroButton1";
 			this->metroButton1->Size = System::Drawing::Size(216, 23);
 			this->metroButton1->TabIndex = 0;
@@ -161,7 +164,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton2
 			// 
-			this->metroButton2->Location = System::Drawing::Point(254, 199);
+			this->metroButton2->Location = System::Drawing::Point(23, 255);
 			this->metroButton2->Name = L"metroButton2";
 			this->metroButton2->Size = System::Drawing::Size(216, 23);
 			this->metroButton2->TabIndex = 4;
@@ -172,7 +175,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton3
 			// 
-			this->metroButton3->Location = System::Drawing::Point(23, 228);
+			this->metroButton3->Location = System::Drawing::Point(254, 255);
 			this->metroButton3->Name = L"metroButton3";
 			this->metroButton3->Size = System::Drawing::Size(216, 23);
 			this->metroButton3->TabIndex = 5;
@@ -357,7 +360,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton5
 			// 
-			this->metroButton5->Location = System::Drawing::Point(23, 257);
+			this->metroButton5->Location = System::Drawing::Point(254, 199);
 			this->metroButton5->Name = L"metroButton5";
 			this->metroButton5->Size = System::Drawing::Size(216, 23);
 			this->metroButton5->TabIndex = 45;
@@ -366,9 +369,21 @@ namespace FFBPluginGUI {
 			this->metroButton5->UseSelectable = true;
 			this->metroButton5->Click += gcnew System::EventHandler(this, &DemulSelect::metroButton5_Click);
 			// 
+			// metroButton6
+			// 
+			this->metroButton6->Location = System::Drawing::Point(23, 199);
+			this->metroButton6->Name = L"metroButton6";
+			this->metroButton6->Size = System::Drawing::Size(216, 23);
+			this->metroButton6->TabIndex = 46;
+			this->metroButton6->TabStop = false;
+			this->metroButton6->Text = L"ATV Track";
+			this->metroButton6->UseSelectable = true;
+			this->metroButton6->Click += gcnew System::EventHandler(this, &DemulSelect::metroButton6_Click);
+			// 
 			// DemulSelect
 			// 
-			this->ClientSize = System::Drawing::Size(493, 294);
+			this->ClientSize = System::Drawing::Size(493, 290);
+			this->Controls->Add(this->metroButton6);
 			this->Controls->Add(this->metroButton5);
 			this->Controls->Add(this->metroButton4);
 			this->Controls->Add(this->metroCheckBox4);
@@ -688,6 +703,12 @@ namespace FFBPluginGUI {
 	{
 		this->Hide();
 		FasterThanSpeed^ obj1 = gcnew FasterThanSpeed(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton6_Click(System::Object^ sender, System::EventArgs^ e) //ATV Track
+	{
+		this->Hide();
+		ATVTrack^ obj1 = gcnew ATVTrack(this);
 		obj1->ShowDialog();
 	}
 };

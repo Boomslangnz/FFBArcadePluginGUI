@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AfterburnerClimax.cpp" />
+    <ClCompile Include="ATVTrack.cpp" />
     <ClCompile Include="Batman.cpp" />
     <ClCompile Include="DaytonaUSA.cpp" />
     <ClCompile Include="DemulSelect.cpp" />
@@ -268,6 +269,7 @@
     <ClInclude Include="AfterburnerClimax.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="ATVTrack.h" />
     <ClInclude Include="Batman.h" />
     <ClInclude Include="DaytonaUSA.h" />
     <ClInclude Include="DemulSelect.h">
