@@ -156,6 +156,7 @@
     <ClCompile Include="Batman.cpp" />
     <ClCompile Include="DaytonaUSA.cpp" />
     <ClCompile Include="DemulSelect.cpp" />
+    <ClCompile Include="FasterThanSpeed.cpp" />
     <ClCompile Include="H2Overdrive.cpp" />
     <ClCompile Include="Help.cpp" />
     <ClCompile Include="Hyperdrive.cpp" />
@@ -272,6 +273,7 @@
     <ClInclude Include="DemulSelect.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="FasterThanSpeed.h" />
     <ClInclude Include="H2Overdrive.h" />
     <ClInclude Include="Help.h">
       <FileType>CppForm</FileType>

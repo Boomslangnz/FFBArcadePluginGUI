@@ -20,6 +20,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "InitialDDemul.h"
 #include "SmashingDrive.h"
 #include "MaximumSpeed.h"
+#include "FasterThanSpeed.h"
 
 namespace FFBPluginGUI {
 
@@ -52,6 +53,7 @@ namespace FFBPluginGUI {
 	private: MetroFramework::Controls::MetroCheckBox^ metroCheckBox3;
 	private: MetroFramework::Controls::MetroCheckBox^ metroCheckBox4;
 	private: MetroFramework::Controls::MetroButton^ metroButton4;
+	private: MetroFramework::Controls::MetroButton^ metroButton5;
 
 	public:
 
@@ -107,6 +109,7 @@ namespace FFBPluginGUI {
 			this->metroCheckBox3 = (gcnew MetroFramework::Controls::MetroCheckBox());
 			this->metroCheckBox4 = (gcnew MetroFramework::Controls::MetroCheckBox());
 			this->metroButton4 = (gcnew MetroFramework::Controls::MetroButton());
+			this->metroButton5 = (gcnew MetroFramework::Controls::MetroButton());
 			this->SuspendLayout();
 			// 
 			// metroButton1
@@ -287,18 +290,6 @@ namespace FFBPluginGUI {
 			// 
 			// metroCheckBox1
 			// 
-			this->metroCheckBox1->AutoSize = true;
-			this->metroCheckBox1->Location = System::Drawing::Point(23, 128);
-			this->metroCheckBox1->Name = L"metroCheckBox1";
-			this->metroCheckBox1->Size = System::Drawing::Size(102, 15);
-			this->metroCheckBox1->TabIndex = 6;
-			this->metroCheckBox1->TabStop = false;
-			this->metroCheckBox1->Text = L"Enable Rumble";
-			this->metroCheckBox1->UseSelectable = true;
-			this->metroCheckBox1->CheckedChanged += gcnew System::EventHandler(this, &DemulSelect::metroCheckBox1_CheckedChanged);
-			// 
-			// metroCheckBox1
-			// 
 			int EnableRumbleA = GetPrivateProfileInt(TEXT("Settings"), TEXT("EnableRumble"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroCheckBox1->AutoSize = true;
 			this->metroCheckBox1->Location = System::Drawing::Point(23, 128);
@@ -364,9 +355,21 @@ namespace FFBPluginGUI {
 			this->metroButton4->UseSelectable = true;
 			this->metroButton4->Click += gcnew System::EventHandler(this, &DemulSelect::metroButton4_Click);
 			// 
+			// metroButton5
+			// 
+			this->metroButton5->Location = System::Drawing::Point(23, 257);
+			this->metroButton5->Name = L"metroButton5";
+			this->metroButton5->Size = System::Drawing::Size(216, 23);
+			this->metroButton5->TabIndex = 45;
+			this->metroButton5->TabStop = false;
+			this->metroButton5->Text = L"Faster Than Speed";
+			this->metroButton5->UseSelectable = true;
+			this->metroButton5->Click += gcnew System::EventHandler(this, &DemulSelect::metroButton5_Click);
+			// 
 			// DemulSelect
 			// 
-			this->ClientSize = System::Drawing::Size(493, 267);
+			this->ClientSize = System::Drawing::Size(493, 294);
+			this->Controls->Add(this->metroButton5);
 			this->Controls->Add(this->metroButton4);
 			this->Controls->Add(this->metroCheckBox4);
 			this->Controls->Add(this->metroCheckBox3);
@@ -679,6 +682,12 @@ namespace FFBPluginGUI {
 	{
 		this->Hide();
 		MaximumSpeed^ obj1 = gcnew MaximumSpeed(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton5_Click(System::Object^ sender, System::EventArgs^ e) //Faster Than Speed
+	{
+		this->Hide();
+		FasterThanSpeed^ obj1 = gcnew FasterThanSpeed(this);
 		obj1->ShowDialog();
 	}
 };
