@@ -354,6 +354,12 @@
     <ClCompile Include="DirtDash.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AceDriver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AceDriverVictoryLap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -693,6 +699,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DirtDash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AceDriverVictoryLap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AceDriver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -41,6 +41,9 @@ namespace FFBPluginGUI {
 			this->AutoAddShortCheckBox("EnableForceSpringEffectDirtDash", L"Force Spring Effect", L"Forces spring effect to work all the time");
 			this->AutoAddShortTrackBarBlock("ForceSpringStrengthDirtDash", L"Forced Spring Strength", 0, 100, L"How strong the spring effect is when forced on");
 
+			this->AutoAddLongTextBox(L"Adjust Force Feedback Division", L"Divide Force Feedback Strength Value by this");
+			this->AutoAddShortTrackBarBlock("FFBDivideDirtDash", L"Force Feedback Division", 0, 2000, L"Divide Force Feedback Strength Value by this");
+
 			this->New2ColsPage();
 
 			this->AutoAddComponent("GlobalForceHeader");

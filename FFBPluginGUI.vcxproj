@@ -152,6 +152,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AceDriver.cpp" />
+    <ClCompile Include="AceDriverVictoryLap.cpp" />
     <ClCompile Include="AfterburnerClimax.cpp" />
     <ClCompile Include="ATVTrack.cpp" />
     <ClCompile Include="Batman.cpp" />
@@ -267,6 +269,7 @@
     <ClCompile Include="ZombieRaid.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AceDriverVictoryLap.h" />
     <ClInclude Include="AfterburnerClimax.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
@@ -453,6 +456,7 @@
     <ClInclude Include="TurkeyShoot.h" />
     <ClInclude Include="UnderFire.h" />
     <ClInclude Include="VaporTrx.h" />
+    <ClInclude Include="AceDriver.h" />
     <ClInclude Include="VirtuaRacing.h" />
     <ClInclude Include="WackyRaces.h">
       <FileType>CppHeader</FileType>
