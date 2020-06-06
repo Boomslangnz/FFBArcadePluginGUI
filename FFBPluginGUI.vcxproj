@@ -158,7 +158,14 @@
     <ClCompile Include="ATVTrack.cpp" />
     <ClCompile Include="Batman.cpp" />
     <ClCompile Include="DaytonaUSA.cpp" />
+    <ClCompile Include="DemulATVTrackInput.cpp" />
+    <ClCompile Include="DemulFasterThanSpeedInput.cpp" />
+    <ClCompile Include="DemulInitialDInput.cpp" />
+    <ClCompile Include="DemulInputSelect.cpp" />
+    <ClCompile Include="DemulMaximumSpeedInput.cpp" />
+    <ClCompile Include="DemulNascarInput.cpp" />
     <ClCompile Include="DemulSelect.cpp" />
+    <ClCompile Include="DemulSmashingDriveInput.cpp" />
     <ClCompile Include="DirtDash.cpp" />
     <ClCompile Include="FasterThanSpeed.cpp" />
     <ClCompile Include="H2Overdrive.cpp" />
@@ -276,9 +283,18 @@
     <ClInclude Include="ATVTrack.h" />
     <ClInclude Include="Batman.h" />
     <ClInclude Include="DaytonaUSA.h" />
+    <ClInclude Include="DemulATVTrackInput.h" />
+    <ClInclude Include="DemulFasterThanSpeedInput.h" />
+    <ClInclude Include="DemulInitialDInput.h" />
+    <ClInclude Include="DemulInputSelect.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DemulMaximumSpeedInput.h" />
+    <ClInclude Include="DemulNascarInput.h" />
     <ClInclude Include="DemulSelect.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="DemulSmashingDriveInput.h" />
     <ClInclude Include="DirtDash.h" />
     <ClInclude Include="FasterThanSpeed.h" />
     <ClInclude Include="H2Overdrive.h" />
@@ -470,6 +486,7 @@
     <ClInclude Include="ZombieRaid.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DemulInputSelect.resx" />
     <EmbeddedResource Include="DemulSelect.resx" />
     <EmbeddedResource Include="Help.resx">
       <DependentUpon>Help.h</DependentUpon>

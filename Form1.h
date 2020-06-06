@@ -24,6 +24,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "ChaseHQ2Input.h"
 #include "DaytonaChampionshipUSA.h"
 #include "DaytonaChampionshipUSAInput.h"
+#include "DemulInputSelect.h"
 #include "DemulSelect.h"
 #include "DirtyDrivin.h"
 #include "FFBTest.h"
@@ -622,7 +623,9 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 26)
 		{
-			MessageBox::Show("Demul Emulator contains no input features");
+			this->Hide();
+			DemulInputSelect^ obj1 = gcnew DemulInputSelect(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 27)
 		{
