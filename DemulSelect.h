@@ -246,6 +246,7 @@ namespace FFBPluginGUI {
 			{
 				this->metroComboBox1->Text = "SDL2 Cannot Detect Any Joystick";
 			}
+			this->metroComboBox1->Items->Add("Select no device");
 			this->metroComboBox1->FormattingEnabled = true;
 			this->metroComboBox1->ItemHeight = 23;
 			this->metroComboBox1->Location = System::Drawing::Point(23, 64);
