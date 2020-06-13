@@ -117,7 +117,7 @@ namespace FFBPluginGUI {
 	private: MetroFramework::Controls::MetroButton^ metroButton37;
 	private: MetroFramework::Controls::MetroButton^ metroButton38;
 	private: MetroFramework::Controls::MetroButton^ metroButton39;
-	private: MetroFramework::Controls::MetroButton^ metroButton40;
+
 	private: MetroFramework::Controls::MetroButton^ metroButton41;
 	private: MetroFramework::Controls::MetroButton^ metroButton42;
 	private: MetroFramework::Controls::MetroButton^ metroButton43;
@@ -223,7 +223,6 @@ namespace FFBPluginGUI {
 			this->metroButton37 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroButton38 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroButton39 = (gcnew MetroFramework::Controls::MetroButton());
-			this->metroButton40 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroButton41 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroButton42 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroButton43 = (gcnew MetroFramework::Controls::MetroButton());
@@ -566,7 +565,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton27
 			// 
-			this->metroButton27->Location = System::Drawing::Point(23, 692);
+			this->metroButton27->Location = System::Drawing::Point(254, 663);
 			this->metroButton27->Name = L"metroButton27";
 			this->metroButton27->Size = System::Drawing::Size(216, 23);
 			this->metroButton27->TabIndex = 31;
@@ -577,7 +576,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton28
 			// 
-			this->metroButton28->Location = System::Drawing::Point(254, 721);
+			this->metroButton28->Location = System::Drawing::Point(23, 721);
 			this->metroButton28->Name = L"metroButton28";
 			this->metroButton28->Size = System::Drawing::Size(216, 23);
 			this->metroButton28->TabIndex = 32;
@@ -588,7 +587,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton29
 			// 
-			this->metroButton29->Location = System::Drawing::Point(23, 750);
+			this->metroButton29->Location = System::Drawing::Point(254, 721);
 			this->metroButton29->Name = L"metroButton29";
 			this->metroButton29->Size = System::Drawing::Size(216, 23);
 			this->metroButton29->TabIndex = 33;
@@ -599,7 +598,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton30
 			// 
-			this->metroButton30->Location = System::Drawing::Point(254, 750);
+			this->metroButton30->Location = System::Drawing::Point(23, 750);
 			this->metroButton30->Name = L"metroButton30";
 			this->metroButton30->Size = System::Drawing::Size(216, 23);
 			this->metroButton30->TabIndex = 34;
@@ -610,7 +609,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton31
 			// 
-			this->metroButton31->Location = System::Drawing::Point(23, 779);
+			this->metroButton31->Location = System::Drawing::Point(254, 750);
 			this->metroButton31->Name = L"metroButton31";
 			this->metroButton31->Size = System::Drawing::Size(216, 23);
 			this->metroButton31->TabIndex = 35;
@@ -621,7 +620,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton32
 			// 
-			this->metroButton32->Location = System::Drawing::Point(254, 779);
+			this->metroButton32->Location = System::Drawing::Point(23, 779);
 			this->metroButton32->Name = L"metroButton32";
 			this->metroButton32->Size = System::Drawing::Size(216, 23);
 			this->metroButton32->TabIndex = 36;
@@ -632,7 +631,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton33
 			// 
-			this->metroButton33->Location = System::Drawing::Point(254, 808);
+			this->metroButton33->Location = System::Drawing::Point(23, 808);
 			this->metroButton33->Name = L"metroButton33";
 			this->metroButton33->Size = System::Drawing::Size(216, 23);
 			this->metroButton33->TabIndex = 37;
@@ -643,7 +642,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton34
 			// 
-			this->metroButton34->Location = System::Drawing::Point(23, 837);
+			this->metroButton34->Location = System::Drawing::Point(254, 808);
 			this->metroButton34->Name = L"metroButton34";
 			this->metroButton34->Size = System::Drawing::Size(216, 23);
 			this->metroButton34->TabIndex = 38;
@@ -805,6 +804,7 @@ namespace FFBPluginGUI {
 			this->metroCheckBox4->UseSelectable = true;
 			this->metroCheckBox4->CheckedChanged += gcnew System::EventHandler(this, &MameSelect::metroCheckBox4_CheckedChanged);
 			// 
+			// 
 			// metroButton35
 			// 
 			this->metroButton35->Location = System::Drawing::Point(23, 431);
@@ -818,7 +818,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton36
 			// 
-			this->metroButton36->Location = System::Drawing::Point(23, 808);
+			this->metroButton36->Location = System::Drawing::Point(254, 779);
 			this->metroButton36->Name = L"metroButton36";
 			this->metroButton36->Size = System::Drawing::Size(216, 23);
 			this->metroButton36->TabIndex = 45;
@@ -860,20 +860,9 @@ namespace FFBPluginGUI {
 			this->metroButton39->UseSelectable = true;
 			this->metroButton39->Click += gcnew System::EventHandler(this, &MameSelect::metroButton39_Click);
 			// 
-			// metroButton40
-			// 
-			this->metroButton40->Location = System::Drawing::Point(254, 663);
-			this->metroButton40->Name = L"metroButton40";
-			this->metroButton40->Size = System::Drawing::Size(216, 23);
-			this->metroButton40->TabIndex = 49;
-			this->metroButton40->TabStop = false;
-			this->metroButton40->Text = L"Sega Touring Car Championship";
-			this->metroButton40->UseSelectable = true;
-			this->metroButton40->Click += gcnew System::EventHandler(this, &MameSelect::metroButton40_Click);
-			// 
 			// metroButton41
 			// 
-			this->metroButton41->Location = System::Drawing::Point(23, 721);
+			this->metroButton41->Location = System::Drawing::Point(254, 692);
 			this->metroButton41->Name = L"metroButton41";
 			this->metroButton41->Size = System::Drawing::Size(216, 23);
 			this->metroButton41->TabIndex = 50;
@@ -884,7 +873,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton42
 			// 
-			this->metroButton42->Location = System::Drawing::Point(254, 692);
+			this->metroButton42->Location = System::Drawing::Point(23, 692);
 			this->metroButton42->Name = L"metroButton42";
 			this->metroButton42->Size = System::Drawing::Size(216, 23);
 			this->metroButton42->TabIndex = 51;
@@ -928,13 +917,12 @@ namespace FFBPluginGUI {
 			// 
 			// MameSelect
 			// 
-			this->ClientSize = System::Drawing::Size(493, 872);
+			this->ClientSize = System::Drawing::Size(493, 842);
 			this->Controls->Add(this->metroButton45);
 			this->Controls->Add(this->metroButton44);
 			this->Controls->Add(this->metroButton43);
 			this->Controls->Add(this->metroButton42);
 			this->Controls->Add(this->metroButton41);
-			this->Controls->Add(this->metroButton40);
 			this->Controls->Add(this->metroButton39);
 			this->Controls->Add(this->metroButton38);
 			this->Controls->Add(this->metroButton37);
