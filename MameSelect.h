@@ -997,6 +997,11 @@ namespace FFBPluginGUI {
 			// MameSelect
 			// 
 			this->ClientSize = System::Drawing::Size(493, 934);
+			int AutoScrollGUI = GetPrivateProfileInt(TEXT("Settings"), TEXT("AutoScrollGUI"), 0, TEXT(".\\FFBPlugin.ini"));
+			if (AutoScrollGUI == 1)
+			{
+				this->AutoScroll = true;
+			}
 			this->Controls->Add(this->metroLabel1);
 			this->Controls->Add(this->metroTextBox4);
 			this->Controls->Add(this->metroTrackBar1);
