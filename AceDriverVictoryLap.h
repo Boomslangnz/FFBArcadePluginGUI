@@ -32,29 +32,29 @@ namespace FFBPluginGUI {
 			this->SuspendLayout();
 
 			this->AutoAddLongTextBox(L"Options", L"");
-			this->AutoAddShortCheckBox("PowerModeAceDriverVictoryLap", L"Power Mode", L"Enable to raise strength of lower values");
+			this->AutoAddShortCheckBox("PowerModeAceDriverVictory", L"Power Mode", L"Enable to raise strength of lower values");
 
-			this->AutoAddLongTrackBarBlock("FeedbackLengthAceDriverVictoryLap", L"Feedback Length", 16, 1000, L"Length of a feedback command");
+			this->AutoAddLongTrackBarBlock("FeedbackLengthAceDriverVictory", L"Feedback Length", 16, 1000, L"Length of a feedback command");
 
 			this->AutoAddLongTextBox(L"Force Spring Effect", L"Force Spring effect over using default game spring");
 
-			this->AutoAddShortCheckBox("EnableForceSpringEffectAceDriverVictoryLap", L"Force Spring Effect", L"Forces spring effect to work all the time");
-			this->AutoAddShortTrackBarBlock("ForceSpringStrengthAceDriverVictoryLap", L"Forced Spring Strength", 0, 100, L"How strong the spring effect is when forced on");
+			this->AutoAddShortCheckBox("EnableForceSpringEffectAceDriverVictory", L"Force Spring Effect", L"Forces spring effect to work all the time");
+			this->AutoAddShortTrackBarBlock("ForceSpringStrengthAceDriverVictory", L"Forced Spring Strength", 0, 100, L"How strong the spring effect is when forced on");
 
 			this->AutoAddLongTextBox(L"Adjust Force Feedback Division", L"Divide Force Feedback Strength Value by this");
-			this->AutoAddShortTrackBarBlock("FFBDivideAceDriverVictoryLap", L"Force Feedback Division", 0, 2000, L"Divide Force Feedback Strength Value by this");
+			this->AutoAddShortTrackBarBlock("FFBDivideAceDriverVictory", L"Force Feedback Division", 0, 2000, L"Divide Force Feedback Strength Value by this");
 
 			this->New2ColsPage();
 
 			this->AutoAddComponent("GlobalForceHeader");
-			this->AutoAddShortTrackBarBlock("MinForceAceDriverVictoryLap", L"Min Force", 0, 100, L"Minimum overrall force strength that will be applied to device");
-			this->AutoAddShortTrackBarBlock("MaxForceAceDriverVictoryLap", L"Max Force", 0, 100, L"Maximum overrall force strength that will be applied to device");
+			this->AutoAddShortTrackBarBlock("MinForceAceDriverVictory", L"Min Force", 0, 100, L"Minimum overrall force strength that will be applied to device");
+			this->AutoAddShortTrackBarBlock("MaxForceAceDriverVictory", L"Max Force", 0, 100, L"Maximum overrall force strength that will be applied to device");
 
 			this->AutoAddComponent("AltGlobalForceHeader");
-			this->AutoAddShortTrackBarBlock("AlternativeMinForceLeftAceDriverVictoryLap", L"Min Force Left", -100, 100, L"Minimum overrall left force strength that will be applied to device");
-			this->AutoAddShortTrackBarBlock("AlternativeMaxForceLeftAceDriverVictoryLap", L"Max Force Left", -100, 100, L"Maximum overrall left force strength that will be applied to device");
-			this->AutoAddShortTrackBarBlock("AlternativeMinForceRightAceDriverVictoryLap", L"Min Force Right", -100, 100, L"Minimum overrall right force strength that will be applied to device");
-			this->AutoAddShortTrackBarBlock("AlternativeMaxForceRightAceDriverVictoryLap", L"Max Force Right", -100, 100, L"Maximum overrall right force strength that will be applied to device");
+			this->AutoAddShortTrackBarBlock("AlternativeMinForceLeftAceDriverVictory", L"Min Force Left", -100, 100, L"Minimum overrall left force strength that will be applied to device");
+			this->AutoAddShortTrackBarBlock("AlternativeMaxForceLeftAceDriverVictory", L"Max Force Left", -100, 100, L"Maximum overrall left force strength that will be applied to device");
+			this->AutoAddShortTrackBarBlock("AlternativeMinForceRightAceDriverVictory", L"Min Force Right", -100, 100, L"Minimum overrall right force strength that will be applied to device");
+			this->AutoAddShortTrackBarBlock("AlternativeMaxForceRightAceDriverVictory", L"Max Force Right", -100, 100, L"Maximum overrall right force strength that will be applied to device");
 
 			this->Init();
 		}
