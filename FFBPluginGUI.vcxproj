@@ -259,6 +259,7 @@
     <ClCompile Include="SonicAllStars.cpp" />
     <ClCompile Include="Spacegun.cpp" />
     <ClCompile Include="STCC.cpp" />
+    <ClCompile Include="StrengthInput.cpp" />
     <ClCompile Include="SuperChase.cpp" />
     <ClCompile Include="SuperGT.cpp" />
     <ClCompile Include="SupermodelSelect.cpp" />
@@ -460,6 +461,7 @@
     </ClInclude>
     <ClInclude Include="Spacegun.h" />
     <ClInclude Include="STCC.h" />
+    <ClInclude Include="StrengthInput.h" />
     <ClInclude Include="SuperChase.h" />
     <ClInclude Include="SuperGT.h" />
     <ClInclude Include="SupermodelSelect.h">

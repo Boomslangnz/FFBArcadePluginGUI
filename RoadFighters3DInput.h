@@ -34,7 +34,15 @@ namespace FFBPluginGUI {
 			this->AutoAddDevice1Selector();
 			this->AutoAddDevice2Selector();
 
-			this->AutoAddComponent("OptionsHeader");
+			this->AutoAddLongTextBox(L"FFB Dynamic Strength Adjustment", L"");
+
+			this->AutoAddShortCheckBox("EnableFFBStrengthDynamicAdjustment", L"Enable Adjustment", L"Enable to modify strength while playing");
+			this->AutoAddShortCheckBox("EnableFFBStrengthPersistence", L"Enable To Make Persistent", L"Enable to save adjusment permanently");
+			this->AutoAddShortCheckBox("EnableFFBStrengthTextToSpeech", L"Enable Text To Speech", L"Enable to hear strength via speaker");
+
+			this->AutoAddShortTrackBarBlock("StepFFBStrength", L"Step FFB Strength", 0, 100, L"Set how far strength changes each button press");
+
+			this->AutoAddLongTextBox(L"Game Options", L"");
 			
 			this->AutoAddShortCheckBox("InputDeviceWheelEnable", L"Enable Input Support", L"");
 			this->AutoAddShortCheckBox("SequentialGears", L"Sequential Gears", L"Enable sequential gears");
@@ -70,6 +78,9 @@ namespace FFBPluginGUI {
 			this->AutoAddLongInputSelect("Button", "leverDown", L"Lever Down");
 			this->AutoAddLongInputSelect("Button", "leverLeft", L"Lever Left");
 			this->AutoAddLongInputSelect("Button", "leverRight", L"Lever Right");
+			this->AutoAddLongInputSelect("Button", "IncreaseFFBStrength", L"Increase FFB Strength");
+			this->AutoAddLongInputSelect("Button", "DecreaseFFBStrength", L"Decrease FFB Strength");
+			this->AutoAddLongInputSelect("Button", "ResetFFBStrength", L"Reset FFB Strength");
 
 			this->AutoAddShortComboBoxBlock(
 				"DpadUp",

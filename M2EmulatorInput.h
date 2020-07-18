@@ -31,9 +31,29 @@ namespace FFBPluginGUI {
 		{
 			this->SuspendLayout();
 
+			this->AutoAddLongTextBox(L"FFB Dynamic Strength Adjustment", L"");
+
+			this->AutoAddShortCheckBox("EnableFFBStrengthDynamicAdjustment", L"Enable Adjustment", L"Enable to modify strength while playing");
+			this->AutoAddShortCheckBox("EnableFFBStrengthPersistence", L"Enable To Make Persistent", L"Enable to save adjusment permanently");
+			this->AutoAddShortCheckBox("EnableFFBStrengthTextToSpeech", L"Enable Text To Speech", L"Enable to hear strength via speaker");
+
+			this->AutoAddShortTrackBarBlock("StepFFBStrength", L"Step FFB Strength", 0, 100, L"Set how far strength changes each button press");
+
+			this->AutoAddLongTextBox(L"Game Options", L"");
+
 			this->AutoAddShortCheckBox("DaytonaAIMultiplayerHack", L"Multiplayer AI Hack", L"Enable hack to allow AI car positions while using network");
 			this->AutoAddShortCheckBox("DaytonaForcePanoramicAttract", L"Panoramic Hack", L"Hack to force panoramic mode for 2p etc");
 			this->AutoAddShortCheckBox("EnableOutputs", L"Enable Outputs", L"Enable Outputs with Output Blaster");
+
+			this->New2ColsPage();
+
+			this->AutoAddLongTextBox(L"Set or remove button configuration below", L"Click then press any button");
+			this->AutoAddShortTextBox(L"Device Select Input", L"Button names for device, click below to set input for device");
+			this->AutoAddShortTextBox(L"Button Number", L"Button number set in FFBPlugin.ini for device");
+
+			this->AutoAddLongInputSelect("Button", "IncreaseFFBStrength", L"Increase FFB Strength");
+			this->AutoAddLongInputSelect("Button", "DecreaseFFBStrength", L"Decrease FFB Strength");
+			this->AutoAddLongInputSelect("Button", "ResetFFBStrength", L"Reset FFB Strength");
 
 			this->Init();
 		}

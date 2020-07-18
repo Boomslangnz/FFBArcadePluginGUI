@@ -381,6 +381,9 @@
     <ClCompile Include="DemulMaximumSpeedInput.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="StrengthInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -747,6 +750,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DemulMaximumSpeedInput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StrengthInput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

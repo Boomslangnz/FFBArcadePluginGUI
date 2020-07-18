@@ -30,6 +30,16 @@ namespace FFBPluginGUI {
 		{
 			this->SuspendLayout();
 
+			this->AutoAddLongTextBox(L"FFB Dynamic Strength Adjustment", L"");
+
+			this->AutoAddShortCheckBox("EnableFFBStrengthDynamicAdjustment", L"Enable Adjustment", L"Enable to modify strength while playing");
+			this->AutoAddShortCheckBox("EnableFFBStrengthPersistence", L"Enable To Make Persistent", L"Enable to save adjusment permanently");
+			this->AutoAddShortCheckBox("EnableFFBStrengthTextToSpeech", L"Enable Text To Speech", L"Enable to hear strength via speaker");
+
+			this->AutoAddShortTrackBarBlock("StepFFBStrength", L"Step FFB Strength", 0, 100, L"Set how far strength changes each button press");
+
+			this->New2ColsPage();
+
 			this->AddTextBox(L"Set or remove button configuration below", this->leftColX, this->minPosY, (2 * this->longWidth) + (2 * this->margin), this->textBoxHeight, L"Select Input then move or press Axis or Button");
 
 			this->leftColPosY = this->minPosY + this->textBoxOuterHeight;
@@ -47,6 +57,9 @@ namespace FFBPluginGUI {
 			this->AutoAddLongInputSelect("Button", "Button8Rumble", L"Button 8");
 			this->AutoAddLongInputSelect("Button", "Button9Rumble", L"Button 9");
 			this->AutoAddLongInputSelect("Button", "Button10Rumble", L"Button 10");
+			this->AutoAddLongInputSelect("Button", "IncreaseFFBStrength", L"Increase FFB Strength");
+			this->AutoAddLongInputSelect("Button", "DecreaseFFBStrength", L"Decrease FFB Strength");
+			this->AutoAddLongInputSelect("Button", "ResetFFBStrength", L"Reset FFB Strength");
 
 			this->New2ColsPage();
 

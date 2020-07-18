@@ -17,10 +17,10 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 
 namespace FFBPluginGUI {
 
-	public ref class Outrun2Input : Helper
+	public ref class StrengthInput : Helper
 	{
 	public:
-		Outrun2Input(MetroForm ^obj1)
+		StrengthInput(MetroForm^ obj1)
 		{
 			this->obj = obj1;
 			this->InitializeComponent();
@@ -39,22 +39,12 @@ namespace FFBPluginGUI {
 
 			this->AutoAddShortTrackBarBlock("StepFFBStrength", L"Step FFB Strength", 0, 100, L"Set how far strength changes each button press");
 
-			this->AutoAddLongTextBox(L"Game Options", L"");
-
-			this->AutoAddShortCheckBox("ChangeGearsViaPlugin", L"Enable Gear Change", L"Enable to change gears");
-
 			this->New2ColsPage();
 
 			this->AutoAddLongTextBox(L"Set or remove button configuration below", L"Click then press any button");
 			this->AutoAddShortTextBox(L"Device Select Input", L"Button names for device, click below to set input for device");
 			this->AutoAddShortTextBox(L"Button Number", L"Button number set in FFBPlugin.ini for device");
 
-			this->AutoAddLongInputSelect("Button", "Gear1", L"Gear 1");
-			this->AutoAddLongInputSelect("Button", "Gear2", L"Gear 2");
-			this->AutoAddLongInputSelect("Button", "Gear3", L"Gear 3");
-			this->AutoAddLongInputSelect("Button", "Gear4", L"Gear 4");
-			this->AutoAddLongInputSelect("Button", "Gear5", L"Gear 5");
-			this->AutoAddLongInputSelect("Button", "Gear6", L"Gear 6");
 			this->AutoAddLongInputSelect("Button", "IncreaseFFBStrength", L"Increase FFB Strength");
 			this->AutoAddLongInputSelect("Button", "DecreaseFFBStrength", L"Decrease FFB Strength");
 			this->AutoAddLongInputSelect("Button", "ResetFFBStrength", L"Reset FFB Strength");

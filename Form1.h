@@ -62,6 +62,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "SegaRally3.h"
 #include "SnoCross.h"
 #include "SonicAllStars.h"
+#include "StrengthInput.h"
 #include "SupermodelSelect.h"
 #include "WackyRaces.h"
 #include "WMMT5.h"
@@ -519,7 +520,9 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 2)
 		{
-			MessageBox::Show("Wacky Races contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 3)
 		{
@@ -529,23 +532,33 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 4)
 		{
-			MessageBox::Show("HOTD4 contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 5)
 		{
-			MessageBox::Show("Sega Racing Classic contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 6)
 		{
-			MessageBox::Show("Sega Rally 3 contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 7)
 		{
-			MessageBox::Show("Ford Racing contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 8)
 		{
-			MessageBox::Show("Initial D6 contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 9)
 		{
@@ -555,11 +568,15 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 10)
 		{
-			MessageBox::Show("GRID contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 11)
 		{
-			MessageBox::Show("Mario Kart GP DX 1.00 contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 12)
 		{
@@ -569,51 +586,75 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 13)
 		{
-			MessageBox::Show("Battle Gear 4 contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 14)
 		{
-			MessageBox::Show("Machstorm contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 15)
 		{
-			MessageBox::Show("Afterburner Climax contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 16)
 		{
-			MessageBox::Show("Initial D4 contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 17)
 		{
-			MessageBox::Show("Initial D7 contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 18)
 		{
-			MessageBox::Show("Initial D8 contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 19)
 		{
-			MessageBox::Show("Pokken Tournament contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 20)
 		{
-			MessageBox::Show("Mario Kart GP DX 1.10 contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 21)
 		{
-			MessageBox::Show("Sonic & Sega All Star Racing contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 22)
 		{
-			MessageBox::Show("Output Reading contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 23)
 		{
-			MessageBox::Show("Initial D5 contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 24)
 		{
-			MessageBox::Show("Initial D4 Japan contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 25)
 		{
@@ -629,7 +670,9 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 27)
 		{
-			MessageBox::Show("GTI Club Supermini Festa contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 28)
 		{
@@ -645,23 +688,33 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 30)
 		{
-			MessageBox::Show("Lets go island 3D contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 31)
 		{
-			MessageBox::Show("Lets go island contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 32)
 		{
-			MessageBox::Show("Initial D Zero contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 33)
 		{
-			MessageBox::Show("Mame contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 34)
 		{
-			MessageBox::Show("Supermodel Reading contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 35)
 		{
@@ -671,51 +724,75 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 36)
 		{
-			MessageBox::Show("Aliens Extermination contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 37)
 		{
-			MessageBox::Show("Rambo contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 38)
 		{
-			MessageBox::Show("Ford Racing Other contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 39)
 		{
-			MessageBox::Show("KO Drive contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 40)
 		{
-			MessageBox::Show("Transformers contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 41)
 		{
-			MessageBox::Show("Golden Gun contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 42)
 		{
-			MessageBox::Show("Dirty Drivin' contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 43)
 		{
-			MessageBox::Show("H2Overdrive contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 44)
 		{
-			MessageBox::Show("Winter X Games Snocross contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 45)
 		{
-			MessageBox::Show("Batman contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 46)
 		{
-			MessageBox::Show("R-Tuned contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 47)
 		{
-			MessageBox::Show("Sega Rally 3 Other contains no input features");
+			this->Hide();
+			StrengthInput^ obj1 = gcnew StrengthInput(this);
+			obj1->ShowDialog();
 		}
 		else
 		{
