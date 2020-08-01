@@ -27,10 +27,14 @@ xcopy "C:\Users\booms\Documents\GitHub\FFBArcadePluginGUI\Release\FFBPluginGUI.e
 xcopy "C:\Users\booms\Documents\GitHub\FFBArcadePluginGUI\Release\MetroFramework.dll" "C:\Users\booms\Documents\GitHub\FFBArcadePlugin\Release.Win32\Demul" /Y
 xcopy "C:\Users\booms\Documents\GitHub\FFBArcadePluginGUI\Release\FFBPluginGUI.exe" "C:\Users\booms\Documents\GitHub\FFBArcadePlugin\Release.Win32\Dirty Drivin'" /Y
 xcopy "C:\Users\booms\Documents\GitHub\FFBArcadePluginGUI\Release\MetroFramework.dll" "C:\Users\booms\Documents\GitHub\FFBArcadePlugin\Release.Win32\Dirty Drivin'" /Y
+xcopy "C:\Users\booms\Documents\GitHub\FFBArcadePluginGUI\Release\FFBPluginGUI.exe" "C:\Users\booms\Documents\GitHub\FFBArcadePlugin\Release.Win32\Ford Racing" /Y
+xcopy "C:\Users\booms\Documents\GitHub\FFBArcadePluginGUI\Release\MetroFramework.dll" "C:\Users\booms\Documents\GitHub\FFBArcadePlugin\Release.Win32\Ford Racing" /Y
 xcopy "C:\Users\booms\Documents\GitHub\FFBArcadePluginGUI\Release\FFBPluginGUI.exe" "C:\Users\booms\Documents\GitHub\FFBArcadePlugin\Release.Win32\Ford Racing Other" /Y
 xcopy "C:\Users\booms\Documents\GitHub\FFBArcadePluginGUI\Release\MetroFramework.dll" "C:\Users\booms\Documents\GitHub\FFBArcadePlugin\Release.Win32\Ford Racing Other" /Y
 xcopy "C:\Users\booms\Documents\GitHub\FFBArcadePluginGUI\Release\FFBPluginGUI.exe" "C:\Users\booms\Documents\GitHub\FFBArcadePlugin\Release.Win32\Golden Gun" /Y
 xcopy "C:\Users\booms\Documents\GitHub\FFBArcadePluginGUI\Release\MetroFramework.dll" "C:\Users\booms\Documents\GitHub\FFBArcadePlugin\Release.Win32\Golden Gun" /Y
+xcopy "C:\Users\booms\Documents\GitHub\FFBArcadePluginGUI\Release\FFBPluginGUI.exe" "C:\Users\booms\Documents\GitHub\FFBArcadePlugin\Release.Win32\Chase HQ 2" /Y
+xcopy "C:\Users\booms\Documents\GitHub\FFBArcadePluginGUI\Release\MetroFramework.dll" "C:\Users\booms\Documents\GitHub\FFBArcadePlugin\Release.Win32\Chase HQ 2" /Y
 xcopy "C:\Users\booms\Documents\GitHub\FFBArcadePluginGUI\Release\FFBPluginGUI.exe" "C:\Users\booms\Documents\GitHub\FFBArcadePlugin\Release.Win32\GRID" /Y
 xcopy "C:\Users\booms\Documents\GitHub\FFBArcadePluginGUI\Release\MetroFramework.dll" "C:\Users\booms\Documents\GitHub\FFBArcadePlugin\Release.Win32\GRID" /Y
 xcopy "C:\Users\booms\Documents\GitHub\FFBArcadePluginGUI\Release\FFBPluginGUI.exe" "C:\Users\booms\Documents\GitHub\FFBArcadePlugin\Release.Win32\GTI Club Supermini Festa" /Y
