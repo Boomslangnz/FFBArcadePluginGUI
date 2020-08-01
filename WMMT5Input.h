@@ -31,6 +31,16 @@ namespace FFBPluginGUI {
 		{
 			this->SuspendLayout();
 
+			this->AutoAddLongTextBox(L"FFB Dynamic Strength Adjustment", L"");
+
+			this->AutoAddShortCheckBox("EnableFFBStrengthDynamicAdjustment", L"Enable Adjustment", L"Enable to modify strength while playing");
+			this->AutoAddShortCheckBox("EnableFFBStrengthPersistence", L"Enable To Make Persistent", L"Enable to save adjusment permanently");
+			this->AutoAddShortCheckBox("EnableFFBStrengthTextToSpeech", L"Enable Text To Speech", L"Enable to hear strength via speaker");
+
+			this->AutoAddShortTrackBarBlock("StepFFBStrength", L"Step FFB Strength", 0, 100, L"Set how far strength changes each button press");
+
+			this->AutoAddLongTextBox(L"Game Options", L"");
+
 			this->AutoAddLongCheckBox("ForceFullTune", L"Force Full Tune", L"Forces full tune if you select a car which is not already fully tuned");
 			this->AutoAddLongCheckBox("DisableRaceTimer", L"Disable Race Timer", L"");
 			this->AutoAddLongCheckBox("EnableForceFinish", L"Enable Force Finish", L"Enable the option to end the race\n(with a win if you are leading, a lose if not)\nby pressing the button configured below");
@@ -42,6 +52,9 @@ namespace FFBPluginGUI {
 
 			this->AutoAddLongInputSelect("Button", "ForceFinishButton", L"Force Finish");
 			this->AutoAddLongInputSelect("Button", "ForceTimeUpButton", L"Force Time Up");
+			this->AutoAddLongInputSelect("Button", "IncreaseFFBStrength", L"Increase FFB Strength");
+			this->AutoAddLongInputSelect("Button", "DecreaseFFBStrength", L"Decrease FFB Strength");
+			this->AutoAddLongInputSelect("Button", "ResetFFBStrength", L"Reset FFB Strength");
 
 			this->Init();
 		}
