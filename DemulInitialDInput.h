@@ -72,36 +72,37 @@ namespace FFBPluginGUI {
 			this->AutoAddLongInputSelect("Button", "StartButton", L"Start Button");
 			this->AutoAddLongInputSelect("Button", "ShiftUp", L"Shift Up");
 			this->AutoAddLongInputSelect("Button", "ShiftDown", L"Shift Down");
+			this->AutoAddLongInputSelect("Button", "InsertRemoveCard", L"Insert or Remove Card");
 			this->AutoAddLongInputSelect("Button", "IncreaseFFBStrength", L"Increase FFB Strength");
 			this->AutoAddLongInputSelect("Button", "DecreaseFFBStrength", L"Decrease FFB Strength");
 			this->AutoAddLongInputSelect("Button", "ResetFFBStrength", L"Reset FFB Strength");
 
 			this->AutoAddShortComboBoxBlock(
 				"DpadUp",
-				"ExitButton|TestButton|ServiceButton|CreditButton|ViewButton|StartButton|ShiftUp|ShiftDown|",
+				"ExitButton|TestButton|ServiceButton|CreditButton|ViewButton|StartButton|ShiftUp|ShiftDown|InsertRemoveCard|",
 				L"Dpad Up",
-				L"Exit Button|Test Button|Service Button|Credit Button|View Button|Start Button|Shift Up|Shift Down|Select no input",
+				L"Exit Button|Test Button|Service Button|Credit Button|View Button|Start Button|Shift Up|Shift Down|Insert/Remove Card|Select no input",
 				L"Choose what happens when you press up on dpad on device 1"
 			);
 			this->AutoAddShortComboBoxBlock(
 				"DpadDown",
-				"ExitButton|TestButton|ServiceButton|CreditButton|ViewButton|StartButton|ShiftUp|ShiftDown|",
+				"ExitButton|TestButton|ServiceButton|CreditButton|ViewButton|StartButton|ShiftUp|ShiftDown|InsertRemoveCard|",
 				L"Dpad Down",
-				L"Exit Button|Test Button|Service Button|Credit Button|View Button|Start Button|Shift Up|Shift Down|Select no input",
+				L"Exit Button|Test Button|Service Button|Credit Button|View Button|Start Button|Shift Up|Shift Down|Insert/Remove Card|Select no input",
 				L"Choose what happens when you press down on dpad on device 1"
 			);
 			this->AutoAddShortComboBoxBlock(
 				"DpadLeft",
-				"ExitButton|TestButton|ServiceButton|CreditButton|ViewButton|StartButton|ShiftUp|ShiftDown|",
+				"ExitButton|TestButton|ServiceButton|CreditButton|ViewButton|StartButton|ShiftUp|ShiftDown|InsertRemoveCard|",
 				L"Dpad Left",
-				L"Exit Button|Test Button|Service Button|Credit Button|View Button|Start Button|Shift Up|Shift Down|Select no input",
+				L"Exit Button|Test Button|Service Button|Credit Button|View Button|Start Button|Shift Up|Shift Down|Insert/Remove Card|Select no input",
 				L"Choose what happens when you press left on dpad on device 1"
 			);
 			this->AutoAddShortComboBoxBlock(
 				"DpadRight",
-				"ExitButton|TestButton|ServiceButton|CreditButton|ViewButton|StartButton|ShiftUp|ShiftDown|",
+				"ExitButton|TestButton|ServiceButton|CreditButton|ViewButton|StartButton|ShiftUp|ShiftDown|InsertRemoveCard|",
 				L"Dpad Right",
-				L"Exit Button|Test Button|Service Button|Credit Button|View Button|Start Button|Shift Up|Shift Down|Select no input",
+				L"Exit Button|Test Button|Service Button|Credit Button|View Button|Start Button|Shift Up|Shift Down|Insert/Remove Card|Select no input",
 				L"Choose what happens when you press right on dpad on device 1"
 			);
 
@@ -122,33 +123,34 @@ namespace FFBPluginGUI {
 			this->AutoAddLongInputSelect("Button", "StartButtonDevice2", L"Start Button");
 			this->AutoAddLongInputSelect("Button", "ShiftUpDevice2", L"Shift Up");
 			this->AutoAddLongInputSelect("Button", "ShiftDownDevice2", L"Shift Down");
+			this->AutoAddLongInputSelect("Button", "InsertRemoveCardDevice2", L"Insert or Remove Card");
 
 			this->AutoAddShortComboBoxBlock(
 				"DpadUpDevice2",
-				"ExitButtonDevice2|TestButtonDevice2|ServiceButtonDevice2|CreditButtonDevice2|ViewButtonDevice2|StartButtonDevice2|ShiftUpDevice2|ShiftDownDevice2|",
+				"ExitButtonDevice2|TestButtonDevice2|ServiceButtonDevice2|CreditButtonDevice2|ViewButtonDevice2|StartButtonDevice2|ShiftUpDevice2|ShiftDownDevice2|InsertRemoveCardDevice2|",
 				L"Dpad Up",
-				L"Exit Button|Test Button|Service Button|Credit Button|View Button|Start Button|Shift Up|Shift Down|Select no input",
+				L"Exit Button|Test Button|Service Button|Credit Button|View Button|Start Button|Shift Up|Shift Down|Insert/Remove Card|Select no input",
 				L"Choose what happens when you press up on dpad on device 2"
 			);
 			this->AutoAddShortComboBoxBlock(
 				"DpadDownDevice2",
-				"ExitButtonDevice2|TestButtonDevice2|ServiceButtonDevice2|CreditButtonDevice2|ViewButtonDevice2|StartButtonDevice2|ShiftUpDevice2|ShiftDownDevice2|",
+				"ExitButtonDevice2|TestButtonDevice2|ServiceButtonDevice2|CreditButtonDevice2|ViewButtonDevice2|StartButtonDevice2|ShiftUpDevice2|ShiftDownDevice2|InsertRemoveCardDevice2|",
 				L"Dpad Down",
-				L"Exit Button|Test Button|Service Button|Credit Button|View Button|Start Button|Shift Up|Shift Down|Select no input",
+				L"Exit Button|Test Button|Service Button|Credit Button|View Button|Start Button|Shift Up|Shift Down|Insert/Remove Card|Select no input",
 				L"Choose what happens when you press down on dpad on device 2"
 			);
 			this->AutoAddShortComboBoxBlock(
 				"DpadLeftDevice2",
-				"ExitButtonDevice2|TestButtonDevice2|ServiceButtonDevice2|CreditButtonDevice2|ViewButtonDevice2|StartButtonDevice2|ShiftUpDevice2|ShiftDownDevice2|",
+				"ExitButtonDevice2|TestButtonDevice2|ServiceButtonDevice2|CreditButtonDevice2|ViewButtonDevice2|StartButtonDevice2|ShiftUpDevice2|ShiftDownDevice2|InsertRemoveCardDevice2|",
 				L"Dpad Left",
-				L"Exit Button|Test Button|Service Button|Credit Button|View Button|Start Button|Shift Up|Shift Down|Select no input",
+				L"Exit Button|Test Button|Service Button|Credit Button|View Button|Start Button|Shift Up|Shift Down|Insert/Remove Card|Select no input",
 				L"Choose what happens when you press left on dpad on device 2"
 			);
 			this->AutoAddShortComboBoxBlock(
 				"DpadRightDevice2",
-				"ExitButtonDevice2|TestButtonDevice2|ServiceButtonDevice2|CreditButtonDevice2|ViewButtonDevice2|StartButtonDevice2|ShiftUpDevice2|ShiftDownDevice2|",
+				"ExitButtonDevice2|TestButtonDevice2|ServiceButtonDevice2|CreditButtonDevice2|ViewButtonDevice2|StartButtonDevice2|ShiftUpDevice2|ShiftDownDevice2|InsertRemoveCardDevice2|",
 				L"Dpad Right",
-				L"Exit Button|Test Button|Service Button|Credit Button|View Button|Start Button|Shift Up|Shift Down|Select no input",
+				L"Exit Button|Test Button|Service Button|Credit Button|View Button|Start Button|Shift Up|Shift Down|Insert/Remove Card|Select no input",
 				L"Choose what happens when you press right on dpad on device 2"
 			);
 
