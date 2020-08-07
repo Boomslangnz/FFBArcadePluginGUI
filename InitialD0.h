@@ -39,6 +39,8 @@ namespace FFBPluginGUI {
 			this->AutoAddComponent("PowerMode");
 			this->AutoAddShortCheckBox("EscapeKeyExitViaPlugin", L"Enable Escape as Exit", L"Enable to exit game when press escape key");
 
+			this->AutoAddLongComboBoxBlock("IDZMode", "0|1|2", L"IDZ FFB", L"0|1|2", L"Modify how force feedback effects react");
+
 			this->AutoAddLongTextBox(L"Force Spring Effect", L"Force Spring effect over using default game spring");
 
 			this->AutoAddShortCheckBox("EnableForceSpringEffect", L"Force Spring Effect", L"Forces spring effect to work all the time");
