@@ -167,6 +167,7 @@
     <ClCompile Include="DemulSelect.cpp" />
     <ClCompile Include="DemulSmashingDriveInput.cpp" />
     <ClCompile Include="DirtDash.cpp" />
+    <ClCompile Include="DoubleAxle.cpp" />
     <ClCompile Include="FasterThanSpeed.cpp" />
     <ClCompile Include="H2Overdrive.cpp" />
     <ClCompile Include="Help.cpp" />
@@ -297,6 +298,7 @@
     </ClInclude>
     <ClInclude Include="DemulSmashingDriveInput.h" />
     <ClInclude Include="DirtDash.h" />
+    <ClInclude Include="DoubleAxle.h" />
     <ClInclude Include="FasterThanSpeed.h" />
     <ClInclude Include="H2Overdrive.h" />
     <ClInclude Include="Help.h">
