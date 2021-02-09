@@ -229,6 +229,7 @@
     <ClCompile Include="MechanizedAttack.cpp" />
     <ClCompile Include="MKGP100.cpp" />
     <ClCompile Include="MKGP110.cpp" />
+    <ClCompile Include="MKGPUSA.cpp" />
     <ClCompile Include="NascarRacing.cpp" />
     <ClCompile Include="OffRoadChallenge.cpp" />
     <ClCompile Include="OperationThunderbolt.cpp" />
@@ -266,6 +267,7 @@
     <ClCompile Include="SuperChase.cpp" />
     <ClCompile Include="SuperGT.cpp" />
     <ClCompile Include="SupermodelSelect.cpp" />
+    <ClCompile Include="SWDC2018.cpp" />
     <ClCompile Include="Terminator2.cpp" />
     <ClCompile Include="TimeCrisis.cpp" />
     <ClCompile Include="Transformers.cpp" />
@@ -418,6 +420,7 @@
     <ClInclude Include="MKGP110.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="MKGPUSA.h" />
     <ClInclude Include="NascarRacing.h" />
     <ClInclude Include="OffRoadChallenge.h" />
     <ClInclude Include="OperationThunderbolt.h" />
@@ -473,6 +476,7 @@
     <ClInclude Include="SupermodelSelect.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="SWDC2018.h" />
     <ClInclude Include="Terminator2.h" />
     <ClInclude Include="TimeCrisis.h" />
     <ClInclude Include="Transformers.h" />

@@ -393,6 +393,12 @@
     <ClCompile Include="StormRacerG.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MKGPUSA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SWDC2018.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -771,6 +777,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StormRacerG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MKGPUSA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SWDC2018.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
