@@ -387,6 +387,12 @@
     <ClCompile Include="DoubleAxle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HardDrivin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StormRacerG.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -759,6 +765,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DoubleAxle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HardDrivin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StormRacerG.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

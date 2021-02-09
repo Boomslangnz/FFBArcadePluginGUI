@@ -34,7 +34,7 @@ namespace FFBPluginGUI {
 			this->AutoAddLongTextBox(L"Options", L"");
 			this->AutoAddShortCheckBox("PowerModeDaytona2", L"Power Mode", L"Enable to raise strength of lower values");
 
-			this->AutoAddLongTrackBarBlock("FeedbackLengthDaytona2", L"Feedback Length", 16, 1000, L"Length of a feedback command");
+			this->AutoAddLongTrackBarBlock("FeedbackLengthDaytona2", L"Feedback Length", 16, 10000, L"Length of a feedback command");
 
 			this->New2ColsPage();
 

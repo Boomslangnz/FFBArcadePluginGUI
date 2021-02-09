@@ -63,6 +63,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "SnoCross.h"
 #include "SonicAllStars.h"
 #include "StrengthInput.h"
+#include "StormRacerG.h"
 #include "SupermodelSelect.h"
 #include "WackyRaces.h"
 #include "WMMT5.h"
@@ -408,7 +409,7 @@ namespace FFBPluginGUI {
 			LGI^ obj1 = gcnew LGI(this);
 			obj1->ShowDialog();
 		}
-		else if (GameSelect == 32)
+		else if (GameSelect == 32 || GameSelect == 49)
 		{
 			this->Hide();
 			InitialD0^ obj1 = gcnew InitialD0(this);
@@ -504,6 +505,12 @@ namespace FFBPluginGUI {
 			SegaRally3^ obj1 = gcnew SegaRally3(this);
 			obj1->ShowDialog();
 		}
+		else if (GameSelect == 48)
+		{
+			this->Hide();
+			StormRacerG^ obj1 = gcnew StormRacerG(this);
+			obj1->ShowDialog();
+		}
 		else
 		{
 			MessageBox::Show("FFBPlugin.ini does not contain GameId or does not exist");
@@ -518,7 +525,10 @@ namespace FFBPluginGUI {
 			DaytonaChampionshipUSAInput^ obj1 = gcnew DaytonaChampionshipUSAInput(this);
 			obj1->ShowDialog();
 		}
-		else if (GameSelect == 2)
+		else if (GameSelect == 2 || GameSelect == 4 || GameSelect == 5 || GameSelect == 6 || GameSelect == 7 || GameSelect == 8 || GameSelect == 10 || GameSelect == 11 || GameSelect == 13 || GameSelect == 14 || GameSelect == 15 || GameSelect == 16 ||
+			GameSelect == 17 || GameSelect == 18 || GameSelect == 19 || GameSelect == 20 || GameSelect == 21 || GameSelect == 22 || GameSelect == 23 || GameSelect == 24 || GameSelect == 27 || GameSelect == 30 || GameSelect == 31 || GameSelect == 32 || 
+			GameSelect == 33 || GameSelect == 34 || GameSelect == 36 || GameSelect == 37 || GameSelect == 38 || GameSelect == 39 || GameSelect == 40 || GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45 || 
+			GameSelect == 46 || GameSelect == 47 || GameSelect == 48 || GameSelect == 49)
 		{
 			this->Hide();
 			StrengthInput^ obj1 = gcnew StrengthInput(this);
@@ -530,130 +540,16 @@ namespace FFBPluginGUI {
 			ChaseHQ2Input^ obj1 = gcnew ChaseHQ2Input(this);
 			obj1->ShowDialog();
 		}
-		else if (GameSelect == 4)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 5)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 6)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 7)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 8)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
 		else if (GameSelect == 9)
 		{
 			this->Hide();
 			WMMT5Input^ obj1 = gcnew WMMT5Input(this);
 			obj1->ShowDialog();
 		}
-		else if (GameSelect == 10)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 11)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
 		else if (GameSelect == 12)
 		{
 			this->Hide();
 			Outrun2Input^ obj1 = gcnew Outrun2Input(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 13)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 14)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 15)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 16)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 17)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 18)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 19)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 20)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 21)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 22)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 23)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 24)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
 			obj1->ShowDialog();
 		}
 		else if (GameSelect == 25)
@@ -668,12 +564,6 @@ namespace FFBPluginGUI {
 			DemulInputSelect^ obj1 = gcnew DemulInputSelect(this);
 			obj1->ShowDialog();
 		}
-		else if (GameSelect == 27)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
 		else if (GameSelect == 28)
 		{
 			this->Hide();
@@ -686,112 +576,10 @@ namespace FFBPluginGUI {
 			RoadFighters3DInput^ obj1 = gcnew RoadFighters3DInput(this);
 			obj1->ShowDialog();
 		}
-		else if (GameSelect == 30)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 31)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 32)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 33)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 34)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
 		else if (GameSelect == 35)
 		{
 			this->Hide();
 			Outrun2Input^ obj1 = gcnew Outrun2Input(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 36)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 37)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 38)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 39)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 40)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 41)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 42)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 43)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 44)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 45)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 46)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 47)
-		{
-			this->Hide();
-			StrengthInput^ obj1 = gcnew StrengthInput(this);
 			obj1->ShowDialog();
 		}
 		else
@@ -817,7 +605,7 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 1 || GameSelect == 2 || GameSelect == 3 || GameSelect == 5 || GameSelect == 6 || GameSelect == 7 || GameSelect == 8 || GameSelect == 9 || GameSelect == 10 || GameSelect == 11 || GameSelect == 13 ||
 			GameSelect == 14 || GameSelect == 17 || GameSelect == 18 || GameSelect == 19 || GameSelect == 20 || GameSelect == 21 || GameSelect == 22 || GameSelect == 25 || GameSelect == 26 || GameSelect == 27 || GameSelect == 28 || 
 			GameSelect == 29 || GameSelect == 30 || GameSelect == 31 || GameSelect == 32 || GameSelect == 33 || GameSelect == 34 || GameSelect == 36 || GameSelect == 38 || GameSelect == 39 || GameSelect == 40 || 
-			GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45 || GameSelect == 47)
+			GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45 || GameSelect == 47 || GameSelect == 48 || GameSelect == 49)
 		{
 			this->Hide();
 			Help^ obj1 = gcnew Help(this);

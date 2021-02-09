@@ -31,7 +31,7 @@ namespace FFBPluginGUI {
 		{
 			this->SuspendLayout();
 
-			this->AutoAddLongTrackBarBlock("FeedbackLengthTOutrun", L"Feedback Length", 16, 1000, L"Length of a feedback command");
+			this->AutoAddLongTrackBarBlock("FeedbackLengthTOutrun", L"Feedback Length", 16, 10000, L"Length of a feedback command");
 
 			this->AutoAddLongTextBox(L"Force Spring Effect", L"Force Spring effect over using default game spring");
 

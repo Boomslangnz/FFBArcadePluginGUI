@@ -170,6 +170,7 @@
     <ClCompile Include="DoubleAxle.cpp" />
     <ClCompile Include="FasterThanSpeed.cpp" />
     <ClCompile Include="H2Overdrive.cpp" />
+    <ClCompile Include="HardDrivin.cpp" />
     <ClCompile Include="Help.cpp" />
     <ClCompile Include="Hyperdrive.cpp" />
     <ClCompile Include="Indy500.cpp" />
@@ -260,6 +261,7 @@
     <ClCompile Include="SonicAllStars.cpp" />
     <ClCompile Include="Spacegun.cpp" />
     <ClCompile Include="STCC.cpp" />
+    <ClCompile Include="StormRacerG.cpp" />
     <ClCompile Include="StrengthInput.cpp" />
     <ClCompile Include="SuperChase.cpp" />
     <ClCompile Include="SuperGT.cpp" />
@@ -301,6 +303,7 @@
     <ClInclude Include="DoubleAxle.h" />
     <ClInclude Include="FasterThanSpeed.h" />
     <ClInclude Include="H2Overdrive.h" />
+    <ClInclude Include="HardDrivin.h" />
     <ClInclude Include="Help.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -463,6 +466,7 @@
     </ClInclude>
     <ClInclude Include="Spacegun.h" />
     <ClInclude Include="STCC.h" />
+    <ClInclude Include="StormRacerG.h" />
     <ClInclude Include="StrengthInput.h" />
     <ClInclude Include="SuperChase.h" />
     <ClInclude Include="SuperGT.h" />

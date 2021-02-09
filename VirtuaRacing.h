@@ -33,7 +33,7 @@ namespace FFBPluginGUI {
 
 			this->AutoAddComponent("CommonOptions");
 
-			this->AutoAddLongTrackBarBlock("FeedbackLengthVirtuaRacing", L"Feedback Length", 16, 1000, L"Length of a feedback command");
+			this->AutoAddLongTrackBarBlock("FeedbackLengthVirtuaRacing", L"Feedback Length", 16, 10000, L"Length of a feedback command");
 
 			this->AutoAddLongTextBox(L"Force Spring Effect", L"Force Spring effect over using default game spring");
 

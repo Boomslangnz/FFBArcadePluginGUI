@@ -299,7 +299,7 @@ namespace FFBPluginGUI {
 		{
 			if (component == "FeedbackLength")
 			{
-				this->AutoAddLongTrackBarBlock("FeedbackLength", L"Feedback Length", 16, 1000, L"Length of a feedback command");
+				this->AutoAddLongTrackBarBlock("FeedbackLength", L"Feedback Length", 16, 10000, L"Length of a feedback command");
 			}
 			else if (component == "OptionsHeader")
 			{
