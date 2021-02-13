@@ -21,9 +21,10 @@ using namespace MetroFramework::Forms;
 [STAThread]
 int main(int argc, char** argv)
 {
+	SDL_SetHint(SDL_HINT_JOYSTICK_RAWINPUT, "0");
 	SDL_Init(SDL_INIT_JOYSTICK | SDL_INIT_GAMECONTROLLER | SDL_INIT_HAPTIC);
 	SDL_JoystickEventState(SDL_ENABLE);
-	SDL_JoystickUpdate;
+	SDL_JoystickUpdate();
 
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);

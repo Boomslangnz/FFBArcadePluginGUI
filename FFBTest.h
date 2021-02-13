@@ -14,6 +14,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include <Windows.h>
 #include <string>
 #include "SDL.h"
+
 static SDL_Joystick* gGameController;
 static SDL_Haptic* gControllerHaptic;
 static int effect_id;
@@ -22,6 +23,13 @@ static int StopRumbleEffectThread(void* ptr)
 {
 	Sleep(2000);
 	SDL_JoystickRumble(gGameController, 0, 0, 0);
+	return 0;
+}
+
+static int StopRumbleTriggersEffectThread(void* ptr)
+{
+	Sleep(2000);
+	SDL_JoystickRumbleTriggers(gGameController, 0, 0, 0);
 	return 0;
 }
 
@@ -47,7 +55,10 @@ namespace FFBPluginGUI {
 			//TODO: Add the constructor code here
 			//
 		}
-	
+	private: MetroFramework::Controls::MetroButton^ metroButton14;
+	public:
+	private: MetroFramework::Controls::MetroButton^ metroButton15;
+
 	public:
 	
 			 MetroForm ^obj;
@@ -120,6 +131,8 @@ namespace FFBPluginGUI {
 			this->metroButton11 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroButton12 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroButton13 = (gcnew MetroFramework::Controls::MetroButton());
+			this->metroButton14 = (gcnew MetroFramework::Controls::MetroButton());
+			this->metroButton15 = (gcnew MetroFramework::Controls::MetroButton());
 			this->SuspendLayout();
 			// 
 			// metroButton1
@@ -244,7 +257,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton3
 			// 
-			this->metroButton3->Location = System::Drawing::Point(23, 196);
+			this->metroButton3->Location = System::Drawing::Point(23, 225);
 			this->metroButton3->Name = L"metroButton3";
 			this->metroButton3->Size = System::Drawing::Size(117, 23);
 			this->metroButton3->TabIndex = 5;
@@ -263,13 +276,13 @@ namespace FFBPluginGUI {
 			this->metroCheckBox1->TabIndex = 6;
 			this->metroCheckBox1->TabStop = false;
 			this->metroCheckBox1->Text = L"Alternative FFB";
-			this->metroCheckBox1->UseSelectable = true;
 			this->metroCheckBox1->Checked = AlternativeFFB;
+			this->metroCheckBox1->UseSelectable = true;
 			this->metroCheckBox1->CheckedChanged += gcnew System::EventHandler(this, &FFBTest::metroCheckBox1_CheckedChanged);
 			// 
 			// metroButton4
 			// 
-			this->metroButton4->Location = System::Drawing::Point(160, 196);
+			this->metroButton4->Location = System::Drawing::Point(160, 225);
 			this->metroButton4->Name = L"metroButton4";
 			this->metroButton4->Size = System::Drawing::Size(117, 23);
 			this->metroButton4->TabIndex = 7;
@@ -280,7 +293,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton5
 			// 
-			this->metroButton5->Location = System::Drawing::Point(23, 225);
+			this->metroButton5->Location = System::Drawing::Point(23, 254);
 			this->metroButton5->Name = L"metroButton5";
 			this->metroButton5->Size = System::Drawing::Size(117, 23);
 			this->metroButton5->TabIndex = 8;
@@ -291,7 +304,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton6
 			// 
-			this->metroButton6->Location = System::Drawing::Point(160, 225);
+			this->metroButton6->Location = System::Drawing::Point(160, 254);
 			this->metroButton6->Name = L"metroButton6";
 			this->metroButton6->Size = System::Drawing::Size(117, 23);
 			this->metroButton6->TabIndex = 9;
@@ -302,7 +315,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton7
 			// 
-			this->metroButton7->Location = System::Drawing::Point(23, 254);
+			this->metroButton7->Location = System::Drawing::Point(23, 283);
 			this->metroButton7->Name = L"metroButton7";
 			this->metroButton7->Size = System::Drawing::Size(117, 23);
 			this->metroButton7->TabIndex = 10;
@@ -324,7 +337,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton8
 			// 
-			this->metroButton8->Location = System::Drawing::Point(160, 254);
+			this->metroButton8->Location = System::Drawing::Point(160, 283);
 			this->metroButton8->Name = L"metroButton8";
 			this->metroButton8->Size = System::Drawing::Size(117, 23);
 			this->metroButton8->TabIndex = 12;
@@ -335,7 +348,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton9
 			// 
-			this->metroButton9->Location = System::Drawing::Point(23, 283);
+			this->metroButton9->Location = System::Drawing::Point(23, 312);
 			this->metroButton9->Name = L"metroButton9";
 			this->metroButton9->Size = System::Drawing::Size(117, 23);
 			this->metroButton9->TabIndex = 13;
@@ -346,7 +359,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton10
 			// 
-			this->metroButton10->Location = System::Drawing::Point(160, 283);
+			this->metroButton10->Location = System::Drawing::Point(160, 312);
 			this->metroButton10->Name = L"metroButton10";
 			this->metroButton10->Size = System::Drawing::Size(117, 23);
 			this->metroButton10->TabIndex = 14;
@@ -357,7 +370,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton11
 			// 
-			this->metroButton11->Location = System::Drawing::Point(23, 312);
+			this->metroButton11->Location = System::Drawing::Point(23, 341);
 			this->metroButton11->Name = L"metroButton11";
 			this->metroButton11->Size = System::Drawing::Size(117, 23);
 			this->metroButton11->TabIndex = 15;
@@ -368,7 +381,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton12
 			// 
-			this->metroButton12->Location = System::Drawing::Point(160, 312);
+			this->metroButton12->Location = System::Drawing::Point(160, 341);
 			this->metroButton12->Name = L"metroButton12";
 			this->metroButton12->Size = System::Drawing::Size(117, 23);
 			this->metroButton12->TabIndex = 16;
@@ -379,7 +392,7 @@ namespace FFBPluginGUI {
 			// 
 			// metroButton13
 			// 
-			this->metroButton13->Location = System::Drawing::Point(23, 341);
+			this->metroButton13->Location = System::Drawing::Point(23, 370);
 			this->metroButton13->Name = L"metroButton13";
 			this->metroButton13->Size = System::Drawing::Size(117, 23);
 			this->metroButton13->TabIndex = 17;
@@ -388,9 +401,33 @@ namespace FFBPluginGUI {
 			this->metroButton13->UseSelectable = true;
 			this->metroButton13->Click += gcnew System::EventHandler(this, &FFBTest::metroButton13_Click);
 			// 
+			// metroButton14
+			// 
+			this->metroButton14->Location = System::Drawing::Point(23, 196);
+			this->metroButton14->Name = L"metroButton14";
+			this->metroButton14->Size = System::Drawing::Size(117, 23);
+			this->metroButton14->TabIndex = 18;
+			this->metroButton14->TabStop = false;
+			this->metroButton14->Text = L"Rumble Left Trigger";
+			this->metroButton14->UseSelectable = true;
+			this->metroButton14->Click += gcnew System::EventHandler(this, &FFBTest::metroButton14_Click);
+			// 
+			// metroButton15
+			// 
+			this->metroButton15->Location = System::Drawing::Point(160, 196);
+			this->metroButton15->Name = L"metroButton15";
+			this->metroButton15->Size = System::Drawing::Size(117, 23);
+			this->metroButton15->TabIndex = 19;
+			this->metroButton15->TabStop = false;
+			this->metroButton15->Text = L"Rumble Right Trigger";
+			this->metroButton15->UseSelectable = true;
+			this->metroButton15->Click += gcnew System::EventHandler(this, &FFBTest::metroButton15_Click);
+			// 
 			// FFBTest
 			// 
-			this->ClientSize = System::Drawing::Size(300, 383);
+			this->ClientSize = System::Drawing::Size(300, 406);
+			this->Controls->Add(this->metroButton15);
+			this->Controls->Add(this->metroButton14);
 			this->Controls->Add(this->metroButton13);
 			this->Controls->Add(this->metroButton12);
 			this->Controls->Add(this->metroButton11);
@@ -423,6 +460,7 @@ namespace FFBPluginGUI {
 		if (e->CloseReason == CloseReason::UserClosing)
 		{
 			SDL_JoystickRumble(gGameController, 0, 0, 0);
+			SDL_JoystickRumbleTriggers(gGameController, 0, 0, 0);
 			SDL_HapticStopAll(gControllerHaptic);
 			SDL_HapticClose(gControllerHaptic);
 			SDL_Quit();
@@ -1028,6 +1066,21 @@ namespace FFBPluginGUI {
 	}
 	private: System::Void metroButton13_Click(System::Object^  sender, System::EventArgs^  e)//Triangle
 	{
+		int DeviceID = GetPrivateProfileInt(TEXT("FFBTest"), TEXT("DeviceID"), 0, TEXT(".\\FFBPlugin.ini"));
+		gGameController = SDL_JoystickOpen(DeviceID);
+		if (gGameController == NULL)
+		{
+			MessageBox::Show("Warning: Unable to open game controller!");
+		}
+		else
+		{
+			//Get controller haptic device
+			gControllerHaptic = SDL_HapticOpenFromJoystick(gGameController);
+			if (gControllerHaptic == NULL)
+			{
+				MessageBox::Show("Warning: Controller does not support haptics!");
+			}
+		}
 		SDL_HapticEffect tempEffect;
 		SDL_memset(&tempEffect, 0, sizeof(SDL_HapticEffect));
 		tempEffect.type = SDL_HAPTIC_TRIANGLE;
@@ -1040,6 +1093,48 @@ namespace FFBPluginGUI {
 		tempEffect.periodic.fade_length = 1000;
 		effect_id = SDL_HapticNewEffect(gControllerHaptic, &tempEffect);
 		SDL_HapticRunEffect(gControllerHaptic, effect_id, 1);
+	}
+	private: System::Void metroButton14_Click(System::Object^ sender, System::EventArgs^ e) //Left Trigger Rumble
+	{
+		int DeviceID = GetPrivateProfileInt(TEXT("FFBTest"), TEXT("DeviceID"), 0, TEXT(".\\FFBPlugin.ini"));
+		gGameController = SDL_JoystickOpen(DeviceID);
+		if (gGameController == NULL)
+		{
+			MessageBox::Show("Warning: Unable to open game controller!");
+		}
+		else
+		{
+			int RumbleLeftMotor = SDL_JoystickRumbleTriggers(gGameController, 0x3FFF, 0, 1);
+			if (RumbleLeftMotor == -1)
+			{
+				MessageBox::Show("Warning: Controller does not support Rumble Triggers!");
+			}
+			else
+			{
+				SDL_Thread* StopRumbleTriggersthread = SDL_CreateThread(StopRumbleTriggersEffectThread, "StopRumbleTriggersEffectThread", (void*)NULL);
+			}
+		}
+	}
+	private: System::Void metroButton15_Click(System::Object^ sender, System::EventArgs^ e) //Right Trigger Rumble
+	{
+		int DeviceID = GetPrivateProfileInt(TEXT("FFBTest"), TEXT("DeviceID"), 0, TEXT(".\\FFBPlugin.ini"));
+		gGameController = SDL_JoystickOpen(DeviceID);
+		if (gGameController == NULL)
+		{
+			MessageBox::Show("Warning: Unable to open game controller!");
+		}
+		else
+		{
+			int RumbleLeftMotor = SDL_JoystickRumbleTriggers(gGameController, 0, 0x3FFF, 1);
+			if (RumbleLeftMotor == -1)
+			{
+				MessageBox::Show("Warning: Controller does not support Rumble Triggers!");
+			}
+			else
+			{
+				SDL_Thread* StopRumbleTriggersthread = SDL_CreateThread(StopRumbleTriggersEffectThread, "StopRumbleTriggersEffectThread", (void*)NULL);
+			}
+		}
 	}
 };
 }
