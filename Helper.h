@@ -329,6 +329,10 @@ namespace FFBPluginGUI {
 			{
 				this->AutoAddShortCheckBox("ReverseRumbleDevice3", L"Reverse Rumble Device 3", L"Reverse the rumble if works incorrectly to liking on device 3");
 			}
+			else if (component == "EnableRumbleTriggers")
+			{
+				this->AutoAddShortCheckBox("EnableRumbleTriggers", L"Enable Rumble Triggers", L"Enable or disable rumble triggers");
+			}
 			else if (component == "Logging")
 			{
 				this->AutoAddShortCheckBox("Logging", L"Enable Logging", L"Enable or disable FFBlog.txt to collect log data");
@@ -362,6 +366,7 @@ namespace FFBPluginGUI {
 				this->AutoAddComponent("OptionsHeader");
 				this->AutoAddComponent("EnableRumble");
 				this->AutoAddComponent("ReverseRumble");
+				this->AutoAddComponent("EnableRumbleTriggers");
 				this->AutoAddComponent("Logging");
 				this->AutoAddComponent("BeepWhenHook");
 				this->AutoAddComponent("ForceShowDeviceGUIDMessageBox");
