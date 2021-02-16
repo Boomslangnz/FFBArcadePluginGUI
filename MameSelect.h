@@ -131,6 +131,7 @@ namespace FFBPluginGUI {
 	private: MetroFramework::Controls::MetroLabel^ metroLabel1;
 	private: MetroFramework::Controls::MetroButton^ metroButton40;
 	private: MetroFramework::Controls::MetroButton^ metroButton46;
+	private: MetroFramework::Controls::MetroCheckBox^ metroCheckBox6;
 
 	public:
 
@@ -242,6 +243,7 @@ namespace FFBPluginGUI {
 			this->metroLabel1 = (gcnew MetroFramework::Controls::MetroLabel());
 			this->metroButton40 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroButton46 = (gcnew MetroFramework::Controls::MetroButton());
+			this->metroCheckBox6 = (gcnew MetroFramework::Controls::MetroCheckBox());
 			this->SuspendLayout();
 			// 
 			// metroButton1
@@ -719,6 +721,7 @@ namespace FFBPluginGUI {
 			this->metroComboBox1->Items->Add("Select no device");
 			this->metroComboBox1->FormattingEnabled = true;
 			this->metroComboBox1->ItemHeight = 23;
+			this->metroComboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Select no device" });
 			this->metroComboBox1->Location = System::Drawing::Point(23, 64);
 			this->metroComboBox1->Name = L"metroComboBox1";
 			this->metroComboBox1->Size = System::Drawing::Size(447, 29);
@@ -771,8 +774,8 @@ namespace FFBPluginGUI {
 			this->metroCheckBox1->Size = System::Drawing::Size(102, 15);
 			this->metroCheckBox1->TabIndex = 6;
 			this->metroCheckBox1->TabStop = false;
-			this->metroCheckBox1->Checked = EnableRumbleA;
 			this->metroCheckBox1->Text = L"Enable Rumble";
+			this->metroCheckBox1->Checked = EnableRumbleA;
 			this->metroCheckBox1->UseSelectable = true;
 			this->metroCheckBox1->CheckedChanged += gcnew System::EventHandler(this, &MameSelect::metroCheckBox1_CheckedChanged);
 			// 
@@ -785,8 +788,8 @@ namespace FFBPluginGUI {
 			this->metroCheckBox2->Size = System::Drawing::Size(107, 15);
 			this->metroCheckBox2->TabIndex = 41;
 			this->metroCheckBox2->TabStop = false;
-			this->metroCheckBox2->Checked = ReverseRumbleA;
 			this->metroCheckBox2->Text = L"Reverse Rumble";
+			this->metroCheckBox2->Checked = ReverseRumbleA;
 			this->metroCheckBox2->UseSelectable = true;
 			this->metroCheckBox2->CheckedChanged += gcnew System::EventHandler(this, &MameSelect::metroCheckBox2_CheckedChanged);
 			// 
@@ -799,8 +802,8 @@ namespace FFBPluginGUI {
 			this->metroCheckBox3->Size = System::Drawing::Size(102, 15);
 			this->metroCheckBox3->TabIndex = 42;
 			this->metroCheckBox3->TabStop = false;
-			this->metroCheckBox3->Checked = AlternativeFFBA;
 			this->metroCheckBox3->Text = L"Alternative FFB";
+			this->metroCheckBox3->Checked = AlternativeFFBA;
 			this->metroCheckBox3->UseSelectable = true;
 			this->metroCheckBox3->CheckedChanged += gcnew System::EventHandler(this, &MameSelect::metroCheckBox3_CheckedChanged);
 			// 
@@ -808,13 +811,13 @@ namespace FFBPluginGUI {
 			// 
 			int LoggingA = GetPrivateProfileInt(TEXT("Settings"), TEXT("Logging"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroCheckBox4->AutoSize = true;
-			this->metroCheckBox4->Location = System::Drawing::Point(23, 149);
+			this->metroCheckBox4->Location = System::Drawing::Point(368, 149);
 			this->metroCheckBox4->Name = L"metroCheckBox4";
 			this->metroCheckBox4->Size = System::Drawing::Size(105, 15);
 			this->metroCheckBox4->TabIndex = 43;
 			this->metroCheckBox4->TabStop = false;
-			this->metroCheckBox4->Checked = LoggingA;
 			this->metroCheckBox4->Text = L"Enable Logging";
+			this->metroCheckBox4->Checked = LoggingA;
 			this->metroCheckBox4->UseSelectable = true;
 			this->metroCheckBox4->CheckedChanged += gcnew System::EventHandler(this, &MameSelect::metroCheckBox4_CheckedChanged);
 			// 
@@ -937,8 +940,8 @@ namespace FFBPluginGUI {
 			this->metroCheckBox5->Size = System::Drawing::Size(165, 15);
 			this->metroCheckBox5->TabIndex = 55;
 			this->metroCheckBox5->TabStop = false;
-			this->metroCheckBox5->Checked = EnableForceSpringEffectA;
 			this->metroCheckBox5->Text = L"Enable Global Spring Effect";
+			this->metroCheckBox5->Checked = EnableForceSpringEffectA;
 			this->metroCheckBox5->UseSelectable = true;
 			this->metroCheckBox5->CheckedChanged += gcnew System::EventHandler(this, &MameSelect::metroCheckBox5_CheckedChanged);
 			// 
@@ -1022,14 +1025,24 @@ namespace FFBPluginGUI {
 			this->metroButton46->UseSelectable = true;
 			this->metroButton46->Click += gcnew System::EventHandler(this, &MameSelect::metroButton46_Click);
 			// 
+			// metroCheckBox6
+			// 
+			int EnableRumbleTriggersA = GetPrivateProfileInt(TEXT("Settings"), TEXT("EnableRumbleTriggers"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroCheckBox6->AutoSize = true;
+			this->metroCheckBox6->Location = System::Drawing::Point(23, 149);
+			this->metroCheckBox6->Name = L"metroCheckBox6";
+			this->metroCheckBox6->Size = System::Drawing::Size(146, 15);
+			this->metroCheckBox6->TabIndex = 61;
+			this->metroCheckBox6->TabStop = false;
+			this->metroCheckBox6->Text = L"Enable Rumble Triggers";
+			this->metroCheckBox6->Checked = EnableRumbleTriggersA;
+			this->metroCheckBox6->UseSelectable = true;
+			this->metroCheckBox6->CheckedChanged += gcnew System::EventHandler(this, &MameSelect::metroCheckBox6_CheckedChanged);
+			// 
 			// MameSelect
 			// 
-			int AutoScrollGUI = GetPrivateProfileInt(TEXT("Settings"), TEXT("AutoScrollGUI"), 0, TEXT(".\\FFBPlugin.ini"));
-			if (AutoScrollGUI == 1)
-			{
-				this->AutoScroll = true;
-			}
 			this->ClientSize = System::Drawing::Size(933, 550);
+			this->Controls->Add(this->metroCheckBox6);
 			this->Controls->Add(this->metroButton46);
 			this->Controls->Add(this->metroButton40);
 			this->Controls->Add(this->metroLabel1);
@@ -1674,6 +1687,17 @@ namespace FFBPluginGUI {
 		this->Hide();
 		HardDrivin^ obj1 = gcnew HardDrivin(this);
 		obj1->ShowDialog();
+	}
+	private: System::Void metroCheckBox6_CheckedChanged(System::Object^ sender, System::EventArgs^ e) //Enable Rumble Triggers
+	{
+		if (metroCheckBox6->Checked)
+		{
+			WritePrivateProfileString(TEXT("Settings"), TEXT("EnableRumbleTriggers"), TEXT("1"), TEXT(".\\FFBPlugin.ini"));
+		}
+		else
+		{
+			WritePrivateProfileString(TEXT("Settings"), TEXT("EnableRumbleTriggers"), TEXT("0"), TEXT(".\\FFBPlugin.ini"));
+		}
 	}
 };
 }
