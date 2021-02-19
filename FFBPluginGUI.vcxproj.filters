@@ -399,6 +399,12 @@
     <ClCompile Include="SWDC2018.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="WMMT6.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WMMT6R.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -783,6 +789,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SWDC2018.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WMMT6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WMMT6R.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

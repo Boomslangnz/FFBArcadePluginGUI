@@ -70,6 +70,8 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "WackyRaces.h"
 #include "WMMT5.h"
 #include "WMMT5Input.h"
+#include "WMMT6.h"
+#include "WMMT6R.h"
 #include "Rambo.h"
 #include "R-Tuned.h"
 #include "Transformers.h"
@@ -515,15 +517,27 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 50)
 		{
-		this->Hide();
-		SWDC2018^ obj1 = gcnew SWDC2018(this);
-		obj1->ShowDialog();
+			this->Hide();
+			SWDC2018^ obj1 = gcnew SWDC2018(this);
+			obj1->ShowDialog();
 		}
 		else if (GameSelect == 51)
 		{
-		this->Hide();
-		MKGPUSA^ obj1 = gcnew MKGPUSA(this);
-		obj1->ShowDialog();
+			this->Hide();
+			MKGPUSA^ obj1 = gcnew MKGPUSA(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 52)
+		{
+			this->Hide();
+			WMMT6^ obj1 = gcnew WMMT6(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 53)
+		{
+			this->Hide();
+			WMMT6R^ obj1 = gcnew WMMT6R(this);
+			obj1->ShowDialog();
 		}
 		else
 		{
@@ -542,7 +556,7 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 2 || GameSelect == 4 || GameSelect == 5 || GameSelect == 6 || GameSelect == 7 || GameSelect == 8 || GameSelect == 10 || GameSelect == 11 || GameSelect == 13 || GameSelect == 14 || GameSelect == 15 || GameSelect == 16 ||
 			GameSelect == 17 || GameSelect == 18 || GameSelect == 19 || GameSelect == 20 || GameSelect == 21 || GameSelect == 22 || GameSelect == 23 || GameSelect == 24 || GameSelect == 27 || GameSelect == 30 || GameSelect == 31 || GameSelect == 32 || 
 			GameSelect == 33 || GameSelect == 34 || GameSelect == 36 || GameSelect == 37 || GameSelect == 38 || GameSelect == 39 || GameSelect == 40 || GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45 || 
-			GameSelect == 46 || GameSelect == 47 || GameSelect == 48 || GameSelect == 49 || GameSelect == 50 || GameSelect == 51)
+			GameSelect == 46 || GameSelect == 47 || GameSelect == 48 || GameSelect == 49 || GameSelect == 50 || GameSelect == 51 || GameSelect == 52 || GameSelect == 53)
 		{
 			this->Hide();
 			StrengthInput^ obj1 = gcnew StrengthInput(this);
@@ -619,7 +633,7 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 1 || GameSelect == 2 || GameSelect == 3 || GameSelect == 5 || GameSelect == 6 || GameSelect == 7 || GameSelect == 8 || GameSelect == 9 || GameSelect == 10 || GameSelect == 11 || GameSelect == 13 ||
 			GameSelect == 14 || GameSelect == 17 || GameSelect == 18 || GameSelect == 19 || GameSelect == 20 || GameSelect == 21 || GameSelect == 22 || GameSelect == 25 || GameSelect == 26 || GameSelect == 27 || GameSelect == 28 || 
 			GameSelect == 29 || GameSelect == 30 || GameSelect == 31 || GameSelect == 32 || GameSelect == 33 || GameSelect == 34 || GameSelect == 36 || GameSelect == 38 || GameSelect == 39 || GameSelect == 40 || 
-			GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45 || GameSelect == 47 || GameSelect == 48 || GameSelect == 49 || GameSelect == 50 || GameSelect == 51)
+			GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45 || GameSelect == 47 || GameSelect == 48 || GameSelect == 49 || GameSelect == 50 || GameSelect == 51 || GameSelect == 52 || GameSelect == 53)
 		{
 			this->Hide();
 			Help^ obj1 = gcnew Help(this);

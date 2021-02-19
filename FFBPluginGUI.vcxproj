@@ -279,6 +279,8 @@
     <ClCompile Include="WackyRaces.cpp" />
     <ClCompile Include="WMMT5.cpp" />
     <ClCompile Include="WMMT5Input.cpp" />
+    <ClCompile Include="WMMT6.cpp" />
+    <ClCompile Include="WMMT6R.cpp" />
     <ClCompile Include="ZombieRaid.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -495,6 +497,8 @@
     <ClInclude Include="WMMT5Input.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="WMMT6.h" />
+    <ClInclude Include="WMMT6R.h" />
     <ClInclude Include="ZombieRaid.h" />
   </ItemGroup>
   <ItemGroup>
