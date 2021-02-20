@@ -33,6 +33,9 @@ namespace FFBPluginGUI {
 
 			this->AutoAddLongTextBox(L"Options", L"");
 			this->AutoAddShortCheckBox("PowerModeSFRushRock", L"Power Mode", L"Enable to raise strength of lower values");
+			this->AutoAddComponent("EnableDamperSFRushRock");
+
+			this->AutoAddLongTrackBarBlock("DamperStrengthSFRushRock", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");
 
 			this->AutoAddLongTrackBarBlock("FeedbackLengthSFRushRock", L"Feedback Length", 16, 10000, L"Length of a feedback command");
 

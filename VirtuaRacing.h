@@ -33,6 +33,10 @@ namespace FFBPluginGUI {
 
 			this->AutoAddComponent("CommonOptions");
 
+			this->AutoAddComponent("EnableDamperVirtuaRacing");
+
+			this->AutoAddLongTrackBarBlock("DamperStrengthVirtuaRacing", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");
+
 			this->AutoAddLongTrackBarBlock("FeedbackLengthVirtuaRacing", L"Feedback Length", 16, 10000, L"Length of a feedback command");
 
 			this->AutoAddLongTextBox(L"Force Spring Effect", L"Force Spring effect over using default game spring");

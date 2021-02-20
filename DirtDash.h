@@ -33,6 +33,9 @@ namespace FFBPluginGUI {
 
 			this->AutoAddLongTextBox(L"Options", L"");
 			this->AutoAddShortCheckBox("PowerModeDirtDash", L"Power Mode", L"Enable to raise strength of lower values");
+			this->AutoAddComponent("EnableDamperDirtDash");
+
+			this->AutoAddLongTrackBarBlock("DamperStrengthDirtDash", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");
 
 			this->AutoAddLongTrackBarBlock("FeedbackLengthDirtDash", L"Feedback Length", 16, 10000, L"Length of a feedback command");
 

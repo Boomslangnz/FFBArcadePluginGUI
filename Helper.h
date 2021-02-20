@@ -341,6 +341,10 @@ namespace FFBPluginGUI {
 			{
 				this->AutoAddShortCheckBox("BeepWhenHook", L"Beep When Hook", L"Beep will occur when FFBPlugin hooks application");
 			}
+			else if (component == "EnableDamper")
+			{
+				this->AutoAddShortCheckBox("EnableDamper", L"Enable Damper", L"Enable damper to lower wheel oscillation");
+			}
 			else if (component == "ForceShowDeviceGUIDMessageBox")
 			{
 				this->AutoAddShortCheckBox("ForceShowDeviceGUIDMessageBox", L"GUID MessageBox", L"Messagebox will appear when launching application to show guid number");
@@ -367,9 +371,7 @@ namespace FFBPluginGUI {
 				this->AutoAddComponent("EnableRumble");
 				this->AutoAddComponent("ReverseRumble");
 				this->AutoAddComponent("EnableRumbleTriggers");
-				this->AutoAddComponent("Logging");
-				this->AutoAddComponent("BeepWhenHook");
-				this->AutoAddComponent("ForceShowDeviceGUIDMessageBox");
+				this->AutoAddComponent("Logging");				
 			}
 			else if (component == "GlobalForceHeader")
 			{

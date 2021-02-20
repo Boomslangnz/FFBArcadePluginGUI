@@ -38,6 +38,9 @@ namespace FFBPluginGUI {
 			this->AutoAddComponent("AlternativeFFB");
 			this->AutoAddComponent("PowerMode");
 			this->AutoAddShortCheckBox("EscapeKeyExitViaPlugin", L"Enable Escape as Exit", L"Enable to exit game when press escape key");
+			this->AutoAddComponent("EnableDamper");
+
+			this->AutoAddLongTrackBarBlock("DamperStrength", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");
 
 			this->AutoAddLongComboBoxBlock("IDZMode", "0|1|2", L"IDZ FFB", L"0|1|2", L"Modify how force feedback effects react");
 

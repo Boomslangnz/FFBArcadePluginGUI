@@ -33,6 +33,9 @@ namespace FFBPluginGUI {
 
 			this->AutoAddLongTextBox(L"Options", L"");
 			this->AutoAddShortCheckBox("PowerModeECA", L"Power Mode", L"Enable to raise strength of lower values");
+			this->AutoAddComponent("EnableDamperECA");
+
+			this->AutoAddLongTrackBarBlock("DamperStrengthECA", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");
 
 			this->AutoAddLongTrackBarBlock("FeedbackLengthECA", L"Feedback Length", 16, 10000, L"Length of a feedback command");
 

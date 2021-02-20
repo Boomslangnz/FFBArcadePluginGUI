@@ -33,6 +33,9 @@ namespace FFBPluginGUI {
 
 			this->AutoAddLongTextBox(L"Options", L"");
 			this->AutoAddShortCheckBox("PowerModeSRally2", L"Power Mode", L"Enable to raise strength of lower values");
+			this->AutoAddComponent("EnableDamperSRally2");
+
+			this->AutoAddLongTrackBarBlock("DamperStrengthSRally2", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");
 
 			this->AutoAddLongTrackBarBlock("FeedbackLengthSRally2", L"Feedback Length", 16, 10000, L"Length of a feedback command");
 
