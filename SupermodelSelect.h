@@ -284,7 +284,6 @@ namespace FFBPluginGUI {
 			this->metroComboBox1->Items->Add("Select no device");
 			this->metroComboBox1->FormattingEnabled = true;
 			this->metroComboBox1->ItemHeight = 23;
-			this->metroComboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Select no device" });
 			this->metroComboBox1->Location = System::Drawing::Point(23, 64);
 			this->metroComboBox1->Name = L"metroComboBox1";
 			this->metroComboBox1->Size = System::Drawing::Size(447, 29);
