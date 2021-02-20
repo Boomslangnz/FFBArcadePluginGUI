@@ -31,10 +31,6 @@ namespace FFBPluginGUI {
 		{
 			this->SuspendLayout();
 
-			this->AutoAddComponent("EnableDamperDAxle");
-
-			this->AutoAddLongTrackBarBlock("DamperStrengthDAxle", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");
-
 			this->AutoAddLongTrackBarBlock("FeedbackLengthDAxle", L"Feedback Length", 16, 10000, L"Length of a feedback command");
 
 			this->AutoAddLongTextBox(L"Force Spring Effect", L"Force Spring effect over using default game spring");

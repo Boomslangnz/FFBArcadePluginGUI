@@ -33,7 +33,7 @@ namespace FFBPluginGUI {
 
 			this->AutoAddLongTextBox(L"Options", L"");
 			this->AutoAddShortCheckBox("PowerModeIndy500", L"Power Mode", L"Enable to raise strength of lower values");
-			this->AutoAddComponent("EnableDamperIndy500");
+			this->AutoAddShortCheckBox("EnableDamperIndy500", L"Enable Damper", L"Enable damper to lower wheel oscillation");
 
 			this->AutoAddLongTrackBarBlock("DamperStrengthIndy500", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");
 

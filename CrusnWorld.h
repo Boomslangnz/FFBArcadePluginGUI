@@ -33,7 +33,7 @@ namespace FFBPluginGUI {
 
 			this->AutoAddLongTextBox(L"Options", L"");
 			this->AutoAddShortCheckBox("PowerModeCrusnWld", L"Power Mode", L"Enable to raise strength of lower values");
-			this->AutoAddComponent("EnableDamperCrusnWld");
+			this->AutoAddShortCheckBox("EnableDamperCrusnWld", L"Enable Damper", L"Enable damper to lower wheel oscillation");
 
 			this->AutoAddLongTrackBarBlock("DamperStrengthCrusnWld", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");
 

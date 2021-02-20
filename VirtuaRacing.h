@@ -33,7 +33,7 @@ namespace FFBPluginGUI {
 
 			this->AutoAddComponent("CommonOptions");
 
-			this->AutoAddComponent("EnableDamperVirtuaRacing");
+			this->AutoAddShortCheckBox("EnableDamperVirtuaRacing", L"Enable Damper", L"Enable damper to lower wheel oscillation");
 
 			this->AutoAddLongTrackBarBlock("DamperStrengthVirtuaRacing", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");
 
