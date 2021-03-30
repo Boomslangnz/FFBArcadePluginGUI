@@ -15,6 +15,10 @@ xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Supermo
 xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Supermodel 64bit Outputs" /Y
 xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT5" /Y
 xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT5" /Y
+xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT6" /Y
+xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT6" /Y
+xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT6R" /Y
+xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT6R" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Afterburner Climax" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Afterburner Climax" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Aliens Extermination" /Y
@@ -97,8 +101,6 @@ xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Sonic & Seg
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Sonic & Sega All Stars Racing" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Supermodel 32bit Outputs" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Supermodel 32bit Outputs" /Y
-xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Storm Racer G" /Y
-xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Storm Racer G" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Transformers" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Transformers" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Wacky Races" /Y
