@@ -390,9 +390,6 @@
     <ClCompile Include="HardDrivin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StormRacerG.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MKGPUSA.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -780,9 +777,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HardDrivin.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StormRacerG.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MKGPUSA.h">

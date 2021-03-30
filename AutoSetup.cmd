@@ -47,18 +47,18 @@ xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\H2Overdrive
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\H2Overdrive" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\HOTD4" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\HOTD4" /Y
-xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\InitialD 4" /Y
-xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\InitialD 4" /Y
-xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\InitialD 4 Japan" /Y
-xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\InitialD 4 Japan" /Y
-xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\InitialD 5" /Y
-xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\InitialD 5" /Y
-xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\InitialD 6" /Y
-xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\InitialD 6" /Y
-xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\InitialD 7" /Y
-xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\InitialD 7" /Y
-xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\InitialD 8" /Y
-xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\InitialD 8" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Initial D 4" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Initial D 4" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Initial D 4 Japan" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Initial D 4 Japan" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Initial D 5" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Initial D 5" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Initial D 6" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Initial D 6" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Initial D 7" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Initial D 7" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Initial D 8" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Initial D 8" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\KODrive" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\KODrive" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\LGI" /Y

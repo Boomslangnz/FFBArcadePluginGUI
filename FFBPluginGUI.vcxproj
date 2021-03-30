@@ -262,7 +262,6 @@
     <ClCompile Include="SonicAllStars.cpp" />
     <ClCompile Include="Spacegun.cpp" />
     <ClCompile Include="STCC.cpp" />
-    <ClCompile Include="StormRacerG.cpp" />
     <ClCompile Include="StrengthInput.cpp" />
     <ClCompile Include="SuperChase.cpp" />
     <ClCompile Include="SuperGT.cpp" />
@@ -471,7 +470,6 @@
     </ClInclude>
     <ClInclude Include="Spacegun.h" />
     <ClInclude Include="STCC.h" />
-    <ClInclude Include="StormRacerG.h" />
     <ClInclude Include="StrengthInput.h" />
     <ClInclude Include="SuperChase.h" />
     <ClInclude Include="SuperGT.h" />
