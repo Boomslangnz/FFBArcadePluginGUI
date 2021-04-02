@@ -128,7 +128,7 @@
 
 1) Ensure visual runtime files are up to date. If un-sure then download &amp; install all in one visual runtime pack
 
-2) Copy opengl32.dll to TeknoParrot folder inside main TeknoParrot folder
+2) Copy opengl32.dll &amp; SDL2.dll to TeknoParrot folder inside main TeknoParrot folder
 eg C:\TeknoParrot\TeknoParrot\
 
 3) Copy remaining files in game folder from FFB Arcade Plugin to same folder as elf file
