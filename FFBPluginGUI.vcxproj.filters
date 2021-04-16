@@ -402,6 +402,9 @@
     <ClCompile Include="WMMT6R.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="StormRacerG.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -789,6 +792,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="WMMT6R.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StormRacerG.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
