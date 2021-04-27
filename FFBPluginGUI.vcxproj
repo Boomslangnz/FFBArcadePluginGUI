@@ -173,6 +173,7 @@
     <ClCompile Include="HardDrivin.cpp" />
     <ClCompile Include="Help.cpp" />
     <ClCompile Include="Hyperdrive.cpp" />
+    <ClCompile Include="InitialD0Input.cpp" />
     <ClCompile Include="Indy500.cpp" />
     <ClCompile Include="InitialDDemul.cpp" />
     <ClCompile Include="LindberghHelp.cpp" />
@@ -312,6 +313,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Hyperdrive.h" />
+    <ClInclude Include="InitialD0Input.h" />
     <ClInclude Include="Indy500.h" />
     <ClInclude Include="InitialDDemul.h" />
     <ClInclude Include="LindberghHelp.h">
