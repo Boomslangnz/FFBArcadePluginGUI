@@ -39,6 +39,7 @@ namespace FFBPluginGUI {
 			this->AutoAddComponent("EnableDamper");
 			this->AutoAddShortCheckBox("EnableBoostEffect", L"Racing Boost Effect", L"Enable to feel shake while boosting etc");
 			this->AutoAddShortCheckBox("EnableGearShiftEffect", L"Gear Shift Effect", L"Enable to feel shake while changing gear");
+			this->AutoAddShortCheckBox("EnableDriftEffect", L"Drift Effect", L"Enable to rotate wheel during drifts");
 
 			this->New2ColsPage();
 
