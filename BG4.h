@@ -37,8 +37,20 @@ namespace FFBPluginGUI {
 			this->AutoAddComponent("CommonOptions");
 			this->AutoAddComponent("AlternativeFFB");
 			this->AutoAddComponent("EnableDamper");
+			this->AutoAddShortCheckBox("EnableBoostEffect", L"Racing Boost Effect", L"Enable to feel shake while boosting etc");
+			this->AutoAddShortCheckBox("EnableGearShiftEffect", L"Gear Shift Effect", L"Enable to feel shake while changing gear");
+
+			this->New2ColsPage();
 
 			this->AutoAddLongTrackBarBlock("DamperStrength", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");
+			this->AutoAddLongTrackBarBlock("SpringStrength", L"Spring Strength", 0, 100, L"Spring Strength for wheels only");
+
+			this->AutoAddLongTextBox(L"Sine Effects", L"Modify sine effects here (wheels only)");
+
+			this->AutoAddShortTrackBarBlock("BoostSinePeriod", L"Boost Period", 0, 200, L"Period of Sine Effect");
+			this->AutoAddShortTrackBarBlock("BoostFadeSinePeriod", L"Boost Fade Period", 0, 200, L"Fade Period of Sine Effect");
+			this->AutoAddShortTrackBarBlock("GearChangeStrength", L"Gear Change Strength", 0, 100, L"Strength of Sine Effect");
+			this->AutoAddShortTrackBarBlock("GearChangeSinePeriod", L"Gear Change Sine Period", 0, 200, L"Period of Sine Effect");
 
 			this->New2ColsPage();
 
