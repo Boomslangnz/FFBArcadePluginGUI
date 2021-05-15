@@ -50,7 +50,6 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "M2EmulatorSelect.h"
 #include "M2EmulatorInput.h"
 #include "Machstorm.h"
-#include "Mame.h"
 #include "MameSelect.h"
 #include "MKGP100.h"
 #include "MKGP110.h"
@@ -418,12 +417,6 @@ namespace FFBPluginGUI {
 		{
 			this->Hide();
 			InitialD0^ obj1 = gcnew InitialD0(this);
-			obj1->ShowDialog();
-		}
-		else if (GameSelect == 33)
-		{
-			this->Hide();
-			Mame^ obj1 = gcnew Mame(this);
 			obj1->ShowDialog();
 		}
 		else if (GameSelect == 34)

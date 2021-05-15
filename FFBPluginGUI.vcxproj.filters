@@ -129,9 +129,6 @@
     <ClCompile Include="GRID.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Mame.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="InitialD0.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -522,9 +519,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GRID.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Mame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="InitialD0.h">

@@ -224,7 +224,6 @@
     <ClCompile Include="M2EmulatorInput.cpp" />
     <ClCompile Include="M2EmulatorSelect.cpp" />
     <ClCompile Include="Machstorm.cpp" />
-    <ClCompile Include="Mame.cpp" />
     <ClCompile Include="MameSelect.cpp" />
     <ClCompile Include="MaximumSpeed.cpp" />
     <ClCompile Include="MechanizedAttack.cpp" />
@@ -408,9 +407,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Machstorm.h">
-      <FileType>CppHeader</FileType>
-    </ClInclude>
-    <ClInclude Include="Mame.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="MameSelect.h">
