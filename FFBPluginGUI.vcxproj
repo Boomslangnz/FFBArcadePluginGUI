@@ -157,6 +157,7 @@
     <ClCompile Include="AfterburnerClimax.cpp" />
     <ClCompile Include="ATVTrack.cpp" />
     <ClCompile Include="Batman.cpp" />
+    <ClCompile Include="D1GPArcade.cpp" />
     <ClCompile Include="DaytonaUSA.cpp" />
     <ClCompile Include="DemulATVTrackInput.cpp" />
     <ClCompile Include="DemulFasterThanSpeedInput.cpp" />
@@ -290,6 +291,7 @@
     </ClInclude>
     <ClInclude Include="ATVTrack.h" />
     <ClInclude Include="Batman.h" />
+    <ClInclude Include="D1GPArcade.h" />
     <ClInclude Include="DaytonaUSA.h" />
     <ClInclude Include="DemulATVTrackInput.h" />
     <ClInclude Include="DemulFasterThanSpeedInput.h" />

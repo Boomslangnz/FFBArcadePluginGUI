@@ -405,6 +405,9 @@
     <ClCompile Include="InitialD0Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D1GPArcade.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -795,6 +798,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="InitialD0Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D1GPArcade.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
