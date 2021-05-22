@@ -41,10 +41,7 @@ namespace FFBPluginGUI {
 			this->AutoAddComponent("GlobalForce");
 
 			this->AutoAddLongTextBox(L"Effects Configuration", L"");
-			this->AutoAddShortTrackBarBlock("Rumble1Strength", L"Rumble 1 Strength", 0, 100, L"Strength of rumble effect 1");
-			this->AutoAddShortTrackBarBlock("Rumble2Strength", L"Rumble 2 Strength", 0, 100, L"Strength of rumble effect 2");
-			this->AutoAddShortTrackBarBlock("Rumble1Length", L"Rumble 1 Length", 16, 1000, L"Length of rumble effect 1 feedback");
-			this->AutoAddShortTrackBarBlock("Rumble2Length", L"Rumble 2 Length", 16, 1000, L"Length of rumble effect 2 feedback");
+			this->AutoAddShortTrackBarBlock("RumbleStrength", L"Rumble Strength", 0, 100, L"Strength of rumble effect 1");
 
 			this->Init();
 		}
