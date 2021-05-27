@@ -208,11 +208,19 @@ namespace FFBPluginGUI {
 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(this->wIndowsWidth, this->leftColPosY > this->maxPosY ? this->leftColPosY : this->maxPosY);
+			
 			this->MaximizeBox = false;
 			this->ShowIcon = false;
 			this->Name = L"Settings";
 			this->Padding = System::Windows::Forms::Padding(0, 60, 0, 0);
+			int AutoScrollGUI = GetPrivateProfileInt(TEXT("Settings"), TEXT("AutoScrollGUI"), 0, TEXT(".\\FFBPlugin.ini"));
+			if (AutoScrollGUI)
+			{
+				this->AutoScroll = true;
+				this->ClientSize = System::Drawing::Size(this->wIndowsWidth / 2.0, this->leftColPosY / 2.0);
+			}
+			else
+				this->ClientSize = System::Drawing::Size(this->wIndowsWidth, this->leftColPosY > this->maxPosY ? this->leftColPosY : this->maxPosY);
 			this->Resizable = false;
 			this->ResumeLayout(false);
 			this->PerformLayout();
