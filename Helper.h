@@ -217,7 +217,7 @@ namespace FFBPluginGUI {
 			if (AutoScrollGUI)
 			{
 				this->AutoScroll = true;
-				this->ClientSize = System::Drawing::Size(this->wIndowsWidth / 2.0, this->leftColPosY / 2.0);
+				this->ClientSize = System::Drawing::Size(this->wIndowsWidth * 0.8, this->leftColPosY * 0.8);
 			}
 			else
 				this->ClientSize = System::Drawing::Size(this->wIndowsWidth, this->leftColPosY > this->maxPosY ? this->leftColPosY : this->maxPosY);
