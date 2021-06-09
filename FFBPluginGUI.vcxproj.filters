@@ -803,6 +803,9 @@
     <ClInclude Include="D1GPArcade.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="WMMT6Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
