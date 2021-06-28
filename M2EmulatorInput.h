@@ -63,7 +63,7 @@ namespace FFBPluginGUI {
 
 			this->New2ColsPage();
 
-			this->AddTextBox(L"Set or remove axis/button configuration below", this->leftColX, this->minPosY, (2 * this->longWidth) + (2 * this->margin), this->textBoxHeight, L"Select Input then move or press Axis or Button");
+			this->AddTextBox(L"Set or remove axis/button configuration below", this->leftColX, this->minPosY, (3.035 * this->longWidth) + (3 * this->margin), this->textBoxHeight, L"Select Input then move or press Axis or Button");
 
 			this->leftColPosY = this->minPosY + this->textBoxOuterHeight;
 
@@ -173,6 +173,32 @@ namespace FFBPluginGUI {
 				L"Exit Button|Test Button|Service Button|Coin 1 Button|Coin 2 Button|Start Button|VR1 Button|VR2 Button|VR3 Button|VR4 Button|Shift 1|Shift 2|Shift 3|Shift 4|Shift Up|Shift Down|Select no input",
 				L"Choose what happens when you press right on dpad on device 2"
 			);
+
+			this->New2ColsPage();
+
+			this->leftColPosY = this->minPosY + this->textBoxOuterHeight;
+
+			this->AutoAddShortTextBox(L"Keyboard Select Inputs", L"Keyboard Names, click below to set input for keyboard");
+			this->AutoAddShortTextBox(L"Keys", L"Key name set in FFBPlugin.ini for keyboard");
+
+			this->leftColPosY += 3 * this->inputSelectOuterHeight;
+
+			this->AutoAddLongInputSelect("Key", "ExitButtonKeyBrd", L"Exit Button");
+			this->AutoAddLongInputSelect("Key", "TestButtonKeyBrd", L"Test Button");
+			this->AutoAddLongInputSelect("Key", "ServiceButtonKeyBrd", L"Service Button");
+			this->AutoAddLongInputSelect("Key", "Coin1ButtonKeyBrd", L"Coin 1 Button");
+			this->AutoAddLongInputSelect("Key", "Coin2ButtonKeyBrd", L"Coin 2 Button");
+			this->AutoAddLongInputSelect("Key", "StartButtonKeyBrd", L"Start Button");
+			this->AutoAddLongInputSelect("Key", "VR1ButtonKeyBrd", L"VR1 Button");
+			this->AutoAddLongInputSelect("Key", "VR2ButtonKeyBrd", L"VR2 Button");
+			this->AutoAddLongInputSelect("Key", "VR3ButtonKeyBrd", L"VR3 Button");
+			this->AutoAddLongInputSelect("Key", "VR4ButtonKeyBrd", L"VR4 Button");
+			this->AutoAddLongInputSelect("Key", "Shift1ButtonKeyBrd", L"Shift 1");
+			this->AutoAddLongInputSelect("Key", "Shift2ButtonKeyBrd", L"Shift 2");
+			this->AutoAddLongInputSelect("Key", "Shift3ButtonKeyBrd", L"Shift 3");
+			this->AutoAddLongInputSelect("Key", "Shift4ButtonKeyBrd", L"Shift 4");
+			this->AutoAddLongInputSelect("Key", "ShiftUpButtonKeyBrd", L"Shift Up");
+			this->AutoAddLongInputSelect("Key", "ShiftDownButtonKeyBrd", L"Shift Down");
 
 			this->Init();
 		}

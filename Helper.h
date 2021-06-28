@@ -118,6 +118,38 @@ static DWORD WINAPI InputSelectAxisThread(LPVOID lpParam)
 	return 0;
 }
 
+static DWORD WINAPI InputSelectKeyboardThread(LPVOID lpParam)
+{
+	inputSelectDone = true;
+	SDL_Event e1;
+	SDL_Window* window = SDL_CreateWindow(
+		"Press Keyboard Input",
+		SDL_WINDOWPOS_UNDEFINED,
+		SDL_WINDOWPOS_UNDEFINED,
+		160,
+		120,
+		SDL_WINDOW_OPENGL
+	);
+		while ((SDL_WaitEvent(&e1)) && (inputSelectDone))
+		{
+			if (e1.type == SDL_KEYDOWN)
+			{
+				std::string param = *static_cast<std::string*>(lpParam);
+				System::String^ sparam = gcnew System::String(param.c_str());
+				msclr::interop::marshal_context context;
+				LPCSTR pparam = context.marshal_as<const CHAR*>(sparam);
+
+				const char* KeyPressed = SDL_GetKeyName(e1.key.keysym.sym);
+				char buff[100];
+				sprintf_s(buff, "%s", KeyPressed);
+				WritePrivateProfileStringA("Settings", pparam, buff, ".\\FFBPlugin.ini");
+				SDL_DestroyWindow(window);
+				inputSelectDone = false;
+			}		
+		}
+	return 0;
+}
+
 namespace FFBPluginGUI {
 
 	using namespace System;
@@ -1401,6 +1433,7 @@ namespace FFBPluginGUI {
 			MetroLabel^ label = gcnew MetroLabel();
 
 			int value = this->GetIniValueInt(param);
+			String^ valuestring = this->GetIniValue(param);
 
 			link->Location = System::Drawing::Point(locX, locY);
 			link->Name = L"";
@@ -1414,6 +1447,9 @@ namespace FFBPluginGUI {
 			label->Location = System::Drawing::Point(locX + this->rightColX - this->leftColX, locY);
 			label->Name = L"";
 			label->Size = System::Drawing::Size(this->shortWidth, 19);
+			if (type == "Key")
+			label->Text = value == 99 ? "Not Defined" : valuestring;
+			else
 			label->Text = value == 99 ? "Not Defined" : System::Convert::ToString(value);
 			//label->TabIndex = 13;
 			label->TabStop = false;
@@ -1422,7 +1458,8 @@ namespace FFBPluginGUI {
 			this->inputSelectLinkList->Add(link);
 			this->inputSelectLabelList->Add(label);
 			this->inputSelectParamList->Add(param);
-			this->inputSelectTypeList->Add(type == "Axis" ? "Axis" : "Button");
+			//this->inputSelectTypeList->Add(type == "Axis" ? "Axis" : "Button");
+			this->inputSelectTypeList->Add(type);
 
 			msclr::interop::marshal_context context;
 			std::string pparam = context.marshal_as<std::string>(param);
@@ -1585,6 +1622,211 @@ namespace FFBPluginGUI {
 					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel29_Click);
 					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer29_Tick);
 					break;
+				case 30:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink30_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel30_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer30_Tick);
+					break;
+				case 31:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink31_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel31_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer31_Tick);
+					break;
+				case 32:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink32_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel32_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer32_Tick);
+					break;
+				case 33:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink33_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel33_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer33_Tick);
+					break;
+				case 34:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink34_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel34_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer34_Tick);
+					break;
+				case 35:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink35_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel35_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer35_Tick);
+					break;
+				case 36:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink36_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel36_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer36_Tick);
+					break;
+				case 37:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink37_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel37_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer37_Tick);
+					break;
+				case 38:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink38_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel38_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer38_Tick);
+					break;
+				case 39:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink39_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel39_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer39_Tick);
+					break;
+				case 40:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink40_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel40_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer40_Tick);
+					break;
+				case 41:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink41_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel41_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer41_Tick);
+					break;
+				case 42:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink42_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel42_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer42_Tick);
+					break;
+				case 43:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink43_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel43_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer43_Tick);
+					break;
+				case 44:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink44_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel44_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer44_Tick);
+					break;
+				case 45:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink45_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel45_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer45_Tick);
+					break;
+				case 46:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink46_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel46_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer46_Tick);
+					break;
+				case 47:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink47_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel47_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer47_Tick);
+					break;
+				case 48:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink48_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel48_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer48_Tick);
+					break;
+				case 49:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink49_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel49_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer49_Tick);
+					break;
+				case 50:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink50_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel50_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer50_Tick);
+					break;
+				case 51:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink51_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel51_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer51_Tick);
+					break;
+				case 52:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink52_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel52_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer52_Tick);
+					break;
+				case 53:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink53_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel53_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer53_Tick);
+					break;
+				case 54:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink54_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel54_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer54_Tick);
+					break;
+				case 55:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink55_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel55_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer55_Tick);
+					break;
+				case 56:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink56_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel56_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer56_Tick);
+					break;
+				case 57:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink57_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel57_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer57_Tick);
+					break;
+				case 58:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink58_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel58_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer58_Tick);
+					break;
+				case 59:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink59_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel59_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer59_Tick);
+					break;
+				case 60:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink60_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel60_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer60_Tick);
+					break;
+				case 61:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink61_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel61_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer61_Tick);
+					break;
+				case 62:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink62_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel62_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer62_Tick);
+					break;
+				case 63:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink63_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel63_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer63_Tick);
+					break;
+				case 64:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink64_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel64_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer64_Tick);
+					break;
+				case 65:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink65_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel65_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer65_Tick);
+					break;
+				case 66:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink66_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel66_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer66_Tick);
+					break;
+				case 67:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink67_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel67_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer67_Tick);
+					break;
+				case 68:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink68_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel68_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer68_Tick);
+					break;
+				case 69:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink69_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel69_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer69_Tick);
+					break;
+				case 70:
+					link->Click += gcnew System::EventHandler(this, &Helper::InputSelectLink70_Click);
+					label->Click += gcnew System::EventHandler(this, &Helper::InputSelectLabel70_Click);
+					this->inputSelectTimer->Tick += gcnew System::EventHandler(this, &Helper::InputSelectTimer70_Tick);
+					break;
 			}
 
 			this->Controls->Add(link);
@@ -1618,10 +1860,15 @@ namespace FFBPluginGUI {
 				this->inputSelectLabelList[index]->Text = L"Move Axis";
 				CreateThread(NULL, 0, InputSelectAxisThread, &inputSelectParamList2[index], 0, NULL);
 			}
-			else
+			else if (this->inputSelectTypeList[index] == "Button")
 			{
 				this->inputSelectLabelList[index]->Text = L"Press Button";
 				CreateThread(NULL, 0, InputSelectButtonThread, &inputSelectParamList2[index], 0, NULL);
+			}
+			else if (this->inputSelectTypeList[index] == "Key")
+			{
+				this->inputSelectLabelList[index]->Text = L"Press Key";
+				CreateThread(NULL, 0, InputSelectKeyboardThread, &inputSelectParamList2[index], 0, NULL);
 			}
 		}
 		Void InputSelectLink0_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 0); }
@@ -1654,6 +1901,47 @@ namespace FFBPluginGUI {
 		Void InputSelectLink27_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 27); }
 		Void InputSelectLink28_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 28); }
 		Void InputSelectLink29_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 29); }
+		Void InputSelectLink30_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 30); }
+		Void InputSelectLink31_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 31); }
+		Void InputSelectLink32_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 32); }
+		Void InputSelectLink33_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 33); }
+		Void InputSelectLink34_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 34); }
+		Void InputSelectLink35_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 35); }
+		Void InputSelectLink36_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 36); }
+		Void InputSelectLink37_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 37); }
+		Void InputSelectLink38_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 38); }
+		Void InputSelectLink39_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 39); }
+		Void InputSelectLink40_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 40); }
+		Void InputSelectLink41_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 41); }
+		Void InputSelectLink42_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 42); }
+		Void InputSelectLink43_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 43); }
+		Void InputSelectLink44_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 44); }
+		Void InputSelectLink45_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 45); }
+		Void InputSelectLink46_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 46); }
+		Void InputSelectLink47_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 47); }
+		Void InputSelectLink48_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 48); }
+		Void InputSelectLink49_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 49); }
+		Void InputSelectLink50_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 50); }
+		Void InputSelectLink51_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 51); }
+		Void InputSelectLink52_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 52); }
+		Void InputSelectLink53_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 53); }
+		Void InputSelectLink54_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 54); }
+		Void InputSelectLink55_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 55); }
+		Void InputSelectLink56_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 56); }
+		Void InputSelectLink57_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 57); }
+		Void InputSelectLink58_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 58); }
+		Void InputSelectLink59_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 59); }
+		Void InputSelectLink60_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 60); }
+		Void InputSelectLink61_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 61); }
+		Void InputSelectLink62_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 62); }
+		Void InputSelectLink63_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 63); }
+		Void InputSelectLink64_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 64); }
+		Void InputSelectLink65_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 65); }
+		Void InputSelectLink66_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 66); }
+		Void InputSelectLink67_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 67); }
+		Void InputSelectLink68_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 68); }
+		Void InputSelectLink69_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 69); }
+		Void InputSelectLink70_Click(Object^ sender, EventArgs^ e) { this->InputSelectLink_Click(sender, e, 70); }
 
 		Void InputSelectLabel_Click(Object^ sender, EventArgs^ e, int index)
 		{
@@ -1690,13 +1978,58 @@ namespace FFBPluginGUI {
 		Void InputSelectLabel27_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 27); }
 		Void InputSelectLabel28_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 28); }
 		Void InputSelectLabel29_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 29); }
+		Void InputSelectLabel30_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 30); }
+		Void InputSelectLabel31_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 31); }
+		Void InputSelectLabel32_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 32); }
+		Void InputSelectLabel33_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 33); }
+		Void InputSelectLabel34_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 34); }
+		Void InputSelectLabel35_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 35); }
+		Void InputSelectLabel36_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 36); }
+		Void InputSelectLabel37_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 37); }
+		Void InputSelectLabel38_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 38); }
+		Void InputSelectLabel39_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 39); }
+		Void InputSelectLabel40_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 40); }
+		Void InputSelectLabel41_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 41); }
+		Void InputSelectLabel42_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 42); }
+		Void InputSelectLabel43_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 43); }
+		Void InputSelectLabel44_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 44); }
+		Void InputSelectLabel45_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 45); }
+		Void InputSelectLabel46_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 46); }
+		Void InputSelectLabel47_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 47); }
+		Void InputSelectLabel48_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 48); }
+		Void InputSelectLabel49_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 49); }
+		Void InputSelectLabel50_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 50); }
+		Void InputSelectLabel51_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 51); }
+		Void InputSelectLabel52_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 52); }
+		Void InputSelectLabel53_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 53); }
+		Void InputSelectLabel54_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 54); }
+		Void InputSelectLabel55_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 55); }
+		Void InputSelectLabel56_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 56); }
+		Void InputSelectLabel57_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 57); }
+		Void InputSelectLabel58_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 58); }
+		Void InputSelectLabel59_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 59); }
+		Void InputSelectLabel60_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 60); }
+		Void InputSelectLabel61_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 61); }
+		Void InputSelectLabel62_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 62); }
+		Void InputSelectLabel63_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 63); }
+		Void InputSelectLabel64_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 64); }
+		Void InputSelectLabel65_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 65); }
+		Void InputSelectLabel66_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 66); }
+		Void InputSelectLabel67_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 67); }
+		Void InputSelectLabel68_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 68); }
+		Void InputSelectLabel69_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 69); }
+		Void InputSelectLabel70_Click(Object^ sender, EventArgs^ e) { this->InputSelectLabel_Click(sender, e, 70); }
 
 		Void InputSelectTimer_Tick(Object^ sender, EventArgs^ e, int index)
 		{
 			int value = this->GetIniValueInt(this->inputSelectParamList[index]);
+			System::String^ valuestring = this->GetIniValue(this->inputSelectParamList[index]);
 			if (!inputSelectDone)
 			{
-				this->inputSelectLabelList[index]->Text = value == 99 ? "Not Defined" : System::Convert::ToString(value);
+				if (this->inputSelectTypeList[index] == "Key")
+					this->inputSelectLabelList[index]->Text = value == 99 ? "Not Defined" : valuestring;
+				else
+					this->inputSelectLabelList[index]->Text = value == 99 ? "Not Defined" : System::Convert::ToString(value);
 			}
 		}
 		Void InputSelectTimer0_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 0); }
@@ -1729,5 +2062,46 @@ namespace FFBPluginGUI {
 		Void InputSelectTimer27_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 27); }
 		Void InputSelectTimer28_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 28); }
 		Void InputSelectTimer29_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 29); }
+		Void InputSelectTimer30_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 30); }
+		Void InputSelectTimer31_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 31); }
+		Void InputSelectTimer32_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 32); }
+		Void InputSelectTimer33_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 33); }
+		Void InputSelectTimer34_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 34); }
+		Void InputSelectTimer35_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 35); }
+		Void InputSelectTimer36_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 36); }
+		Void InputSelectTimer37_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 37); }
+		Void InputSelectTimer38_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 38); }
+		Void InputSelectTimer39_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 39); }
+		Void InputSelectTimer40_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 40); }
+		Void InputSelectTimer41_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 41); }
+		Void InputSelectTimer42_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 42); }
+		Void InputSelectTimer43_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 43); }
+		Void InputSelectTimer44_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 44); }
+		Void InputSelectTimer45_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 45); }
+		Void InputSelectTimer46_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 46); }
+		Void InputSelectTimer47_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 47); }
+		Void InputSelectTimer48_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 48); }
+		Void InputSelectTimer49_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 49); }
+		Void InputSelectTimer50_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 50); }
+		Void InputSelectTimer51_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 51); }
+		Void InputSelectTimer52_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 52); }
+		Void InputSelectTimer53_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 53); }
+		Void InputSelectTimer54_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 54); }
+		Void InputSelectTimer55_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 55); }
+		Void InputSelectTimer56_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 56); }
+		Void InputSelectTimer57_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 57); }
+		Void InputSelectTimer58_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 58); }
+		Void InputSelectTimer59_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 59); }
+		Void InputSelectTimer60_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 60); }
+		Void InputSelectTimer61_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 61); }
+		Void InputSelectTimer62_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 62); }
+		Void InputSelectTimer63_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 63); }
+		Void InputSelectTimer64_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 64); }
+		Void InputSelectTimer65_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 65); }
+		Void InputSelectTimer66_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 66); }
+		Void InputSelectTimer67_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 67); }
+		Void InputSelectTimer68_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 68); }
+		Void InputSelectTimer69_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 69); }
+		Void InputSelectTimer70_Tick(Object^ sender, EventArgs^ e) { this->InputSelectTimer_Tick(sender, e, 70); }
 	};
 }
