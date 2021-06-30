@@ -128,7 +128,7 @@ static DWORD WINAPI InputSelectKeyboardThread(LPVOID lpParam)
 		SDL_WINDOWPOS_UNDEFINED,
 		160,
 		120,
-		SDL_WINDOW_OPENGL
+		(SDL_WINDOW_OPENGL,SDL_WINDOW_BORDERLESS)
 	);
 		while ((SDL_WaitEvent(&e1)) && (inputSelectDone))
 		{

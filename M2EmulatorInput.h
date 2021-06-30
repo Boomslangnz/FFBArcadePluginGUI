@@ -126,8 +126,9 @@ namespace FFBPluginGUI {
 			this->AutoAddShortTextBox(L"Device 2 Select Inputs", L"Button names for device 2, click below to set input for device 2");
 			this->AutoAddShortTextBox(L"Buttons", L"Button number set in FFBPlugin.ini for device 2");
 
-			this->leftColPosY += 3 * this->inputSelectOuterHeight;
-
+			this->AutoAddLongInputSelect("Axis", "InputDeviceWheelSteeringAxisDevice2", L"Steering Axis");
+			this->AutoAddLongInputSelect("Axis", "InputDeviceWheelAcclAxisDevice2", L"Accelerator Axis");
+			this->AutoAddLongInputSelect("Axis", "InputDeviceWheelBrakeAxisDevice2", L"Brake Axis");
 			this->AutoAddLongInputSelect("Button", "ExitButtonDevice2", L"Exit Button");
 			this->AutoAddLongInputSelect("Button", "TestButtonDevice2", L"Test Button");
 			this->AutoAddLongInputSelect("Button", "ServiceButtonDevice2", L"Service Button");
