@@ -408,6 +408,9 @@
     <ClCompile Include="D1GPArcade.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CrazyTaxi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -804,6 +807,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="WMMT6Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CrazyTaxi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
