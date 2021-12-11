@@ -15,6 +15,10 @@ xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Supermo
 xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Supermodel 64bit Outputs" /Y
 xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT5" /Y
 xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT5" /Y
+xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT5DX" /Y
+xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT5DX" /Y
+xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT5DX+" /Y
+xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT5DX+" /Y
 xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT6" /Y
 xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT6" /Y
 xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT6R" /Y
@@ -33,6 +37,10 @@ xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\D1GP Arcade
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\D1GP Arcade" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Daytona Championship USA" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Daytona Championship USA" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Daytona Championship USA NSE" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Daytona Championship USA NSE" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Crazy Taxi Steam" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Crazy Taxi Steam" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Demul" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Demul" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Dirty Drivin'" /Y
