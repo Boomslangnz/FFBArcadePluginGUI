@@ -411,6 +411,9 @@
     <ClCompile Include="CrazyTaxi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Flycast.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -810,6 +813,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CrazyTaxi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Flycast.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
