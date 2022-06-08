@@ -13,6 +13,8 @@ xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Sega Wo
 xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Sega World Drivers Championship 2018" /Y
 xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Supermodel 64bit Outputs" /Y
 xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Supermodel 64bit Outputs" /Y
+xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT3" /Y
+xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT3" /Y
 xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT5" /Y
 xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT5" /Y
 xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT5DX" /Y
@@ -39,6 +41,8 @@ xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Daytona Cha
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Daytona Championship USA" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Daytona Championship USA NSE" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Daytona Championship USA NSE" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Dead Heat" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Dead Heat" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Crazy Taxi Steam" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Crazy Taxi Steam" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Demul" /Y
@@ -61,6 +65,8 @@ xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\H2Overdrive
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\H2Overdrive" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\HOTD4" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\HOTD4" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Flycast" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Flycast" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Initial D 4" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Initial D 4" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Initial D 4 Japan" /Y
