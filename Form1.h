@@ -26,9 +26,11 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "D1GPArcade.h"
 #include "DaytonaChampionshipUSA.h"
 #include "DaytonaChampionshipUSAInput.h"
+#include "DeadHeat.h"
 #include "DemulInputSelect.h"
 #include "DemulSelect.h"
 #include "DirtyDrivin.h"
+#include "ElfLdr2Help.h"
 #include "FFBTest.h"
 #include "FordRacing.h"
 #include "Flycast.h"
@@ -71,6 +73,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "SupermodelSelect.h"
 #include "SWDC2018.h"
 #include "WackyRaces.h"
+#include "WMMT3.h"
 #include "WMMT5.h"
 #include "WMMT5Input.h"
 #include "WMMT6.h"
@@ -551,9 +554,21 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 60)
 		{
-		this->Hide();
-		Flycast^ obj1 = gcnew Flycast(this);
-		obj1->ShowDialog();
+			this->Hide();
+			Flycast^ obj1 = gcnew Flycast(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 61)
+		{
+			this->Hide();
+			WMMT3^ obj1 = gcnew WMMT3(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 62)
+		{
+			this->Hide();
+			DeadHeat^ obj1 = gcnew DeadHeat(this);
+			obj1->ShowDialog();
 		}
 		else
 		{
@@ -572,7 +587,7 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 2 || GameSelect == 4 || GameSelect == 5 || GameSelect == 6 || GameSelect == 7 || GameSelect == 8 || GameSelect == 10 || GameSelect == 11 || GameSelect == 13 || GameSelect == 14 || GameSelect == 15 || GameSelect == 16 ||
 			GameSelect == 17 || GameSelect == 18 || GameSelect == 19 || GameSelect == 20 || GameSelect == 21 || GameSelect == 22 || GameSelect == 23 || GameSelect == 24 || GameSelect == 27 || GameSelect == 30 || GameSelect == 31  || GameSelect == 33 || 
 			GameSelect == 34 || GameSelect == 36 || GameSelect == 37 || GameSelect == 38 || GameSelect == 39 || GameSelect == 40 || GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45 || GameSelect == 46 || 
-			GameSelect == 47 || GameSelect == 50 || GameSelect == 51 || GameSelect == 53 || GameSelect == 54 || GameSelect == 55 || GameSelect == 56 || GameSelect == 57 || GameSelect == 58 || GameSelect == 59 || GameSelect == 60)
+			GameSelect == 47 || GameSelect == 50 || GameSelect == 51 || GameSelect == 53 || GameSelect == 54 || GameSelect == 55 || GameSelect == 56 || GameSelect == 57 || GameSelect == 58 || GameSelect == 59 || GameSelect == 60 || GameSelect == 61 || GameSelect == 62)
 		{
 			this->Hide();
 			StrengthInput^ obj1 = gcnew StrengthInput(this);
@@ -656,6 +671,12 @@ namespace FFBPluginGUI {
 		{
 			this->Hide();
 			LindberghHelp^ obj1 = gcnew LindberghHelp(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 61 || GameSelect == 62)
+		{
+			this->Hide();
+			ElfLdr2Help^ obj1 = gcnew ElfLdr2Help(this);
 			obj1->ShowDialog();
 		}
 		else if (GameSelect == 1 || GameSelect == 2 || GameSelect == 3 || GameSelect == 5 || GameSelect == 6 || GameSelect == 7 || GameSelect == 8 || GameSelect == 9 || GameSelect == 10 || GameSelect == 11 || GameSelect == 13 ||

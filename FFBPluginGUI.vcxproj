@@ -164,6 +164,7 @@
     <ClCompile Include="CrazyTaxi.cpp" />
     <ClCompile Include="D1GPArcade.cpp" />
     <ClCompile Include="DaytonaUSA.cpp" />
+    <ClCompile Include="DeadHeat.cpp" />
     <ClCompile Include="DemulATVTrackInput.cpp" />
     <ClCompile Include="DemulFasterThanSpeedInput.cpp" />
     <ClCompile Include="DemulInitialDInput.cpp" />
@@ -174,6 +175,7 @@
     <ClCompile Include="DemulSmashingDriveInput.cpp" />
     <ClCompile Include="DirtDash.cpp" />
     <ClCompile Include="DoubleAxle.cpp" />
+    <ClCompile Include="ElfLdr2Help.cpp" />
     <ClCompile Include="FasterThanSpeed.cpp" />
     <ClCompile Include="Flycast.cpp" />
     <ClCompile Include="H2Overdrive.cpp" />
@@ -284,6 +286,7 @@
     <ClCompile Include="VaporTrx.cpp" />
     <ClCompile Include="VirtuaRacing.cpp" />
     <ClCompile Include="WackyRaces.cpp" />
+    <ClCompile Include="WMMT3.cpp" />
     <ClCompile Include="WMMT5.cpp" />
     <ClCompile Include="WMMT5Input.cpp" />
     <ClCompile Include="WMMT6.cpp" />
@@ -300,6 +303,7 @@
     <ClInclude Include="CrazyTaxi.h" />
     <ClInclude Include="D1GPArcade.h" />
     <ClInclude Include="DaytonaUSA.h" />
+    <ClInclude Include="DeadHeat.h" />
     <ClInclude Include="DemulATVTrackInput.h" />
     <ClInclude Include="DemulFasterThanSpeedInput.h" />
     <ClInclude Include="DemulInitialDInput.h" />
@@ -314,6 +318,9 @@
     <ClInclude Include="DemulSmashingDriveInput.h" />
     <ClInclude Include="DirtDash.h" />
     <ClInclude Include="DoubleAxle.h" />
+    <ClInclude Include="ElfLdr2Help.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="FasterThanSpeed.h" />
     <ClInclude Include="Flycast.h" />
     <ClInclude Include="H2Overdrive.h" />
@@ -453,6 +460,7 @@
     <ClInclude Include="RailChase.h" />
     <ClInclude Include="Rambo.h" />
     <ClInclude Include="RaveRacer.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="RevolutionX.h" />
     <ClInclude Include="RoadFighters3D.h">
       <FileType>CppHeader</FileType>
@@ -499,6 +507,7 @@
     <ClInclude Include="WackyRaces.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="WMMT3.h" />
     <ClInclude Include="WMMT5.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
@@ -513,6 +522,9 @@
   <ItemGroup>
     <EmbeddedResource Include="DemulInputSelect.resx" />
     <EmbeddedResource Include="DemulSelect.resx" />
+    <EmbeddedResource Include="ElfLdr2Help.resx">
+      <DependentUpon>ElfLdr2Help.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Help.resx">
       <DependentUpon>Help.h</DependentUpon>
     </EmbeddedResource>
@@ -538,6 +550,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="FFBPluginGUI.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

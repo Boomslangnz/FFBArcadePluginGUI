@@ -124,12 +124,12 @@
     <value>True</value>
   </metadata>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>			Help for Lindbergh Games
+    <value>			Help for ElfLdr2 Games
 
 1) Ensure visual runtime files are up to date. If un-sure then download &amp; install all in one visual runtime pack
 
-2) Copy opengl32.dll &amp; SDL2.dll to TeknoParrot folder inside main TeknoParrot folder
-eg C:\TeknoParrot\TeknoParrot\
+2) Copy opengl32.dll &amp; SDL2.dll to ElfLdr2 folder inside main TeknoParrot folder
+eg C:\TeknoParrot\ElfLdr2\
 
 3) Copy remaining files (including SDL2.dll) in game folder from FFB Arcade Plugin to same folder as elf file
 
