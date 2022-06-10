@@ -178,6 +178,7 @@
     <ClCompile Include="ElfLdr2Help.cpp" />
     <ClCompile Include="FasterThanSpeed.cpp" />
     <ClCompile Include="Flycast.cpp" />
+    <ClCompile Include="GaelcoTuningRace.cpp" />
     <ClCompile Include="H2Overdrive.cpp" />
     <ClCompile Include="HardDrivin.cpp" />
     <ClCompile Include="Help.cpp" />
@@ -255,6 +256,7 @@
     <ClCompile Include="Rambo.cpp" />
     <ClCompile Include="RaveRacer.cpp" />
     <ClCompile Include="RevolutionX.cpp" />
+    <ClCompile Include="RingRiders.cpp" />
     <ClCompile Include="RoadFighters3D.cpp" />
     <ClCompile Include="RoadFighters3DInput.cpp" />
     <ClCompile Include="R_Tuned.cpp" />
@@ -279,6 +281,7 @@
     <ClCompile Include="SWDC2018.cpp" />
     <ClCompile Include="Terminator2.cpp" />
     <ClCompile Include="TimeCrisis.cpp" />
+    <ClCompile Include="TokyoCop.cpp" />
     <ClCompile Include="Transformers.cpp" />
     <ClCompile Include="TurboOutrun.cpp" />
     <ClCompile Include="TurkeyShoot.cpp" />
@@ -323,6 +326,7 @@
     </ClInclude>
     <ClInclude Include="FasterThanSpeed.h" />
     <ClInclude Include="Flycast.h" />
+    <ClInclude Include="GaelcoTuningRace.h" />
     <ClInclude Include="H2Overdrive.h" />
     <ClInclude Include="HardDrivin.h" />
     <ClInclude Include="Help.h">
@@ -462,6 +466,7 @@
     <ClInclude Include="RaveRacer.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="RevolutionX.h" />
+    <ClInclude Include="RingRiders.h" />
     <ClInclude Include="RoadFighters3D.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
@@ -497,6 +502,7 @@
     <ClInclude Include="SWDC2018.h" />
     <ClInclude Include="Terminator2.h" />
     <ClInclude Include="TimeCrisis.h" />
+    <ClInclude Include="TokyoCop.h" />
     <ClInclude Include="Transformers.h" />
     <ClInclude Include="TurboOutrun.h" />
     <ClInclude Include="TurkeyShoot.h" />

@@ -34,6 +34,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "FFBTest.h"
 #include "FordRacing.h"
 #include "Flycast.h"
+#include "GaelcoTuningRace.h"
 #include "GoldenGun.h"
 #include "GRID.h"
 #include "GTIClub.h"
@@ -62,6 +63,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "Outrun2.h"
 #include "Outrun2Input.h"
 #include "PokkenTournament.h"
+#include "RingRiders.h"
 #include "RoadFighters3D.h"
 #include "RoadFighters3DInput.h"
 #include "SegaRacingClassic.h"
@@ -81,6 +83,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "WMMT6R.h"
 #include "Rambo.h"
 #include "R-Tuned.h"
+#include "TokyoCop.h"
 #include "Transformers.h"
 
 namespace FFBPluginGUI {
@@ -570,6 +573,24 @@ namespace FFBPluginGUI {
 			DeadHeat^ obj1 = gcnew DeadHeat(this);
 			obj1->ShowDialog();
 		}
+		else if (GameSelect == 64)
+		{
+			this->Hide();
+			GaelcoTuningRace^ obj1 = gcnew GaelcoTuningRace(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 65)
+		{
+			this->Hide();
+			TokyoCop^ obj1 = gcnew TokyoCop(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 66)
+		{
+			this->Hide();
+			RingRiders^ obj1 = gcnew RingRiders(this);
+			obj1->ShowDialog();
+		}
 		else
 		{
 			MessageBox::Show("FFBPlugin.ini does not contain GameId or does not exist");
@@ -587,7 +608,8 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 2 || GameSelect == 4 || GameSelect == 5 || GameSelect == 6 || GameSelect == 7 || GameSelect == 8 || GameSelect == 10 || GameSelect == 11 || GameSelect == 13 || GameSelect == 14 || GameSelect == 15 || GameSelect == 16 ||
 			GameSelect == 17 || GameSelect == 18 || GameSelect == 19 || GameSelect == 20 || GameSelect == 21 || GameSelect == 22 || GameSelect == 23 || GameSelect == 24 || GameSelect == 27 || GameSelect == 30 || GameSelect == 31  || GameSelect == 33 || 
 			GameSelect == 34 || GameSelect == 36 || GameSelect == 37 || GameSelect == 38 || GameSelect == 39 || GameSelect == 40 || GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45 || GameSelect == 46 || 
-			GameSelect == 47 || GameSelect == 50 || GameSelect == 51 || GameSelect == 53 || GameSelect == 54 || GameSelect == 55 || GameSelect == 56 || GameSelect == 57 || GameSelect == 58 || GameSelect == 59 || GameSelect == 60 || GameSelect == 61 || GameSelect == 62 || GameSelect == 63)
+			GameSelect == 47 || GameSelect == 50 || GameSelect == 51 || GameSelect == 53 || GameSelect == 54 || GameSelect == 55 || GameSelect == 56 || GameSelect == 57 || GameSelect == 58 || GameSelect == 59 || GameSelect == 60 || GameSelect == 61 || 
+			GameSelect == 62 || GameSelect == 63 || GameSelect == 64 || GameSelect == 65 || GameSelect == 66)
 		{
 			this->Hide();
 			StrengthInput^ obj1 = gcnew StrengthInput(this);
@@ -667,13 +689,13 @@ namespace FFBPluginGUI {
 	private: System::Void metroButton4_Click(System::Object^ sender, System::EventArgs^ e) //Help
 	{
 		int GameSelect = GetPrivateProfileInt(TEXT("Settings"), TEXT("GameId"), 0, TEXT(".\\FFBPlugin.ini"));
-		if (GameSelect == 4 || GameSelect == 12 || GameSelect == 15 || GameSelect == 16 || GameSelect == 23 || GameSelect == 24 || GameSelect == 35 || GameSelect == 37 || GameSelect == 46)
+		if (GameSelect == 4 || GameSelect == 12 || GameSelect == 15 || GameSelect == 16 || GameSelect == 23 || GameSelect == 24 || GameSelect == 35 || GameSelect == 37 || GameSelect == 46 || GameSelect == 64 || GameSelect == 65)
 		{
 			this->Hide();
 			LindberghHelp^ obj1 = gcnew LindberghHelp(this);
 			obj1->ShowDialog();
 		}
-		else if (GameSelect == 61 || GameSelect == 62 || GameSelect == 63)
+		else if (GameSelect == 61 || GameSelect == 62 || GameSelect == 63 || GameSelect == 66)
 		{
 			this->Hide();
 			ElfLdr2Help^ obj1 = gcnew ElfLdr2Help(this);

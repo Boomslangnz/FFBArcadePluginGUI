@@ -423,6 +423,15 @@
     <ClCompile Include="ElfLdr2Help.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GaelcoTuningRace.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TokyoCop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RingRiders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -837,6 +846,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ElfLdr2Help.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GaelcoTuningRace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TokyoCop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RingRiders.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
