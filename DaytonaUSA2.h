@@ -39,6 +39,11 @@ namespace FFBPluginGUI {
 
 			this->AutoAddLongTrackBarBlock("FeedbackLengthDaytona2", L"Feedback Length", 16, 10000, L"Length of a feedback command");
 
+			this->AutoAddLongTextBox(L"Force Spring Effect", L"Force Spring effect over using default game spring");
+
+			this->AutoAddShortCheckBox("EnableForceSpringEffectDaytona2", L"Force Spring Effect", L"Forces spring effect to work all the time");
+			this->AutoAddShortTrackBarBlock("ForceSpringStrengthDaytona2", L"Forced Spring Strength", 0, 100, L"How strong the spring effect is when forced on");
+
 			this->New2ColsPage();
 
 			this->AutoAddComponent("GlobalForceHeader");
