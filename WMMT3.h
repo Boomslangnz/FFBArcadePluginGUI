@@ -46,6 +46,13 @@ namespace FFBPluginGUI {
 
 			this->AutoAddComponent("AltGlobalForce");
 
+			this->New2ColsPage();
+
+			this->AutoAddLongTrackBarBlock("SpringStrength", L"Spring Strength", 0, 100, L"Strength of spring effect");
+			this->AutoAddLongTrackBarBlock("ViosityStrength", L"Friction Strength", 0, 100, L"Strength of friction effect");
+			this->AutoAddLongTrackBarBlock("ReflectStrength", L"Road Effect Strength", 0, 100, L"Strength of road effects");
+			this->AutoAddLongTrackBarBlock("CenterOffsetStrength", L"Center Offset Strength", 0, 100, L"Strength of drifting etc");
+
 			this->Init();
 		}
 	};
