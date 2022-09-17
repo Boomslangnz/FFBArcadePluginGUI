@@ -423,7 +423,7 @@ namespace FFBPluginGUI {
 			LGI^ obj1 = gcnew LGI(this);
 			obj1->ShowDialog();
 		}
-		else if (GameSelect == 32 || GameSelect == 49)
+		else if (GameSelect == 32 || GameSelect == 49 || GameSelect == 67)
 		{
 			this->Hide();
 			InitialD0^ obj1 = gcnew InitialD0(this);
@@ -657,7 +657,7 @@ namespace FFBPluginGUI {
 			RoadFighters3DInput^ obj1 = gcnew RoadFighters3DInput(this);
 			obj1->ShowDialog();
 		}
-		else if (GameSelect == 32 || GameSelect == 49)
+		else if (GameSelect == 32 || GameSelect == 49 || GameSelect == 67)
 		{
 			this->Hide();
 			InitialD0Input^ obj1 = gcnew InitialD0Input(this);
@@ -705,7 +705,7 @@ namespace FFBPluginGUI {
 			GameSelect == 14 || GameSelect == 17 || GameSelect == 18 || GameSelect == 19 || GameSelect == 20 || GameSelect == 21 || GameSelect == 22 || GameSelect == 25 || GameSelect == 26 || GameSelect == 27 || GameSelect == 28 || 
 			GameSelect == 29 || GameSelect == 30 || GameSelect == 31 || GameSelect == 32 || GameSelect == 33 || GameSelect == 34 || GameSelect == 36 || GameSelect == 38 || GameSelect == 39 || GameSelect == 40 || 
 			GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45 || GameSelect == 47 || GameSelect == 49 || GameSelect == 50 || GameSelect == 51 || GameSelect == 52 || GameSelect == 53 || 
-			GameSelect == 54 || GameSelect == 55 || GameSelect == 56 || GameSelect == 57 || GameSelect == 58 || GameSelect == 59 || GameSelect == 60)
+			GameSelect == 54 || GameSelect == 55 || GameSelect == 56 || GameSelect == 57 || GameSelect == 58 || GameSelect == 59 || GameSelect == 60 || GameSelect == 67)
 		{
 			this->Hide();
 			Help^ obj1 = gcnew Help(this);
