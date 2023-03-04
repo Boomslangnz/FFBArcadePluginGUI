@@ -33,7 +33,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "ElfLdr2Help.h"
 #include "FFBTest.h"
 #include "FordRacing.h"
-#include "Flycast.h"
+#include "FlycastEmulatorSelect.h"
 #include "GaelcoTuningRace.h"
 #include "GoldenGun.h"
 #include "GRID.h"
@@ -558,7 +558,7 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 60)
 		{
 			this->Hide();
-			Flycast^ obj1 = gcnew Flycast(this);
+			FlycastEmulatorSelect^ obj1 = gcnew FlycastEmulatorSelect(this);
 			obj1->ShowDialog();
 		}
 		else if (GameSelect == 61)

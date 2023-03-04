@@ -17,10 +17,10 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 
 namespace FFBPluginGUI {
 
-	public ref class MaximumSpeed : Helper
+	public ref class FlycastMaximumSpeed : Helper
 	{
 	public:
-		MaximumSpeed(MetroForm^ obj1)
+		FlycastMaximumSpeed(MetroForm^ obj1)
 		{
 			this->obj = obj1;
 			this->InitializeComponent();

@@ -16,12 +16,11 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "SDL.h"
 #include "Helper.h"
 
-#include "NascarRacing.h"
-#include "InitialDDemul.h"
-#include "SmashingDrive.h"
-#include "DemulMaximumSpeed.h"
-#include "DemulFasterThanSpeed.h"
-#include "ATVTrack.h"
+#include "Flycast18Wheeler.h"
+#include "FlycastInitialD.h"
+#include "FlycastFasterThanSpeed.h"
+#include "FlycastMaximumSpeed.h"
+#include "FlycastF355.h"
 
 namespace FFBPluginGUI {
 
@@ -33,12 +32,12 @@ namespace FFBPluginGUI {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for DemulSelect
+	/// Summary for FlycastEmulatorSelect
 	/// </summary>
-	public ref class DemulSelect : public MetroFramework::Forms::MetroForm
+	public ref class FlycastEmulatorSelect : public MetroFramework::Forms::MetroForm
 	{
 	public:
-		DemulSelect(void)
+		FlycastEmulatorSelect(void)
 		{
 			InitializeComponent();
 			//
@@ -53,14 +52,12 @@ namespace FFBPluginGUI {
 	private: MetroFramework::Controls::MetroCheckBox^ metroCheckBox2;
 	private: MetroFramework::Controls::MetroCheckBox^ metroCheckBox3;
 	private: MetroFramework::Controls::MetroCheckBox^ metroCheckBox4;
-	private: MetroFramework::Controls::MetroButton^ metroButton4;
-	private: MetroFramework::Controls::MetroButton^ metroButton5;
-	private: MetroFramework::Controls::MetroButton^ metroButton6;
+	private: MetroFramework::Controls::MetroCheckBox^ metroCheckBox5;
 
 	public:
 
 		MetroForm^ obj;
-		DemulSelect(MetroForm^ obj1)
+		FlycastEmulatorSelect(MetroForm^ obj1)
 		{
 			obj = obj1;
 			InitializeComponent();
@@ -70,7 +67,7 @@ namespace FFBPluginGUI {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~DemulSelect()
+		~FlycastEmulatorSelect()
 		{
 			if (components)
 			{
@@ -82,6 +79,9 @@ namespace FFBPluginGUI {
 	private: MetroFramework::Controls::MetroTextBox^ metroTextBox1;
 	private: MetroFramework::Controls::MetroButton^ metroButton2;
 	private: MetroFramework::Controls::MetroButton^ metroButton3;
+	private: MetroFramework::Controls::MetroButton^ metroButton4;
+	private: MetroFramework::Controls::MetroButton^ metroButton5;
+	private: MetroFramework::Controls::MetroButton^ metroButton6;
 	private: MetroFramework::Controls::MetroLink^ metroLink1;
 	private: MetroFramework::Controls::MetroCheckBox^ metroCheckBox1;
 
@@ -102,6 +102,9 @@ namespace FFBPluginGUI {
 			this->metroTextBox1 = (gcnew MetroFramework::Controls::MetroTextBox());
 			this->metroButton2 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroButton3 = (gcnew MetroFramework::Controls::MetroButton());
+			this->metroButton4 = (gcnew MetroFramework::Controls::MetroButton());
+			this->metroButton5 = (gcnew MetroFramework::Controls::MetroButton());
+			//this->metroButton6 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroLink1 = (gcnew MetroFramework::Controls::MetroLink());
 			this->metroTextBox2 = (gcnew MetroFramework::Controls::MetroTextBox());
 			this->metroComboBox1 = (gcnew MetroFramework::Controls::MetroComboBox());
@@ -110,21 +113,19 @@ namespace FFBPluginGUI {
 			this->metroCheckBox2 = (gcnew MetroFramework::Controls::MetroCheckBox());
 			this->metroCheckBox3 = (gcnew MetroFramework::Controls::MetroCheckBox());
 			this->metroCheckBox4 = (gcnew MetroFramework::Controls::MetroCheckBox());
-			this->metroButton4 = (gcnew MetroFramework::Controls::MetroButton());
-			this->metroButton5 = (gcnew MetroFramework::Controls::MetroButton());
-			this->metroButton6 = (gcnew MetroFramework::Controls::MetroButton());
+			this->metroCheckBox5 = (gcnew MetroFramework::Controls::MetroCheckBox());
 			this->SuspendLayout();
 			// 
 			// metroButton1
 			// 
-			this->metroButton1->Location = System::Drawing::Point(23, 228);
+			this->metroButton1->Location = System::Drawing::Point(23, 199);
 			this->metroButton1->Name = L"metroButton1";
 			this->metroButton1->Size = System::Drawing::Size(216, 23);
 			this->metroButton1->TabIndex = 0;
 			this->metroButton1->TabStop = false;
-			this->metroButton1->Text = L"Initial D Arcade Stage Games";
+			this->metroButton1->Text = L"18 Wheeler";
 			this->metroButton1->UseSelectable = true;
-			this->metroButton1->Click += gcnew System::EventHandler(this, &DemulSelect::metroButton1_Click);
+			this->metroButton1->Click += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroButton1_Click);
 			// 
 			// metroTextBox1
 			// 
@@ -160,29 +161,62 @@ namespace FFBPluginGUI {
 			this->metroTextBox1->WaterMarkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)),
 				static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
 			this->metroTextBox1->WaterMarkFont = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Pixel));
-			this->metroTextBox1->Click += gcnew System::EventHandler(this, &DemulSelect::metroTextBox1_Click);
+			this->metroTextBox1->Click += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroTextBox1_Click);
 			// 
 			// metroButton2
 			// 
-			this->metroButton2->Location = System::Drawing::Point(23, 257);
+			this->metroButton2->Location = System::Drawing::Point(254, 199);
 			this->metroButton2->Name = L"metroButton2";
 			this->metroButton2->Size = System::Drawing::Size(216, 23);
 			this->metroButton2->TabIndex = 4;
 			this->metroButton2->TabStop = false;
-			this->metroButton2->Text = L"Nascar Racing";
+			this->metroButton2->Text = L"F355 Challenge 1 && 2";
 			this->metroButton2->UseSelectable = true;
-			this->metroButton2->Click += gcnew System::EventHandler(this, &DemulSelect::metroButton2_Click);
+			this->metroButton2->Click += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroButton2_Click);
 			// 
 			// metroButton3
 			// 
-			this->metroButton3->Location = System::Drawing::Point(254, 257);
+			this->metroButton3->Location = System::Drawing::Point(23, 228);
 			this->metroButton3->Name = L"metroButton3";
 			this->metroButton3->Size = System::Drawing::Size(216, 23);
 			this->metroButton3->TabIndex = 5;
 			this->metroButton3->TabStop = false;
-			this->metroButton3->Text = L"Smashing Drive";
+			this->metroButton3->Text = L"Faster Than Speed";
 			this->metroButton3->UseSelectable = true;
-			this->metroButton3->Click += gcnew System::EventHandler(this, &DemulSelect::metroButton3_Click);
+			this->metroButton3->Click += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroButton3_Click);
+			// 
+			// metroButton4
+			// 
+			this->metroButton4->Location = System::Drawing::Point(254, 228);
+			this->metroButton4->Name = L"metroButton4";
+			this->metroButton4->Size = System::Drawing::Size(216, 23);
+			this->metroButton4->TabIndex = 7;
+			this->metroButton4->TabStop = false;
+			this->metroButton4->Text = L"Initial D Arcade Stage 1 && 2 && 3";
+			this->metroButton4->UseSelectable = true;
+			this->metroButton4->Click += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroButton4_Click);
+			// 
+			// metroButton5
+			// 
+			this->metroButton5->Location = System::Drawing::Point(23, 257);
+			this->metroButton5->Name = L"metroButton5";
+			this->metroButton5->Size = System::Drawing::Size(216, 23);
+			this->metroButton5->TabIndex = 8;
+			this->metroButton5->TabStop = false;
+			this->metroButton5->Text = L"Maximum Speed";
+			this->metroButton5->UseSelectable = true;
+			this->metroButton5->Click += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroButton5_Click);
+			//// 
+			//// metroButton6
+			//// 
+			//this->metroButton6->Location = System::Drawing::Point(254, 257);
+			//this->metroButton6->Name = L"metroButton6";
+			//this->metroButton6->Size = System::Drawing::Size(216, 23);
+			//this->metroButton6->TabIndex = 9;
+			//this->metroButton6->TabStop = false;
+			//this->metroButton6->Text = L"Future Game";
+			//this->metroButton6->UseSelectable = true;
+			//this->metroButton6->Click += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroButton6_Click);
 			// 
 			// metroLink1
 			// 
@@ -193,7 +227,7 @@ namespace FFBPluginGUI {
 			this->metroLink1->TabStop = false;
 			this->metroLink1->Text = L"Go Back To Previous Menu";
 			this->metroLink1->UseSelectable = true;
-			this->metroLink1->Click += gcnew System::EventHandler(this, &DemulSelect::metroLink1_Click);
+			this->metroLink1->Click += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroLink1_Click);
 			// 
 			// metroTextBox2
 			// 
@@ -255,7 +289,7 @@ namespace FFBPluginGUI {
 			this->metroComboBox1->TabIndex = 3;
 			this->metroComboBox1->TabStop = false;
 			this->metroComboBox1->UseSelectable = true;
-			this->metroComboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &DemulSelect::metroComboBox1_SelectedIndexChanged);
+			this->metroComboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroComboBox1_SelectedIndexChanged);
 			// 
 			// metroTextBox3
 			// 
@@ -301,10 +335,10 @@ namespace FFBPluginGUI {
 			this->metroCheckBox1->Size = System::Drawing::Size(102, 15);
 			this->metroCheckBox1->TabIndex = 6;
 			this->metroCheckBox1->TabStop = false;
-			this->metroCheckBox1->Checked = EnableRumbleA;
 			this->metroCheckBox1->Text = L"Enable Rumble";
+			this->metroCheckBox1->Checked = EnableRumbleA;
 			this->metroCheckBox1->UseSelectable = true;
-			this->metroCheckBox1->CheckedChanged += gcnew System::EventHandler(this, &DemulSelect::metroCheckBox1_CheckedChanged);
+			this->metroCheckBox1->CheckedChanged += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroCheckBox1_CheckedChanged);
 			// 
 			// metroCheckBox2
 			// 
@@ -315,10 +349,10 @@ namespace FFBPluginGUI {
 			this->metroCheckBox2->Size = System::Drawing::Size(107, 15);
 			this->metroCheckBox2->TabIndex = 41;
 			this->metroCheckBox2->TabStop = false;
-			this->metroCheckBox2->Checked = ReverseRumbleA;
 			this->metroCheckBox2->Text = L"Reverse Rumble";
+			this->metroCheckBox2->Checked = ReverseRumbleA;
 			this->metroCheckBox2->UseSelectable = true;
-			this->metroCheckBox2->CheckedChanged += gcnew System::EventHandler(this, &DemulSelect::metroCheckBox2_CheckedChanged);
+			this->metroCheckBox2->CheckedChanged += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroCheckBox2_CheckedChanged);
 			// 
 			// metroCheckBox3
 			// 
@@ -329,70 +363,52 @@ namespace FFBPluginGUI {
 			this->metroCheckBox3->Size = System::Drawing::Size(102, 15);
 			this->metroCheckBox3->TabIndex = 42;
 			this->metroCheckBox3->TabStop = false;
-			this->metroCheckBox3->Checked = AlternativeFFBA;
 			this->metroCheckBox3->Text = L"Alternative FFB";
+			this->metroCheckBox3->Checked = AlternativeFFBA;
 			this->metroCheckBox3->UseSelectable = true;
-			this->metroCheckBox3->CheckedChanged += gcnew System::EventHandler(this, &DemulSelect::metroCheckBox3_CheckedChanged);
+			this->metroCheckBox3->CheckedChanged += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroCheckBox3_CheckedChanged);
 			// 
 			// metroCheckBox4
 			// 
 			int LoggingA = GetPrivateProfileInt(TEXT("Settings"), TEXT("Logging"), 0, TEXT(".\\FFBPlugin.ini"));
 			this->metroCheckBox4->AutoSize = true;
-			this->metroCheckBox4->Location = System::Drawing::Point(23, 149);
+			this->metroCheckBox4->Location = System::Drawing::Point(193, 149);
 			this->metroCheckBox4->Name = L"metroCheckBox4";
 			this->metroCheckBox4->Size = System::Drawing::Size(105, 15);
 			this->metroCheckBox4->TabIndex = 43;
 			this->metroCheckBox4->TabStop = false;
-			this->metroCheckBox4->Checked = LoggingA;
 			this->metroCheckBox4->Text = L"Enable Logging";
+			this->metroCheckBox4->Checked = LoggingA;
 			this->metroCheckBox4->UseSelectable = true;
-			this->metroCheckBox4->CheckedChanged += gcnew System::EventHandler(this, &DemulSelect::metroCheckBox4_CheckedChanged);
+			this->metroCheckBox4->CheckedChanged += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroCheckBox4_CheckedChanged);
 			// 
-			// metroButton4
+			// metroCheckBox5
 			// 
-			this->metroButton4->Location = System::Drawing::Point(254, 228);
-			this->metroButton4->Name = L"metroButton4";
-			this->metroButton4->Size = System::Drawing::Size(216, 23);
-			this->metroButton4->TabIndex = 44;
-			this->metroButton4->TabStop = false;
-			this->metroButton4->Text = L"Maximum Speed";
-			this->metroButton4->UseSelectable = true;
-			this->metroButton4->Click += gcnew System::EventHandler(this, &DemulSelect::metroButton4_Click);
+			int EnableRumbleTriggersA = GetPrivateProfileInt(TEXT("Settings"), TEXT("EnableRumbleTriggers"), 0, TEXT(".\\FFBPlugin.ini"));
+			this->metroCheckBox5->AutoSize = true;
+			this->metroCheckBox5->Location = System::Drawing::Point(23, 149);
+			this->metroCheckBox5->Name = L"metroCheckBox5";
+			this->metroCheckBox5->Size = System::Drawing::Size(146, 15);
+			this->metroCheckBox5->TabIndex = 44;
+			this->metroCheckBox5->TabStop = false;
+			this->metroCheckBox5->Text = L"Enable Rumble Triggers";
+			this->metroCheckBox5->Checked = EnableRumbleTriggersA;
+			this->metroCheckBox5->UseSelectable = true;
+			this->metroCheckBox5->CheckedChanged += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroCheckBox5_CheckedChanged);
 			// 
-			// metroButton5
+			// FlycastEmulatorSelect
 			// 
-			this->metroButton5->Location = System::Drawing::Point(254, 199);
-			this->metroButton5->Name = L"metroButton5";
-			this->metroButton5->Size = System::Drawing::Size(216, 23);
-			this->metroButton5->TabIndex = 45;
-			this->metroButton5->TabStop = false;
-			this->metroButton5->Text = L"Faster Than Speed";
-			this->metroButton5->UseSelectable = true;
-			this->metroButton5->Click += gcnew System::EventHandler(this, &DemulSelect::metroButton5_Click);
-			// 
-			// metroButton6
-			// 
-			this->metroButton6->Location = System::Drawing::Point(23, 199);
-			this->metroButton6->Name = L"metroButton6";
-			this->metroButton6->Size = System::Drawing::Size(216, 23);
-			this->metroButton6->TabIndex = 46;
-			this->metroButton6->TabStop = false;
-			this->metroButton6->Text = L"ATV Track";
-			this->metroButton6->UseSelectable = true;
-			this->metroButton6->Click += gcnew System::EventHandler(this, &DemulSelect::metroButton6_Click);
-			// 
-			// DemulSelect
-			// 
-			this->ClientSize = System::Drawing::Size(493, 291);
-			this->Controls->Add(this->metroButton6);
-			this->Controls->Add(this->metroButton5);
-			this->Controls->Add(this->metroButton4);
+			this->ClientSize = System::Drawing::Size(493, 294);
+			this->Controls->Add(this->metroCheckBox5);
 			this->Controls->Add(this->metroCheckBox4);
 			this->Controls->Add(this->metroCheckBox3);
 			this->Controls->Add(this->metroCheckBox2);
 			this->Controls->Add(this->metroTextBox3);
 			this->Controls->Add(this->metroTextBox2);
 			this->Controls->Add(this->metroLink1);
+			//this->Controls->Add(this->metroButton6);
+			this->Controls->Add(this->metroButton5);
+			this->Controls->Add(this->metroButton4);
 			this->Controls->Add(this->metroButton3);
 			this->Controls->Add(this->metroButton2);
 			this->Controls->Add(this->metroTextBox1);
@@ -400,9 +416,9 @@ namespace FFBPluginGUI {
 			this->Controls->Add(this->metroComboBox1);
 			this->Controls->Add(this->metroCheckBox1);
 			this->MaximizeBox = false;
-			this->Name = L"DemulSelect";
+			this->Name = L"FlycastEmulatorSelect";
 			this->Resizable = false;
-			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &DemulSelect::Form1_FormClosing);
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &FlycastEmulatorSelect::Form1_FormClosing);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -676,41 +692,52 @@ namespace FFBPluginGUI {
 	{
 
 	}
-	private: System::Void metroButton1_Click(System::Object^ sender, System::EventArgs^ e) //Initial D Games
+	private: System::Void metroButton1_Click(System::Object^ sender, System::EventArgs^ e) //18Wheeler
 	{
 		this->Hide();
-		InitialDDemul^ obj1 = gcnew InitialDDemul(this);
+		Flycast18Wheeler^ obj1 = gcnew Flycast18Wheeler(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton2_Click(System::Object^ sender, System::EventArgs^ e) //Nascar Racing
+	private: System::Void metroButton2_Click(System::Object^ sender, System::EventArgs^ e) //F355 Challenge games
 	{
 		this->Hide();
-		NascarRacing^ obj1 = gcnew NascarRacing(this);
+		FlycastF355^ obj1 = gcnew FlycastF355(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton3_Click(System::Object^ sender, System::EventArgs^ e) //Smashing Drive
+	private: System::Void metroButton3_Click(System::Object^ sender, System::EventArgs^ e) //FasterThanSpeed
 	{
 		this->Hide();
-		SmashingDrive^ obj1 = gcnew SmashingDrive(this);
+		FlycastFasterThanSpeed^ obj1 = gcnew FlycastFasterThanSpeed(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton4_Click(System::Object^ sender, System::EventArgs^ e) //Maximum Speed
+	private: System::Void metroButton4_Click(System::Object^ sender, System::EventArgs^ e) //Initial D games
 	{
 		this->Hide();
-		DemulMaximumSpeed^ obj1 = gcnew DemulMaximumSpeed(this);
+		FlycastInitialD^ obj1 = gcnew FlycastInitialD(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton5_Click(System::Object^ sender, System::EventArgs^ e) //Faster Than Speed
+	private: System::Void metroButton5_Click(System::Object^ sender, System::EventArgs^ e) //Maximum Speed
 	{
 		this->Hide();
-		DemulFasterThanSpeed^ obj1 = gcnew DemulFasterThanSpeed(this);
+		FlycastMaximumSpeed^ obj1 = gcnew FlycastMaximumSpeed(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton6_Click(System::Object^ sender, System::EventArgs^ e) //ATV Track
+	private: System::Void metroButton6_Click(System::Object^ sender, System::EventArgs^ e) //Future Game
 	{
-		this->Hide();
-		ATVTrack^ obj1 = gcnew ATVTrack(this);
-		obj1->ShowDialog();
+		//this->Hide();
+		//OverRev^ obj1 = gcnew OverRev(this);
+		//obj1->ShowDialog();
+	}
+	private: System::Void metroCheckBox5_CheckedChanged(System::Object^ sender, System::EventArgs^ e) //Enable Rumble Triggers
+	{
+		if (metroCheckBox5->Checked)
+		{
+			WritePrivateProfileString(TEXT("Settings"), TEXT("EnableRumbleTriggers"), TEXT("1"), TEXT(".\\FFBPlugin.ini"));
+		}
+		else
+		{
+			WritePrivateProfileString(TEXT("Settings"), TEXT("EnableRumbleTriggers"), TEXT("0"), TEXT(".\\FFBPlugin.ini"));
+		}
 	}
 };
 }

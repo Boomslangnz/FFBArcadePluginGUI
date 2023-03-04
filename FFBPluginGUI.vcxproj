@@ -176,8 +176,13 @@
     <ClCompile Include="DirtDash.cpp" />
     <ClCompile Include="DoubleAxle.cpp" />
     <ClCompile Include="ElfLdr2Help.cpp" />
-    <ClCompile Include="FasterThanSpeed.cpp" />
-    <ClCompile Include="Flycast.cpp" />
+    <ClCompile Include="DemulFasterThanSpeed.cpp" />
+    <ClCompile Include="Flycast18Wheeler.cpp" />
+    <ClCompile Include="FlycastEmulatorSelect.cpp" />
+    <ClCompile Include="FlycastF355.cpp" />
+    <ClCompile Include="FlycastFasterThanSpeed.cpp" />
+    <ClCompile Include="FlycastInitialD.cpp" />
+    <ClCompile Include="FlycastMaximumSpeed.cpp" />
     <ClCompile Include="GaelcoTuningRace.cpp" />
     <ClCompile Include="H2Overdrive.cpp" />
     <ClCompile Include="HardDrivin.cpp" />
@@ -235,7 +240,7 @@
     <ClCompile Include="M2EmulatorSelect.cpp" />
     <ClCompile Include="Machstorm.cpp" />
     <ClCompile Include="MameSelect.cpp" />
-    <ClCompile Include="MaximumSpeed.cpp" />
+    <ClCompile Include="DemulMaximumSpeed.cpp" />
     <ClCompile Include="MechanizedAttack.cpp" />
     <ClCompile Include="MKGP100.cpp" />
     <ClCompile Include="MKGP110.cpp" />
@@ -324,8 +329,13 @@
     <ClInclude Include="ElfLdr2Help.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="FasterThanSpeed.h" />
-    <ClInclude Include="Flycast.h" />
+    <ClInclude Include="DemulFasterThanSpeed.h" />
+    <ClInclude Include="Flycast18Wheeler.h" />
+    <ClInclude Include="FlycastEmulatorSelect.h" />
+    <ClInclude Include="FlycastF355.h" />
+    <ClInclude Include="FlycastFasterThanSpeed.h" />
+    <ClInclude Include="FlycastInitialD.h" />
+    <ClInclude Include="FlycastMaximumSpeed.h" />
     <ClInclude Include="GaelcoTuningRace.h" />
     <ClInclude Include="H2Overdrive.h" />
     <ClInclude Include="HardDrivin.h" />
@@ -433,7 +443,7 @@
     <ClInclude Include="MameSelect.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MaximumSpeed.h" />
+    <ClInclude Include="DemulMaximumSpeed.h" />
     <ClInclude Include="MechanizedAttack.h" />
     <ClInclude Include="MKGP100.h">
       <FileType>CppHeader</FileType>
@@ -530,6 +540,9 @@
     <EmbeddedResource Include="DemulSelect.resx" />
     <EmbeddedResource Include="ElfLdr2Help.resx">
       <DependentUpon>ElfLdr2Help.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlycastEmulatorSelect.resx">
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Help.resx">
       <DependentUpon>Help.h</DependentUpon>

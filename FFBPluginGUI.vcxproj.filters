@@ -339,10 +339,10 @@
     <ClCompile Include="InitialDDemul.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MaximumSpeed.cpp">
+    <ClCompile Include="DemulMaximumSpeed.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FasterThanSpeed.cpp">
+    <ClCompile Include="DemulFasterThanSpeed.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ATVTrack.cpp">
@@ -411,9 +411,6 @@
     <ClCompile Include="CrazyTaxi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Flycast.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="WMMT3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -430,6 +427,24 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="RingRiders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlycastInitialD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlycastMaximumSpeed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlycastFasterThanSpeed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Flycast18Wheeler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlycastF355.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlycastEmulatorSelect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -758,10 +773,10 @@
     <ClInclude Include="NascarRacing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MaximumSpeed.h">
+    <ClInclude Include="DemulMaximumSpeed.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FasterThanSpeed.h">
+    <ClInclude Include="DemulFasterThanSpeed.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ATVTrack.h">
@@ -833,9 +848,6 @@
     <ClInclude Include="CrazyTaxi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Flycast.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="WMMT3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -857,6 +869,24 @@
     <ClInclude Include="RingRiders.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FlycastEmulatorSelect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlycastInitialD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlycastFasterThanSpeed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlycastMaximumSpeed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Flycast18Wheeler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlycastF355.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -869,6 +899,9 @@
       <Filter>Header Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="DemulInputSelect.resx">
+      <Filter>Header Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FlycastEmulatorSelect.resx">
       <Filter>Header Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

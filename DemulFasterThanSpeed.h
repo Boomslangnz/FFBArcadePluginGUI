@@ -17,10 +17,10 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 
 namespace FFBPluginGUI {
 
-	public ref class FasterThanSpeed : Helper
+	public ref class DemulFasterThanSpeed : Helper
 	{
 	public:
-		FasterThanSpeed(MetroForm^ obj1)
+		DemulFasterThanSpeed(MetroForm^ obj1)
 		{
 			this->obj = obj1;
 			this->InitializeComponent();
