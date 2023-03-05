@@ -33,6 +33,7 @@ namespace FFBPluginGUI {
 
 			this->AutoAddLongTextBox(L"Options", L"");
 			this->AutoAddShortCheckBox("PowerModeKingOfRoute66", L"Power Mode", L"Enable to raise strength of lower values");
+			this->AutoAddShortCheckBox("DoubleSineKingOfRoute66", L"Double Sine", L"Enable to double strength of sine effect");
 			this->AutoAddShortCheckBox("EnableDamperKingOfRoute66", L"Enable Damper", L"Enable damper to lower wheel oscillation");
 
 			this->AutoAddLongTrackBarBlock("DamperStrengthKingOfRoute66", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");

@@ -33,6 +33,8 @@ namespace FFBPluginGUI {
 
 			this->AutoAddLongTextBox(L"Options", L"");
 			this->AutoAddShortCheckBox("PowerModeClubKart", L"Power Mode", L"Enable to raise strength of lower values");
+			this->AutoAddShortCheckBox("DoubleSineClubKart", L"Double Sine", L"Enable to double strength of sine effect");
+			this->AutoAddShortCheckBox("DoubleConstantClubKart", L"Double Constant", L"Enable to double strength of constant effect");
 			this->AutoAddShortCheckBox("EnableDamperClubKart", L"Enable Damper", L"Enable damper to lower wheel oscillation");
 
 			this->AutoAddLongTrackBarBlock("DamperStrengthClubKart", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");

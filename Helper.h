@@ -407,11 +407,11 @@ namespace FFBPluginGUI {
 			}
 			else if (component == "DoubleSine")
 			{
-				this->AutoAddShortCheckBox("DoubleSine", L"Double Sine Strength", L"Enable to double strength of sine effect");
+				this->AutoAddShortCheckBox("DoubleSine", L"Double Sine", L"Enable to double strength of sine effect");
 			}
 			else if (component == "DoubleConstant")
 			{
-				this->AutoAddShortCheckBox("DoubleConstant", L"Double Constant Strength", L"Enable to double strength of constant effect");
+				this->AutoAddShortCheckBox("DoubleConstant", L"Double Constant", L"Enable to double strength of constant effect");
 			}
 			else if (component == "CommonOptions")
 			{
