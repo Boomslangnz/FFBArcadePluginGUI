@@ -33,7 +33,8 @@ namespace FFBPluginGUI {
 
 			this->AutoAddLongTextBox(L"Options", L"");
 			this->AutoAddShortCheckBox("PowerModeInitialDDemul", L"Power Mode", L"Enable to raise strength of lower values");
-			this->AutoAddShortCheckBox("IncreaseSineInitialDDemul", L"Increase Sine Strength", L"Enable to raise strength of sine effect");
+			this->AutoAddShortCheckBox("DoubleSineInitialD", L"Double Sine Strength", L"Enable to double strength of sine effect");
+			this->AutoAddShortCheckBox("DoubleConstant", L"Double Constant Strength", L"Enable to double strength of constant effect");
 			this->AutoAddComponent("EnableDamperInitialDDemul");
 
 			this->AutoAddLongTrackBarBlock("DamperStrengthInitialDDemul", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");
