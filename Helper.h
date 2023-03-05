@@ -405,6 +405,10 @@ namespace FFBPluginGUI {
 			{
 				this->AutoAddShortCheckBox("PowerMode", L"Power Mode", L"Enable to raise strength of low effects");
 			}
+			else if (component == "IncreaseSine")
+			{
+				this->AutoAddShortCheckBox("IncreaseSine", L"Increase Sine Strength", L"Enable to raise strength of sine effect");
+			}
 			else if (component == "CommonOptions")
 			{
 				this->AutoAddComponent("OptionsHeader");

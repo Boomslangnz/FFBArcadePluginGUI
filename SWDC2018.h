@@ -37,6 +37,7 @@ namespace FFBPluginGUI {
 			this->AutoAddComponent("CommonOptions");
 			this->AutoAddComponent("AlternativeFFB");
 			this->AutoAddComponent("PowerMode");
+			this->AutoAddComponent("IncreaseSine");
 			this->AutoAddShortCheckBox("EscapeKeyExitViaPlugin", L"Enable Escape as Exit", L"Enable to exit game when press escape key");
 			this->AutoAddComponent("EnableDamper");
 

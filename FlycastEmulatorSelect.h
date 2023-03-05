@@ -21,6 +21,8 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "FlycastFasterThanSpeed.h"
 #include "FlycastMaximumSpeed.h"
 #include "FlycastF355.h"
+#include "FlycastClubKart.h"
+#include "FlycastKingOfRoute66.h"
 
 namespace FFBPluginGUI {
 
@@ -82,6 +84,7 @@ namespace FFBPluginGUI {
 	private: MetroFramework::Controls::MetroButton^ metroButton4;
 	private: MetroFramework::Controls::MetroButton^ metroButton5;
 	private: MetroFramework::Controls::MetroButton^ metroButton6;
+	private: MetroFramework::Controls::MetroButton^ metroButton7;
 	private: MetroFramework::Controls::MetroLink^ metroLink1;
 	private: MetroFramework::Controls::MetroCheckBox^ metroCheckBox1;
 
@@ -104,7 +107,8 @@ namespace FFBPluginGUI {
 			this->metroButton3 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroButton4 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroButton5 = (gcnew MetroFramework::Controls::MetroButton());
-			//this->metroButton6 = (gcnew MetroFramework::Controls::MetroButton());
+			this->metroButton6 = (gcnew MetroFramework::Controls::MetroButton());
+			this->metroButton7 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroLink1 = (gcnew MetroFramework::Controls::MetroLink());
 			this->metroTextBox2 = (gcnew MetroFramework::Controls::MetroTextBox());
 			this->metroComboBox1 = (gcnew MetroFramework::Controls::MetroComboBox());
@@ -170,7 +174,7 @@ namespace FFBPluginGUI {
 			this->metroButton2->Size = System::Drawing::Size(216, 23);
 			this->metroButton2->TabIndex = 4;
 			this->metroButton2->TabStop = false;
-			this->metroButton2->Text = L"F355 Challenge 1 && 2";
+			this->metroButton2->Text = L"Club Kart";
 			this->metroButton2->UseSelectable = true;
 			this->metroButton2->Click += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroButton2_Click);
 			// 
@@ -181,7 +185,7 @@ namespace FFBPluginGUI {
 			this->metroButton3->Size = System::Drawing::Size(216, 23);
 			this->metroButton3->TabIndex = 5;
 			this->metroButton3->TabStop = false;
-			this->metroButton3->Text = L"Faster Than Speed";
+			this->metroButton3->Text = L"F355 Challenge 1 && 2";
 			this->metroButton3->UseSelectable = true;
 			this->metroButton3->Click += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroButton3_Click);
 			// 
@@ -192,7 +196,7 @@ namespace FFBPluginGUI {
 			this->metroButton4->Size = System::Drawing::Size(216, 23);
 			this->metroButton4->TabIndex = 7;
 			this->metroButton4->TabStop = false;
-			this->metroButton4->Text = L"Initial D Arcade Stage 1 && 2 && 3";
+			this->metroButton4->Text = L"Faster Than Speed";
 			this->metroButton4->UseSelectable = true;
 			this->metroButton4->Click += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroButton4_Click);
 			// 
@@ -203,20 +207,31 @@ namespace FFBPluginGUI {
 			this->metroButton5->Size = System::Drawing::Size(216, 23);
 			this->metroButton5->TabIndex = 8;
 			this->metroButton5->TabStop = false;
-			this->metroButton5->Text = L"Maximum Speed";
+			this->metroButton5->Text = L"Initial D Arcade Stage 1 && 2 && 3";
 			this->metroButton5->UseSelectable = true;
 			this->metroButton5->Click += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroButton5_Click);
-			//// 
-			//// metroButton6
-			//// 
-			//this->metroButton6->Location = System::Drawing::Point(254, 257);
-			//this->metroButton6->Name = L"metroButton6";
-			//this->metroButton6->Size = System::Drawing::Size(216, 23);
-			//this->metroButton6->TabIndex = 9;
-			//this->metroButton6->TabStop = false;
-			//this->metroButton6->Text = L"Future Game";
-			//this->metroButton6->UseSelectable = true;
-			//this->metroButton6->Click += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroButton6_Click);
+			// 
+			// metroButton6
+			// 
+			this->metroButton6->Location = System::Drawing::Point(254, 257);
+			this->metroButton6->Name = L"metroButton6";
+			this->metroButton6->Size = System::Drawing::Size(216, 23);
+			this->metroButton6->TabIndex = 9;
+			this->metroButton6->TabStop = false;
+			this->metroButton6->Text = L"King Of Route 66";
+			this->metroButton6->UseSelectable = true;
+			this->metroButton6->Click += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroButton6_Click);
+			// 
+			// metroButton7
+			// 
+			this->metroButton7->Location = System::Drawing::Point(23, 286);
+			this->metroButton7->Name = L"metroButton7";
+			this->metroButton7->Size = System::Drawing::Size(216, 23);
+			this->metroButton7->TabIndex = 10;
+			this->metroButton7->TabStop = false;
+			this->metroButton7->Text = L"Maximum Speed";
+			this->metroButton7->UseSelectable = true;
+			this->metroButton7->Click += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroButton7_Click);
 			// 
 			// metroLink1
 			// 
@@ -398,7 +413,7 @@ namespace FFBPluginGUI {
 			// 
 			// FlycastEmulatorSelect
 			// 
-			this->ClientSize = System::Drawing::Size(493, 294);
+			this->ClientSize = System::Drawing::Size(493, 323);
 			this->Controls->Add(this->metroCheckBox5);
 			this->Controls->Add(this->metroCheckBox4);
 			this->Controls->Add(this->metroCheckBox3);
@@ -406,7 +421,8 @@ namespace FFBPluginGUI {
 			this->Controls->Add(this->metroTextBox3);
 			this->Controls->Add(this->metroTextBox2);
 			this->Controls->Add(this->metroLink1);
-			//this->Controls->Add(this->metroButton6);
+			this->Controls->Add(this->metroButton7);
+			this->Controls->Add(this->metroButton6);
 			this->Controls->Add(this->metroButton5);
 			this->Controls->Add(this->metroButton4);
 			this->Controls->Add(this->metroButton3);
@@ -698,35 +714,41 @@ namespace FFBPluginGUI {
 		Flycast18Wheeler^ obj1 = gcnew Flycast18Wheeler(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton2_Click(System::Object^ sender, System::EventArgs^ e) //F355 Challenge games
+	private: System::Void metroButton2_Click(System::Object^ sender, System::EventArgs^ e) //Club Kart
+	{
+		this->Hide();
+		FlycastClubKart^ obj1 = gcnew FlycastClubKart(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton3_Click(System::Object^ sender, System::EventArgs^ e) //F355 Challenge 1 & 2
 	{
 		this->Hide();
 		FlycastF355^ obj1 = gcnew FlycastF355(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton3_Click(System::Object^ sender, System::EventArgs^ e) //FasterThanSpeed
+	private: System::Void metroButton4_Click(System::Object^ sender, System::EventArgs^ e) //Faster Than Speed
 	{
 		this->Hide();
 		FlycastFasterThanSpeed^ obj1 = gcnew FlycastFasterThanSpeed(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton4_Click(System::Object^ sender, System::EventArgs^ e) //Initial D games
+	private: System::Void metroButton5_Click(System::Object^ sender, System::EventArgs^ e) //Initial D 1 && 2 && 3
 	{
 		this->Hide();
 		FlycastInitialD^ obj1 = gcnew FlycastInitialD(this);
 		obj1->ShowDialog();
 	}
-	private: System::Void metroButton5_Click(System::Object^ sender, System::EventArgs^ e) //Maximum Speed
+	private: System::Void metroButton6_Click(System::Object^ sender, System::EventArgs^ e) //King Of Route 66
+	{
+		this->Hide();
+		FlycastKingOfRoute66^ obj1 = gcnew FlycastKingOfRoute66(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton7_Click(System::Object^ sender, System::EventArgs^ e) //Maximum Speed
 	{
 		this->Hide();
 		FlycastMaximumSpeed^ obj1 = gcnew FlycastMaximumSpeed(this);
 		obj1->ShowDialog();
-	}
-	private: System::Void metroButton6_Click(System::Object^ sender, System::EventArgs^ e) //Future Game
-	{
-		//this->Hide();
-		//OverRev^ obj1 = gcnew OverRev(this);
-		//obj1->ShowDialog();
 	}
 	private: System::Void metroCheckBox5_CheckedChanged(System::Object^ sender, System::EventArgs^ e) //Enable Rumble Triggers
 	{

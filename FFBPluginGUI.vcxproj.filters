@@ -447,6 +447,12 @@
     <ClCompile Include="FlycastEmulatorSelect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FlycastClubKart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlycastKingOfRoute66.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -885,6 +891,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FlycastF355.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlycastClubKart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlycastKingOfRoute66.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

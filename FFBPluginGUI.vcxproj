@@ -178,10 +178,12 @@
     <ClCompile Include="ElfLdr2Help.cpp" />
     <ClCompile Include="DemulFasterThanSpeed.cpp" />
     <ClCompile Include="Flycast18Wheeler.cpp" />
+    <ClCompile Include="FlycastClubKart.cpp" />
     <ClCompile Include="FlycastEmulatorSelect.cpp" />
     <ClCompile Include="FlycastF355.cpp" />
     <ClCompile Include="FlycastFasterThanSpeed.cpp" />
     <ClCompile Include="FlycastInitialD.cpp" />
+    <ClCompile Include="FlycastKingOfRoute66.cpp" />
     <ClCompile Include="FlycastMaximumSpeed.cpp" />
     <ClCompile Include="GaelcoTuningRace.cpp" />
     <ClCompile Include="H2Overdrive.cpp" />
@@ -331,10 +333,12 @@
     </ClInclude>
     <ClInclude Include="DemulFasterThanSpeed.h" />
     <ClInclude Include="Flycast18Wheeler.h" />
+    <ClInclude Include="FlycastClubKart.h" />
     <ClInclude Include="FlycastEmulatorSelect.h" />
     <ClInclude Include="FlycastF355.h" />
     <ClInclude Include="FlycastFasterThanSpeed.h" />
     <ClInclude Include="FlycastInitialD.h" />
+    <ClInclude Include="FlycastKingOfRoute66.h" />
     <ClInclude Include="FlycastMaximumSpeed.h" />
     <ClInclude Include="GaelcoTuningRace.h" />
     <ClInclude Include="H2Overdrive.h" />
