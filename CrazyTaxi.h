@@ -44,6 +44,7 @@ namespace FFBPluginGUI {
 			this->AutoAddShortCheckBox("EnableGroundEffects", L"Ground Effects", L"Enable to feel ground effects");
 
 			this->AutoAddLongTrackBarBlock("DamperStrength", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");
+			this->AutoAddLongTrackBarBlock("SpringStrength", L"Spring Strength", 0, 100, L"How strong the spring effect is");
 
 			this->New2ColsPage();
 
