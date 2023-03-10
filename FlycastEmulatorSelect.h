@@ -23,6 +23,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "FlycastF355.h"
 #include "FlycastClubKart.h"
 #include "FlycastKingOfRoute66.h"
+#include "FlycastSegaDrivingSimulator.h"
 
 namespace FFBPluginGUI {
 
@@ -85,6 +86,7 @@ namespace FFBPluginGUI {
 	private: MetroFramework::Controls::MetroButton^ metroButton5;
 	private: MetroFramework::Controls::MetroButton^ metroButton6;
 	private: MetroFramework::Controls::MetroButton^ metroButton7;
+	private: MetroFramework::Controls::MetroButton^ metroButton8;
 	private: MetroFramework::Controls::MetroLink^ metroLink1;
 	private: MetroFramework::Controls::MetroCheckBox^ metroCheckBox1;
 
@@ -109,6 +111,7 @@ namespace FFBPluginGUI {
 			this->metroButton5 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroButton6 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroButton7 = (gcnew MetroFramework::Controls::MetroButton());
+			this->metroButton8 = (gcnew MetroFramework::Controls::MetroButton());
 			this->metroLink1 = (gcnew MetroFramework::Controls::MetroLink());
 			this->metroTextBox2 = (gcnew MetroFramework::Controls::MetroTextBox());
 			this->metroComboBox1 = (gcnew MetroFramework::Controls::MetroComboBox());
@@ -232,6 +235,17 @@ namespace FFBPluginGUI {
 			this->metroButton7->Text = L"Maximum Speed";
 			this->metroButton7->UseSelectable = true;
 			this->metroButton7->Click += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroButton7_Click);
+			// 
+			// metroButton8
+			// 
+			this->metroButton8->Location = System::Drawing::Point(254, 286);
+			this->metroButton8->Name = L"metroButton7";
+			this->metroButton8->Size = System::Drawing::Size(216, 23);
+			this->metroButton8->TabIndex = 10;
+			this->metroButton8->TabStop = false;
+			this->metroButton8->Text = L"Sega Driving Simulator";
+			this->metroButton8->UseSelectable = true;
+			this->metroButton8->Click += gcnew System::EventHandler(this, &FlycastEmulatorSelect::metroButton8_Click);
 			// 
 			// metroLink1
 			// 
@@ -421,6 +435,7 @@ namespace FFBPluginGUI {
 			this->Controls->Add(this->metroTextBox3);
 			this->Controls->Add(this->metroTextBox2);
 			this->Controls->Add(this->metroLink1);
+			this->Controls->Add(this->metroButton8);
 			this->Controls->Add(this->metroButton7);
 			this->Controls->Add(this->metroButton6);
 			this->Controls->Add(this->metroButton5);
@@ -748,6 +763,12 @@ namespace FFBPluginGUI {
 	{
 		this->Hide();
 		FlycastMaximumSpeed^ obj1 = gcnew FlycastMaximumSpeed(this);
+		obj1->ShowDialog();
+	}
+	private: System::Void metroButton8_Click(System::Object^ sender, System::EventArgs^ e) //Sega Driving Simulator
+	{
+		this->Hide();
+		FlycastSegaDrivingSimulator^ obj1 = gcnew FlycastSegaDrivingSimulator(this);
 		obj1->ShowDialog();
 	}
 	private: System::Void metroCheckBox5_CheckedChanged(System::Object^ sender, System::EventArgs^ e) //Enable Rumble Triggers

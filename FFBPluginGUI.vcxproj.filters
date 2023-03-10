@@ -453,6 +453,9 @@
     <ClCompile Include="FlycastKingOfRoute66.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FlycastSegaDrivingSimulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -897,6 +900,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FlycastKingOfRoute66.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlycastSegaDrivingSimulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -78,6 +78,12 @@ namespace FFBPluginGUI {
 			this->AutoAddLongInputSelect("Button", "leverDown", L"Lever Down");
 			this->AutoAddLongInputSelect("Button", "leverLeft", L"Lever Left");
 			this->AutoAddLongInputSelect("Button", "leverRight", L"Lever Right");
+			this->AutoAddLongInputSelect("Button", "Gear1Button", L"Gear 1");
+			this->AutoAddLongInputSelect("Button", "Gear2Button", L"Gear 2");
+			this->AutoAddLongInputSelect("Button", "Gear3Button", L"Gear 3");
+			this->AutoAddLongInputSelect("Button", "Gear4Button", L"Gear 4");
+			this->AutoAddLongInputSelect("Button", "Gear5Button", L"Gear 5");
+			this->AutoAddLongInputSelect("Button", "Gear6Button", L"Gear 6");
 			this->AutoAddLongInputSelect("Button", "IncreaseFFBStrength", L"Increase FFB Strength");
 			this->AutoAddLongInputSelect("Button", "DecreaseFFBStrength", L"Decrease FFB Strength");
 			this->AutoAddLongInputSelect("Button", "ResetFFBStrength", L"Reset FFB Strength");
@@ -130,6 +136,12 @@ namespace FFBPluginGUI {
 			this->AutoAddLongInputSelect("Button", "leverDownDevice2", L"Lever Down");
 			this->AutoAddLongInputSelect("Button", "leverLeftDevice2", L"Lever Left");
 			this->AutoAddLongInputSelect("Button", "leverRightDevice2", L"Lever Right");
+			this->AutoAddLongInputSelect("Button", "Gear1ButtonDevice2", L"Gear 1");
+			this->AutoAddLongInputSelect("Button", "Gear2ButtonDevice2", L"Gear 2");
+			this->AutoAddLongInputSelect("Button", "Gear3ButtonDevice2", L"Gear 3");
+			this->AutoAddLongInputSelect("Button", "Gear4ButtonDevice2", L"Gear 4");
+			this->AutoAddLongInputSelect("Button", "Gear5ButtonDevice2", L"Gear 5");
+			this->AutoAddLongInputSelect("Button", "Gear6ButtonDevice2", L"Gear 6");
 
 			this->AutoAddShortComboBoxBlock(
 				"DpadUpDevice2",

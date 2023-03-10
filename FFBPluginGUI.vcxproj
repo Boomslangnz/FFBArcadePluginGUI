@@ -185,6 +185,7 @@
     <ClCompile Include="FlycastInitialD.cpp" />
     <ClCompile Include="FlycastKingOfRoute66.cpp" />
     <ClCompile Include="FlycastMaximumSpeed.cpp" />
+    <ClCompile Include="FlycastSegaDrivingSimulator.cpp" />
     <ClCompile Include="GaelcoTuningRace.cpp" />
     <ClCompile Include="H2Overdrive.cpp" />
     <ClCompile Include="HardDrivin.cpp" />
@@ -340,6 +341,7 @@
     <ClInclude Include="FlycastInitialD.h" />
     <ClInclude Include="FlycastKingOfRoute66.h" />
     <ClInclude Include="FlycastMaximumSpeed.h" />
+    <ClInclude Include="FlycastSegaDrivingSimulator.h" />
     <ClInclude Include="GaelcoTuningRace.h" />
     <ClInclude Include="H2Overdrive.h" />
     <ClInclude Include="HardDrivin.h" />
