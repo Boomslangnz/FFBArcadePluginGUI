@@ -40,17 +40,11 @@ namespace FFBPluginGUI {
 
 			this->AutoAddLongTrackBarBlock("DamperStrength", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");
 
-			this->AutoAddLongTrackBarBlock("SpringStrength", L"Spring Strength", 0, 100, L"Spring Strength for wheels only");
-
 			this->New2ColsPage();
 
 			this->AutoAddComponent("GlobalForce");
 
 			this->AutoAddComponent("AltGlobalForce");
-
-			this->AutoAddLongTextBox(L"Additional Effects Strength", L"");
-			this->AutoAddShortTrackBarBlock("GearChangeStrength", L"Gear Change", 0, 100, L"");
-			this->AutoAddShortTrackBarBlock("GearChangeLength", L"Gear Change Length", 0, 500, L"");
 
 			this->Init();
 		}
