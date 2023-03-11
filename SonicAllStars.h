@@ -37,7 +37,9 @@ namespace FFBPluginGUI {
 			this->AutoAddComponent("CommonOptions");
 			this->AutoAddComponent("AlternativeFFB");
 			this->AutoAddComponent("EnableDamper");
-
+			this->AutoAddShortCheckBox("SpringEnable", L"Enable Spring Effect", L"Forces spring effect to work all the time");
+			
+			this->AutoAddLongTrackBarBlock("SpringStrength", L"Spring Strength", 0, 100, L"How strong the spring effect is when forced on");
 			this->AutoAddLongTrackBarBlock("DamperStrength", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");
 
 			this->New2ColsPage();
