@@ -24,6 +24,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "ChaseHQ2.h"
 #include "ChaseHQ2Input.h"
 #include "D1GPArcade.h"
+#include "DaytonaChampionshipUSANSE.h"
 #include "DaytonaChampionshipUSA.h"
 #include "DaytonaChampionshipUSAInput.h"
 #include "DeadHeat.h"
@@ -237,7 +238,7 @@ namespace FFBPluginGUI {
 	private: System::Void metroButton1_Click(System::Object^  sender, System::EventArgs^  e)
 	{
 		int GameSelect = GetPrivateProfileInt(TEXT("Settings"), TEXT("GameId"), 0, TEXT(".\\FFBPlugin.ini"));
-		if (GameSelect == 1 || GameSelect == 59)
+		if (GameSelect == 1)
 		{
 			this->Hide();
 			DaytonaChampionshipUSA^ obj1 = gcnew DaytonaChampionshipUSA(this);
@@ -553,6 +554,12 @@ namespace FFBPluginGUI {
 		{
 			this->Hide();
 			CrazyTaxi^ obj1 = gcnew CrazyTaxi(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 59)
+		{
+			this->Hide();
+			DaytonaChampionshipUSANSE^ obj1 = gcnew DaytonaChampionshipUSANSE(this);
 			obj1->ShowDialog();
 		}
 		else if (GameSelect == 60)

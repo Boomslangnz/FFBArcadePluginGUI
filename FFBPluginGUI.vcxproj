@@ -163,6 +163,7 @@
     <ClCompile Include="Batman.cpp" />
     <ClCompile Include="CrazyTaxi.cpp" />
     <ClCompile Include="D1GPArcade.cpp" />
+    <ClCompile Include="DaytonaChampionshipUSANSE.cpp" />
     <ClCompile Include="DaytonaUSA.cpp" />
     <ClCompile Include="DeadHeat.cpp" />
     <ClCompile Include="DemulATVTrackInput.cpp" />
@@ -313,6 +314,7 @@
     <ClInclude Include="Batman.h" />
     <ClInclude Include="CrazyTaxi.h" />
     <ClInclude Include="D1GPArcade.h" />
+    <ClInclude Include="DaytonaChampionshipUSANSE.h" />
     <ClInclude Include="DaytonaUSA.h" />
     <ClInclude Include="DeadHeat.h" />
     <ClInclude Include="DemulATVTrackInput.h" />

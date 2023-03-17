@@ -389,6 +389,22 @@ namespace FFBPluginGUI {
 			{
 				this->AutoAddShortCheckBox("ForceShowDeviceGUIDMessageBox", L"GUID MessageBox", L"Messagebox will appear when launching application to show guid number");
 			}
+			else if (component == "DoubleConstant")
+			{
+				this->AutoAddShortCheckBox("DoubleConstant", L"Double Constant", L"Enable to double strength of constant effect");
+			}
+			else if (component == "DoubleSpring")
+			{
+				this->AutoAddShortCheckBox("DoubleSpring", L"Double Spring", L"Enable to double strength of spring effect");
+			}
+			else if (component == "DoubleSine")
+			{
+				this->AutoAddShortCheckBox("DoubleSine", L"Double Sine", L"Enable to double strength of sine effect");
+			}
+			else if (component == "DoubleFriction")
+			{
+				this->AutoAddShortCheckBox("DoubleFriction", L"Double Friction", L"Enable to double strength of friction effect");
+			}
 			else if (component == "AlternativeFFB")
 			{
 				this->AutoAddShortCheckBox("AlternativeFFB", L"Alternative FFB", L"Use if wheel rotates incorrectly");
