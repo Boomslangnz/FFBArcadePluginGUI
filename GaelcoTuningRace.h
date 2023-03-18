@@ -37,6 +37,7 @@ namespace FFBPluginGUI {
 			this->AutoAddComponent("CommonOptions");
 			this->AutoAddComponent("AlternativeFFB");
 			this->AutoAddComponent("EnableDamper");
+			this->AutoAddComponent("DoubleConstant");
 
 			this->AutoAddLongTrackBarBlock("DamperStrength", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");
 
