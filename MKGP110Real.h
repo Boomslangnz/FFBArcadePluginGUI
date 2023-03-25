@@ -38,8 +38,10 @@ namespace FFBPluginGUI {
 			this->AutoAddComponent("PowerMode");
 			this->AutoAddComponent("AlternativeFFB");
 			this->AutoAddComponent("EnableDamper");
+			this->AutoAddShortCheckBox("SpringEnable", L"Enable Spring Effect", L"Forces spring effect to work all the time");
 
 			this->AutoAddLongTrackBarBlock("DamperStrength", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");
+			this->AutoAddLongTrackBarBlock("SpringStrength", L"Spring Strength", 0, 100, L"Spring Strength for wheels only");
 
 			this->New2ColsPage();
 
