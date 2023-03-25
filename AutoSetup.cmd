@@ -67,8 +67,10 @@ xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Golden Gun"
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Golden Gun" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Chase HQ 2" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Chase HQ 2" /Y
-xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\GRID" /Y
-xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\GRID" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\GRID Real" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\GRID Real" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\GRID Custom" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\GRID Custom" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\GTI Club Supermini Festa" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\GTI Club Supermini Festa" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\H2Overdrive" /Y

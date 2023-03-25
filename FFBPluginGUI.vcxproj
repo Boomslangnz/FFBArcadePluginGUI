@@ -188,6 +188,7 @@
     <ClCompile Include="FlycastMaximumSpeed.cpp" />
     <ClCompile Include="FlycastSegaDrivingSimulator.cpp" />
     <ClCompile Include="GaelcoTuningRace.cpp" />
+    <ClCompile Include="GRIDCustom.cpp" />
     <ClCompile Include="H2Overdrive.cpp" />
     <ClCompile Include="HardDrivin.cpp" />
     <ClCompile Include="Help.cpp" />
@@ -223,7 +224,7 @@
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="GhoulPanic.cpp" />
     <ClCompile Include="GoldenGun.cpp" />
-    <ClCompile Include="GRID.cpp" />
+    <ClCompile Include="GRIDReal.cpp" />
     <ClCompile Include="GTIClub.cpp" />
     <ClCompile Include="GunBuster.cpp" />
     <ClCompile Include="Helper.cpp" />
@@ -348,6 +349,7 @@
     <ClInclude Include="FlycastMaximumSpeed.h" />
     <ClInclude Include="FlycastSegaDrivingSimulator.h" />
     <ClInclude Include="GaelcoTuningRace.h" />
+    <ClInclude Include="GRIDCustom.h" />
     <ClInclude Include="H2Overdrive.h" />
     <ClInclude Include="HardDrivin.h" />
     <ClInclude Include="Help.h">
@@ -405,7 +407,7 @@
     </ClInclude>
     <ClInclude Include="GhoulPanic.h" />
     <ClInclude Include="GoldenGun.h" />
-    <ClInclude Include="GRID.h" />
+    <ClInclude Include="GRIDReal.h" />
     <ClInclude Include="GTIClub.h">
       <FileType>CppHeader</FileType>
     </ClInclude>

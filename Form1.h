@@ -37,7 +37,8 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "FlycastEmulatorSelect.h"
 #include "GaelcoTuningRace.h"
 #include "GoldenGun.h"
-#include "GRID.h"
+#include "GRIDCustom.h"
+#include "GRIDReal.h"
 #include "GTIClub.h"
 #include "H2Overdrive.h"
 #include "Help.h"
@@ -298,7 +299,7 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 10)
 		{
 			this->Hide();
-			GRID^ obj1 = gcnew GRID(this);
+			GRIDReal^ obj1 = gcnew GRIDReal(this);
 			obj1->ShowDialog();
 		}
 		else if (GameSelect == 11)
@@ -619,6 +620,12 @@ namespace FFBPluginGUI {
 			MKGPUSAReal^ obj1 = gcnew MKGPUSAReal(this);
 			obj1->ShowDialog();
 		}
+		else if (GameSelect == 71)
+		{
+			this->Hide();
+			GRIDCustom^ obj1 = gcnew GRIDCustom(this);
+			obj1->ShowDialog();
+		}
 		else
 		{
 			MessageBox::Show("FFBPlugin.ini does not contain GameId or does not exist");
@@ -637,7 +644,7 @@ namespace FFBPluginGUI {
 			GameSelect == 17 || GameSelect == 18 || GameSelect == 19 || GameSelect == 20 || GameSelect == 21 || GameSelect == 22 || GameSelect == 23 || GameSelect == 24 || GameSelect == 27 || GameSelect == 30 || GameSelect == 31  || GameSelect == 33 || 
 			GameSelect == 34 || GameSelect == 36 || GameSelect == 37 || GameSelect == 38 || GameSelect == 39 || GameSelect == 40 || GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45 || GameSelect == 46 || 
 			GameSelect == 47 || GameSelect == 50 || GameSelect == 51 || GameSelect == 53 || GameSelect == 54 || GameSelect == 55 || GameSelect == 56 || GameSelect == 57 || GameSelect == 58 || GameSelect == 59 || GameSelect == 60 || GameSelect == 61 || 
-			GameSelect == 62 || GameSelect == 63 || GameSelect == 64 || GameSelect == 65 || GameSelect == 66 || GameSelect == 68 || GameSelect == 69 || GameSelect == 70)
+			GameSelect == 62 || GameSelect == 63 || GameSelect == 64 || GameSelect == 65 || GameSelect == 66 || GameSelect == 68 || GameSelect == 69 || GameSelect == 70 || GameSelect == 71)
 		{
 			this->Hide();
 			StrengthInput^ obj1 = gcnew StrengthInput(this);

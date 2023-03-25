@@ -126,7 +126,7 @@
     <ClCompile Include="HOTD4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GRID.cpp">
+    <ClCompile Include="GRIDReal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="InitialD0.cpp">
@@ -468,6 +468,9 @@
     <ClCompile Include="MKGP110Real.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GRIDCustom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -581,7 +584,7 @@
     <ClInclude Include="HOTD4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GRID.h">
+    <ClInclude Include="GRIDReal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="InitialD0.h">
@@ -927,6 +930,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MKGP110Real.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GRIDCustom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
