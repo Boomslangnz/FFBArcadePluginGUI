@@ -66,10 +66,10 @@
     <ClCompile Include="Machstorm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MKGP100.cpp">
+    <ClCompile Include="MKGP100Custom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MKGP110.cpp">
+    <ClCompile Include="MKGP110Custom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Outrun2.cpp">
@@ -387,7 +387,7 @@
     <ClCompile Include="HardDrivin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MKGPUSA.cpp">
+    <ClCompile Include="MKGPUSACustom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SWDC2018.cpp">
@@ -459,6 +459,15 @@
     <ClCompile Include="DaytonaChampionshipUSANSE.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MKGP118Real.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MKGPUSAReal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MKGP110Real.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -512,10 +521,10 @@
     <ClInclude Include="Machstorm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MKGP100.h">
+    <ClInclude Include="MKGP100Custom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MKGP110.h">
+    <ClInclude Include="MKGP110Custom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Outrun2.h">
@@ -833,7 +842,7 @@
     <ClInclude Include="HardDrivin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MKGPUSA.h">
+    <ClInclude Include="MKGPUSACustom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SWDC2018.h">
@@ -909,6 +918,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DaytonaChampionshipUSANSE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MKGP118Real.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MKGPUSAReal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MKGP110Real.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

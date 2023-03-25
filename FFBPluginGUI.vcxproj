@@ -246,9 +246,12 @@
     <ClCompile Include="MameSelect.cpp" />
     <ClCompile Include="DemulMaximumSpeed.cpp" />
     <ClCompile Include="MechanizedAttack.cpp" />
-    <ClCompile Include="MKGP100.cpp" />
-    <ClCompile Include="MKGP110.cpp" />
-    <ClCompile Include="MKGPUSA.cpp" />
+    <ClCompile Include="MKGP100Custom.cpp" />
+    <ClCompile Include="MKGP110Custom.cpp" />
+    <ClCompile Include="MKGP110Real.cpp" />
+    <ClCompile Include="MKGP118Real.cpp" />
+    <ClCompile Include="MKGPUSACustom.cpp" />
+    <ClCompile Include="MKGPUSAReal.cpp" />
     <ClCompile Include="NascarRacing.cpp" />
     <ClCompile Include="OffRoadChallenge.cpp" />
     <ClCompile Include="OperationThunderbolt.cpp" />
@@ -453,13 +456,16 @@
     </ClInclude>
     <ClInclude Include="DemulMaximumSpeed.h" />
     <ClInclude Include="MechanizedAttack.h" />
-    <ClInclude Include="MKGP100.h">
+    <ClInclude Include="MKGP100Custom.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
-    <ClInclude Include="MKGP110.h">
+    <ClInclude Include="MKGP110Custom.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
-    <ClInclude Include="MKGPUSA.h" />
+    <ClInclude Include="MKGP110Real.h" />
+    <ClInclude Include="MKGP118Real.h" />
+    <ClInclude Include="MKGPUSACustom.h" />
+    <ClInclude Include="MKGPUSAReal.h" />
     <ClInclude Include="NascarRacing.h" />
     <ClInclude Include="OffRoadChallenge.h" />
     <ClInclude Include="OperationThunderbolt.h" />

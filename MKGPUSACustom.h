@@ -17,10 +17,10 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 
 namespace FFBPluginGUI {
 
-	public ref class MKGP110 : Helper
+	public ref class MKGPUSACustom : Helper
 	{
 	public:
-		MKGP110(MetroForm ^obj1)
+		MKGPUSACustom(MetroForm^ obj1)
 		{
 			this->obj = obj1;
 			this->InitializeComponent();

@@ -58,9 +58,12 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "M2EmulatorInput.h"
 #include "Machstorm.h"
 #include "MameSelect.h"
-#include "MKGP100.h"
-#include "MKGP110.h"
-#include "MKGPUSA.h"
+#include "MKGP100Custom.h"
+#include "MKGP110Custom.h"
+#include "MKGP110Real.h"
+#include "MKGP118Real.h"
+#include "MKGPUSAReal.h"
+#include "MKGPUSACustom.h"
 #include "Outrun2.h"
 #include "Outrun2Input.h"
 #include "PokkenTournament.h"
@@ -301,7 +304,7 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 11)
 		{
 			this->Hide();
-			MKGP100^ obj1 = gcnew MKGP100(this);
+			MKGP100Custom^ obj1 = gcnew MKGP100Custom(this);
 			obj1->ShowDialog();
 		}
 		else if (GameSelect == 12)
@@ -355,7 +358,7 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 20)
 		{
 			this->Hide();
-			MKGP110^ obj1 = gcnew MKGP110(this);
+			MKGP110Custom^ obj1 = gcnew MKGP110Custom(this);
 			obj1->ShowDialog();
 		}
 		else if (GameSelect == 21)
@@ -523,7 +526,7 @@ namespace FFBPluginGUI {
 		else if (GameSelect == 51)
 		{
 			this->Hide();
-			MKGPUSA^ obj1 = gcnew MKGPUSA(this);
+			MKGPUSACustom^ obj1 = gcnew MKGPUSACustom(this);
 			obj1->ShowDialog();
 		}
 		else if (GameSelect == 52)
@@ -598,6 +601,24 @@ namespace FFBPluginGUI {
 			RingRiders^ obj1 = gcnew RingRiders(this);
 			obj1->ShowDialog();
 		}
+		else if (GameSelect == 68)
+		{
+			this->Hide();
+			MKGP118Real^ obj1 = gcnew MKGP118Real(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 69)
+		{
+			this->Hide();
+			MKGP110Real^ obj1 = gcnew MKGP110Real(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 70)
+		{
+			this->Hide();
+			MKGPUSAReal^ obj1 = gcnew MKGPUSAReal(this);
+			obj1->ShowDialog();
+		}
 		else
 		{
 			MessageBox::Show("FFBPlugin.ini does not contain GameId or does not exist");
@@ -616,7 +637,7 @@ namespace FFBPluginGUI {
 			GameSelect == 17 || GameSelect == 18 || GameSelect == 19 || GameSelect == 20 || GameSelect == 21 || GameSelect == 22 || GameSelect == 23 || GameSelect == 24 || GameSelect == 27 || GameSelect == 30 || GameSelect == 31  || GameSelect == 33 || 
 			GameSelect == 34 || GameSelect == 36 || GameSelect == 37 || GameSelect == 38 || GameSelect == 39 || GameSelect == 40 || GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45 || GameSelect == 46 || 
 			GameSelect == 47 || GameSelect == 50 || GameSelect == 51 || GameSelect == 53 || GameSelect == 54 || GameSelect == 55 || GameSelect == 56 || GameSelect == 57 || GameSelect == 58 || GameSelect == 59 || GameSelect == 60 || GameSelect == 61 || 
-			GameSelect == 62 || GameSelect == 63 || GameSelect == 64 || GameSelect == 65 || GameSelect == 66)
+			GameSelect == 62 || GameSelect == 63 || GameSelect == 64 || GameSelect == 65 || GameSelect == 66 || GameSelect == 68 || GameSelect == 69 || GameSelect == 70)
 		{
 			this->Hide();
 			StrengthInput^ obj1 = gcnew StrengthInput(this);

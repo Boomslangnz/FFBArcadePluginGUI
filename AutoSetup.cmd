@@ -99,12 +99,18 @@ xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Machstorm" 
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Machstorm" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\MAME 32bit Outputs" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\MAME 32bit Outputs" /Y
-xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Mario Kart Arcade GP DX v100" /Y
-xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Mario Kart Arcade GP DX v100" /Y
-xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Mario Kart Arcade GP DX v110" /Y
-xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Mario Kart Arcade GP DX v110" /Y
-xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Mario Kart Arcade GP DX USA" /Y
-xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Mario Kart Arcade GP DX USA" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Mario Kart Arcade GP DX v100 Custom" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Mario Kart Arcade GP DX v100 Custom" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Mario Kart Arcade GP DX v110 Custom" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Mario Kart Arcade GP DX v110 Custom" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Mario Kart Arcade GP DX v110 Real" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Mario Kart Arcade GP DX v110 Real" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Mario Kart Arcade GP DX v118 Real" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Mario Kart Arcade GP DX v118 Real" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Mario Kart Arcade GP DX USA Custom" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Mario Kart Arcade GP DX USA Custom" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Mario Kart Arcade GP DX USA Real" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Mario Kart Arcade GP DX USA Real" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Outrun 2 Special Tours Deluxe Custom" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Outrun 2 Special Tours Deluxe Custom" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Outrun 2 Special Tours Deluxe Real" /Y
