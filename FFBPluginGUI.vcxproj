@@ -250,6 +250,7 @@
     <ClCompile Include="MKGP100Custom.cpp" />
     <ClCompile Include="MKGP110Custom.cpp" />
     <ClCompile Include="MKGP110Real.cpp" />
+    <ClCompile Include="MKGP118Custom.cpp" />
     <ClCompile Include="MKGP118Real.cpp" />
     <ClCompile Include="MKGPUSACustom.cpp" />
     <ClCompile Include="MKGPUSAReal.cpp" />
@@ -465,6 +466,7 @@
       <FileType>CppHeader</FileType>
     </ClInclude>
     <ClInclude Include="MKGP110Real.h" />
+    <ClInclude Include="MKGP118Custom.h" />
     <ClInclude Include="MKGP118Real.h" />
     <ClInclude Include="MKGPUSACustom.h" />
     <ClInclude Include="MKGPUSAReal.h" />
