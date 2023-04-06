@@ -88,6 +88,7 @@ namespace FFBPluginGUI {
 			this->AutoAddShortCheckBox("SpeedBumpRumble", L"Speed Bump Effect", L"");
 			this->AutoAddShortCheckBox("RoughTrackRumble", L"Rough Track Effect", L"");
 			this->AutoAddShortCheckBox("BridgeRumble", L"Bridge Effect", L"");
+			this->AutoAddShortCheckBox("MenuRumble", L"Menu Effect", L"");
 
 			this->leftColPosY = effectsY;
 			this->lastItemType = "";
@@ -97,6 +98,7 @@ namespace FFBPluginGUI {
 			this->AutoAddShortTrackBarBlock("SpeedBumpRumbleStrength", L"Speed Bump", 0, 100, L"Strength when driving over speed bumps");
 			this->AutoAddShortTrackBarBlock("RoughTrackRumbleStrength", L"Rough Track", 0, 100, L"Strength when driving over rough part of track");
 			this->AutoAddShortTrackBarBlock("BridgeRumbleStrength", L"Bridge Strength", 0, 100, L"Strength when driving over bridge");
+			this->AutoAddShortTrackBarBlock("MenuRumbleStrength", L"Menu Strength", 0, 100, L"Strength when moving through menu");
 
 			this->Init();
 		}
