@@ -363,7 +363,7 @@ namespace FFBPluginGUI {
 			MKGP110Custom^ obj1 = gcnew MKGP110Custom(this);
 			obj1->ShowDialog();
 		}
-		else if (GameSelect == 21)
+		else if (GameSelect == 21 || GameSelect == 74)
 		{
 			this->Hide();
 			SonicAllStars^ obj1 = gcnew SonicAllStars(this);
@@ -651,7 +651,7 @@ namespace FFBPluginGUI {
 			GameSelect == 17 || GameSelect == 18 || GameSelect == 19 || GameSelect == 20 || GameSelect == 21 || GameSelect == 22 || GameSelect == 23 || GameSelect == 24 || GameSelect == 27 || GameSelect == 30 || GameSelect == 31  || GameSelect == 33 || 
 			GameSelect == 34 || GameSelect == 36 || GameSelect == 37 || GameSelect == 38 || GameSelect == 39 || GameSelect == 40 || GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45 || GameSelect == 46 || 
 			GameSelect == 47 || GameSelect == 50 || GameSelect == 51 || GameSelect == 53 || GameSelect == 54 || GameSelect == 55 || GameSelect == 56 || GameSelect == 57 || GameSelect == 58 || GameSelect == 59 || GameSelect == 60 || GameSelect == 61 || 
-			GameSelect == 62 || GameSelect == 63 || GameSelect == 64 || GameSelect == 65 || GameSelect == 66 || GameSelect == 68 || GameSelect == 69 || GameSelect == 70 || GameSelect == 71 || GameSelect == 72 || GameSelect == 73)
+			GameSelect == 62 || GameSelect == 63 || GameSelect == 64 || GameSelect == 65 || GameSelect == 66 || GameSelect == 68 || GameSelect == 69 || GameSelect == 70 || GameSelect == 71 || GameSelect == 72 || GameSelect == 73 || GameSelect == 74)
 		{
 			this->Hide();
 			StrengthInput^ obj1 = gcnew StrengthInput(this);
@@ -747,7 +747,8 @@ namespace FFBPluginGUI {
 			GameSelect == 14 || GameSelect == 17 || GameSelect == 18 || GameSelect == 19 || GameSelect == 20 || GameSelect == 21 || GameSelect == 22 || GameSelect == 25 || GameSelect == 26 || GameSelect == 27 || GameSelect == 28 || 
 			GameSelect == 29 || GameSelect == 30 || GameSelect == 31 || GameSelect == 32 || GameSelect == 33 || GameSelect == 34 || GameSelect == 36 || GameSelect == 38 || GameSelect == 39 || GameSelect == 40 || 
 			GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45 || GameSelect == 47 || GameSelect == 49 || GameSelect == 50 || GameSelect == 51 || GameSelect == 52 || GameSelect == 53 || 
-			GameSelect == 54 || GameSelect == 55 || GameSelect == 56 || GameSelect == 57 || GameSelect == 58 || GameSelect == 59 || GameSelect == 60 || GameSelect == 67)
+			GameSelect == 54 || GameSelect == 55 || GameSelect == 56 || GameSelect == 57 || GameSelect == 58 || GameSelect == 59 || GameSelect == 60 || GameSelect == 67 || GameSelect == 68 || GameSelect == 69 || GameSelect == 70 ||
+			GameSelect == 71 || GameSelect == 72 || GameSelect == 73 || GameSelect == 74)
 		{
 			this->Hide();
 			Help^ obj1 = gcnew Help(this);
