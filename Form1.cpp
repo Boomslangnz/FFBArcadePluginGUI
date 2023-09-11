@@ -22,9 +22,7 @@ using namespace MetroFramework::Forms;
 int main(int argc, char** argv)
 {
 	SDL_SetHint(SDL_HINT_JOYSTICK_RAWINPUT, "0");
-	SDL_Init(SDL_INIT_HAPTIC | SDL_INIT_VIDEO);
-	if (SDL_InitSubSystem(SDL_INIT_JOYSTICK) < 0);
-	if (SDL_InitSubSystem(SDL_INIT_GAMECONTROLLER) < 0);
+	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK | SDL_INIT_HAPTIC | SDL_INIT_GAMECONTROLLER) < 0)
 	SDL_JoystickEventState(SDL_ENABLE);
 	SDL_JoystickUpdate();
 
