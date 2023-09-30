@@ -147,6 +147,8 @@ xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Transformer
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Transformers" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT3" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT3" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT3DX+" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT3DX+" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Wacky Races" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Wacky Races" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Winter X Games SnoCross" /Y
