@@ -20,7 +20,7 @@ namespace FFBPluginGUI {
 	public ref class DaytonaChampionshipUSA : Helper
 	{
 	public:
-		DaytonaChampionshipUSA(MetroForm ^obj1)
+		DaytonaChampionshipUSA(MetroForm^ obj1)
 		{
 			this->obj = obj1;
 			this->InitializeComponent();
@@ -35,8 +35,13 @@ namespace FFBPluginGUI {
 			this->AutoAddComponent("FeedbackLength");
 
 			this->AutoAddComponent("CommonOptions");
+			this->AutoAddShortCheckBox("OriginalFFB", L"Original FFB", L"Enable to feel FFB similar to original Daytona USA");
 			this->AutoAddComponent("AlternativeFFB");
 			this->AutoAddComponent("EnableDamper");
+			this->AutoAddComponent("DoubleSpring");
+			this->AutoAddComponent("DoubleConstant");
+			this->AutoAddComponent("DoubleSine");
+			this->AutoAddComponent("DoubleFriction");
 
 			this->AutoAddLongTrackBarBlock("DamperStrength", L"Damper Strength", 0, 100, L"Strength of damper effect to lower oscillation");
 

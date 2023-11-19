@@ -41,9 +41,7 @@ namespace FFBPluginGUI {
 
 			this->AutoAddLongTextBox(L"Game Options", L"");
 
-			this->AutoAddShortCheckBox("ChangeGearsViaPlugin", L"Enable Gear Change", L"Enable to change gears");
 			this->AutoAddShortCheckBox("EscapeKeyExitViaPlugin", L"Enable Escape as Exit", L"Enable to exit game when press escape key");
-			this->AutoAddShortCheckBox("MenuMovementViaPlugin", L"Enable Menu Movement", L"Enable to move through menu with device");
 			this->AutoAddShortCheckBox("HideCursor", L"Hide Mouse Cursor", L"Hide Mouse Cursor when launch game");
 
 			this->New2ColsPage();
@@ -52,12 +50,6 @@ namespace FFBPluginGUI {
 			this->AutoAddShortTextBox(L"Device Select Input", L"Button names for device, click below to set input for device");
 			this->AutoAddShortTextBox(L"Button Number", L"Button number set in FFBPlugin.ini for device");
 
-			this->AutoAddLongInputSelect("Button", "Gear1", L"Gear 1");
-			this->AutoAddLongInputSelect("Button", "Gear2", L"Gear 2");
-			this->AutoAddLongInputSelect("Button", "Gear3", L"Gear 3");
-			this->AutoAddLongInputSelect("Button", "Gear4", L"Gear 4");
-			this->AutoAddLongInputSelect("Button", "GearUp", L"Gear Up");
-			this->AutoAddLongInputSelect("Button", "GearDown", L"Gear Down");
 			this->AutoAddLongInputSelect("Button", "IncreaseFFBStrength", L"Increase FFB Strength");
 			this->AutoAddLongInputSelect("Button", "DecreaseFFBStrength", L"Decrease FFB Strength");
 			this->AutoAddLongInputSelect("Button", "ResetFFBStrength", L"Reset FFB Strength");
