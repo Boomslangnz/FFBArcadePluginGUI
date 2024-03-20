@@ -159,6 +159,7 @@
     <ClCompile Include="AceDriver.cpp" />
     <ClCompile Include="AceDriverVictoryLap.cpp" />
     <ClCompile Include="AfterburnerClimax.cpp" />
+    <ClCompile Include="ArcticThunder.cpp" />
     <ClCompile Include="ATVTrack.cpp" />
     <ClCompile Include="Batman.cpp" />
     <ClCompile Include="CrazyTaxi.cpp" />
@@ -315,6 +316,7 @@
     <ClInclude Include="AfterburnerClimax.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="ArcticThunder.h" />
     <ClInclude Include="ATVTrack.h" />
     <ClInclude Include="Batman.h" />
     <ClInclude Include="CrazyTaxi.h" />
