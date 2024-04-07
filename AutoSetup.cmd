@@ -48,8 +48,8 @@ xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\FnF" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\FnFDrift" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\FnFDrift" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\FnFSuperCars" /Y
-xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\FnFSuperCars" /Y
-
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Sega Race TV" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Sega Race TV" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\D1GP Arcade" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\D1GP Arcade" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Daytona Championship USA" /Y
