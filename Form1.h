@@ -34,6 +34,9 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "DirtyDrivin.h"
 #include "ElfLdr2Help.h"
 #include "FFBTest.h"
+#include "FnF.h"
+#include "FnFDrift.h"
+#include "FnFSuperCars.h"
 #include "FordRacing.h"
 #include "FlycastEmulatorSelect.h"
 #include "GaelcoTuningRace.h"
@@ -44,6 +47,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "H2Overdrive.h"
 #include "Help.h"
 #include "HOTD4.h"
+#include "HummerExtreme.h"
 #include "InitialD0.h"
 #include "InitialD0Input.h"
 #include "InitialD4.h"
@@ -640,6 +644,30 @@ namespace FFBPluginGUI {
 		ArcticThunder^ obj1 = gcnew ArcticThunder(this);
 		obj1->ShowDialog();
 		}
+		else if (GameSelect == 77)
+		{
+			this->Hide();
+			FnF^ obj1 = gcnew FnF(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 78)
+		{
+			this->Hide();
+			FnFDrift^ obj1 = gcnew FnFDrift(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 79)
+		{
+			this->Hide();
+			FnFSuperCars^ obj1 = gcnew FnFSuperCars(this);
+			obj1->ShowDialog();
+		}
+		else if(GameSelect == 81)
+		{
+			this->Hide();
+			HummerExtreme^ obj1 = gcnew HummerExtreme(this);
+			obj1->ShowDialog();
+		} 
 		else
 		{
 			MessageBox::Show("FFBPlugin.ini does not contain GameId or does not exist");
