@@ -24,6 +24,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "CrazyTaxi.h"
 #include "ChaseHQ2.h"
 #include "ChaseHQ2Input.h"
+#include "CrusnBlast.h"
 #include "D1GPArcade.h"
 #include "DaytonaChampionshipUSANSE.h"
 #include "DaytonaChampionshipUSA.h"
@@ -35,6 +36,9 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "ElfLdr2Help.h"
 #include "FFBTest.h"
 #include "FordRacing.h"
+#include "FNF.h"
+#include "FNFDrift.h"
+#include "FNFSupercars.h"
 #include "FlycastEmulatorSelect.h"
 #include "GaelcoTuningRace.h"
 #include "GoldenGun.h"
@@ -43,6 +47,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "GTIClub.h"
 #include "H2Overdrive.h"
 #include "Help.h"
+#include "HummerExtreme.h"
 #include "HOTD4.h"
 #include "InitialD0.h"
 #include "InitialD0Input.h"
@@ -52,6 +57,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "InitialD6.h"
 #include "InitialD7.h"
 #include "InitialD8.h"
+#include "InitialDTheArcadev231.h"
 #include "KODrive.h"
 #include "LGI.h"
 #include "LGI3D.h"
@@ -636,9 +642,45 @@ namespace FFBPluginGUI {
 		}
 		else if (GameSelect == 75)
 		{
-		this->Hide();
-		ArcticThunder^ obj1 = gcnew ArcticThunder(this);
-		obj1->ShowDialog();
+			this->Hide();
+			ArcticThunder^ obj1 = gcnew ArcticThunder(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 76)
+		{
+			this->Hide();
+			CrusnBlast^ obj1 = gcnew CrusnBlast(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 77)
+		{
+			this->Hide();
+			FNF^ obj1 = gcnew FNF(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 78)
+		{
+			this->Hide();
+			FNFDrift^ obj1 = gcnew FNFDrift(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 79)
+		{
+			this->Hide();
+			FNFSupercars^ obj1 = gcnew FNFSupercars(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 81)
+		{
+			this->Hide();
+			HummerExtreme^ obj1 = gcnew HummerExtreme(this);
+			obj1->ShowDialog();
+		}
+		else if (GameSelect == 82)
+		{
+			this->Hide();
+			InitialDTAv231^ obj1 = gcnew InitialDTAv231(this);
+			obj1->ShowDialog();
 		}
 		else
 		{
@@ -658,7 +700,8 @@ namespace FFBPluginGUI {
 			GameSelect == 17 || GameSelect == 18 || GameSelect == 19 || GameSelect == 20 || GameSelect == 21 || GameSelect == 22 || GameSelect == 23 || GameSelect == 24 || GameSelect == 27 || GameSelect == 30 || GameSelect == 31  || GameSelect == 33 || 
 			GameSelect == 34 || GameSelect == 36 || GameSelect == 37 || GameSelect == 38 || GameSelect == 39 || GameSelect == 40 || GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45 || GameSelect == 46 || 
 			GameSelect == 47 || GameSelect == 50 || GameSelect == 51 || GameSelect == 53 || GameSelect == 54 || GameSelect == 55 || GameSelect == 56 || GameSelect == 57 || GameSelect == 58 || GameSelect == 59 || GameSelect == 60 || GameSelect == 61 || 
-			GameSelect == 62 || GameSelect == 63 || GameSelect == 64 || GameSelect == 65 || GameSelect == 66 || GameSelect == 68 || GameSelect == 69 || GameSelect == 70 || GameSelect == 71 || GameSelect == 72 || GameSelect == 73 || GameSelect == 74 || GameSelect == 75)
+			GameSelect == 62 || GameSelect == 63 || GameSelect == 64 || GameSelect == 65 || GameSelect == 66 || GameSelect == 68 || GameSelect == 69 || GameSelect == 70 || GameSelect == 71 || GameSelect == 72 || GameSelect == 73 || GameSelect == 74 ||
+			GameSelect == 75 || GameSelect == 76 || GameSelect == 77 || GameSelect == 78 || GameSelect == 79 || GameSelect == 81 || GameSelect == 82)
 		{
 			this->Hide();
 			StrengthInput^ obj1 = gcnew StrengthInput(this);
@@ -738,7 +781,7 @@ namespace FFBPluginGUI {
 	private: System::Void metroButton4_Click(System::Object^ sender, System::EventArgs^ e) //Help
 	{
 		int GameSelect = GetPrivateProfileInt(TEXT("Settings"), TEXT("GameId"), 0, TEXT(".\\FFBPlugin.ini"));
-		if (GameSelect == 4 || GameSelect == 12 || GameSelect == 15 || GameSelect == 16 || GameSelect == 23 || GameSelect == 24 || GameSelect == 35 || GameSelect == 37 || GameSelect == 46 || GameSelect == 64 || GameSelect == 65)
+		if (GameSelect == 4 || GameSelect == 12 || GameSelect == 15 || GameSelect == 16 || GameSelect == 23 || GameSelect == 24 || GameSelect == 35 || GameSelect == 37 || GameSelect == 46 || GameSelect == 64 || GameSelect == 65 || GameSelect == 76 || GameSelect == 81)
 		{
 			this->Hide();
 			LindberghHelp^ obj1 = gcnew LindberghHelp(this);
@@ -755,7 +798,7 @@ namespace FFBPluginGUI {
 			GameSelect == 29 || GameSelect == 30 || GameSelect == 31 || GameSelect == 32 || GameSelect == 33 || GameSelect == 34 || GameSelect == 36 || GameSelect == 38 || GameSelect == 39 || GameSelect == 40 || 
 			GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45 || GameSelect == 47 || GameSelect == 49 || GameSelect == 50 || GameSelect == 51 || GameSelect == 52 || GameSelect == 53 || 
 			GameSelect == 54 || GameSelect == 55 || GameSelect == 56 || GameSelect == 57 || GameSelect == 58 || GameSelect == 59 || GameSelect == 60 || GameSelect == 67 || GameSelect == 68 || GameSelect == 69 || GameSelect == 70 ||
-			GameSelect == 71 || GameSelect == 72 || GameSelect == 73 || GameSelect == 74 || GameSelect == 75)
+			GameSelect == 71 || GameSelect == 72 || GameSelect == 73 || GameSelect == 74 || GameSelect == 75 || GameSelect == 77 || GameSelect == 78 || GameSelect == 79 || GameSelect == 82)
 		{
 			this->Hide();
 			Help^ obj1 = gcnew Help(this);

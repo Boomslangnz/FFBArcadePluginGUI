@@ -477,6 +477,24 @@
     <ClCompile Include="ArcticThunder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FNF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FNFDrift.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FNFSupercars.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HummerExtreme.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CrusnBlast.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InitialDTheArcadev231.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -945,6 +963,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ArcticThunder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FNF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FNFDrift.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FNFSupercars.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CrusnBlast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HummerExtreme.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InitialDTheArcadev231.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

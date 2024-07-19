@@ -163,6 +163,7 @@
     <ClCompile Include="ATVTrack.cpp" />
     <ClCompile Include="Batman.cpp" />
     <ClCompile Include="CrazyTaxi.cpp" />
+    <ClCompile Include="CrusnBlast.cpp" />
     <ClCompile Include="D1GPArcade.cpp" />
     <ClCompile Include="DaytonaChampionshipUSANSE.cpp" />
     <ClCompile Include="DaytonaUSA.cpp" />
@@ -188,15 +189,20 @@
     <ClCompile Include="FlycastKingOfRoute66.cpp" />
     <ClCompile Include="FlycastMaximumSpeed.cpp" />
     <ClCompile Include="FlycastSegaDrivingSimulator.cpp" />
+    <ClCompile Include="FNF.cpp" />
+    <ClCompile Include="FNFDrift.cpp" />
+    <ClCompile Include="FNFSupercars.cpp" />
     <ClCompile Include="GaelcoTuningRace.cpp" />
     <ClCompile Include="GRIDCustom.cpp" />
     <ClCompile Include="H2Overdrive.cpp" />
     <ClCompile Include="HardDrivin.cpp" />
     <ClCompile Include="Help.cpp" />
+    <ClCompile Include="HummerExtreme.cpp" />
     <ClCompile Include="Hyperdrive.cpp" />
     <ClCompile Include="InitialD0Input.cpp" />
     <ClCompile Include="Indy500.cpp" />
     <ClCompile Include="InitialDDemul.cpp" />
+    <ClCompile Include="InitialDTheArcadev231.cpp" />
     <ClCompile Include="LindberghHelp.cpp" />
     <ClCompile Include="AfterburnerII.cpp" />
     <ClCompile Include="Alien3.cpp" />
@@ -320,6 +326,7 @@
     <ClInclude Include="ATVTrack.h" />
     <ClInclude Include="Batman.h" />
     <ClInclude Include="CrazyTaxi.h" />
+    <ClInclude Include="CrusnBlast.h" />
     <ClInclude Include="D1GPArcade.h" />
     <ClInclude Include="DaytonaChampionshipUSANSE.h" />
     <ClInclude Include="DaytonaUSA.h" />
@@ -351,6 +358,9 @@
     <ClInclude Include="FlycastKingOfRoute66.h" />
     <ClInclude Include="FlycastMaximumSpeed.h" />
     <ClInclude Include="FlycastSegaDrivingSimulator.h" />
+    <ClInclude Include="FNF.h" />
+    <ClInclude Include="FNFDrift.h" />
+    <ClInclude Include="FNFSupercars.h" />
     <ClInclude Include="GaelcoTuningRace.h" />
     <ClInclude Include="GRIDCustom.h" />
     <ClInclude Include="H2Overdrive.h" />
@@ -358,10 +368,12 @@
     <ClInclude Include="Help.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="HummerExtreme.h" />
     <ClInclude Include="Hyperdrive.h" />
     <ClInclude Include="InitialD0Input.h" />
     <ClInclude Include="Indy500.h" />
     <ClInclude Include="InitialDDemul.h" />
+    <ClInclude Include="InitialDTheArcadev231.h" />
     <ClInclude Include="LindberghHelp.h">
       <FileType>CppForm</FileType>
     </ClInclude>
