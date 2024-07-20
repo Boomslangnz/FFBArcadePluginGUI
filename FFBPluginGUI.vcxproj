@@ -310,6 +310,7 @@
     <ClCompile Include="VaporTrx.cpp" />
     <ClCompile Include="VirtuaRacing.cpp" />
     <ClCompile Include="WackyRaces.cpp" />
+    <ClCompile Include="WastelandRacers2071.cpp" />
     <ClCompile Include="WMMT3.cpp" />
     <ClCompile Include="WMMT5.cpp" />
     <ClCompile Include="WMMT5Input.cpp" />
@@ -555,6 +556,7 @@
     <ClInclude Include="WackyRaces.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="WastelandRacers2071.h" />
     <ClInclude Include="WMMT3.h" />
     <ClInclude Include="WMMT5.h">
       <FileType>CppHeader</FileType>

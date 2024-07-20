@@ -159,6 +159,8 @@ xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Supermodel 
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Supermodel 32bit Outputs" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Transformers" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Transformers" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Wasteland Racers 2071" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Wasteland Racers 2071" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT3" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT3" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT3DX+" /Y
