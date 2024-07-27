@@ -132,6 +132,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Workspace\Projects\wmmt6rr\FFBArcadePluginGUI\Includes\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>Shell32.lib</AdditionalDependencies>
@@ -316,6 +317,7 @@
     <ClCompile Include="WMMT5Input.cpp" />
     <ClCompile Include="WMMT6.cpp" />
     <ClCompile Include="WMMT6R.cpp" />
+    <ClCompile Include="WMMT6RR.cpp" />
     <ClCompile Include="ZombieRaid.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -567,6 +569,7 @@
     <ClInclude Include="WMMT6.h" />
     <ClInclude Include="WMMT6Input.h" />
     <ClInclude Include="WMMT6R.h" />
+    <ClInclude Include="WMMT6RR.h" />
     <ClInclude Include="ZombieRaid.h" />
   </ItemGroup>
   <ItemGroup>

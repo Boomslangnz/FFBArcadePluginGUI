@@ -429,6 +429,14 @@ namespace FFBPluginGUI {
 			{
 				this->AutoAddShortCheckBox("DoubleConstant", L"Double Constant", L"Enable to double strength of constant effect");
 			}
+			else if (component == "ReverseCollision")
+			{
+				this->AutoAddShortCheckBox("ReverseCollision", L"Reverse Collision", L"Reverse the collision if works incorrectly to liking");
+			}
+			else if (component == "ReverseTiresSlip")
+			{
+				this->AutoAddShortCheckBox("ReverseTiresSlip", L"Reverse Tires Slip", L"Reverse the tireslip if works incorrectly to liking");
+			}
 			else if (component == "CommonOptions")
 			{
 				this->AutoAddComponent("OptionsHeader");
@@ -577,9 +585,9 @@ namespace FFBPluginGUI {
 			}
 		}
 
-		Void AddDeviceSelector(int device, String^ param, String^ text, String^ tooltîp, MetroComboBox^ comboBox, int locY)
+		Void AddDeviceSelector(int device, String^ param, String^ text, String^ tooltï¿½p, MetroComboBox^ comboBox, int locY)
 		{
-			this->AddTextBox(text, this->leftColX, locY, this->longWidth, this->textBoxHeight, tooltîp);
+			this->AddTextBox(text, this->leftColX, locY, this->longWidth, this->textBoxHeight, tooltï¿½p);
 			locY += this->textBoxOuterHeight;
 			for (int i = 0; i < SDL_NumJoysticks(); i++)
 			{

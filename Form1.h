@@ -95,6 +95,7 @@ along with FFB Arcade Plugin GUI.If not, see < https://www.gnu.org/licenses/>.
 #include "WMMT6.h"
 #include "WMMT6Input.h"
 #include "WMMT6R.h"
+#include "WMMT6RR.h"
 #include "Rambo.h"
 #include "R-Tuned.h"
 #include "TokyoCop.h"
@@ -689,6 +690,12 @@ namespace FFBPluginGUI {
 			WastelandRacers2071^ obj1 = gcnew WastelandRacers2071(this);
 			obj1->ShowDialog();
 		}
+		else if (GameSelect == 84)
+		{
+			this->Hide();
+			WMMT6RR^ obj1 = gcnew WMMT6RR(this);
+			obj1->ShowDialog();
+		}
 		else
 		{
 			MessageBox::Show("FFBPlugin.ini does not contain GameId or does not exist");
@@ -708,7 +715,7 @@ namespace FFBPluginGUI {
 			GameSelect == 34 || GameSelect == 36 || GameSelect == 37 || GameSelect == 38 || GameSelect == 39 || GameSelect == 40 || GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45 || GameSelect == 46 || 
 			GameSelect == 47 || GameSelect == 50 || GameSelect == 51 || GameSelect == 53 || GameSelect == 54 || GameSelect == 55 || GameSelect == 56 || GameSelect == 57 || GameSelect == 58 || GameSelect == 59 || GameSelect == 60 || GameSelect == 61 || 
 			GameSelect == 62 || GameSelect == 63 || GameSelect == 64 || GameSelect == 65 || GameSelect == 66 || GameSelect == 68 || GameSelect == 69 || GameSelect == 70 || GameSelect == 71 || GameSelect == 72 || GameSelect == 73 || GameSelect == 74 ||
-			GameSelect == 75 || GameSelect == 76 || GameSelect == 77 || GameSelect == 78 || GameSelect == 79 || GameSelect == 81 || GameSelect == 82 || GameSelect == 83)
+			GameSelect == 75 || GameSelect == 76 || GameSelect == 77 || GameSelect == 78 || GameSelect == 79 || GameSelect == 81 || GameSelect == 82 || GameSelect == 83 || GameSelect == 84)
 		{
 			this->Hide();
 			StrengthInput^ obj1 = gcnew StrengthInput(this);
@@ -805,7 +812,7 @@ namespace FFBPluginGUI {
 			GameSelect == 29 || GameSelect == 30 || GameSelect == 31 || GameSelect == 32 || GameSelect == 33 || GameSelect == 34 || GameSelect == 36 || GameSelect == 38 || GameSelect == 39 || GameSelect == 40 || 
 			GameSelect == 41 || GameSelect == 42 || GameSelect == 43 || GameSelect == 44 || GameSelect == 45 || GameSelect == 47 || GameSelect == 49 || GameSelect == 50 || GameSelect == 51 || GameSelect == 52 || GameSelect == 53 || 
 			GameSelect == 54 || GameSelect == 55 || GameSelect == 56 || GameSelect == 57 || GameSelect == 58 || GameSelect == 59 || GameSelect == 60 || GameSelect == 67 || GameSelect == 68 || GameSelect == 69 || GameSelect == 70 ||
-			GameSelect == 71 || GameSelect == 72 || GameSelect == 73 || GameSelect == 74 || GameSelect == 75 || GameSelect == 77 || GameSelect == 78 || GameSelect == 79 || GameSelect == 82 || GameSelect == 83)
+			GameSelect == 71 || GameSelect == 72 || GameSelect == 73 || GameSelect == 74 || GameSelect == 75 || GameSelect == 77 || GameSelect == 78 || GameSelect == 79 || GameSelect == 82 || GameSelect == 83 || GameSelect == 84)
 		{
 			this->Hide();
 			Help^ obj1 = gcnew Help(this);

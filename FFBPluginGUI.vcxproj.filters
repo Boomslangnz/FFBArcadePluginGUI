@@ -399,6 +399,9 @@
     <ClCompile Include="WMMT6R.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="WMMT6RR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="StormRacerG.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -882,6 +885,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="WMMT6R.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WMMT6RR.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StormRacerG.h">
