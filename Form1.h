@@ -795,13 +795,13 @@ namespace FFBPluginGUI {
 	private: System::Void metroButton4_Click(System::Object^ sender, System::EventArgs^ e) //Help
 	{
 		int GameSelect = GetPrivateProfileInt(TEXT("Settings"), TEXT("GameId"), 0, TEXT(".\\FFBPlugin.ini"));
-		if (GameSelect == 4 || GameSelect == 12 || GameSelect == 15 || GameSelect == 16 || GameSelect == 23 || GameSelect == 24 || GameSelect == 35 || GameSelect == 37 || GameSelect == 46 || GameSelect == 64 || GameSelect == 65 || GameSelect == 76 || GameSelect == 81)
+		if (GameSelect == 4 || GameSelect == 12 || GameSelect == 15 || GameSelect == 16 || GameSelect == 23 || GameSelect == 24 || GameSelect == 35 || GameSelect == 37 || GameSelect == 46 || GameSelect == 64 || GameSelect == 65)
 		{
 			this->Hide();
 			LindberghHelp^ obj1 = gcnew LindberghHelp(this);
 			obj1->ShowDialog();
 		}
-		else if (GameSelect == 61 || GameSelect == 62 || GameSelect == 63 || GameSelect == 66)
+		else if (GameSelect == 61 || GameSelect == 62 || GameSelect == 63 || GameSelect == 66 || GameSelect == 76 || GameSelect == 81)
 		{
 			this->Hide();
 			ElfLdr2Help^ obj1 = gcnew ElfLdr2Help(this);
