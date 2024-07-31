@@ -31,6 +31,8 @@ xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT6" 
 xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT6" /Y
 xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT6R" /Y
 xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT6R" /Y
+xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT6RR" /Y
+xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT6RR" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Afterburner Climax" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Afterburner Climax" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Aliens Extermination" /Y
@@ -145,6 +147,8 @@ xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Sega Racing
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Sega Racing Classic" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Sega Rally 3" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Sega Rally 3" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Sega Race TV" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Sega Race TV" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Sega Rally 3 Other" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Sega Rally 3 Other" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Showdown" /Y
