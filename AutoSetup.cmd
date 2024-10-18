@@ -7,6 +7,8 @@ xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Initial
 xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Initial D Zero v211" /Y
 xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Initial D Zero v230" /Y
 xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Initial D Zero v230" /Y
+xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Initial D The Arcade v231" /Y
+xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Initial D The Arcade v231" /Y
 xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\MAME 64bit Outputs" /Y
 xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\MAME 64bit Outputs" /Y
 xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\PokkenTournament" /Y
@@ -29,6 +31,8 @@ xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT6" 
 xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT6" /Y
 xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT6R" /Y
 xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT6R" /Y
+xcopy ".\x64\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT6RR" /Y
+xcopy ".\x64\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT6RR" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Afterburner Climax" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Afterburner Climax" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Aliens Extermination" /Y
@@ -68,6 +72,8 @@ xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Ring Riders
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Ring Riders" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Crazy Taxi Steam" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Crazy Taxi Steam" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Cruisn Blast" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Cruisn Blast" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Demul" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Demul" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Dirty Drivin'" /Y
@@ -76,6 +82,12 @@ xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Ford Racing
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Ford Racing" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Ford Racing Other" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Ford Racing Other" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\FNF" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\FNF" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\FNF Drift" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\FNF Drift" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\FNF Supercars" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\FNF Supercars" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Golden Gun" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Golden Gun" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Chase HQ 2" /Y
@@ -88,6 +100,8 @@ xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\GTI Club Su
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\GTI Club Supermini Festa" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\H2Overdrive" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\H2Overdrive" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Hummer Extreme" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Hummer Extreme" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\HOTD4" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\HOTD4" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Initial D 4" /Y
@@ -142,6 +156,8 @@ xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Sega Racing
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Sega Racing Classic" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Sega Rally 3" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Sega Rally 3" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Sega Race TV" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Sega Race TV" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Sega Rally 3 Other" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Sega Rally 3 Other" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Showdown" /Y
@@ -156,6 +172,8 @@ xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Supermodel 
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Supermodel 32bit Outputs" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Transformers" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Transformers" /Y
+xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\Wasteland Racers 2071" /Y
+xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\Wasteland Racers 2071" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT3" /Y
 xcopy ".\Release\MetroFramework.dll" "..\FFBArcadePlugin\Release.Win32\WMMT3" /Y
 xcopy ".\Release\FFBPluginGUI.exe" "..\FFBArcadePlugin\Release.Win32\WMMT3DX+" /Y
